@@ -1,0 +1,15 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Yonarmed 12 Kostrad (Ngawi)",
+  "matra": "darat",
+  "lat": -7.404,
+  "lng": 111.445,
+  "satuan": "Batalion Artileri Medan 12 Kostrad (TNI AD)",
+  "alutsista": [
+    {
+      "nama": "CAESAR 155 mm 6x6",
+      "slug": "caesar-155mm"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI AD / Kostrad"
+}

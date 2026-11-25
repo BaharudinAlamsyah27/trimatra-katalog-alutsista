@@ -1,0 +1,485 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { labelJenis, labelMatra, labelStatus, namaNegara } from '../lib/format';
+import { derivePenggunaMap } from '../lib/derive';
+
+const semuaAlutsista = (await getCollection('alutsista')).sort((a, b) =>
+  a.data.nama.localeCompare(b.data.nama, 'id')
+);
+const semuaPabrikan = await getCollection('pabrikan');
+const pabrikanMap = new Map(semuaPabrikan.map((p) => [p.id, p.data.nama]));
+const penggunaMap = await derivePenggunaMap();
+
+const daratList = semuaAlutsista.filter((e) => e.data.matra === 'darat');
+const lautList = semuaAlutsista.filter((e) => e.data.matra === 'laut');
+const udaraList = semuaAlutsista.filter((e) => e.data.matra === 'udara');
+
+const totalPeristiwa = semuaAlutsista.reduce((sum, e) => sum + e.data.sejarah.linimasa.length, 0);
+
+const pilihanSlugs = [
+  'leopard-2ri',
+  'fregat-kelas-martadinata',
+  'f-16-fighting-falcon',
+  'harimau-medium-tank',
+  'kapal-selam-kelas-nagapasa',
+  'sukhoi-su-27-su-30',
+  'astros-ii-mk6',
+  'kcr-60m-sampari',
+  'ah-64e-apache',
+];
+const alutsistaMap = new Map(semuaAlutsista.map((e) => [e.id, e]));
+const alutsistaPilihan = pilihanSlugs
+  .map((s) => alutsistaMap.get(s))
+  .filter((e): e is (typeof semuaAlutsista)[number] => Boolean(e));
+
+const matraCards = [
+  {
+    kunci: 'darat',
+    label: 'Matra Darat',
+    sub: 'TNI Angkatan Darat',
+    count: daratList.length,
+    sampul: '/images/leopard-2ri.webp',
+    ringkas: 'Tank tempur utama, tank medium, panser 6x6, rantis 4x4, howitzer swagerak, MLRS, dan senapan serbu.',
+  },
+  {
+    kunci: 'laut',
+    label: 'Matra Laut',
+    sub: 'TNI Angkatan Laut',
+    count: lautList.length,
+    sampul: '/images/fregat-kelas-martadinata.webp',
+    ringkas: 'Kapal selam diesel-listrik, fregat SIGMA 10514, korvet, kapal cepat rudal, dan kapal amfibi LPD.',
+  },
+  {
+    kunci: 'udara',
+    label: 'Matra Udara',
+    sub: 'TNI Angkatan Udara',
+    count: udaraList.length,
+    sampul: '/images/sukhoi-su-27-su-30.webp',
+    ringkas: 'Pesawat tempur multiperan, jet latih supersonik, pesawat angkut berat/medium, dan helikopter tempur.',
+  },
+];
+---
+
+<Base
+  judul="Beranda"
+  deskripsi="Katalog Alutsista Interaktif — Referensi edukasi alutsista Trimatra (Darat, Laut, Udara) dengan foto asli, spesifikasi bersumber terbuka, model 3D, dan simulasi jangkauan."
+  transparentHeader={true}
+>
+  <!-- HERO EDITORIAL 1 BACKGROUND UTAMA PENUH (Terinspirasi Referensi Gambar 1 — Image-Led, Bersih, Tanpa Slop) -->
+  <section class="relative min-h-[92vh] w-full flex flex-col justify-end overflow-hidden bg-slate-950">
+    <!-- 1 Foto Latar Penuh Berkualitas Tinggi -->
+    <img
+      src="/images/ah-64e-apache.webp"
+      alt="Boeing AH-64E Apache Guardian TNI AD"
+      class="absolute inset-0 w-full h-full object-cover object-center scale-[1.01]"
+      loading="eager"
+      width="1280"
+      height="800"
+    />
+    <!-- Vignette Sinematik Halus agar Teks Kontras Tinggi (WCAG >= 7:1) -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0b1017] via-slate-950/55 to-slate-950/40"></div>
+
+    <!-- Konten Utama di Bagian Bawah-Tengah / Kiri-Bawah yang Tegas -->
+    <div class="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-14 sm:pb-18 space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8 space-y-5">
+          <!-- Status Pill Monitoring + Jam Live WIB -->
+          <div class="inline-flex flex-wrap items-center gap-3 px-3.5 py-1.5 rounded-full bg-slate-950/65 backdrop-blur-md border border-emerald-400/30 text-xs font-mono text-emerald-300">
+            <span class="relative flex h-2.5 w-2.5" aria-hidden="true">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+            </span>
+            <span class="font-bold tracking-wider">ARSIP AKTIF</span>
+            <span class="text-white/30">|</span>
+            <span>DARAT &bull; LAUT &bull; UDARA</span>
+            <span class="text-white/30 hidden sm:inline">|</span>
+            <span id="live-wib-clock" class="tabular-nums text-cyan-300 hidden sm:inline">--:--:-- WIB</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase leading-[1.04]">
+            <span data-i18n-id="KATALOG ALUTSISTA TRIMATRA." data-i18n-en="TRIMATRA DEFENSE ARCHIVE.">
+              KATALOG ALUTSISTA TRIMATRA.
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-xl text-slate-200 max-w-2xl leading-relaxed font-normal">
+            <span
+              data-i18n-id="Ensiklopedia interaktif berbasis sumber terbuka yang mendokumentasikan spesifikasi metrik, sejarah, foto asli, model 3D 360°, serta simulasi jangkauan geografis."
+              data-i18n-en="An open-source interactive catalog documenting metric specifications, service history, real photography, 360° 3D models, and geographic range simulation."
+            >
+              Ensiklopedia interaktif berbasis sumber terbuka yang mendokumentasikan spesifikasi metrik, sejarah, foto asli, model 3D 360°, serta simulasi jangkauan geografis.
+            </span>
+          </p>
+
+          <!-- Tombol Aksi Pill Modern -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a
+              href="/katalog"
+              class="min-h-[48px] px-7 py-3 rounded-full bg-white text-slate-950 hover:bg-emerald-400 font-bold text-sm sm:text-base inline-flex items-center gap-2.5 transition-colors shadow-lg"
+            >
+              <span data-i18n-id="Jelajahi Katalog" data-i18n-en="Explore Catalog">Jelajahi Katalog</span>
+              <span aria-hidden="true" class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-950 text-white text-xs">&rarr;</span>
+            </a>
+            <a
+              href="/peta"
+              class="min-h-[48px] px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-white font-semibold text-sm sm:text-base inline-flex items-center gap-2 transition-colors"
+            >
+              <span data-i18n-id="Buka Peta & Simulasi Jangkauan" data-i18n-en="Open Map & Range Simulator">
+                Buka Peta & Simulasi Jangkauan
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Widget Radar Sapuan Halus (Desktop HUD Ornamen Monitoring) -->
+        <div class="hidden lg:flex lg:col-span-4 justify-end">
+          <a
+            href="/peta"
+            aria-label="Buka simulator radar dan peta jangkauan"
+            class="hud-frame group p-4 rounded-2xl bg-slate-950/65 backdrop-blur-md border border-emerald-400/25 hover:border-emerald-400/60 transition-colors flex items-center gap-4"
+          >
+            <div class="relative w-24 h-24 rounded-full border border-emerald-400/40 bg-emerald-950/50 overflow-hidden shrink-0">
+              <!-- Cincin jangkauan radar -->
+              <div class="absolute inset-3 rounded-full border border-emerald-400/25"></div>
+              <div class="absolute inset-7 rounded-full border border-emerald-400/25"></div>
+              <div class="absolute inset-y-0 left-1/2 w-px bg-emerald-400/20"></div>
+              <div class="absolute inset-x-0 top-1/2 h-px bg-emerald-400/20"></div>
+              <!-- Sapuan radar berputar -->
+              <div class="radar-beam absolute inset-0 rounded-full"></div>
+              <!-- 3 titik blip Trimatra -->
+              <span class="radar-blip absolute top-4 left-6 w-2 h-2 rounded-full bg-emerald-300 shadow-[0_0_8px_#34d399]"></span>
+              <span class="radar-blip absolute bottom-5 right-5 w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_8px_#22d3ee]" style="animation-delay:0.9s"></span>
+              <span class="radar-blip absolute top-8 right-6 w-1.5 h-1.5 rounded-full bg-amber-300 shadow-[0_0_8px_#fbbf24]" style="animation-delay:1.8s"></span>
+              <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-white"></span>
+            </div>
+            <div class="font-mono text-xs space-y-1.5">
+              <div class="text-emerald-300 font-bold tracking-wider">SIMULATOR RADAR</div>
+              <div class="text-slate-300 leading-snug">Radius Jelajah &amp;<br />Estimasi Lintasan</div>
+              <div class="text-cyan-300 group-hover:translate-x-0.5 transition-transform inline-block">Buka /peta &rarr;</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Baris Bawah Hero: Pencarian Cepat + 4 Angka Ringkas Bersih -->
+      <div class="pt-6 border-t border-white/15 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <form action="/katalog" method="get" role="search" class="lg:col-span-6 flex items-center gap-2">
+          <label for="hero-search" class="sr-only">Cari nama alutsista atau pabrikan</label>
+          <input
+            id="hero-search"
+            name="q"
+            type="search"
+            placeholder="Cari alutsista (Leopard 2RI, F-16, Nagapasa, Pindad)..."
+            class="flex-1 min-h-[46px] px-4 py-2 rounded-full bg-slate-950/70 backdrop-blur-md border border-white/20 text-sm sm:text-base text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          />
+          <button
+            type="submit"
+            class="min-h-[46px] px-5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-colors cursor-pointer shrink-0"
+          >
+            Cari
+          </button>
+        </form>
+
+        <div class="lg:col-span-6 grid grid-cols-4 gap-3 text-center sm:text-right">
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold tabular-nums text-white">{semuaAlutsista.length}</div>
+            <div class="text-xs text-slate-300">Alutsista</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold tabular-nums text-emerald-300">{semuaPabrikan.length}</div>
+            <div class="text-xs text-slate-300">Pabrikan</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold tabular-nums text-cyan-300">{penggunaMap.size}</div>
+            <div class="text-xs text-slate-300">Negara</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold tabular-nums text-amber-300">{totalPeristiwa}</div>
+            <div class="text-xs text-slate-300">Linimasa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Konten Bawah Landing Page: Transisi Bertema Trimatra (Langit → Hutan → Samudra → Gurun) -->
+
+  <!-- BAND 2: TEMA HUTAN & MEDAN DARAT (3 Matra + Modul Konsol) -->
+  <section class="relative overflow-hidden bg-[#0b1512] text-white border-t border-emerald-500/15">
+    <img
+      src="/images/leopard-2ri.webp"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-20 blur-[2px] scale-105 pointer-events-none select-none"
+      loading="lazy"
+      width="1280"
+      height="800"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0b1017] via-[#0d1c16]/85 to-[#091821]"></div>
+    <div class="absolute inset-0 bg-topo-pattern opacity-45 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 space-y-12">
+      <!-- Seksi 1: 3 Matra Utama -->
+      <div aria-labelledby="heading-matra" class="space-y-6">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="text-xs font-mono uppercase tracking-[0.2em] text-emerald-400 font-semibold mb-1">
+              Zona 01 &bull; Medan Darat &amp; Hutan Tropis
+            </p>
+            <h2 id="heading-matra" class="text-2xl sm:text-3xl font-extrabold text-white">
+              Jelajahi Berdasarkan Matra
+            </h2>
+            <p class="text-base text-slate-300 mt-1">
+              Struktur katalog dibagi menjadi tiga matra utama sesuai taksonomi pertahanan.
+            </p>
+          </div>
+          <a href="/katalog" class="text-sm font-bold text-emerald-300 hover:text-emerald-200 hover:underline">
+            Lihat seluruh katalog &rarr;
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {matraCards.map((m) => (
+            <a
+              href={`/katalog?matra=${m.kunci}`}
+              class="group relative rounded-xl overflow-hidden border border-white/15 bg-slate-900 min-h-[250px] flex flex-col justify-end p-6 hover:border-emerald-400/70 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 shadow-lg"
+            >
+              <img
+                src={m.sampul}
+                alt={`Foto ${m.label}`}
+                class="absolute inset-0 w-full h-full object-cover opacity-65 group-hover:opacity-80 group-hover:scale-105 transition-all duration-300 ease-out"
+                loading="lazy"
+                width="640"
+                height="400"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#08100d] via-[#0b1017]/65 to-transparent"></div>
+              <div class="relative z-10 space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-xs font-mono font-bold px-2.5 py-1 rounded bg-slate-950/85 border border-emerald-500/40 text-emerald-300">
+                    {m.sub}
+                  </span>
+                  <span class="text-sm font-bold tabular-nums text-white bg-white/15 px-3 py-0.5 rounded-full backdrop-blur-xs">
+                    {m.count} entri
+                  </span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">
+                  {m.label}
+                </h3>
+                <p class="text-sm text-slate-200 leading-relaxed">
+                  {m.ringkas}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Seksi 2: Modul Konsol Fitur (Glass-Dark di atas Latar Hutan) -->
+      <div aria-labelledby="heading-modul" class="hud-frame rounded-xl border border-emerald-400/20 bg-[#0b1318]/80 backdrop-blur-md overflow-hidden shadow-xl">
+        <div class="flex items-center justify-between gap-3 px-5 py-3 border-b border-white/10 bg-slate-950/60 font-mono text-xs sm:text-[13px] font-semibold text-slate-300">
+          <span id="heading-modul" class="inline-flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
+            MODUL EKSPLORASI &bull; KONSOL DATA
+          </span>
+          <span class="text-emerald-400">TERVERIFIKASI SUMBER TERBUKA</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+          <a href="/peta" class="p-6 hover:bg-emerald-500/10 transition-colors space-y-2">
+            <div class="font-mono text-xs font-bold text-emerald-400">sim /peta-jangkauan</div>
+            <div class="font-bold text-base text-white">Peta & Simulasi Jangkauan</div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Ukur radius jelajah pesawat/kapal dan perkiraan waktu tempuh antar lokasi di peta Indonesia.
+            </p>
+          </a>
+          <a href="/bandingkan?jenis=pesawat-tempur&items=f-16-fighting-falcon,sukhoi-su-27-su-30" class="p-6 hover:bg-cyan-500/10 transition-colors space-y-2">
+            <div class="font-mono text-xs font-bold text-cyan-400">diff /spesifikasi</div>
+            <div class="font-bold text-base text-white">Bandingkan Alutsista</div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Komparasi parameter metrik 2–3 entri sejenis secara berdampingan dengan tautan URL.
+            </p>
+          </a>
+          <a href="/pabrikan" class="p-6 hover:bg-sky-500/10 transition-colors space-y-2">
+            <div class="font-mono text-xs font-bold text-sky-400">ls /pabrikan</div>
+            <div class="font-bold text-base text-white">Direktori Pabrikan ({semuaPabrikan.length})</div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Profil PT Pindad, PT PAL, PTDI, Damen, Lockheed Martin, KMW, Boeing, dan lainnya.
+            </p>
+          </a>
+          <a href="/sejarah" class="p-6 hover:bg-amber-500/10 transition-colors space-y-2">
+            <div class="font-mono text-xs font-bold text-amber-400">log /sejarah</div>
+            <div class="font-bold text-base text-white">Linimasa Sejarah ({totalPeristiwa})</div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Kronologi pengembangan, pengiriman, dan modernisasi lintas dekade (1950–2024).
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAND 3: TEMA SAMUDRA & MARITIM (Sorotan 9 Alutsista Grid 3x3 Penuh) -->
+  <section aria-labelledby="heading-galeri-lengkap" class="relative overflow-hidden bg-[#091821] text-white border-t border-cyan-500/15">
+    <img
+      src="/images/fregat-kelas-martadinata.webp"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-15 blur-[3px] scale-105 pointer-events-none select-none"
+      loading="lazy"
+      width="1280"
+      height="800"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-[#091821] via-[#0c202e]/85 to-[#17130e]"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 space-y-8">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="text-xs font-mono uppercase tracking-[0.2em] text-cyan-300 font-semibold mb-1">
+            Zona 02 &bull; Samudra &amp; Armada Nusantara
+          </p>
+          <h2 id="heading-galeri-lengkap" class="text-2xl sm:text-3xl font-extrabold text-white">
+            Sorotan Alutsista Trimatra (9 Pilihan)
+          </h2>
+          <p class="text-base text-slate-300 mt-1">
+            Perwakilan 3 matra utama — setiap kartu menyajikan foto asli, model 3D 360°, spesifikasi metrik, dan referensi terbuka.
+          </p>
+        </div>
+        <a
+          href="/katalog"
+          class="min-h-[42px] px-4 py-2 rounded-lg border border-cyan-400/35 bg-cyan-500/10 hover:bg-cyan-500/20 text-sm font-semibold text-cyan-200 inline-flex items-center transition-colors"
+        >
+          Lihat Semua {semuaAlutsista.length} Entri &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {alutsistaPilihan.map((item) => {
+          const foto = item.data.galeri[0]?.berkas || item.data.model3d?.poster;
+          const namaPabrikan = item.data.pabrikan
+            .map((p) => pabrikanMap.get(p.id) || p.id)
+            .join(', ');
+          return (
+            <article class="group rounded-xl border border-white/12 bg-[#0d1822]/85 backdrop-blur-md overflow-hidden hover:border-cyan-400/60 transition-colors flex flex-col shadow-lg">
+              <a href={`/alutsista/${item.id}`} class="block aspect-16/10 bg-slate-900 relative overflow-hidden">
+                {foto && (
+                  <img
+                    src={foto}
+                    alt={`Foto asli ${item.data.nama}`}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
+                    loading="lazy"
+                    width="480"
+                    height="300"
+                  />
+                )}
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent"></div>
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-950/85 text-emerald-300 border border-emerald-500/30">
+                    {labelMatra(item.data.matra)}
+                  </span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-950/80 text-slate-100 border border-white/10">
+                    {labelJenis(item.data.jenis)}
+                  </span>
+                </div>
+                {item.data.model3d && (
+                  <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md text-xs font-semibold bg-cyan-700/95 text-white">
+                    Foto + 3D
+                  </span>
+                )}
+              </a>
+
+              <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                  <h3 class="text-lg font-bold text-white leading-snug">
+                    <a href={`/alutsista/${item.id}`} class="hover:text-cyan-300 transition-colors">
+                      {item.data.nama}
+                    </a>
+                  </h3>
+                  <p class="text-sm text-slate-400">
+                    {item.data.negaraAsal.map((n) => namaNegara(n)).join(', ')} &bull; {namaPabrikan}
+                  </p>
+                  <p class="text-sm text-slate-300 line-clamp-2 leading-relaxed">
+                    {item.data.peran}
+                  </p>
+                </div>
+
+                <div class="pt-3.5 border-t border-white/10 flex items-center justify-between text-sm">
+                  <span class="font-medium text-emerald-400">
+                    {labelStatus(item.data.status)}
+                  </span>
+                  <a
+                    href={`/alutsista/${item.id}`}
+                    class="font-bold text-cyan-300 hover:text-cyan-200 hover:underline"
+                  >
+                    Lihat Detail &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- BAND 4: TEMA GURUN & MEDAN LATIHAN (Banner Penutup Katalog Lengkap) -->
+  <section class="relative overflow-hidden bg-[#17130e] text-white border-t border-amber-500/20">
+    <img
+      src="/images/astros-ii-mk6.webp"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-25 blur-[1px] pointer-events-none select-none"
+      loading="lazy"
+      width="1280"
+      height="800"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-[#17130e]/95 via-[#1c160e]/85 to-[#0b1017]/90"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+      <div class="p-6 sm:p-8 rounded-2xl border border-amber-400/25 bg-slate-950/60 backdrop-blur-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-2 max-w-2xl">
+          <p class="text-xs font-mono uppercase tracking-[0.2em] text-amber-300 font-semibold">
+            Zona 03 &bull; Medan Gurun &amp; Arsip Lengkap
+          </p>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+            Masih ada {semuaAlutsista.length - alutsistaPilihan.length} alutsista lainnya di katalog lengkap
+          </h3>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            Jelajahi seluruh 25 entri dengan filter matra, jenis (tank, fregat, kapal selam, pesawat, artileri), negara asal, hingga simulasi jangkauan geografis di peta Nusantara.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 shrink-0">
+          <a
+            href="/katalog"
+            class="min-h-[46px] px-6 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm inline-flex items-center gap-2 transition-colors shadow-lg"
+          >
+            Buka Katalog Lengkap ({semuaAlutsista.length}) &rarr;
+          </a>
+          <a
+            href="/peta"
+            class="min-h-[46px] px-5 py-2.5 rounded-full border border-white/25 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm inline-flex items-center transition-colors"
+          >
+            Coba Simulator Peta
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const clockEl = document.getElementById('live-wib-clock');
+    function updateClock() {
+      if (!clockEl) return;
+      const now = new Date();
+      const fmt = new Intl.DateTimeFormat('id-ID', {
+        timeZone: 'Asia/Jakarta',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      }).format(now);
+      clockEl.textContent = `${fmt.replaceAll('.', ':')} WIB`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</Base>

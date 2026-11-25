@@ -1,0 +1,230 @@
+{
+  "nama": "Pindad Anoa 6x6",
+  "namaLain": [
+    "APS-3 Anoa",
+    "Panser Anoa"
+  ],
+  "matra": "darat",
+  "jenis": "kendaraan-lapis-baja",
+  "peran": "Kendaraan angkut personel lapis baja berpenggerak enam roda (6x6) buatan dalam negeri.",
+  "negaraAsal": [
+    "ID"
+  ],
+  "pabrikan": [
+    "pindad"
+  ],
+  "varian": [
+    {
+      "nama": "Anoa 6x6 APC",
+      "keterangan": "Varian dasar pengangkut personel lapis baja dengan kapasitas tiga awak dan sepuluh personel."
+    },
+    {
+      "nama": "Anoa 6x6 Komando / Ambulans / Logistik",
+      "keterangan": "Varian pendukung lapangan untuk pos komando bergerak, evakuasi medis, serta angkutan bahan bakar dan amunisi."
+    },
+    {
+      "nama": "Anoa 2 / Amphibious",
+      "keterangan": "Pengembangan generasi kedua dengan penyempurnaan sistem kemudi dan varian berkemampuan lintas air tenang."
+    }
+  ],
+  "tahunMulaiDinas": 2008,
+  "status": "dalam-dinas",
+  "ringkasan": "Pindad Anoa 6x6 adalah kendaraan tempur pengangkut personel berlapis baja berpenggerak enam roda yang dirancang dan diproduksi oleh PT Pindad di Bandung. Kendaraan ini menjadi tulang punggung mobilitas infanteri mekanis TNI Angkatan Darat sekaligus digunakan oleh kontingen penjaga perdamaian Indonesia di bawah misi PBB.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 6,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 2.5,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 2.17,
+      "satuan": "m",
+      "catatan": "Tinggi badan kendaraan hingga atap lambung (hingga sekitar 2,5 m tergantung dudukan senjata).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-tempur",
+      "label": "Bobot tempur",
+      "nilai": 14500,
+      "satuan": "kg",
+      "catatan": "Bobot kosong sekitar 12.500 kg.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 3,
+      "satuan": "orang",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "penumpang",
+      "label": "Kapasitas penumpang",
+      "nilai": 10,
+      "satuan": "orang",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "Diesel turbocharged 6-silinder segaris (320 hp)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "daya",
+      "label": "Daya",
+      "nilai": 238.6,
+      "satuan": "kW",
+      "catatan": "Setara 320 tenaga kuda (hp) pada 2.500 rpm.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 80,
+      "satuan": "km/jam",
+      "catatan": "Di jalan beraspal; hingga 90 km/jam pada pengujian jalan raya.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 600,
+      "satuan": "km",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-utama",
+      "label": "Persenjataan utama",
+      "nilai": "Dudukan senapan mesin berat 12,7 mm atau pelontar granat otomatis 40 mm",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-sekunder",
+      "label": "Persenjataan sekunder",
+      "nilai": "Senapan mesin 7,62 mm dan pelontar granat asap",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Darat",
+      "varian": "Anoa 6x6 APC, Komando, Ambulans, Logistik",
+      "jumlah": 400,
+      "jenisJumlah": "perkiraan",
+      "tahunMulai": 2008,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Lebih dari 400 unit berbagai varian telah diserahkan secara bertahap sejak kontrak produksi perdana.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Pengembangan kendaraan pengangkut personel lapis baja Anoa berawal dari kebutuhan TNI Angkatan Darat pada awal dekade 2000-an akan kendaraan angkut pasukan beroda ban yang dapat diproduksi secara mandiri di dalam negeri. Setelah merintis purwarupa berpenggerak 4x4 (APS-1 dan APS-2), tim rekayasa PT Pindad bekerja sama dengan Badan Pengkajian dan Penerapan Teknologi (BPPT) beralih ke konfigurasi 6x6 bersasis monokok baja yang diberi kode APS-3.\n\nPurwarupa APS-3 Anoa 6x6 diperkenalkan secara resmi ke publik menjelang peringatan HUT TNI pada tahun 2008. Pemerintah Indonesia kemudian memesan gelombang produksi pertama sebanyak 150 unit untuk melengkapi batalion infanteri mekanis TNI AD. Nama Anoa diambil dari satwa endemik kerbau kerdil asal Sulawesi.\n\nSelain bertugas di satuan dalam negeri, puluhan unit Anoa 6x6 bercat putih telah dikerahkan sejak tahun 2010 untuk mendukung Kontingen Garuda dalam misi penjaga perdamaian Perserikatan Bangsa-Bangsa di Lebanon (UNIFIL) maupun Afrika Tengah.",
+    "linimasa": [
+      {
+        "tahun": 2006,
+        "judul": "Perancangan purwarupa APS-3 6x6",
+        "uraian": "PT Pindad bersama BPPT memulai rancang bangun kendaraan angkut personel berpenggerak enam roda dengan lambung monokok baja.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2008,
+        "bulan": 10,
+        "judul": "Debut publik dan pesanan produksi pertama",
+        "uraian": "Anoa 6x6 tampil perdana pada peringatan HUT TNI ke-63 dan mulai diproduksi seri untuk TNI Angkatan Darat.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2010,
+        "bulan": 4,
+        "judul": "Penugasan misi perdamaian PBB (UNIFIL)",
+        "uraian": "Unit Anoa 6x6 milik TNI diberangkatkan ke Lebanon untuk mendukung operasional batalion mekanis Kontingen Garuda.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/pindad-anoa-6x6.glb",
+    "poster": "/models/pindad-anoa-6x6.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Pindad Anoa 6x6 dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "lambung",
+        "label": "Lambung Monokok",
+        "posisi": "0 0.65 0.3",
+        "normal": "0 1 0",
+        "deskripsi": "Struktur lambung baja monokok pelindung ruang awak dan sepuluh personel."
+      },
+      {
+        "id": "kubah",
+        "label": "Dudukan Senjata Atap",
+        "posisi": "0 1.35 0.6",
+        "normal": "0 1 0",
+        "deskripsi": "Kupola pelindung juru tembak untuk dudukan senapan mesin 12,7 mm atau pelontar granat 40 mm."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/pindad-anoa-6x6.webp",
+      "alt": "Foto asli Pindad Anoa 6x6",
+      "kredit": "Nafisathallah via Wikimedia Commons",
+      "lisensi": "CC BY 4.0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Spesifikasi Produk Kendaraan Khusus Anoa 6x6 APC",
+      "penerbit": "PT Pindad",
+      "url": "https://pindad.com/anoa-6x6-apc",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database & Publikasi Produksi Anoa PT Pindad",
+      "penerbit": "SIPRI / PT Pindad",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "panser",
+    "apc",
+    "6x6",
+    "pindad",
+    "tni-ad",
+    "produksi-lokal"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

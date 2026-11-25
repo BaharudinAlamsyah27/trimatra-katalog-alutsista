@@ -1,0 +1,75 @@
+{
+  "nama": "KRI Bima Suci (986)",
+  "namaLain": ["Bima Suci"],
+  "matra": "laut",
+  "jenis": "kapal-latih",
+  "peran": "Kapal latih tiang tinggi jenis barque tiga tiang untuk pendidikan pelayaran dan diplomasi maritim kadet Akademi Angkatan Laut.",
+  "negaraAsal": ["ES"],
+  "pabrikan": ["freire-shipyard"],
+  "varian": [
+    {
+      "nama": "Barque 3 Tiang (986)",
+      "keterangan": "Dirancang khusus menggantikan KRI Dewaruci sebagai kapal latih pelayaran jarak jauh TNI AL."
+    }
+  ],
+  "tahunMulaiDinas": 2017,
+  "status": "dalam-dinas",
+  "ringkasan": "KRI Bima Suci (986) adalah kapal layar latih tiang tinggi milik TNI Angkatan Laut yang dibangun oleh galangan Freire Shipyard di Vigo, Spanyol. Kapal ini mulai bertugas pada 2017 untuk melatih navigasi astronomi dan pelayaran samudra para taruna Akademi Angkatan Laut sekaligus menjalankan misi diplomasi maritim.",
+  "spesifikasi": [
+    { "kunci": "panjang", "label": "Panjang", "nilai": 111.2, "satuan": "m", "keandalan": "resmi", "sumberId": "freire-bimasuci" },
+    { "kunci": "lebar", "label": "Lebar", "nilai": 13.65, "satuan": "m", "keandalan": "resmi", "sumberId": "freire-bimasuci" },
+    { "kunci": "sarat-air", "label": "Sarat air", "nilai": 5.95, "satuan": "m", "keandalan": "resmi", "sumberId": "freire-bimasuci" },
+    { "kunci": "displasemen", "label": "Displasemen", "nilai": 2346, "satuan": "ton", "keandalan": "sekunder", "sumberId": "tnial-bimasuci" },
+    { "kunci": "kecepatan-maks", "label": "Kecepatan maks", "nilai": 27.8, "satuan": "km/jam", "catatan": "± 15 knot dengan layar penuh", "keandalan": "sekunder", "sumberId": "tnial-bimasuci" },
+    { "kunci": "awak", "label": "Awak", "nilai": 203, "satuan": "orang", "catatan": "83 awak tetap dan 120 kadet", "keandalan": "resmi", "sumberId": "freire-bimasuci" }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut",
+      "varian": "KRI Bima Suci (986)",
+      "jumlah": 1,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2017,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "sumberId": "tnial-bimasuci"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Dibangun di Spanyol pada 2016–2017 sebagai penerus KRI Dewaruci untuk mendukung pendidikan kadet AAL dalam pelayaran lintas samudra.",
+    "linimasa": [
+      { "tahun": 2016, "bulan": 10, "judul": "Peluncuran di Galangan Freire", "uraian": "Lambung KRI Bima Suci diluncurkan di Vigo, Spanyol.", "sumberId": "freire-bimasuci" },
+      { "tahun": 2017, "bulan": 9, "judul": "Serah Terima ke TNI AL", "uraian": "Resmi diserahkan kepada TNI Angkatan Laut dan berlayar menuju Indonesia.", "sumberId": "tnial-bimasuci" },
+      { "tahun": 2017, "bulan": 11, "judul": "Tiba di Pangkalan Surabaya", "uraian": "Bersandar di Dermaga Koarmada II Surabaya untuk memulai tugas pendidikan kadet.", "sumberId": "tnial-bimasuci" }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/kri-bima-suci.webp",
+      "alt": "Foto KRI Bima Suci (986) berlayar",
+      "kredit": "Humas Kemenko Maritim / Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "freire-bimasuci",
+      "judul": "KRI Bima Suci Sail Training Vessel",
+      "penerbit": "Freire Shipyard",
+      "url": "https://www.freireshipyard.com/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "tnial-bimasuci",
+      "judul": "Publikasi Resmi KRI Bima Suci TNI Angkatan Laut",
+      "penerbit": "TNI Angkatan Laut",
+      "url": "https://www.tnial.mil.id/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-pemerintah"
+    }
+  ],
+  "tag": ["kapal-latih", "aal", "tni-al"],
+  "diperbaruiPada": "2026-11-25"
+}

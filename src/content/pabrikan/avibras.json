@@ -1,0 +1,19 @@
+{
+  "nama": "Avibras Indústria Aeroespacial",
+  "negara": "BR",
+  "tahunBerdiri": 1961,
+  "jenisUsaha": "Perusahaan kedirgantaraan dan sistem pertahanan swasta",
+  "deskripsi": "Perusahaan teknologi pertahanan dan kedirgantaraan asal Brasil yang merancang serta memproduksi sistem peluncur roket artileri multilaras ASTROS II.",
+  "sejarahSingkat": "Didirikan pada tahun 1961 di São José dos Campos oleh sekelompok insinyur Institut Teknologi Aeronautika Brasil, awalnya merancang pesawat latih dan roket penelitian sebelum mengembangkan sistem artileri roket ASTROS pada awal dekade 1980-an.",
+  "situs": "https://www.avibras.com.br",
+  "sumber": [
+    {
+      "id": "p-avibras-1",
+      "judul": "Avibras Institutional & ASTROS System",
+      "penerbit": "Avibras Indústria Aeroespacial",
+      "url": "https://www.avibras.com.br",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Dermaga Pondok Dayung / Kolinlamil (Jakarta)",
+  "matra": "laut",
+  "lat": -6.102,
+  "lng": 106.885,
+  "satuan": "Koarmada I & Komando Lintas Laut Militer (TNI AL)",
+  "alutsista": [
+    {
+      "nama": "Korvet Kelas Bung Tomo",
+      "slug": "korvet-kelas-bung-tomo"
+    },
+    {
+      "nama": "KCR-60M Kelas Sampari",
+      "slug": "kcr-60m-sampari"
+    },
+    {
+      "nama": "Kapal Amfibi Kelas Makassar",
+      "slug": "kapal-amfibi-kelas-makassar"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI Angkatan Laut"
+}

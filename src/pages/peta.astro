@@ -1,0 +1,919 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { labelJenis, labelMatra } from '../lib/format';
+
+const semuaAlutsista = (await getCollection('alutsista')).sort((a, b) =>
+  a.data.nama.localeCompare(b.data.nama, 'id')
+);
+
+const simDataset = semuaAlutsista
+  .map((e) => {
+    const spSpeed = e.data.spesifikasi.find(
+      (s) => s.kunci === 'kecepatan-maks' && typeof s.nilai === 'number'
+    );
+    const spRange = e.data.spesifikasi.find(
+      (s) => (s.kunci === 'jangkauan' || s.kunci === 'jarak-jelajah') && typeof s.nilai === 'number'
+    );
+
+    let jangkauanKm = spRange && typeof spRange.nilai === 'number' ? spRange.nilai : null;
+    if (!jangkauanKm && e.id === 'caesar-155mm') jangkauanKm = 42;
+    else if (!jangkauanKm && e.id === 'astros-ii-mk6') jangkauanKm = 90;
+
+    return {
+      slug: e.id,
+      nama: e.data.nama,
+      matra: e.data.matra,
+      matraLabel: labelMatra(e.data.matra),
+      jenisLabel: labelJenis(e.data.jenis),
+      kecepatanKmh: spSpeed && typeof spSpeed.nilai === 'number' ? spSpeed.nilai : null,
+      jangkauanKm,
+    };
+  })
+  .filter((d) => d.jangkauanKm !== null || d.kecepatanKmh !== null);
+
+const pangkalanCollection = await getCollection('pangkalan');
+const lokasiPublik = pangkalanCollection
+  .map((p) => ({
+    id: p.id,
+    ...p.data,
+  }))
+  .sort((a, b) => a.nama.localeCompare(b.nama, 'id'));
+
+const presetSkenario = [
+  {
+    id: 'patroli-natuna',
+    label: 'Lintas Udara ke Natuna',
+    desc: 'Pekanbaru → Natuna (F-16 vs Fregat Martadinata)',
+    origin: 'roesmin',
+    dest: 'natuna',
+    unitA: 'f-16-fighting-falcon',
+    unitB: 'fregat-kelas-martadinata',
+    mode: 'roundtrip',
+  },
+  {
+    id: 'logistik-papua',
+    label: 'Jembatan Udara Logistik',
+    desc: 'Jakarta (Halim) → Jayapura (C-130 vs CN235-220)',
+    origin: 'halim',
+    dest: 'jayapura',
+    unitA: 'c-130-hercules',
+    unitB: 'cn-235-220',
+    mode: 'oneway',
+  },
+  {
+    id: 'lintas-barat-timur',
+    label: 'Lintas Sabang — Makassar',
+    desc: 'Makassar → Sabang (Su-30MK2 vs C-130 Hercules)',
+    origin: 'hasanuddin',
+    dest: 'sabang',
+    unitA: 'sukhoi-su-27-su-30',
+    unitB: 'c-130-hercules',
+    mode: 'oneway',
+  },
+  {
+    id: 'maritim-nusantara',
+    label: 'Pelayaran Laut Jawa',
+    desc: 'Surabaya → Jakarta (Fregat Martadinata vs LPD Makassar)',
+    origin: 'koarmada2',
+    dest: 'pondokdayung',
+    unitA: 'fregat-kelas-martadinata',
+    unitB: 'kapal-amfibi-kelas-makassar',
+    mode: 'roundtrip',
+  },
+];
+---
+
+<Base
+  judul="Peta Pangkalan & Simulator Jangkauan Trimatra"
+  deskripsi="Peta interaktif pangkalan publik, simulator radius jangkauan, animasi lintasan & perbandingan waktu tempuh (ETA), serta profil jelajah edukatif Trimatra."
+>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <header class="space-y-2">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /peta &bull; Simulator Geografis & Jangkauan Katalog Terbuka
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white" data-i18n-id="Peta Pangkalan & Simulator Jangkauan" data-i18n-en="Base Map & Range Simulator">
+        Peta Pangkalan & Simulator Jangkauan
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl">
+        Uji perbandingan radius jangkauan, simulasi animasi waktu tempuh (<em>real-time race</em>), arah kompas (<em>bearing</em>), dan cakupan pulang-pergi antar alutsista di peta nusantara.
+      </p>
+    </header>
+
+    <!-- Bar Preset Skenario Edukatif Cepat -->
+    <section aria-label="Preset skenario edukasi" class="space-y-2.5">
+      <p class="text-xs font-mono uppercase tracking-wider font-bold text-slate-500 dark:text-slate-400">
+        Skenario Uji Cepat (1 Klik):
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        {presetSkenario.map((p) => (
+          <button
+            type="button"
+            class="preset-btn text-left p-3.5 rounded-xl border border-slate-200 dark:border-[#243244] bg-white dark:bg-[#111822] hover:border-emerald-500 transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            data-origin={p.origin}
+            data-dest={p.dest}
+            data-unita={p.unitA}
+            data-unitb={p.unitB}
+            data-mode={p.mode}
+          >
+            <div class="text-sm font-bold text-slate-900 dark:text-white">{p.label}</div>
+            <div class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">{p.desc}</div>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <!-- Panel Konsol Simulasi Interaktif -->
+    <section aria-label="Konsol simulasi jangkauan dan perbandingan waktu tempuh" class="terminal-panel">
+      <div class="terminal-bar">
+        <span>KONSOL SIMULATOR JANGKAUAN & LINTASAN</span>
+        <span id="sim-bearing-badge" class="tabular-nums text-emerald-700 dark:text-emerald-400">ARAH: —°</span>
+      </div>
+
+      <div class="p-5 sm:p-6 space-y-5">
+        <!-- Baris 1: 4 Pemilih Utama -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <label for="sim-origin" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              1. Titik Awal (Pangkalan)
+            </label>
+            <select
+              id="sim-origin"
+              class="w-full min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              {lokasiPublik.map((loc) => (
+                <option value={loc.id} selected={loc.id === 'roesmin'}>{loc.nama}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label for="sim-dest" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              2. Titik Tujuan (atau Klik Peta)
+            </label>
+            <select
+              id="sim-dest"
+              class="w-full min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              {lokasiPublik.map((loc) => (
+                <option value={loc.id} selected={loc.id === 'natuna'}>{loc.nama}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label for="sim-unit-a" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              3. Alutsista A (Radius Hijau)
+            </label>
+            <select
+              id="sim-unit-a"
+              class="w-full min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              {simDataset.map((a) => (
+                <option value={a.slug} selected={a.slug === 'f-16-fighting-falcon'}>
+                  {a.nama} ({a.matraLabel})
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label for="sim-unit-b" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              4. Alutsista B Pembanding (Biru)
+            </label>
+            <select
+              id="sim-unit-b"
+              class="w-full min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              <option value="">— Tanpa Pembanding —</option>
+              {simDataset.map((a) => (
+                <option value={a.slug} selected={a.slug === 'fregat-kelas-martadinata'}>
+                  {a.nama} ({a.matraLabel})
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <!-- Baris 2: Kontrol Lanjutan (Mode Sekali Jalan/PP, Slider Persentase Kecepatan, & Tombol Animasi) -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-[#243244] bg-slate-50 dark:bg-[#0d131c] grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+          <div class="lg:col-span-4 space-y-1.5">
+            <div class="flex items-center justify-between text-sm">
+              <label for="sim-speed-pct" class="font-semibold text-slate-700 dark:text-slate-200">
+                Profil Kecepatan Jelajah
+              </label>
+              <span id="sim-speed-label" class="font-mono font-bold text-emerald-700 dark:text-emerald-400">80% Maks</span>
+            </div>
+            <input
+              id="sim-speed-pct"
+              type="range"
+              min="40"
+              max="100"
+              step="5"
+              value="80"
+              class="w-full accent-emerald-500 cursor-pointer"
+            />
+          </div>
+
+          <div class="lg:col-span-4 flex flex-wrap items-center gap-2">
+            <span class="text-sm font-semibold text-slate-700 dark:text-slate-200 mr-1">Mode Jarak:</span>
+            <button
+              id="btn-mode-oneway"
+              type="button"
+              class="min-h-[38px] px-3 py-1.5 rounded-lg text-xs font-semibold border border-emerald-500 bg-emerald-600 text-white cursor-pointer"
+            >
+              Sekali Jalan (100%)
+            </button>
+            <button
+              id="btn-mode-roundtrip"
+              type="button"
+              class="min-h-[38px] px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-300 dark:border-[#2c3c52] text-slate-700 dark:text-slate-200 hover:border-emerald-500 cursor-pointer"
+            >
+              Pulang-Pergi (Radius 50%)
+            </button>
+          </div>
+
+          <div class="lg:col-span-4 flex flex-wrap items-center lg:justify-end gap-2">
+            <button
+              id="btn-play-sim"
+              type="button"
+              class="min-h-[42px] px-4 py-2 rounded-lg bg-slate-900 dark:bg-emerald-600 hover:bg-slate-800 dark:hover:bg-emerald-500 text-white text-sm font-bold inline-flex items-center gap-2 cursor-pointer transition-colors"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <span>Putar Simulasi Lintasan</span>
+            </button>
+            <button
+              id="btn-reset-route"
+              type="button"
+              class="min-h-[42px] px-3.5 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] hover:border-emerald-500 text-xs font-semibold text-slate-700 dark:text-slate-200 cursor-pointer"
+            >
+              Reset Titik
+            </button>
+          </div>
+        </div>
+
+        <!-- Baris 3: Hasil Perhitungan + Progress Bar Animasi -->
+        <div id="sim-results" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl border border-slate-200 dark:border-[#243244] bg-white dark:bg-[#111822]">
+            <div class="text-xs font-mono uppercase text-slate-500 dark:text-slate-400">Jarak & Arah Kompas</div>
+            <div id="res-distance" class="text-2xl font-extrabold tabular-nums text-slate-900 dark:text-white mt-1">— km</div>
+            <div id="res-route-label" class="text-xs text-slate-600 dark:text-slate-400 mt-1">Pilih rute atau klik peta.</div>
+            <div id="res-multi-info" class="text-xs font-mono text-amber-600 dark:text-amber-400 mt-1.5"></div>
+          </div>
+
+          <div class="p-4 rounded-xl border border-emerald-500/40 bg-emerald-500/5 space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs font-mono uppercase text-emerald-700 dark:text-emerald-400 font-bold" id="res-a-title">Alutsista A</span>
+              <span id="res-a-badge" class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-700 dark:text-emerald-300">—</span>
+            </div>
+            <div id="res-a-eta" class="text-xl font-extrabold tabular-nums text-slate-900 dark:text-white">—</div>
+            <div id="res-a-meta" class="text-xs text-slate-600 dark:text-slate-300">—</div>
+            <div class="w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+              <div id="prog-a" class="h-full bg-emerald-500 w-0 transition-all duration-100"></div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl border border-cyan-500/40 bg-cyan-500/5 space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs font-mono uppercase text-cyan-700 dark:text-cyan-400 font-bold" id="res-b-title">Alutsista B</span>
+              <span id="res-b-badge" class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-700 dark:text-cyan-300">—</span>
+            </div>
+            <div id="res-b-eta" class="text-xl font-extrabold tabular-nums text-slate-900 dark:text-white">—</div>
+            <div id="res-b-meta" class="text-xs text-slate-600 dark:text-slate-300">—</div>
+            <div class="w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+              <div id="prog-b" class="h-full bg-cyan-400 w-0 transition-all duration-100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Peta Interaktif dengan Pengalih Tema Peta & Filter Layer Matra -->
+    <section class="terminal-panel">
+      <div class="terminal-bar flex-wrap">
+        <div class="flex flex-wrap items-center gap-2">
+          <span>PETA INTERAKTIF</span>
+          <span class="text-slate-400">|</span>
+          <button type="button" data-basemap="dark" class="basemap-btn px-2.5 py-1 rounded text-xs font-bold bg-emerald-600 text-white cursor-pointer">
+            Peta Gelap
+          </button>
+          <button type="button" data-basemap="osm" class="basemap-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-200 dark:bg-[#192330] text-slate-700 dark:text-slate-200 cursor-pointer">
+            Peta Standar
+          </button>
+          <button type="button" data-basemap="sat" class="basemap-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-200 dark:bg-[#192330] text-slate-700 dark:text-slate-200 cursor-pointer">
+            Satelit
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 text-xs">
+          <label class="inline-flex items-center gap-1.5 cursor-pointer">
+            <input type="checkbox" id="layer-darat" checked class="accent-emerald-500" />
+            <span class="text-emerald-600 dark:text-emerald-400 font-semibold">Darat</span>
+          </label>
+          <label class="inline-flex items-center gap-1.5 cursor-pointer">
+            <input type="checkbox" id="layer-laut" checked class="accent-cyan-500" />
+            <span class="text-cyan-600 dark:text-cyan-400 font-semibold">Laut</span>
+          </label>
+          <label class="inline-flex items-center gap-1.5 cursor-pointer">
+            <input type="checkbox" id="layer-udara" checked class="accent-indigo-400" />
+            <span class="text-indigo-500 dark:text-indigo-400 font-semibold">Udara</span>
+          </label>
+          <label class="inline-flex items-center gap-1.5 cursor-pointer border-l border-slate-300 dark:border-[#2c3c52] pl-3">
+            <input type="checkbox" id="layer-alki" class="accent-sky-400" />
+            <span class="text-sky-600 dark:text-sky-300 font-semibold">Jalur ALKI I–III</span>
+          </label>
+          <label class="inline-flex items-center gap-1.5 cursor-pointer">
+            <input type="checkbox" id="layer-terminator" class="accent-amber-400" />
+            <span class="text-amber-600 dark:text-amber-300 font-semibold">Siang/Malam</span>
+          </label>
+          <label class="inline-flex items-center gap-1.5 cursor-pointer border-l border-slate-300 dark:border-[#2c3c52] pl-3">
+            <input type="checkbox" id="mode-waypoint" class="accent-amber-500" />
+            <span class="text-amber-600 dark:text-amber-400 font-semibold">Mode Multi-Titik (Klik Peta)</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="peta-trimatra" class="w-full h-[500px] sm:h-[580px] bg-slate-950 z-10 map-dark-filter"></div>
+
+      <div class="px-5 py-3 border-t border-slate-200 dark:border-[#243244] bg-slate-50 dark:bg-[#0d131c] flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600 dark:text-slate-400">
+        <span>Tip: Klik sembarang lokasi pada peta untuk mengganti tujuan, atau aktifkan <strong>Mode Multi-Titik</strong> untuk menggambar rute berbelok.</span>
+        <span id="map-cursor-coords" class="font-mono tabular-nums text-emerald-700 dark:text-emerald-400">KURSOR: -2.20°, 114.50°</span>
+      </div>
+    </section>
+
+    <!-- Daftar Pangkalan Publik -->
+    <section aria-labelledby="daftar-lokasi" class="space-y-4">
+      <h2 id="daftar-lokasi" class="text-2xl font-bold text-slate-900 dark:text-white">
+        Daftar Pangkalan & Satuan Induk Publik
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {lokasiPublik.filter((l) => l.alutsista.length > 0).map((loc) => (
+          <article class="terminal-panel p-5 space-y-3">
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">{loc.nama}</h3>
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold uppercase bg-slate-100 dark:bg-[#192330] text-emerald-700 dark:text-emerald-300 shrink-0">
+                {loc.matra}
+              </span>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300">{loc.satuan}</p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              {loc.alutsista.map((a) => (
+                <a
+                  href={`/alutsista/${a.slug}`}
+                  class="px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-500/20"
+                >
+                  {a.nama}
+                </a>
+              ))}
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 pt-1">Sumber: {loc.sumber}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <script
+    is:inline
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script is:inline define:vars={{ lokasiPublik, simDataset }}>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof L === 'undefined') return;
+      const map = L.map('peta-trimatra', { scrollWheelZoom: false }).setView([-2.2, 114.5], 5);
+
+      const mapContainer = document.getElementById('peta-trimatra');
+      const tileLayers = {
+        dark: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          attribution: '&copy; OpenStreetMap contributors',
+        }),
+        osm: L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          attribution: '&copy; OpenStreetMap contributors',
+        }),
+        sat: L.tileLayer(
+          'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+          {
+            maxZoom: 17,
+            attribution: 'Tiles &copy; Esri',
+          }
+        ),
+      };
+
+      let activeTile = tileLayers.dark.addTo(map);
+      mapContainer?.classList.add('map-dark-filter');
+
+      document.querySelectorAll('.basemap-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-basemap');
+          if (!tileLayers[key]) return;
+          map.removeLayer(activeTile);
+          activeTile = tileLayers[key].addTo(map);
+          if (key === 'dark') {
+            mapContainer?.classList.add('map-dark-filter');
+          } else {
+            mapContainer?.classList.remove('map-dark-filter');
+          }
+          document.querySelectorAll('.basemap-btn').forEach((b) => {
+            const active = b.getAttribute('data-basemap') === key;
+            b.className = active
+              ? 'basemap-btn px-2.5 py-1 rounded text-xs font-bold bg-emerald-600 text-white cursor-pointer'
+              : 'basemap-btn px-2.5 py-1 rounded text-xs font-semibold bg-slate-200 dark:bg-[#192330] text-slate-700 dark:text-slate-200 cursor-pointer';
+          });
+        });
+      });
+
+      // Layer marker per matra (bisa di-toggle)
+      const matraLayers = {
+        darat: L.layerGroup().addTo(map),
+        laut: L.layerGroup().addTo(map),
+        udara: L.layerGroup().addTo(map),
+      };
+      const colors = { darat: '#10b981', laut: '#06b6d4', udara: '#818cf8' };
+
+      lokasiPublik.forEach((loc) => {
+        const marker = L.circleMarker([loc.lat, loc.lng], {
+          radius: 7,
+          fillColor: colors[loc.matra] || '#10b981',
+          color: '#0b1017',
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.9,
+        }).addTo(matraLayers[loc.matra] || matraLayers.darat);
+
+        const links = loc.alutsista
+          .map((a) => `<li><a href="/alutsista/${a.slug}" style="color:#0284c7;font-weight:600">${a.nama}</a></li>`)
+          .join('');
+
+        marker.bindPopup(`
+          <div style="min-width:200px;font-family:sans-serif;line-height:1.45">
+            <strong style="font-size:14px">${loc.nama}</strong><br/>
+            <span style="font-size:12px;color:#475569">${loc.satuan}</span>
+            ${links ? `<ul style="margin:6px 0 0 16px;padding:0;font-size:12px">${links}</ul>` : ''}
+          </div>
+        `);
+      });
+
+      ['darat', 'laut', 'udara'].forEach((m) => {
+        const cb = document.getElementById(`layer-${m}`);
+        cb?.addEventListener('change', () => {
+          if (cb.checked) matraLayers[m].addTo(map);
+          else map.removeLayer(matraLayers[m]);
+        });
+      });
+
+      // Layer Jalur ALKI I, II, III (Alur Laut Kepulauan Indonesia — Referensi Edukatif)
+      const alkiLayer = L.layerGroup();
+      const alkiRoutes = [
+        {
+          nama: 'ALKI I (Selat Sunda — Laut Natuna)',
+          coords: [[-7.2, 104.8], [-5.9, 105.8], [-3.2, 107.0], [0.5, 106.5], [3.8, 108.2], [5.8, 109.0]],
+        },
+        {
+          nama: 'ALKI II (Selat Lombok — Selat Makassar — Laut Sulawesi)',
+          coords: [[-9.2, 115.7], [-8.5, 115.8], [-5.5, 118.2], [-1.0, 118.8], [2.5, 120.2], [5.5, 122.0]],
+        },
+        {
+          nama: 'ALKI III-A (Laut Sawu — Laut Banda — Laut Seram — Pasifik)',
+          coords: [[-10.5, 123.5], [-8.4, 125.0], [-5.5, 127.0], [-2.5, 128.5], [1.5, 129.0], [4.5, 130.5]],
+        },
+      ];
+      alkiRoutes.forEach((r) => {
+        L.polyline(r.coords, {
+          color: '#38bdf8',
+          weight: 2.5,
+          dashArray: '10 6',
+          opacity: 0.8,
+        })
+          .bindTooltip(r.nama)
+          .addTo(alkiLayer);
+      });
+
+      document.getElementById('layer-alki')?.addEventListener('change', (e) => {
+        if (e.target.checked) alkiLayer.addTo(map);
+        else map.removeLayer(alkiLayer);
+      });
+
+      // Layer Garis Siang/Malam Real-Time (Solar Terminator Sederhana)
+      const termLayer = L.layerGroup();
+      function renderTerminator() {
+        termLayer.clearLayers();
+        const now = new Date();
+        const start = new Date(Date.UTC(now.getUTCFullYear(), 0, 0));
+        const dayOfYear = Math.floor((now - start) / 86400000);
+        const declRad = (-23.44 * Math.cos(((2 * Math.PI) / 365) * (dayOfYear + 10)) * Math.PI) / 180;
+        const utcHours = now.getUTCHours() + now.getUTCMinutes() / 60;
+        const sunLng = (12 - utcHours) * 15;
+        const nightPts = [];
+        for (let lng = 85; lng <= 150; lng += 2) {
+          const ha = ((lng - sunLng) * Math.PI) / 180;
+          const latRad = Math.atan(-Math.cos(ha) / Math.tan(declRad || 0.0001));
+          nightPts.push([(latRad * 180) / Math.PI, lng]);
+        }
+        const southNight = declRad >= 0;
+        const capLat = southNight ? -85 : 85;
+        const polyPts = [[capLat, 85], ...nightPts, [capLat, 150]];
+        L.polygon(polyPts, {
+          color: '#f59e0b',
+          weight: 1.5,
+          fillColor: '#020617',
+          fillOpacity: 0.38,
+          interactive: false,
+        }).addTo(termLayer);
+      }
+
+      document.getElementById('layer-terminator')?.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          renderTerminator();
+          termLayer.addTo(map);
+        } else {
+          map.removeLayer(termLayer);
+        }
+      });
+
+      // Elemen kontrol simulasi
+      const simLayer = L.layerGroup().addTo(map);
+      const animLayer = L.layerGroup().addTo(map);
+      const selOrigin = document.getElementById('sim-origin');
+      const selDest = document.getElementById('sim-dest');
+      const selA = document.getElementById('sim-unit-a');
+      const selB = document.getElementById('sim-unit-b');
+      const speedSlider = document.getElementById('sim-speed-pct');
+      const speedLabel = document.getElementById('sim-speed-label');
+      const btnOneWay = document.getElementById('btn-mode-oneway');
+      const btnRoundTrip = document.getElementById('btn-mode-roundtrip');
+      const btnPlay = document.getElementById('btn-play-sim');
+      const btnResetRoute = document.getElementById('btn-reset-route');
+      const cbWaypoint = document.getElementById('mode-waypoint');
+
+      const resDist = document.getElementById('res-distance');
+      const resRoute = document.getElementById('res-route-label');
+      const resMultiInfo = document.getElementById('res-multi-info');
+      const bearingBadge = document.getElementById('sim-bearing-badge');
+
+      const resATitle = document.getElementById('res-a-title');
+      const resABadge = document.getElementById('res-a-badge');
+      const resAEta = document.getElementById('res-a-eta');
+      const resAMeta = document.getElementById('res-a-meta');
+      const progA = document.getElementById('prog-a');
+
+      const resBTitle = document.getElementById('res-b-title');
+      const resBBadge = document.getElementById('res-b-badge');
+      const resBEta = document.getElementById('res-b-eta');
+      const resBMeta = document.getElementById('res-b-meta');
+      const progB = document.getElementById('prog-b');
+
+      let rangeMode = 'oneway'; // 'oneway' | 'roundtrip'
+      let customPoints = []; // array of { lat, lng, nama }
+      let animFrame = null;
+
+      function haversineKm(lat1, lon1, lat2, lon2) {
+        const R = 6371;
+        const dLat = ((lat2 - lat1) * Math.PI) / 180;
+        const dLon = ((lon2 - lon1) * Math.PI) / 180;
+        const a =
+          Math.sin(dLat / 2) ** 2 +
+          Math.cos((lat1 * Math.PI) / 180) *
+            Math.cos((lat2 * Math.PI) / 180) *
+            Math.sin(dLon / 2) ** 2;
+        return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      }
+
+      function computeBearing(lat1, lon1, lat2, lon2) {
+        const p1 = (lat1 * Math.PI) / 180;
+        const p2 = (lat2 * Math.PI) / 180;
+        const dL = ((lon2 - lon1) * Math.PI) / 180;
+        const y = Math.sin(dL) * Math.cos(p2);
+        const x = Math.cos(p1) * Math.sin(p2) - Math.sin(p1) * Math.cos(p2) * Math.cos(dL);
+        return ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
+      }
+
+      function compassDir(deg) {
+        const dirs = ['U', 'TL', 'T', 'TG', 'S', 'BD', 'B', 'BL'];
+        return dirs[Math.round(deg / 45) % 8];
+      }
+
+      function formatDuration(hours) {
+        const totalMin = Math.round(hours * 60);
+        const h = Math.floor(totalMin / 60);
+        const m = totalMin % 60;
+        if (h === 0) return `${m} menit`;
+        if (m === 0) return `${h} jam`;
+        return `${h} jam ${m} menit`;
+      }
+
+      function setRangeMode(mode) {
+        rangeMode = mode;
+        const activeCls = 'min-h-[38px] px-3 py-1.5 rounded-lg text-xs font-semibold border border-emerald-500 bg-emerald-600 text-white cursor-pointer';
+        const idleCls = 'min-h-[38px] px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-300 dark:border-[#2c3c52] text-slate-700 dark:text-slate-200 hover:border-emerald-500 cursor-pointer';
+        btnOneWay.className = mode === 'oneway' ? activeCls : idleCls;
+        btnRoundTrip.className = mode === 'roundtrip' ? activeCls : idleCls;
+        updateSimulation();
+      }
+
+      function getCurrentRoute() {
+        const origin = lokasiPublik.find((l) => l.id === selOrigin.value) || lokasiPublik[0];
+        if (customPoints.length > 0) {
+          return [origin, ...customPoints];
+        }
+        const dest = lokasiPublik.find((l) => l.id === selDest.value) || lokasiPublik[1];
+        return [origin, dest];
+      }
+
+      function routeDistanceKm(pts) {
+        let total = 0;
+        for (let i = 0; i < pts.length - 1; i++) {
+          total += haversineKm(pts[i].lat, pts[i].lng, pts[i + 1].lat, pts[i + 1].lng);
+        }
+        return total;
+      }
+
+      function interpolateRoute(pts, fraction) {
+        if (pts.length < 2) return pts[0];
+        const total = routeDistanceKm(pts);
+        const target = Math.max(0, Math.min(1, fraction)) * total;
+        let acc = 0;
+        for (let i = 0; i < pts.length - 1; i++) {
+          const seg = haversineKm(pts[i].lat, pts[i].lng, pts[i + 1].lat, pts[i + 1].lng);
+          if (acc + seg >= target || i === pts.length - 2) {
+            const localT = seg > 0 ? (target - acc) / seg : 0;
+            return {
+              lat: pts[i].lat + (pts[i + 1].lat - pts[i].lat) * localT,
+              lng: pts[i].lng + (pts[i + 1].lng - pts[i].lng) * localT,
+            };
+          }
+          acc += seg;
+        }
+        return pts[pts.length - 1];
+      }
+
+      function formatUnitReport(unit, distKm, speedFactor, titleEl, badgeEl, etaEl, metaEl) {
+        if (!unit) {
+          titleEl.textContent = 'Pembanding Nonaktif';
+          badgeEl.textContent = '—';
+          etaEl.textContent = '—';
+          metaEl.textContent = 'Pilih Alutsista B untuk membandingkan radius & simulasi lintasan.';
+          return null;
+        }
+        titleEl.textContent = unit.nama;
+        const fmt = (n) => new Intl.NumberFormat('id-ID', { maximumFractionDigits: 0 }).format(n);
+
+        let etaHours = null;
+        if (unit.kecepatanKmh) {
+          const effSpeed = unit.kecepatanKmh * speedFactor;
+          etaHours = distKm / effSpeed;
+          etaEl.textContent = `± ${formatDuration(etaHours)}`;
+        } else {
+          etaEl.textContent = 'Kecepatan tidak dipublikasikan';
+        }
+
+        const effectiveRange = unit.jangkauanKm
+          ? rangeMode === 'roundtrip'
+            ? unit.jangkauanKm * 0.5
+            : unit.jangkauanKm
+          : null;
+
+        if (effectiveRange !== null) {
+          const reachable = distKm <= effectiveRange;
+          badgeEl.textContent = reachable ? 'DALAM RADIUS' : 'LUAR RADIUS';
+          badgeEl.className = reachable
+            ? 'text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-300'
+            : 'text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-700 dark:text-amber-300';
+        } else {
+          badgeEl.textContent = 'N/A';
+        }
+
+        const parts = [];
+        if (unit.kecepatanKmh) {
+          parts.push(`Jelajah (${Math.round(speedFactor * 100)}%): ${fmt(unit.kecepatanKmh * speedFactor)} km/jam`);
+        }
+        if (effectiveRange !== null) {
+          parts.push(`Radius ${rangeMode === 'roundtrip' ? 'PP (50%)' : '1x Jalan'}: ${fmt(effectiveRange)} km`);
+        }
+        metaEl.textContent = parts.join(' • ');
+        return etaHours;
+      }
+
+      function stopAnimation() {
+        if (animFrame) cancelAnimationFrame(animFrame);
+        animFrame = null;
+        animLayer.clearLayers();
+      }
+
+      function updateSimulation() {
+        stopAnimation();
+        simLayer.clearLayers();
+        if (progA) progA.style.width = '0%';
+        if (progB) progB.style.width = '0%';
+
+        const pts = getCurrentRoute();
+        const origin = pts[0];
+        const finalDest = pts[pts.length - 1];
+        const distKm = routeDistanceKm(pts);
+        const speedFactor = Number(speedSlider.value) / 100;
+        const unitA = simDataset.find((d) => d.slug === selA.value);
+        const unitB = selB.value ? simDataset.find((d) => d.slug === selB.value) : null;
+
+        const bearing = computeBearing(origin.lat, origin.lng, finalDest.lat, finalDest.lng);
+        const fmt = (n) => new Intl.NumberFormat('id-ID', { maximumFractionDigits: 0 }).format(n);
+
+        if (resDist) resDist.textContent = `${fmt(distKm)} km`;
+        if (resRoute) resRoute.textContent = `${origin.nama} → ${finalDest.nama}`;
+        if (bearingBadge) bearingBadge.textContent = `ARAH: ${Math.round(bearing)}° (${compassDir(bearing)})`;
+        if (resMultiInfo) {
+          resMultiInfo.textContent =
+            pts.length > 2 ? `Rute Multi-Titik: ${pts.length} titik (${pts.length - 1} segmen)` : '';
+        }
+
+        // Garis rute
+        L.polyline(
+          pts.map((p) => [p.lat, p.lng]),
+          { color: '#fbbf24', weight: 3, dashArray: '8 8' }
+        ).addTo(simLayer);
+
+        // Pin waypoint & tujuan
+        pts.slice(1).forEach((p, i) => {
+          const isLast = i === pts.length - 2;
+          L.circleMarker([p.lat, p.lng], {
+            radius: isLast ? 9 : 6,
+            fillColor: isLast ? '#fbbf24' : '#f97316',
+            color: '#0b1017',
+            weight: 2,
+            fillOpacity: 1,
+          })
+            .bindTooltip(isLast ? `Tujuan: ${p.nama} (${fmt(distKm)} km)` : `Waypoint ${i + 1}`)
+            .addTo(simLayer);
+        });
+
+        const radiusMultiplier = rangeMode === 'roundtrip' ? 0.5 : 1;
+
+        if (unitA && unitA.jangkauanKm) {
+          L.circle([origin.lat, origin.lng], {
+            radius: unitA.jangkauanKm * radiusMultiplier * 1000,
+            color: '#10b981',
+            weight: 2,
+            fillColor: '#10b981',
+            fillOpacity: 0.1,
+          }).addTo(simLayer);
+        }
+
+        if (unitB && unitB.jangkauanKm) {
+          L.circle([origin.lat, origin.lng], {
+            radius: unitB.jangkauanKm * radiusMultiplier * 1000,
+            color: '#06b6d4',
+            weight: 2,
+            dashArray: '6 6',
+            fillColor: '#06b6d4',
+            fillOpacity: 0.08,
+          }).addTo(simLayer);
+        }
+
+        formatUnitReport(unitA, distKm, speedFactor, resATitle, resABadge, resAEta, resAMeta);
+        formatUnitReport(unitB, distKm, speedFactor, resBTitle, resBBadge, resBEta, resBMeta);
+      }
+
+      // Animasi Real-Time Race antara Alutsista A & Alutsista B di atas peta
+      btnPlay?.addEventListener('click', () => {
+        stopAnimation();
+        const pts = getCurrentRoute();
+        const distKm = routeDistanceKm(pts);
+        if (distKm <= 0) return;
+
+        const speedFactor = Number(speedSlider.value) / 100;
+        const unitA = simDataset.find((d) => d.slug === selA.value);
+        const unitB = selB.value ? simDataset.find((d) => d.slug === selB.value) : null;
+
+        const speedA = unitA?.kecepatanKmh ? unitA.kecepatanKmh * speedFactor : 0;
+        const speedB = unitB?.kecepatanKmh ? unitB.kecepatanKmh * speedFactor : 0;
+        const maxSpeed = Math.max(speedA, speedB, 1);
+
+        const markerA =
+          speedA > 0
+            ? L.circleMarker([pts[0].lat, pts[0].lng], {
+                radius: 8,
+                fillColor: '#10b981',
+                color: '#ffffff',
+                weight: 2,
+                fillOpacity: 1,
+              })
+                .bindTooltip(unitA.nama)
+                .addTo(animLayer)
+            : null;
+
+        const markerB =
+          speedB > 0
+            ? L.circleMarker([pts[0].lat, pts[0].lng], {
+                radius: 8,
+                fillColor: '#06b6d4',
+                color: '#ffffff',
+                weight: 2,
+                fillOpacity: 1,
+              })
+                .bindTooltip(unitB.nama)
+                .addTo(animLayer)
+            : null;
+
+        // Durasi animasi 4.5 detik untuk unit tercepat
+        const durationMs = 4500;
+        const start = performance.now();
+
+        function step(now) {
+          const elapsed = now - start;
+          const baseProgress = Math.min(1, elapsed / durationMs);
+
+          const pA = speedA > 0 ? Math.min(1, baseProgress * (speedA / maxSpeed) * (speedA < maxSpeed ? 1 : 1)) : 0;
+          const pB = speedB > 0 ? Math.min(1, baseProgress * (speedB / maxSpeed)) : 0;
+
+          if (markerA) {
+            const pos = interpolateRoute(pts, pA);
+            markerA.setLatLng([pos.lat, pos.lng]);
+            if (progA) progA.style.width = `${Math.round(pA * 100)}%`;
+          }
+          if (markerB) {
+            const pos = interpolateRoute(pts, pB);
+            markerB.setLatLng([pos.lat, pos.lng]);
+            if (progB) progB.style.width = `${Math.round(pB * 100)}%`;
+          }
+
+          if (baseProgress < 1) {
+            animFrame = requestAnimationFrame(step);
+          }
+        }
+
+        animFrame = requestAnimationFrame(step);
+      });
+
+      const cursorCoordsEl = document.getElementById('map-cursor-coords');
+      map.on('mousemove', (e) => {
+        if (!cursorCoordsEl) return;
+        const lat = e.latlng.lat;
+        const lng = e.latlng.lng;
+        const ns = lat >= 0 ? 'LU' : 'LS';
+        const ew = lng >= 0 ? 'BT' : 'BB';
+        cursorCoordsEl.textContent = `KURSOR: ${Math.abs(lat).toFixed(2)}° ${ns}, ${Math.abs(lng).toFixed(2)}° ${ew}`;
+      });
+
+      map.on('click', (e) => {
+        const pt = {
+          lat: e.latlng.lat,
+          lng: e.latlng.lng,
+          nama: `Titik (${e.latlng.lat.toFixed(2)}, ${e.latlng.lng.toFixed(2)})`,
+        };
+        if (cbWaypoint && cbWaypoint.checked) {
+          customPoints.push(pt);
+        } else {
+          customPoints = [pt];
+        }
+        updateSimulation();
+      });
+
+      btnOneWay?.addEventListener('click', () => setRangeMode('oneway'));
+      btnRoundTrip?.addEventListener('click', () => setRangeMode('roundtrip'));
+
+      btnResetRoute?.addEventListener('click', () => {
+        customPoints = [];
+        if (cbWaypoint) cbWaypoint.checked = false;
+        updateSimulation();
+      });
+
+      speedSlider?.addEventListener('input', () => {
+        if (speedLabel) speedLabel.textContent = `${speedSlider.value}% Maks`;
+        updateSimulation();
+      });
+
+      selDest?.addEventListener('change', () => {
+        customPoints = [];
+        updateSimulation();
+      });
+      [selOrigin, selA, selB].forEach((el) => el?.addEventListener('change', updateSimulation));
+
+      // Preset Skenario Buttons
+      document.querySelectorAll('.preset-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          customPoints = [];
+          if (cbWaypoint) cbWaypoint.checked = false;
+          selOrigin.value = btn.getAttribute('data-origin');
+          selDest.value = btn.getAttribute('data-dest');
+          selA.value = btn.getAttribute('data-unita');
+          selB.value = btn.getAttribute('data-unitb');
+          setRangeMode(btn.getAttribute('data-mode') || 'oneway');
+        });
+      });
+
+      updateSimulation();
+    });
+  </script>
+</Base>

@@ -1,0 +1,219 @@
+---
+import { getCollection, getEntries } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ModelViewer from '../../components/ModelViewer.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import UserTable from '../../components/UserTable.astro';
+import Timeline from '../../components/Timeline.astro';
+import SourceList from '../../components/SourceList.astro';
+import {
+  formatTanggalLengkap,
+  labelJenis,
+  labelMatra,
+  labelStatus,
+  namaNegara,
+} from '../../lib/format';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('alutsista');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const daftarPabrikan = await getEntries(data.pabrikan);
+---
+
+<Base
+  judul={data.nama}
+  deskripsi={`${data.nama} — ${data.peran} Spesifikasi, pengguna, sejarah, dan model 3D interaktif.`}
+  ogImage={data.galeri[0]?.berkas || data.model3d?.poster}
+>
+  <article class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-10">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-600 dark:text-slate-400 flex flex-wrap items-center gap-1.5">
+      <a href="/" class="hover:underline">Beranda</a>
+      <span>/</span>
+      <a href="/katalog" class="hover:underline">Katalog</a>
+      <span>/</span>
+      <a href={`/katalog?matra=${data.matra}`} class="hover:underline">{labelMatra(data.matra)}</a>
+      <span>/</span>
+      <a href={`/jenis/${data.jenis}`} class="hover:underline">{labelJenis(data.jenis)}</a>
+      <span>/</span>
+      <span class="font-semibold text-slate-900 dark:text-slate-100" aria-current="page">{data.nama}</span>
+    </nav>
+
+    <!-- Header Ringkasan -->
+    <header class="space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div class="flex flex-wrap items-center gap-2">
+          <a
+            href={`/katalog?matra=${data.matra}`}
+            class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-slate-900 dark:bg-sky-600 text-white hover:opacity-90"
+          >
+            Matra {labelMatra(data.matra)}
+          </a>
+          <a
+            href={`/jenis/${data.jenis}`}
+            class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700"
+          >
+            {labelJenis(data.jenis)}
+          </a>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-900 dark:text-emerald-200">
+            {labelStatus(data.status)}
+          </span>
+        </div>
+
+        <a
+          href={`/bandingkan?jenis=${data.jenis}&items=${entry.id}`}
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          <span>Bandingkan Sejenis &rarr;</span>
+        </a>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        {data.nama}
+      </h1>
+
+      {data.namaLain.length > 0 && (
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+          Sebutan / Penamaan Lain: <span class="font-medium text-slate-800 dark:text-slate-200">{data.namaLain.join(', ')}</span>
+        </p>
+      )}
+
+      <p class="text-base sm:text-lg font-medium text-slate-800 dark:text-slate-200">
+        {data.peran}
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm">
+        <div>
+          <span class="block text-xs text-slate-500 dark:text-slate-400">Negara Asal</span>
+          <span class="font-semibold text-slate-900 dark:text-white">
+            {data.negaraAsal.map((k) => `${namaNegara(k)} (${k})`).join(', ')}
+          </span>
+        </div>
+        <div>
+          <span class="block text-xs text-slate-500 dark:text-slate-400">Pabrikan Utama</span>
+          <div class="flex flex-wrap gap-1.5 font-semibold">
+            {daftarPabrikan.map((p, idx) => (
+              <>
+                <a href={`/pabrikan/${p.id}`} class="text-sky-700 dark:text-sky-400 hover:underline">
+                  {p.data.nama}
+                </a>
+                {idx < daftarPabrikan.length - 1 && <span>,</span>}
+              </>
+            ))}
+          </div>
+        </div>
+        <div>
+          <span class="block text-xs text-slate-500 dark:text-slate-400">Tahun Mulai Dinas</span>
+          <span class="font-semibold text-slate-900 dark:text-white">
+            {data.tahunMulaiDinas ?? 'Tidak dipublikasikan'}
+          </span>
+        </div>
+      </div>
+
+      <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+        {data.ringkasan}
+      </p>
+    </header>
+
+    <!-- Media: Foto Asli & Penampil Model 3D -->
+    <ModelViewer model={data.model3d} nama={data.nama} galeri={data.galeri} fallbackImage={data.galeri[0]} />
+
+    <!-- Spesifikasi Teknis -->
+    <SpecTable jenis={data.jenis} spesifikasi={data.spesifikasi} />
+
+    <!-- Profil Pabrikan -->
+    <section aria-labelledby="heading-pabrikan" class="space-y-3">
+      <h2 id="heading-pabrikan" class="text-xl font-bold text-slate-900 dark:text-white" data-i18n-id="Pabrikan & Industri Pembuat" data-i18n-en="Manufacturer">
+        Pabrikan & Industri Pembuat
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {daftarPabrikan.map((p) => (
+          <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">
+                <a href={`/pabrikan/${p.id}`} class="hover:text-sky-700 dark:hover:text-sky-400">
+                  {p.data.nama}
+                </a>
+              </h3>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                {namaNegara(p.data.negara)} ({p.data.negara})
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              {p.data.jenisUsaha} {p.data.tahunBerdiri ? `• Berdiri ${p.data.tahunBerdiri}` : ''}
+            </p>
+            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              {p.data.deskripsi}
+            </p>
+            <div class="flex flex-wrap items-center gap-4 pt-1">
+              <a
+                href={`/pabrikan/${p.id}`}
+                class="text-xs font-semibold text-sky-700 dark:text-sky-400 hover:underline"
+              >
+                Lihat Profil & Produk Pabrikan &rarr;
+              </a>
+              {p.data.situs && (
+                <a
+                  href={p.data.situs}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-semibold text-slate-600 dark:text-slate-400 hover:underline"
+                >
+                  Situs Resmi &nearr;
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Daftar Pengguna -->
+    <UserTable pengguna={data.pengguna} />
+
+    <!-- Varian -->
+    {data.varian.length > 0 && (
+      <section aria-labelledby="heading-varian" class="space-y-3">
+        <h2 id="heading-varian" class="text-xl font-bold text-slate-900 dark:text-white" data-i18n-id="Varian & Pengembangan" data-i18n-en="Variants">
+          Varian & Pengembangan
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {data.varian.map((v) => (
+            <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-1">
+              <h3 class="font-bold text-sm text-slate-900 dark:text-white">{v.nama}</h3>
+              <p class="text-sm text-slate-700 dark:text-slate-300">{v.keterangan}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Sejarah & Linimasa -->
+    <Timeline ringkas={data.sejarah.ringkas} linimasa={data.sejarah.linimasa} />
+
+    <!-- Sumber Terbuka -->
+    <SourceList sumber={data.sumber} />
+
+    <!-- Footer Entri: Tanggal Pembaruan & Koreksi -->
+    <footer class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-600 dark:text-slate-400">
+      <div>
+        Entri terakhir diperbarui pada: <strong class="text-slate-900 dark:text-slate-200">{formatTanggalLengkap(data.diperbaruiPada)}</strong>
+      </div>
+      <div class="flex items-center gap-3">
+        <a
+          href="/tentang#koreksi"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-slate-300 dark:border-slate-700 font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          <span>Laporkan Koreksi Data</span>
+        </a>
+      </div>
+    </footer>
+  </article>
+</Base>

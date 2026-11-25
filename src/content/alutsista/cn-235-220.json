@@ -1,0 +1,233 @@
+{
+  "nama": "CN235-220",
+  "namaLain": [
+    "CASA/IPTN CN-235",
+    "CN235-220M",
+    "CN235-220 MPA"
+  ],
+  "matra": "udara",
+  "jenis": "pesawat-angkut",
+  "peran": "Pesawat angkut militer kelas menengah dan pengawasan maritim bermesin turboprop ganda.",
+  "negaraAsal": [
+    "ID",
+    "ES"
+  ],
+  "pabrikan": [
+    "pt-dirgantara-indonesia"
+  ],
+  "varian": [
+    {
+      "nama": "CN235-100 / CN235-220M (Angkut Militer)",
+      "keterangan": "Varian angkut taktis multiguna dengan pintu rampa belakang untuk angkutan personel, terjun payung, dan evakuasi medis."
+    },
+    {
+      "nama": "CN235-220 MPA (Patroli Maritim)",
+      "keterangan": "Varian pengawasan laut dilengkapi radar pencari permukaan 360 derajat, kamera FLIR, dan sistem identifikasi otomatis kapal (AIS)."
+    }
+  ],
+  "tahunMulaiDinas": 1988,
+  "status": "dalam-produksi",
+  "ringkasan": "CN235-220 adalah pesawat angkut taktis kelas menengah bermesin turboprop ganda yang awalnya dirancang bersama oleh IPTN (kini PT Dirgantara Indonesia) dan CASA Spanyol melalui perusahaan patungan Airtech. PT Dirgantara Indonesia di Bandung memproduksi dan mengembangkan seri CN235-220 untuk kebutuhan angkut TNI AU serta patroli maritim TNI AU dan Puspenerbal TNI AL, maupun berbagai negara ekspor.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 21.4,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "rentang-sayap",
+      "label": "Rentang sayap",
+      "nilai": 25.81,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 8.18,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 9800,
+      "satuan": "kg",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "bobot-lepas-landas-maks",
+      "label": "Bobot lepas landas maks",
+      "nilai": 16100,
+      "satuan": "kg",
+      "catatan": "Pada varian CN235-220 Militer (16.500 kg dalam kondisi darurat/overload).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "2 x turboprop General Electric CT7-9C (masing-masing 1.305 kW / 1.750 shp)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 439,
+      "satuan": "km/jam",
+      "catatan": "Kecepatan jelajah maksimum sekitar 237 knot (439 km/jam).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan",
+      "label": "Jangkauan",
+      "nilai": 4350,
+      "satuan": "km",
+      "catatan": "Jangkauan feri bahan bakar maksimum (sekitar 1.400–2.000 km dengan muatan kerja; ketahanan terbang hingga 11 jam pada varian MPA).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "plafon",
+      "label": "Plafon operasi",
+      "nilai": 7620,
+      "satuan": "m",
+      "catatan": "Setara 25.000 kaki.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak/kapasitas",
+      "nilai": "2 penerbang + kru kabin/konsol; mengangkut hingga 49 personel atau 34 pasukan payung",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "muatan-persenjataan",
+      "label": "Muatan/persenjataan",
+      "nilai": "Muatan kargo maksimum hingga 5.200 kg (atau konsol misi radar/FLIR pada varian MPA)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Udara & Puspenerbal TNI Angkatan Laut",
+      "varian": "CN235-100M, CN235-220M, & CN235-220 MPA",
+      "jumlah": 14,
+      "jenisJumlah": "perkiraan",
+      "tahunMulai": 1993,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Beroperasi di Skadron Udara 2 dan Skadron Udara 27 TNI AU serta Skadron Udara 800 Puspenerbal TNI AL.",
+      "sumberId": "s2"
+    },
+    {
+      "negara": "KR",
+      "angkatan": "Angkatan Udara & Penjaga Pantai Korea Selatan",
+      "varian": "CN235-220M & CN235-220 MPA",
+      "jumlah": 12,
+      "jenisJumlah": "dikirim",
+      "tahunMulai": 2001,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Salah satu pelanggan ekspor utama produksi PT Dirgantara Indonesia.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Program CN-235 lahir pada Oktober 1979 melalui pembentukan perusahaan patungan Aircraft Technology Industries (Airtech) antara IPTN Indonesia (dipimpin B.J. Habibie) dan CASA Spanyol. Huruf 'CN' merupakan singkatan dari CASA-Nurtanio, sedangkan '235' melambangkan 2 mesin dengan kapasitas awal 35 penumpang.\n\nDua prototipe dibangun secara bersamaan: prototipe Spanyol (Infanta Elena) dan prototipe Indonesia (Tetuko) yang keduanya terbang perdana pada akhir tahun 1983. Sejak saat itu, PT Dirgantara Indonesia di Bandung terus menyempurnakan platform ini hingga melahirkan generasi CN235-220 dengan struktur sayap yang diperkuat, jarak lepas landas lebih pendek, serta varian khusus Patroli Maritim (MPA) yang digunakan oleh TNI AU, TNI AL, dan sejumlah negara sahabat.",
+    "linimasa": [
+      {
+        "tahun": 1979,
+        "bulan": 10,
+        "judul": "Pembentukan konsorsium Airtech CASA–Nurtanio",
+        "uraian": "IPTN dan CASA Spanyol sepakat merancang bersama pesawat angkut komuter dan militer CN-235.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 1983,
+        "bulan": 12,
+        "judul": "Penerbangan perdana prototipe Indonesia 'Tetuko' di Bandung",
+        "uraian": "Prototipe CN-235 buatan Bandung melaksanakan penerbangan perdana pada 30 Desember 1983.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2008,
+        "judul": "Pengiriman varian CN235-220 MPA untuk pengawasan maritim",
+        "uraian": "PT Dirgantara Indonesia menyerahkan varian Patroli Maritim (MPA) dengan integrasi radar permukaan dan sensor elektro-optik.",
+        "sumberId": "s1"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/cn-235-220.glb",
+    "poster": "/models/cn-235-220.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik CN235-220 dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "mesin-ct7",
+        "label": "2 Mesin Turboprop GE CT7-9C",
+        "posisi": "0.95 0.72 0.25",
+        "normal": "0 1 0",
+        "deskripsi": "Sepasang mesin turboprop General Electric CT7-9C di sayap tinggi."
+      },
+      {
+        "id": "rampa-cn235",
+        "label": "Pintu Rampa Belakang & Kubah Radar",
+        "posisi": "0 0.45 -1.35",
+        "normal": "0 0 -1",
+        "deskripsi": "Bagian ekor dengan pintu rampa kargo untuk operasi militer dan penerjunan."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/cn-235-220.webp",
+      "alt": "Foto asli CN235-220",
+      "kredit": "Ekki01 via Wikimedia Commons",
+      "lisensi": "CC BY-SA 3.0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "CN235-220 Military Transport & MPA Product Specification",
+      "penerbit": "PT Dirgantara Indonesia",
+      "url": "https://www.indonesian-aerospace.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (Indonesia PTDI CN-235 Deliveries)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "pesawat-angkut",
+    "cn-235",
+    "mpa",
+    "ptdi",
+    "tni-au",
+    "tni-al"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

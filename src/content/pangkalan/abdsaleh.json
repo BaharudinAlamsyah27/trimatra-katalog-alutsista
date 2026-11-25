@@ -1,0 +1,19 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Lanud Abdulrachman Saleh (Malang)",
+  "matra": "udara",
+  "lat": -7.926,
+  "lng": 112.714,
+  "satuan": "Skadron Udara 4 & Skadron Udara 32 (TNI AU)",
+  "alutsista": [
+    {
+      "nama": "NC212i",
+      "slug": "nc212i"
+    },
+    {
+      "nama": "C-130 Hercules",
+      "slug": "c-130-hercules"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI Angkatan Udara"
+}

@@ -1,0 +1,19 @@
+{
+  "nama": "General Dynamics / Lockheed Martin",
+  "negara": "US",
+  "tahunBerdiri": 1995,
+  "jenisUsaha": "Perusahaan kedirgantaraan dan teknologi pertahanan",
+  "deskripsi": "Perusahaan kedirgantaraan Amerika Serikat yang merancang dan memproduksi pesawat tempur multiperan F-16 Fighting Falcon serta pesawat angkut C-130 Hercules.",
+  "sejarahSingkat": "Program F-16 awalnya dikembangkan oleh General Dynamics di Fort Worth pada dekade 1970-an, kemudian divisi manufaktur pesawat tersebut diakuisisi oleh Lockheed pada tahun 1993 yang selanjutnya bergabung dengan Martin Marietta menjadi Lockheed Martin pada tahun 1995.",
+  "situs": "https://www.lockheedmartin.com",
+  "sumber": [
+    {
+      "id": "p-lm-1",
+      "judul": "F-16 Fighting Falcon Product Overview",
+      "penerbit": "Lockheed Martin Corporation",
+      "url": "https://www.lockheedmartin.com/en-us/products/f-16.html",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

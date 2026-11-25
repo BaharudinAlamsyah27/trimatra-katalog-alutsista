@@ -1,0 +1,30 @@
+{
+  "name": "trimatra-katalog-alutsista-interaktif",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node --eval \"process.env.ASTRO_TELEMETRY_DISABLED='1';process.argv=['node','astro','dev',...process.argv.slice(1)];import('./node_modules/astro/astro.js')\"",
+    "build": "node --eval \"process.env.ASTRO_TELEMETRY_DISABLED='1';process.argv=['node','astro','build',...process.argv.slice(1)];import('./node_modules/astro/astro.js')\"",
+    "preview": "node --eval \"process.env.ASTRO_TELEMETRY_DISABLED='1';process.argv=['node','astro','preview',...process.argv.slice(1)];import('./node_modules/astro/astro.js')\"",
+    "validate": "tsx scripts/validate-data.ts && tsx scripts/check-model-size.ts",
+    "lint": "node --eval \"process.env.ASTRO_TELEMETRY_DISABLED='1';process.argv=['node','astro','check',...process.argv.slice(1)];import('./node_modules/astro/astro.js')\"",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@google/model-viewer": "^4.4.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "astro": "^5.4.0",
+    "fuse.js": "^7.1.0",
+    "tailwindcss": "^4.0.0",
+    "three": "^0.183.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@types/node": "^22.13.0",
+    "@types/three": "^0.183.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.3",
+    "vitest": "^5.1.1"
+  }
+}

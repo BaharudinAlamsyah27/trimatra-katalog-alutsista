@@ -1,0 +1,19 @@
+{
+  "nama": "BAE Systems Maritime",
+  "negara": "GB",
+  "tahunBerdiri": 1999,
+  "jenisUsaha": "Perusahaan industri pertahanan, kedirgantaraan, dan perkapalan",
+  "deskripsi": "Perusahaan pertahanan dan perkapalan multinasional asal Britania Raya yang galangannya di Scotstoun, Glasgow (dahulu Yarrow Shipbuilders / BAE Systems Marine) membangun korvet Kelas Bung Tomo.",
+  "sejarahSingkat": "BAE Systems terbentuk pada tahun 1999 dari penggabungan British Aerospace dan Marconi Electronic Systems, mencakup galangan kapal di Sungai Clyde yang telah membangun kapal perang sejak abad ke-19.",
+  "situs": "https://www.baesystems.com",
+  "sumber": [
+    {
+      "id": "p-bae-1",
+      "judul": "BAE Systems Maritime Naval Ships",
+      "penerbit": "BAE Systems plc",
+      "url": "https://www.baesystems.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

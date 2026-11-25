@@ -1,0 +1,183 @@
+{
+  "nama": "ASTROS II Mk 6",
+  "namaLain": [
+    "Artillery Saturation Rocket System",
+    "Astros II"
+  ],
+  "matra": "darat",
+  "jenis": "roket-multilaras",
+  "peran": "Sistem peluncur roket artileri multilaras modular untuk dukungan tembakan area jarak jauh.",
+  "negaraAsal": [
+    "BR"
+  ],
+  "pabrikan": [
+    "avibras"
+  ],
+  "varian": [
+    {
+      "nama": "AV-LMU (Launcher Vehicle)",
+      "keterangan": "Kendaraan peluncur roket modular dengan dua pod wadah amunisi roket."
+    },
+    {
+      "nama": "AV-RMD & AV-UCF",
+      "keterangan": "Kendaraan pengisi ulang amunisi berkeran derek serta kendaraan radar pengendali tembakan baterai."
+    }
+  ],
+  "tahunMulaiDinas": 1983,
+  "status": "dalam-dinas",
+  "ringkasan": "ASTROS II (Artillery Saturation Rocket System) adalah sistem peluncur roket multilaras swagerak buatan Avibras Indústria Aeroespacial asal Brasil. Varian ASTROS II Mk 6 yang dioperasikan oleh Batalion Artileri Medan TNI Angkatan Darat menggunakan sasis truk taktis berpenggerak 6x6 berkabin lapis baja dan mampu meluncurkan beberapa kaliber roket berbeda dari wadah modular yang sama.",
+  "spesifikasi": [
+    {
+      "kunci": "kaliber",
+      "label": "Kaliber",
+      "nilai": 180,
+      "satuan": "mm",
+      "catatan": "Modular: mendukung roket SS-30 (127 mm), SS-40 (180 mm), serta keluarga SS-60/SS-80 (300 mm).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "panjang-laras",
+      "label": "Panjang laras",
+      "nilai": "2 pod modular (32 tabung 127 mm, 16 tabung 180 mm, atau 4 tabung 300 mm)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot",
+      "label": "Bobot",
+      "nilai": 24000,
+      "satuan": "kg",
+      "catatan": "Bobot tempur kendaraan peluncur Mk 6 berkisar 24.000–27.000 kg tergantung muatan pod roket.",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 3,
+      "satuan": "orang",
+      "catatan": "Komandan, juru tembak, dan pengemudi di dalam kabin berlapis baja.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan-maks",
+      "label": "Jangkauan maks (per amunisi, menurut produsen)",
+      "nilai": "9–30 km (SS-30), 35 km (SS-40), hingga 90 km (SS-80)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "laju-tembak",
+      "label": "Laju tembak",
+      "nilai": "Salvo penuh atau penembakan tunggal beruntun dari dalam kabin",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "penggerak",
+      "label": "Penggerak/platform",
+      "nilai": "Truk taktis berat berpenggerak 6x6 (Tatra T815-7 pada versi Mk 6)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Darat (Korps Artileri Medan)",
+      "varian": "ASTROS II Mk 6",
+      "jumlah": 63,
+      "jenisJumlah": "dikirim",
+      "tahunMulai": 2014,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Mencakup sekitar 63 unit kendaraan peluncur dari dua gelombang pengadaan beserta kendaraan pendukung amunisi dan komando.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Avibras mengembangkan sistem ASTROS II di Brasil pada awal dekade 1980-an dengan konsep peluncur modular yang memungkinkan satu kendaraan menembakkan roket jarak pendek untuk latihan maupun roket kaliber besar untuk jarak jauh tanpa mengganti platform kendaraan. Sistem ini mulai berdinas pada tahun 1983.\n\nPada November 2012, Kementerian Pertahanan Republik Indonesia memesan sistem ASTROS II Mk 6 (generasi keenam yang berbasis pada konsep pengembangan ASTROS 2020) untuk memodernisasi satuan Artileri Medan TNI AD. Gelombang pertama tiba pada tahun 2014 dan disusul gelombang pengadaan kedua pada tahun 2019–2020, ditempatkan antara lain di Yonarmed 10 Kostrad (Bogor), Yonarmed 1 Kostrad (Malang), dan Yonarmed 9 Kostrad (Purwakarta).",
+    "linimasa": [
+      {
+        "tahun": 1983,
+        "judul": "ASTROS II generasi awal mulai berdinas",
+        "uraian": "Avibras merampungkan pengembangan dan memulai produksi seri sistem roket artileri ASTROS II di Brasil.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2012,
+        "bulan": 11,
+        "judul": "Kontrak pengadaan ASTROS II Mk 6 oleh Indonesia",
+        "uraian": "Indonesia menandatangani kontrak pengadaan baterai peluncur ASTROS II Mk 6 lengkap dengan kendaraan komando, radar, dan pengisi amunisi.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2014,
+        "judul": "Kedatangan gelombang pertama di satuan Armed TNI AD",
+        "uraian": "Baterai pertama ASTROS II Mk 6 diterima dan dioperasikan oleh Batalion Artileri Medan Kostrad.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/astros-ii-mk6.glb",
+    "poster": "/models/astros-ii-mk6.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik ASTROS II Mk 6 dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "kabin-depan",
+        "label": "Kabin Lapis Baja 3 Awak",
+        "posisi": "0 0.85 1.25",
+        "normal": "0 1 0",
+        "deskripsi": "Kabin kru antipeluru dilengkapi komputer kendali penembakan."
+      },
+      {
+        "id": "modul-peluncur",
+        "label": "Modul Peluncur Roket Ganda",
+        "posisi": "0 1.15 -0.65",
+        "normal": "0 1 0",
+        "deskripsi": "Rumah peluncur berputar yang memuat dua pod roket modular berbagai kaliber."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/astros-ii-mk6.webp",
+      "alt": "Foto asli ASTROS II Mk 6",
+      "kredit": "DoD photo by: TECH. SGT. H. H. DEFFNER via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Avibras ASTROS System Technical Overview",
+      "penerbit": "Avibras Indústria Aeroespacial",
+      "url": "https://www.avibras.com.br",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (Brazil to Indonesia ASTROS II)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "mlrs",
+    "roket-multilaras",
+    "astros",
+    "avibras",
+    "armed",
+    "tni-ad"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

@@ -1,0 +1,187 @@
+{
+  "nama": "CAESAR 155 mm 6x6",
+  "namaLain": [
+    "Camion Équipé d'un Système d'Artillerie",
+    "Meriam Swagerak CAESAR"
+  ],
+  "matra": "darat",
+  "jenis": "artileri",
+  "peran": "Howitzer swagerak beroda ban kaliber 155 mm / 52 kaliber untuk dukungan tembakan artileri medan jarak jauh.",
+  "negaraAsal": [
+    "FR"
+  ],
+  "pabrikan": [
+    "nexter-knds"
+  ],
+  "varian": [
+    {
+      "nama": "CAESAR 6x6 (Sasis Renault Sherpa 5)",
+      "keterangan": "Konfigurasi berpenggerak enam roda dengan kabin berlapis baja yang dioperasikan oleh satuan Armed TNI AD."
+    }
+  ],
+  "tahunMulaiDinas": 2008,
+  "status": "dalam-dinas",
+  "ringkasan": "CAESAR (Camion Équipé d'un Système d'Artillerie) adalah meriam howitzer swagerak kaliber 155 mm dengan panjang laras 52 kaliber yang dipasang pada sasis truk taktis 6x6 buatan Nexter Systems (kini KNDS France). Kombinasi bobot di bawah 18 ton dan sistem kendali tembakan terkomputerisasi memungkinkan meriam ini diangkut pesawat C-130 Hercules serta berpindah posisi dengan cepat.",
+  "spesifikasi": [
+    {
+      "kunci": "kaliber",
+      "label": "Kaliber",
+      "nilai": 155,
+      "satuan": "mm",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "panjang-laras",
+      "label": "Panjang laras",
+      "nilai": "52 kaliber (sekitar 8,06 m)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot",
+      "label": "Bobot",
+      "nilai": 17700,
+      "satuan": "kg",
+      "catatan": "Bobot tempur di bawah 18.000 kg (panjang keseluruhan kendaraan sekitar 10 m).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 5,
+      "satuan": "orang",
+      "catatan": "5–6 personel awak meriam.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan-maks",
+      "label": "Jangkauan maks (per amunisi, menurut produsen)",
+      "nilai": "Hingga 42 km (amunisi ERFB-BB) atau >50 km (amunisi berpeluncur roket VLAP)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "laju-tembak",
+      "label": "Laju tembak",
+      "nilai": "6 tembakan/menit (membawa 18 butir amunisi siap tembak di kendaraan)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "penggerak",
+      "label": "Penggerak/platform",
+      "nilai": "Sasis truk taktis Renault Sherpa 5 6x6 (kecepatan jalan raya >80 km/jam, jarak jelajah 600 km)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Darat (Korps Artileri Medan)",
+      "varian": "CAESAR 155 mm 6x6",
+      "jumlah": 55,
+      "jenisJumlah": "dikirim",
+      "tahunMulai": 2014,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Terdiri atas 37 unit pesanan batch pertama (2012) dan 18 unit batch kedua (2017).",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Sistem howitzer swagerak CAESAR dikembangkan di Prancis pada dekade 1990-an untuk menjembatani celah antara meriam tarik yang ringan namun lambat digelar dengan howitzer beroda rantai yang berat. Setelah diuji coba dan disempurnakan, unit produksi seri mulai berdinas di Angkatan Darat Prancis pada tahun 2008.\n\nIndonesia memesan gelombang pertama sebanyak 37 unit CAESAR 155 mm pada tahun 2012 yang mulai tiba pada tahun 2014, kemudian memesan gelombang kedua sebanyak 18 unit pada tahun 2017 sehingga total mencapai 55 unit. Meriam swagerak ini memperkuat Batalion Armed 12 Kostrad (Ngawi), Batalion Armed 9 Kostrad (Purwakarta), dan Batalion Armed 20 (Kupang).",
+    "linimasa": [
+      {
+        "tahun": 1994,
+        "judul": "Pengenalan konsep awal CAESAR 155 mm",
+        "uraian": "GIAT Industries memperkenalkan konsep meriam 155 mm/52 kaliber di atas sasis truk taktis beroda ban.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2012,
+        "bulan": 9,
+        "judul": "Kontrak pesanan gelombang pertama oleh Indonesia (37 unit)",
+        "uraian": "Kementerian Pertahanan RI menandatangani kontrak pengadaan 37 unit CAESAR 155 mm untuk TNI AD.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2014,
+        "bulan": 8,
+        "judul": "Kedatangan unit pertama CAESAR di Indonesia",
+        "uraian": "Unit awal CAESAR 155 mm tiba di Indonesia dan ditampilkan pada peringatan HUT TNI ke-69.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2017,
+        "bulan": 2,
+        "judul": "Kontrak tambahan 18 unit gelombang kedua",
+        "uraian": "Indonesia memesan 18 unit tambahan CAESAR beserta simulator pelatihan dan kendaraan pendukung.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/caesar-155mm.glb",
+    "poster": "/models/caesar-155mm.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik CAESAR 155 mm 6x6 dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "laras-52cal",
+        "label": "Laras 155 mm / 52 Kaliber",
+        "posisi": "0 1.25 0.3",
+        "normal": "0 1 0",
+        "deskripsi": "Laras meriam 155 mm sepanjang 52 kaliber dengan rem mulut laras (muzzle brake)."
+      },
+      {
+        "id": "sekop-tumpuan",
+        "label": "Sekop Penumpu Hidrolik",
+        "posisi": "0 0.35 -1.45",
+        "normal": "0 1 0",
+        "deskripsi": "Pelat penumpu belakang yang diturunkan ke tanah untuk menyalurkan hentakan saat menembak."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/caesar-155mm.webp",
+      "alt": "Foto asli CAESAR 155 mm 6x6",
+      "kredit": "Sulthan Naufal via Wikimedia Commons",
+      "lisensi": "CC BY 4.0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "CAESAR 6x6 155mm Self-Propelled Howitzer Product Sheet",
+      "penerbit": "KNDS France (Nexter)",
+      "url": "https://www.knds.fr",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (France to Indonesia CAESAR 155mm)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "artileri",
+    "howitzer",
+    "155mm",
+    "caesar",
+    "nexter",
+    "armed",
+    "tni-ad"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

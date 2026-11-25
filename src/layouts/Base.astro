@@ -1,0 +1,505 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  judul: string;
+  deskripsi?: string;
+  ogImage?: string;
+  transparentHeader?: boolean;
+}
+
+const {
+  judul,
+  deskripsi = 'Katalog Alutsista Interaktif — Ensiklopedia dan katalog edukasi alat utama sistem senjata (alutsista) dari sumber terbuka dengan model 3D interaktif.',
+  ogImage = '/images/f-16-fighting-falcon.webp',
+  transparentHeader = false,
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const pageTitle = `${judul} — Katalog Alutsista Interaktif`;
+
+const navCategories = [
+  {
+    idTitle: 'Utama',
+    enTitle: 'Main',
+    items: [
+      { href: '/', idLabel: 'Beranda', enLabel: 'Home', desc: 'Tampilan utama & sorotan Trimatra', exact: true },
+      { href: '/katalog', idLabel: 'Katalog', enLabel: 'Catalog', desc: 'Jelajahi & filter 25 entri alutsista', exact: false },
+    ],
+  },
+  {
+    idTitle: 'Direktori & Data',
+    enTitle: 'Directory & Data',
+    items: [
+      { href: '/militer-indonesia', idLabel: 'Militer Indonesia', enLabel: 'Indonesian Military', desc: 'Struktur organisasi, sejarah, roadmap & satuan', exact: false },
+      { href: '/pabrikan', idLabel: 'Pabrikan', enLabel: 'Manufacturers', desc: 'Industri pertahanan dalam & luar negeri', exact: false },
+      { href: '/pengguna', idLabel: 'Pengguna', enLabel: 'Operators', desc: 'Rekap inventaris per negara & angkatan', exact: false },
+      { href: '/sejarah', idLabel: 'Sejarah', enLabel: 'History', desc: 'Linimasa kronologis lintas dekade', exact: false },
+    ],
+  },
+  {
+    idTitle: 'Analisis & Simulasi',
+    enTitle: 'Analysis & Simulation',
+    items: [
+      { href: '/simulasi', idLabel: 'Pusat Simulasi', enLabel: 'Simulation Hub', desc: 'Skala ukuran, logistik HADR, fisika Mach', exact: false },
+      { href: '/peta', idLabel: 'Peta & Simulasi', enLabel: 'Map & Range', desc: 'Pangkalan publik & kalkulator jangkauan', exact: false },
+      { href: '/bandingkan', idLabel: 'Bandingkan', enLabel: 'Compare', desc: 'Komparasi spesifikasi 2–3 entri sejenis', exact: false },
+      { href: '/kuis', idLabel: 'Kuis Trimatra', enLabel: 'Trimatra Quiz', desc: 'Uji pengenalan foto & peran alutsista', exact: false },
+    ],
+  },
+  {
+    idTitle: 'Informasi',
+    enTitle: 'Information',
+    items: [
+      { href: '/tentang', idLabel: 'Tentang', enLabel: 'About', desc: 'Metodologi, sumber terbuka, & lisensi', exact: false },
+    ],
+  },
+];
+
+const navLinks = navCategories.flatMap((cat) => cat.items);
+---
+
+<!doctype html>
+<html lang="id" class="dark bg-slate-50 text-slate-900 dark:bg-[#0b1017] dark:text-[#e6edf3]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={deskripsi} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={deskripsi} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="id_ID" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={deskripsi} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>
+      (function () {
+        const theme = localStorage.getItem('trimatra-theme') || 'dark';
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+        const lang = localStorage.getItem('trimatra-lang') || 'id';
+        document.documentElement.setAttribute('data-lang', lang);
+        const unit = localStorage.getItem('trimatra-unit') || 'metric';
+        document.documentElement.setAttribute('data-unit', unit);
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col text-base selection:bg-emerald-500 selection:text-slate-950">
+    <a
+      href="#konten-utama"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-emerald-600 focus:text-white focus:rounded-lg focus:font-semibold focus:shadow-lg"
+    >
+      Lewati ke konten utama
+    </a>
+
+    <!-- Header Minimalis & Bersih dengan Tombol Hamburger yang Bisa Dilipat -->
+    <header
+      class={`${
+        transparentHeader
+          ? 'fixed top-0 inset-x-0 z-40 bg-slate-950/55 backdrop-blur-md border-b border-white/10 text-white'
+          : 'sticky top-0 z-40 border-b border-slate-200 dark:border-[#243244] bg-white/95 dark:bg-[#0d131c]/95 backdrop-blur-md'
+      }`}
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
+        <!-- Kiri: Tombol Hamburger (Selalu Tersedia) + Brand -->
+        <div class="flex items-center gap-3">
+          <button
+            id="btn-drawer-open"
+            type="button"
+            aria-label="Buka menu navigasi samping"
+            aria-controls="side-nav-drawer"
+            aria-expanded="false"
+            class={`min-h-[42px] min-w-[42px] inline-flex items-center justify-center rounded-lg border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+              transparentHeader
+                ? 'border-white/20 bg-white/5 text-white hover:bg-white/15'
+                : 'border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#111822] text-slate-800 dark:text-slate-100 hover:border-emerald-500'
+            }`}
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+          <a
+            href="/"
+            class="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
+          >
+            <span class="text-lg sm:text-xl font-black tracking-tight uppercase">
+              TRIMATRA<span class="text-emerald-400">.</span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Tengah: Navigasi Ringkas Desktop (Hanya 5 Tautan Utama agar Tidak Sesak) -->
+        <nav aria-label="Navigasi utama" class="hidden lg:flex items-center gap-1">
+          {navLinks.slice(0, 7).map((link) => {
+            const active = link.exact ? currentPath === '/' : currentPath.startsWith(link.href);
+            return (
+              <a
+                href={link.href}
+                aria-current={active ? 'page' : undefined}
+                class={`px-3.5 py-2 rounded-full text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                  active
+                    ? transparentHeader
+                      ? 'bg-white text-slate-950 font-semibold'
+                      : 'bg-slate-900 text-white dark:bg-emerald-600 dark:text-white font-semibold'
+                    : transparentHeader
+                      ? 'text-white/85 hover:text-white hover:bg-white/10'
+                      : 'text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-[#192330]'
+                }`}
+              >
+                <span data-i18n-id={link.idLabel} data-i18n-en={link.enLabel}>{link.idLabel}</span>
+              </a>
+            );
+          })}
+        </nav>
+
+        <!-- Kanan: Utilitas Ringkas (SI/IMP, ID/EN, Tema) -->
+        <div class="flex items-center gap-2">
+          <button
+            id="btn-unit-toggle"
+            type="button"
+            aria-label="Ganti satuan tampilan Metrik atau Imperial"
+            title="Satuan: Metrik (SI) / Imperial (IMP)"
+            class={`min-h-[40px] px-3 rounded-full text-xs font-mono font-bold border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+              transparentHeader
+                ? 'border-white/20 bg-white/10 text-white hover:bg-white/20'
+                : 'border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#111822] text-slate-800 dark:text-cyan-300 hover:border-emerald-500'
+            }`}
+          >
+            SI
+          </button>
+
+          <button
+            id="btn-lang-toggle"
+            type="button"
+            aria-label="Ganti bahasa antarmuka (ID / EN)"
+            title="Bahasa Indonesia / English"
+            class={`min-h-[40px] px-3 rounded-full text-xs font-mono font-bold border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+              transparentHeader
+                ? 'border-white/20 bg-white/10 text-white hover:bg-white/20'
+                : 'border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#111822] text-slate-800 dark:text-emerald-300 hover:border-emerald-500'
+            }`}
+          >
+            ID
+          </button>
+
+          <button
+            id="btn-theme-toggle"
+            type="button"
+            aria-label="Ganti tema terang atau gelap"
+            title="Mode Gelap / Terang"
+            class={`min-h-[40px] min-w-[40px] inline-flex items-center justify-center rounded-full border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+              transparentHeader
+                ? 'border-white/20 bg-white/10 text-white hover:bg-white/20'
+                : 'border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#111822] text-slate-800 dark:text-slate-200 hover:border-emerald-500'
+            }`}
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-13.66l-.7.7M4.04 19.96l-.7.7M21 12h-1M4 12H3m16.96 7.96l-.7-.7M4.74 4.74l-.7-.7M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Backdrop & Side Navigation Drawer (Dapat Dilipat & Diperindah) -->
+    <div
+      id="side-nav-backdrop"
+      class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-200"
+      aria-hidden="true"
+    ></div>
+
+    <aside
+      id="side-nav-drawer"
+      aria-label="Menu navigasi samping"
+      aria-hidden="true"
+      class="fixed top-0 left-0 bottom-0 z-50 w-80 max-w-[88vw] bg-white dark:bg-[#0d131c] border-r border-slate-200 dark:border-[#243244] shadow-2xl transform -translate-x-full transition-transform duration-250 ease-out flex flex-col"
+    >
+      <div class="px-5 py-4 border-b border-slate-200 dark:border-[#243244] flex items-center justify-between">
+        <div>
+          <div class="text-lg font-black tracking-tight text-slate-900 dark:text-white">
+            TRIMATRA<span class="text-emerald-500">.</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Katalog Alutsista Interaktif</p>
+        </div>
+        <button
+          id="btn-drawer-close"
+          type="button"
+          aria-label="Tutup menu navigasi samping"
+          class="min-h-[40px] min-w-[40px] inline-flex items-center justify-center rounded-lg border border-slate-200 dark:border-[#243244] text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#192330] cursor-pointer"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-4 flex-1 overflow-y-auto space-y-6">
+        <!-- Pencarian Cepat di Side Nav -->
+        <form action="/katalog" method="get" role="search">
+          <label for="sidenav-search" class="sr-only">Cari alutsista</label>
+          <input
+            id="sidenav-search"
+            name="q"
+            type="search"
+            placeholder="Cari alutsista..."
+            class="w-full min-h-[42px] px-3.5 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+        </form>
+
+        <!-- Daftar Tautan Berkelompok per Kategori -->
+        <nav aria-label="Menu samping" class="space-y-5">
+          {navCategories.map((cat) => (
+            <div class="space-y-1">
+              <p
+                class="px-3 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5"
+                data-i18n-id={cat.idTitle}
+                data-i18n-en={cat.enTitle}
+              >
+                {cat.idTitle}
+              </p>
+              {cat.items.map((link) => {
+                const active = link.exact ? currentPath === '/' : currentPath.startsWith(link.href);
+                return (
+                  <a
+                    href={link.href}
+                    aria-current={active ? 'page' : undefined}
+                    class={`block px-3.5 py-2.5 rounded-lg transition-colors ${
+                      active
+                        ? 'bg-emerald-500/15 border border-emerald-500/35 text-emerald-800 dark:text-emerald-300'
+                        : 'text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#161f2c] border border-transparent'
+                    }`}
+                  >
+                    <div class="text-sm font-bold" data-i18n-id={link.idLabel} data-i18n-en={link.enLabel}>
+                      {link.idLabel}
+                    </div>
+                    <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{link.desc}</div>
+                  </a>
+                );
+              })}
+            </div>
+          ))}
+        </nav>
+
+        <!-- Kategori Matra & Jenis Populer -->
+        <div class="pt-4 border-t border-slate-200 dark:border-[#243244] space-y-3">
+          <p class="px-3 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Kategori Matra
+          </p>
+          <div class="grid grid-cols-3 gap-2 px-1">
+            <a href="/katalog?matra=darat" class="py-2 text-center rounded-lg text-xs font-semibold bg-slate-100 dark:bg-[#161f2c] text-slate-800 dark:text-emerald-300 hover:bg-emerald-600 hover:text-white transition-colors">
+              Darat
+            </a>
+            <a href="/katalog?matra=laut" class="py-2 text-center rounded-lg text-xs font-semibold bg-slate-100 dark:bg-[#161f2c] text-slate-800 dark:text-cyan-300 hover:bg-cyan-600 hover:text-white transition-colors">
+              Laut
+            </a>
+            <a href="/katalog?matra=udara" class="py-2 text-center rounded-lg text-xs font-semibold bg-slate-100 dark:bg-[#161f2c] text-slate-800 dark:text-sky-300 hover:bg-sky-600 hover:text-white transition-colors">
+              Udara
+            </a>
+          </div>
+
+          <p class="px-3 pt-1 text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Jenis Populer
+          </p>
+          <div class="flex flex-wrap gap-1.5 px-1">
+            <a href="/jenis/tank-utama" class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-[#161f2c] text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-300">Tank Utama</a>
+            <a href="/jenis/fregat" class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-[#161f2c] text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300">Fregat</a>
+            <a href="/jenis/kapal-selam" class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-[#161f2c] text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300">Kapal Selam</a>
+            <a href="/jenis/pesawat-tempur" class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-[#161f2c] text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-300">Pesawat Tempur</a>
+            <a href="/jenis/helikopter" class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-[#161f2c] text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-300">Helikopter</a>
+            <a href="/jenis/artileri" class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-[#161f2c] text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-300">Artileri</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-5 py-3.5 border-t border-slate-200 dark:border-[#243244] text-xs text-slate-500 dark:text-slate-400">
+        Tekan <kbd class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-[#192330] font-mono">Esc</kbd> untuk menutup menu.
+      </div>
+    </aside>
+
+    <main id="konten-utama" class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer Atmosferik Gelap-Topografi + Penafian Wajib (Menyatu Tanpa Ruang Putih Kosong) -->
+    <footer class={`relative overflow-hidden border-t border-white/10 bg-[#080d14] text-slate-200 ${transparentHeader ? 'mt-0' : 'mt-12'}`}>
+      <div class="absolute inset-0 bg-topo-pattern opacity-35 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0b131e]/80 via-[#080d14]/95 to-[#06090f] pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+        <!-- Grid 4 Kolom Umum Footer -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="space-y-3">
+            <div class="text-xl font-black tracking-tight text-white">
+              TRIMATRA<span class="text-emerald-400">.</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Katalog Alutsista Interaktif berbahasa Indonesia berbasis informasi terbuka (open-source), dilengkapi foto asli berlisensi bebas, model 3D 360°, dan simulasi jangkauan edukatif.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-white">
+              Direktori Trimatra
+            </h2>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li><a href="/katalog?matra=darat" class="hover:text-emerald-400 transition-colors">Alutsista Matra Darat</a></li>
+              <li><a href="/katalog?matra=laut" class="hover:text-emerald-400 transition-colors">Alutsista Matra Laut</a></li>
+              <li><a href="/katalog?matra=udara" class="hover:text-emerald-400 transition-colors">Alutsista Matra Udara</a></li>
+              <li><a href="/katalog" class="hover:text-emerald-400 transition-colors">Semua Entri Katalog</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-white">
+              Fitur & Analisis
+            </h2>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li><a href="/bandingkan" class="hover:text-emerald-400 transition-colors">Bandingkan Spesifikasi</a></li>
+              <li><a href="/simulasi" class="hover:text-emerald-400 transition-colors">Pusat Simulasi &amp; Kalkulator</a></li>
+              <li><a href="/peta" class="hover:text-emerald-400 transition-colors">Peta Pangkalan & Simulasi Jangkauan</a></li>
+              <li><a href="/militer-indonesia" class="hover:text-emerald-400 transition-colors">Militer Indonesia &amp; Roadmap</a></li>
+              <li><a href="/pabrikan" class="hover:text-emerald-400 transition-colors">Profil Pabrikan & Industri</a></li>
+              <li><a href="/pengguna" class="hover:text-emerald-400 transition-colors">Daftar Negara Pengguna</a></li>
+              <li><a href="/sejarah" class="hover:text-emerald-400 transition-colors">Linimasa Sejarah Gabungan</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-white">
+              Transparansi & Sumber
+            </h2>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li><a href="/tentang" class="hover:text-emerald-400 transition-colors">Metodologi & Aturan Konten</a></li>
+              <li><a href="/tentang#atribusi-aset" class="hover:text-emerald-400 transition-colors">Atribusi Foto & Model 3D</a></li>
+              <li><a href="/tentang#koreksi" class="hover:text-emerald-400 transition-colors">Laporkan Koreksi Data</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Penafian Wajib -->
+        <div class="p-4 sm:p-5 rounded-xl bg-amber-500/10 border border-amber-400/30 text-slate-200 text-sm leading-relaxed">
+          <p class="font-bold text-amber-300 mb-1" data-i18n-id="Penafian Wajib (Disclaimer)" data-i18n-en="Mandatory Disclaimer">
+            Penafian Wajib (Disclaimer)
+          </p>
+          <p>
+            Situs edukasi non-resmi. Tidak berafiliasi dengan TNI, Kementerian Pertahanan, atau produsen mana pun. Data bersumber dari informasi terbuka dan dapat berbeda dari data resmi.
+          </p>
+        </div>
+
+        <!-- Baris Hak Cipta Bawah -->
+        <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm text-slate-400">
+          <p>&copy; {new Date().getFullYear()} Katalog Alutsista Interaktif. Situs statis edukasi terbuka.</p>
+          <p class="font-mono text-xs">Satuan Sumber: Metrik (SI) &bull; Tanpa Pelacak Pihak Ketiga</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Side Navigation Drawer Controls
+      const drawer = document.getElementById('side-nav-drawer');
+      const backdrop = document.getElementById('side-nav-backdrop');
+      const btnOpen = document.getElementById('btn-drawer-open');
+      const btnClose = document.getElementById('btn-drawer-close');
+
+      function openDrawer() {
+        drawer?.classList.remove('-translate-x-full');
+        drawer?.setAttribute('aria-hidden', 'false');
+        backdrop?.classList.remove('opacity-0', 'pointer-events-none');
+        btnOpen?.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer?.classList.add('-translate-x-full');
+        drawer?.setAttribute('aria-hidden', 'true');
+        backdrop?.classList.add('opacity-0', 'pointer-events-none');
+        btnOpen?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      btnOpen?.addEventListener('click', openDrawer);
+      btnClose?.addEventListener('click', closeDrawer);
+      backdrop?.addEventListener('click', closeDrawer);
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+
+      // Language Toggle
+      function applyLang(lang: string) {
+        document.documentElement.setAttribute('data-lang', lang);
+        const btn = document.getElementById('btn-lang-toggle');
+        if (btn) btn.textContent = lang.toUpperCase();
+        document.querySelectorAll<HTMLElement>('[data-i18n-id]').forEach((el) => {
+          const text = lang === 'en' ? el.getAttribute('data-i18n-en') : el.getAttribute('data-i18n-id');
+          if (text) el.textContent = text;
+        });
+      }
+
+      // Metric <-> Imperial Toggle
+      function convertMetricToImperial(val: number, unit: string): { value: string; unit: string } | null {
+        const fmt = (n: number) => new Intl.NumberFormat('id-ID', { maximumFractionDigits: 2 }).format(n);
+        if (unit === 'm') return { value: fmt(val * 3.28084), unit: 'ft' };
+        if (unit === 'mm') return { value: fmt(val / 25.4), unit: 'in' };
+        if (unit === 'kg') return { value: fmt(val * 2.20462), unit: 'lb' };
+        if (unit === 'km') return { value: fmt(val * 0.621371), unit: 'mi' };
+        if (unit === 'km/jam') return { value: fmt(val * 0.539957), unit: 'knot' };
+        if (unit === 'kW') return { value: fmt(val * 1.34102), unit: 'hp' };
+        return null;
+      }
+
+      function applyUnit(mode: string) {
+        document.documentElement.setAttribute('data-unit', mode);
+        const btn = document.getElementById('btn-unit-toggle');
+        if (btn) btn.textContent = mode === 'imperial' ? 'IMP' : 'SI';
+
+        document.querySelectorAll<HTMLElement>('[data-metric-val]').forEach((el) => {
+          const rawVal = Number(el.getAttribute('data-metric-val'));
+          const rawUnit = el.getAttribute('data-metric-unit') || '';
+          const valSpan = el.querySelector<HTMLElement>('.spec-val');
+          const unitSpan = el.querySelector<HTMLElement>('.spec-unit');
+          if (!valSpan || isNaN(rawVal)) return;
+
+          if (mode === 'imperial') {
+            const conv = convertMetricToImperial(rawVal, rawUnit);
+            if (conv) {
+              valSpan.textContent = conv.value;
+              if (unitSpan) unitSpan.textContent = conv.unit;
+              return;
+            }
+          }
+          valSpan.textContent = new Intl.NumberFormat('id-ID', { maximumFractionDigits: 2 }).format(rawVal);
+          if (unitSpan) unitSpan.textContent = rawUnit;
+        });
+      }
+
+      applyLang(localStorage.getItem('trimatra-lang') || 'id');
+      applyUnit(localStorage.getItem('trimatra-unit') || 'metric');
+
+      document.getElementById('btn-lang-toggle')?.addEventListener('click', () => {
+        const next = (document.documentElement.getAttribute('data-lang') || 'id') === 'id' ? 'en' : 'id';
+        localStorage.setItem('trimatra-lang', next);
+        applyLang(next);
+      });
+
+      document.getElementById('btn-unit-toggle')?.addEventListener('click', () => {
+        const next = (document.documentElement.getAttribute('data-unit') || 'metric') === 'metric' ? 'imperial' : 'metric';
+        localStorage.setItem('trimatra-unit', next);
+        applyUnit(next);
+      });
+
+      document.getElementById('btn-theme-toggle')?.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('trimatra-theme', isDark ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>

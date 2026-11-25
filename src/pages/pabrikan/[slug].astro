@@ -1,0 +1,149 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SourceList from '../../components/SourceList.astro';
+import { labelJenis, labelMatra, labelStatus, namaNegara } from '../../lib/format';
+
+export async function getStaticPaths() {
+  const semuaPabrikan = await getCollection('pabrikan');
+  const semuaAlutsista = await getCollection('alutsista');
+
+  return semuaPabrikan.map((pabrikan) => {
+    const produk = semuaAlutsista
+      .filter((a) => a.data.pabrikan.some((ref) => ref.id === pabrikan.id))
+      .sort((a, b) => a.data.nama.localeCompare(b.data.nama, 'id'));
+    return {
+      params: { slug: pabrikan.id },
+      props: { pabrikan, produk },
+    };
+  });
+}
+
+const { pabrikan, produk } = Astro.props;
+const { data } = pabrikan;
+---
+
+<Base
+  judul={data.nama}
+  deskripsi={`Profil pabrikan ${data.nama} (${namaNegara(data.negara)}), sejarah singkat, dan daftar produk alutsista di katalog.`}
+>
+  <article class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-600 dark:text-slate-400 flex flex-wrap items-center gap-1.5">
+      <a href="/" class="hover:underline">Beranda</a>
+      <span>/</span>
+      <a href="/pabrikan" class="hover:underline">Pabrikan</a>
+      <span>/</span>
+      <span class="font-semibold text-slate-900 dark:text-slate-100" aria-current="page">{data.nama}</span>
+    </nav>
+
+    <header class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-slate-900 dark:bg-sky-600 text-white">
+          {namaNegara(data.negara)} ({data.negara})
+        </span>
+        {data.tahunBerdiri && (
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
+            Didirikan {data.tahunBerdiri}
+          </span>
+        )}
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        {data.nama}
+      </h1>
+
+      <p class="text-sm font-semibold text-slate-600 dark:text-slate-400">
+        {data.jenisUsaha}
+      </p>
+
+      <p class="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+        {data.deskripsi}
+      </p>
+
+      {data.situs && (
+        <div>
+          <a
+            href={data.situs}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-700 dark:text-sky-400 hover:underline"
+          >
+            <span>Kunjungi Situs Resmi {data.nama}</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      )}
+    </header>
+
+    <section aria-labelledby="sejarah-pabrikan" class="space-y-3">
+      <h2 id="sejarah-pabrikan" class="text-xl font-bold text-slate-900 dark:text-white">
+        Sejarah Singkat Perusahaan
+      </h2>
+      <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+        {data.sejarahSingkat}
+      </p>
+    </section>
+
+    <section aria-labelledby="produk-katalog" class="space-y-4">
+      <h2 id="produk-katalog" class="text-xl font-bold text-slate-900 dark:text-white">
+        Produk Alutsista di Katalog ({produk.length})
+      </h2>
+
+      {produk.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {produk.map((item) => {
+            const poster = item.data.model3d?.poster || item.data.galeri[0]?.berkas;
+            return (
+              <article class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-xs flex flex-col">
+                <a href={`/alutsista/${item.id}`} class="block aspect-16/10 bg-slate-100 dark:bg-slate-800 relative">
+                  {poster && (
+                    <img
+                      src={poster}
+                      alt={`Foto ${item.data.nama}`}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                      width="480"
+                      height="300"
+                    />
+                  )}
+                  <div class="absolute top-3 left-3 flex gap-1.5">
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-slate-900/85 text-white">
+                      {labelMatra(item.data.matra)}
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200">
+                      {labelJenis(item.data.jenis)}
+                    </span>
+                  </div>
+                </a>
+                <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                  <div>
+                    <h3 class="text-base font-bold text-slate-900 dark:text-white">
+                      <a href={`/alutsista/${item.id}`} class="hover:text-sky-700 dark:hover:text-sky-400">
+                        {item.data.nama}
+                      </a>
+                    </h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 line-clamp-2">
+                      {item.data.peran}
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-between text-xs pt-2 border-t border-slate-100 dark:border-slate-800">
+                    <span class="text-emerald-800 dark:text-emerald-300 font-medium">
+                      {labelStatus(item.data.status)}
+                    </span>
+                    <a href={`/alutsista/${item.id}`} class="font-semibold text-sky-700 dark:text-sky-400 hover:underline">
+                      Detail &rarr;
+                    </a>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      ) : (
+        <p class="text-sm text-slate-600 dark:text-slate-400">Belum ada produk tercatat di katalog.</p>
+      )}
+    </section>
+
+    <SourceList sumber={data.sumber} />
+  </article>
+</Base>

@@ -1,0 +1,64 @@
+---
+interface PeristiwaItem {
+  tahun: number;
+  bulan?: number;
+  judul: string;
+  uraian: string;
+  sumberId: string;
+}
+
+interface Props {
+  ringkas: string;
+  linimasa: PeristiwaItem[];
+}
+
+const { ringkas, linimasa } = Astro.props;
+const paragraf = ringkas.split('\n\n').filter(Boolean);
+
+const namaBulan = [
+  'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+  'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember',
+];
+---
+
+<section aria-labelledby="heading-sejarah" class="space-y-6">
+  <h2 id="heading-sejarah" class="text-xl font-bold text-slate-900 dark:text-white" data-i18n-id="Sejarah Pengembangan & Dinas" data-i18n-en="Development & Service History">
+    Sejarah Pengembangan & Dinas
+  </h2>
+
+  <div class="prose prose-slate dark:prose-invert max-w-none space-y-3 text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+    {paragraf.map((p) => (
+      <p>{p}</p>
+    ))}
+  </div>
+
+  <div class="pt-2">
+    <h3 class="text-base font-bold text-slate-900 dark:text-white mb-4" data-i18n-id="Linimasa Peristiwa Penting" data-i18n-en="Key Milestones Timeline">
+      Linimasa Peristiwa Penting
+    </h3>
+    <ol class="relative border-s-2 border-slate-300 dark:border-slate-700 ms-3 space-y-6">
+      {linimasa.map((ev) => (
+        <li class="ms-6">
+          <span class="absolute -start-2.5 flex items-center justify-center w-5 h-5 rounded-full bg-sky-700 text-white ring-4 ring-white dark:ring-slate-950"></span>
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <time class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-100">
+              {ev.bulan ? `${namaBulan[ev.bulan - 1]} ${ev.tahun}` : ev.tahun}
+            </time>
+            <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+              {ev.judul}
+            </h4>
+            <a
+              href={`#sumber-${ev.sumberId}`}
+              class="text-xs font-mono font-semibold text-sky-700 dark:text-sky-400 hover:underline"
+            >
+              [{ev.sumberId}]
+            </a>
+          </div>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            {ev.uraian}
+          </p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

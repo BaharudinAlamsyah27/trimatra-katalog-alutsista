@@ -1,0 +1,15 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Lanumad Ahmad Yani (Semarang)",
+  "matra": "darat",
+  "lat": -6.971,
+  "lng": 110.374,
+  "satuan": "Skadron 11/Serbu Puspenerbad (TNI AD)",
+  "alutsista": [
+    {
+      "nama": "Boeing AH-64E Apache Guardian",
+      "slug": "ah-64e-apache"
+    }
+  ],
+  "sumber": "Informasi publik resmi Puspenerbad TNI AD"
+}

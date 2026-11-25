@@ -1,0 +1,202 @@
+{
+  "nama": "AS565 MBe Panther",
+  "namaLain": [
+    "Eurocopter AS565 Panther",
+    "Airbus Helicopters AS565 MBe"
+  ],
+  "matra": "udara",
+  "jenis": "helikopter",
+  "peran": "Helikopter maritim dan anti-kapal selam kelas menengah yang beroperasi dari dek kapal perang.",
+  "negaraAsal": [
+    "FR",
+    "ID"
+  ],
+  "pabrikan": [
+    "airbus-helicopters",
+    "pt-dirgantara-indonesia"
+  ],
+  "varian": [
+    {
+      "nama": "AS565 MBe Panther AKS (Anti-Kapal Selam)",
+      "keterangan": "Konfigurasi peperangan anti-kapal selam untuk Puspenerbal TNI AL dengan sonar celup (dipping sonar) HELRAS dan peluncur torpedo ringan."
+    }
+  ],
+  "tahunMulaiDinas": 1986,
+  "status": "dalam-dinas",
+  "ringkasan": "AS565 MBe Panther adalah varian militer maritim dari keluarga helikopter Dauphin bermesin ganda yang diproduksi oleh Airbus Helicopters bekerja sama dengan PT Dirgantara Indonesia. Di jajaran Puspenerbal TNI Angkatan Laut, 11 unit AS565 MBe Panther berperan sebagai helikopter organik kapal perang (Fregat Kelas Martadinata dan Korvet Kelas Diponegoro/Bung Tomo) untuk peperangan anti-kapal selam dan SAR laut.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 13.68,
+      "satuan": "m",
+      "catatan": "Panjang total dengan rotor berputar (panjang badan 12,08 m).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "diameter-rotor",
+      "label": "Diameter rotor",
+      "nilai": 11.94,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 2380,
+      "satuan": "kg",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-maks",
+      "label": "Bobot maks",
+      "nilai": 4500,
+      "satuan": "kg",
+      "catatan": "Bobot lepas landas maksimum ditingkatkan menjadi 4.500 kg pada varian MBe.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "2 x turboshaft Safran (Turbomeca) Arriel 2N dengan FADEC (masing-masing ~845 kW / 1.130 shp)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 278,
+      "satuan": "km/jam",
+      "catatan": "Sekitar 150 knot.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan",
+      "label": "Jangkauan",
+      "nilai": 780,
+      "satuan": "km",
+      "catatan": "Jangkauan maksimum dengan bahan bakar internal (ketahanan terbang sekitar 4 jam).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak-kapasitas",
+      "label": "Awak/kapasitas",
+      "nilai": "2 penerbang + operator konsol sonar (atau hingga 8–10 penumpang dalam konfigurasi angkut/SAR)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "muatan-persenjataan",
+      "label": "Muatan/persenjataan",
+      "nilai": "Sonar celup frekuensi rendah L3 Ocean Systems HELRAS, peluncur sonobuoy, dan cantelan torpedo ringan anti-kapal selam 324 mm",
+      "keandalan": "resmi",
+      "sumberId": "s2"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut (Puspenerbal — Skadron Udara 100)",
+      "varian": "AS565 MBe Panther AKS",
+      "jumlah": 11,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2017,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Beroperasi di Skadron Udara 100 Wing Udara 2 Puspenerbal Juanda dan ditempatkan di atas KRI kombatan utama.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Keluarga helikopter AS565 Panther dikembangkan di Prancis pada dekade 1980-an dari helikopter AS365 Dauphin dengan ciri khas rotor ekor tertutup (Fenestron) yang meningkatkan keselamatan personel saat beroperasi di dek kapal perang yang sempit. Varian AS565 MBe merupakan versi peningkatan dengan mesin Arriel 2N yang berdaya lebih tinggi untuk operasi di wilayah bersuhu panas.\n\nPada tahun 2014, Kementerian Pertahanan RI memesan 11 unit AS565 MBe Panther untuk memenuhi kebutuhan helikopter Anti-Kapal Selam (AKS) Puspenerbal TNI Angkatan Laut. Dalam program ini, Airbus Helicopters mengirimkan rangka dasar helikopter ke Bandung, kemudian PT Dirgantara Indonesia melakukan penyelesaian akhir serta pemasangan dan pengujian sistem misi anti-kapal selam (sonar celup HELRAS dan cantelan torpedo) sebelum menyerahkan seluruh unit kepada TNI AL antara tahun 2017 hingga 2021.",
+    "linimasa": [
+      {
+        "tahun": 1984,
+        "bulan": 2,
+        "judul": "Penerbangan perdana prototipe militer AS365M Panther",
+        "uraian": "Prototipe awal keluarga Panther melaksanakan penerbangan perdana di Marignane, Prancis.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2014,
+        "judul": "Kontrak pengadaan 11 unit AS565 MBe Panther untuk TNI AL",
+        "uraian": "Indonesia memesan 11 unit AS565 MBe dengan skema integrasi sistem misi anti-kapal selam di PT Dirgantara Indonesia.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2017,
+        "bulan": 11,
+        "judul": "Penyerahan gelombang awal AS565 MBe kepada Puspenerbal",
+        "uraian": "PT Dirgantara Indonesia mulai menyerahkan unit awal AS565 MBe Panther kepada Skadron Udara 100 Puspenerbal TNI AL.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/as565-mbe-panther.glb",
+    "poster": "/models/as565-mbe-panther.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik AS565 MBe Panther dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "ekor-fenestron",
+        "label": "Rotor Ekor Tertutup (Fenestron)",
+        "posisi": "0 0.65 -1.45",
+        "normal": "1 0 0",
+        "deskripsi": "Kipas rotor ekor yang terlindung di dalam sirip tegak untuk keamanan operasi di dek kapal perang."
+      },
+      {
+        "id": "kabin-sonar",
+        "label": "Kabin Konsol & Sonar Celup HELRAS",
+        "posisi": "0 0.55 0.15",
+        "normal": "0 1 0",
+        "deskripsi": "Ruang kabin tengah tempat kerekan sonar celup anti-kapal selam dan cantelan torpedo."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/as565-mbe-panther.webp",
+      "alt": "Foto asli AS565 MBe Panther",
+      "kredit": "Mass Communication Specialist Seaman Patrick Grieco via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Airbus Helicopters AS565 MBe Product Brochure",
+      "penerbit": "Airbus Helicopters",
+      "url": "https://www.airbus.com/en/products-services/helicopters/military-helicopters/as565-mbe",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "Integrasi Sistem Misi Anti-Kapal Selam AS565 MBe Panther",
+      "penerbit": "PT Dirgantara Indonesia / SIPRI",
+      "url": "https://www.indonesian-aerospace.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ],
+  "tag": [
+    "helikopter",
+    "aks",
+    "anti-kapal-selam",
+    "panther",
+    "as565",
+    "ptdi",
+    "airbus",
+    "tni-al"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

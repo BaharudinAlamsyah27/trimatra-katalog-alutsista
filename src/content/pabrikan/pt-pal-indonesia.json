@@ -1,0 +1,19 @@
+{
+  "nama": "PT PAL Indonesia",
+  "negara": "ID",
+  "tahunBerdiri": 1980,
+  "jenisUsaha": "BUMN galangan kapal dan rekayasa maritim (anggota holding DEFEND ID)",
+  "deskripsi": "Perusahaan galangan kapal milik negara Indonesia yang berkedudukan di Surabaya, memproduksi kapal perang permukaan, kapal selam melalui kerja sama alih teknologi, serta kapal niaga.",
+  "sejarahSingkat": "Berawal dari galangan kapal Marine Establishment pada masa kolonial yang diresmikan pada 1939, kemudian dinasionalisasi menjadi Penataran Angkatan Laut (PAL) dan ditetapkan sebagai PT PAL Indonesia (Persero) pada 15 April 1980.",
+  "situs": "https://www.pal.co.id",
+  "sumber": [
+    {
+      "id": "p-pal-1",
+      "judul": "Sekilas Perusahaan PT PAL Indonesia",
+      "penerbit": "PT PAL Indonesia",
+      "url": "https://www.pal.co.id",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

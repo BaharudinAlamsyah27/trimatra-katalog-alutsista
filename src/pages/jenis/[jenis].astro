@@ -1,0 +1,150 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import taksonomiJson from '../../data/taksonomi.json';
+import { SEJARAH_JENIS } from '../../lib/derive';
+import { labelMatra, labelStatus, namaNegara } from '../../lib/format';
+
+export async function getStaticPaths() {
+  const semuaAlutsista = await getCollection('alutsista');
+  const semuaPabrikan = await getCollection('pabrikan');
+  const pabrikanMap = new Map(semuaPabrikan.map((p) => [p.id, p.data.nama]));
+
+  return taksonomiJson.jenis.map((info) => {
+    const entriList = semuaAlutsista
+      .filter((a) => a.data.jenis === info.kunci)
+      .sort((a, b) => a.data.nama.localeCompare(b.data.nama, 'id'));
+    return {
+      params: { jenis: info.kunci },
+      props: {
+        info,
+        entriList,
+        pabrikanMap: Object.fromEntries(pabrikanMap),
+      },
+    };
+  });
+}
+
+const { info, entriList, pabrikanMap } = Astro.props;
+const sejarahInfo = SEJARAH_JENIS[info.kunci];
+---
+
+<Base
+  judul={`Jenis Alutsista: ${info.label}`}
+  deskripsi={`${info.label} (Matra ${labelMatra(info.matra)}) — ${info.deskripsi} Sejarah ringkas dan daftar alutsista di katalog.`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-600 dark:text-slate-400 flex flex-wrap items-center gap-1.5">
+      <a href="/" class="hover:underline">Beranda</a>
+      <span>/</span>
+      <a href="/katalog" class="hover:underline">Katalog</a>
+      <span>/</span>
+      <a href={`/katalog?matra=${info.matra}`} class="hover:underline">Matra {labelMatra(info.matra)}</a>
+      <span>/</span>
+      <span class="font-semibold text-slate-900 dark:text-slate-100" aria-current="page">{info.label}</span>
+    </nav>
+
+    <header class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-slate-900 dark:bg-sky-600 text-white">
+          Matra {labelMatra(info.matra)}
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-mono bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
+          Templat: {info.templatSpesifikasi}
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        {info.label}
+      </h1>
+      <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300">
+        {info.deskripsi}
+      </p>
+    </header>
+
+    {sejarahInfo && (
+      <section aria-labelledby="sejarah-jenis" class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
+        <h2 id="sejarah-jenis" class="text-lg font-bold text-slate-900 dark:text-white">
+          Sejarah & Perkembangan Kategori {info.label}
+        </h2>
+        <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+          {sejarahInfo.sejarahRingkas}
+        </p>
+        <p class="text-xs text-slate-500 dark:text-slate-400">
+          Rujukan: <span class="font-medium">{sejarahInfo.sumberRingkas}</span>
+        </p>
+      </section>
+    )}
+
+    <section aria-labelledby="daftar-entri-jenis" class="space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <h2 id="daftar-entri-jenis" class="text-xl font-bold text-slate-900 dark:text-white">
+          Daftar Entri {info.label} ({entriList.length})
+        </h2>
+        {entriList.length >= 2 && (
+          <a
+            href={`/bandingkan?items=${entriList.slice(0, 3).map((e) => e.id).join(',')}`}
+            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-sky-700 text-white text-xs font-semibold hover:bg-sky-800"
+          >
+            <span>Bandingkan Entri {info.label}</span>
+            <span>&rarr;</span>
+          </a>
+        )}
+      </div>
+
+      {entriList.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {entriList.map((item) => {
+            const poster = item.data.model3d?.poster || item.data.galeri[0]?.berkas;
+            const namaPabrikan = item.data.pabrikan
+              .map((p) => pabrikanMap[p.id] || p.id)
+              .join(', ');
+            return (
+              <article class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-xs flex flex-col">
+                <a href={`/alutsista/${item.id}`} class="block aspect-16/10 bg-slate-100 dark:bg-slate-800 relative">
+                  {poster && (
+                    <img
+                      src={poster}
+                      alt={`Foto ${item.data.nama}`}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                      width="480"
+                      height="300"
+                    />
+                  )}
+                </a>
+                <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                  <div class="space-y-1.5">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                      <a href={`/alutsista/${item.id}`} class="hover:text-sky-700 dark:hover:text-sky-400">
+                        {item.data.nama}
+                      </a>
+                    </h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400">
+                      {item.data.negaraAsal.map((k) => namaNegara(k)).join(', ')} &bull; {namaPabrikan}
+                    </p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 line-clamp-2">
+                      {item.data.peran}
+                    </p>
+                  </div>
+                  <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                    <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-medium">
+                      {labelStatus(item.data.status)}
+                    </span>
+                    <a href={`/alutsista/${item.id}`} class="font-semibold text-sky-700 dark:text-sky-400 hover:underline">
+                      Lihat Spesifikasi &rarr;
+                    </a>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      ) : (
+        <div class="p-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-center text-sm text-slate-600 dark:text-slate-400">
+          Belum ada entri untuk jenis <strong>{info.label}</strong> pada katalog saat ini.
+        </div>
+      )}
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,191 @@
+{
+  "nama": "Pindad SS2-V1",
+  "namaLain": [
+    "Senapan Serbu 2 Varian 1",
+    "SS2"
+  ],
+  "matra": "darat",
+  "jenis": "senjata-ringan",
+  "peran": "Senapan serbu perorangan standar infanteri berkaliber 5,56 x 45 mm NATO.",
+  "negaraAsal": [
+    "ID"
+  ],
+  "pabrikan": [
+    "pindad"
+  ],
+  "varian": [
+    {
+      "nama": "SS2-V1",
+      "keterangan": "Varian senapan serbu standar dengan panjang laras 460 mm dan popor lipat."
+    },
+    {
+      "nama": "SS2-V2 / SS2-V5",
+      "keterangan": "Varian karabin berlaras lebih pendek untuk awak kendaraan dan pertempuran jarak dekat."
+    },
+    {
+      "nama": "SS2-V4",
+      "keterangan": "Varian berlaras berat (Heavy Barrel) dengan akurasi tinggi dilengkapi rel bidikan optik."
+    }
+  ],
+  "tahunMulaiDinas": 2006,
+  "status": "dalam-dinas",
+  "ringkasan": "Pindad SS2-V1 adalah senapan serbu kaliber 5,56 x 45 mm NATO yang dirancang dan diproduksi secara mandiri oleh PT Pindad sebagai generasi penerus SS1. Senapan ini bekerja dengan sistem operasi gas piston langkah panjang dan popor lipat samping, serta menjadi senjata organik standar prajurit TNI.",
+  "spesifikasi": [
+    {
+      "kunci": "amunisi",
+      "label": "Amunisi/kaliber",
+      "nilai": "5,56 x 45 mm NATO",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 985,
+      "satuan": "mm",
+      "catatan": "Panjang dengan popor terbentang (742 mm saat popor dilipat).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 3.4,
+      "satuan": "kg",
+      "catatan": "Tanpa magasin (sekitar 3,8–4,16 kg dengan magasin penuh tergantung konfigurasi).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "panjang-laras",
+      "label": "Panjang laras",
+      "nilai": 460,
+      "satuan": "mm",
+      "catatan": "6 alur putar kanan (178 mm / 7 inci per putaran).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "laju-tembak",
+      "label": "Laju tembak",
+      "nilai": 700,
+      "satuan": "tembakan/menit",
+      "catatan": "Rentang laju tembak siklik 675–725 butir/menit.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kapasitas-magasin",
+      "label": "Kapasitas magasin",
+      "nilai": 30,
+      "satuan": "butir",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-efektif",
+      "label": "Jarak efektif (menurut produsen)",
+      "nilai": 450,
+      "satuan": "m",
+      "catatan": "Rentang 400–500 m dengan pembidik standar.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI (AD, AL, AU) & Polri",
+      "varian": "SS2-V1, SS2-V2, SS2-V4, SS2-V5",
+      "jumlah": null,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2006,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Puluhan ribu pucuk telah diproduksi sebagai senapan serbu organik utama TNI; jumlah total pasti seluruh batch tidak dipublikasikan secara terperinci.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Setelah memproduksi senapan serbu SS1 (berlisensi dari FN FNC Belgia) sejak awal dekade 1990-an, tim rekayasa Divisi Senjata PT Pindad mulai merancang senapan serbu generasi baru pada awal dekade 2000-an. Perancangan difokuskan pada pengurangan bobot, peningkatan ergonomi, ketahanan terhadap lumpur dan kelembapan tropis, serta kemudahan perawatan.\n\nSenapan baru tersebut diberi nama SS2 (Senapan Serbu 2) dan mulai dipesan secara resmi oleh TNI Angkatan Darat pada tahun 2006. Keluarga SS2 terus berkembang melahirkan varian karabin (V2 dan V5) serta varian laras berat (V4) yang secara konsisten digunakan kontingen petembak TNI dalam kompetisi menembak militer internasional seperti AASAM dan AARM.",
+    "linimasa": [
+      {
+        "tahun": 2002,
+        "judul": "Pengembangan desain awal keluarga SS2",
+        "uraian": "PT Pindad mengembangkan dan menguji purwarupa senapan serbu generasi kedua sebagai penerus SS1.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2006,
+        "judul": "Mulai berdinas di jajaran TNI",
+        "uraian": "TNI Angkatan Darat mulai mengadopsi SS2-V1 secara bertahap menggantikan SS1 di satuan tempur.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2008,
+        "judul": "Pengembangan varian SS2-V4 Heavy Barrel dan SS2-V5",
+        "uraian": "PT Pindad memperluas lini SS2 dengan varian laras berat presisi tinggi serta varian karabin kompak.",
+        "sumberId": "s1"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/pindad-ss2.glb",
+    "poster": "/models/pindad-ss2.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Pindad SS2-V1 dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "laras-460",
+        "label": "Laras 460 mm & Peredam Kilat",
+        "posisi": "0 0.42 1.25",
+        "normal": "0 1 0",
+        "deskripsi": "Laras kaliber 5,56 mm sepanjang 460 mm dengan pelindung tangan polimer."
+      },
+      {
+        "id": "badan-rel",
+        "label": "Rumah Mekanisme & Pembidik",
+        "posisi": "0 0.55 0",
+        "normal": "0 1 0",
+        "deskripsi": "Bagian atas badan senjata tempat tangkai pembawa/pembidik atau rel Picatinny."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/pindad-ss2.webp",
+      "alt": "Foto asli Pindad SS2-V1",
+      "kredit": "Pindad via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Spesifikasi Produk Senjata SS2-V1",
+      "penerbit": "PT Pindad",
+      "url": "https://pindad.com/ss2-v1",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "Katalog Produk Senjata & Sejarah Inovasi PT Pindad",
+      "penerbit": "PT Pindad",
+      "url": "https://pindad.com/senjata",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ],
+  "tag": [
+    "senapan-serbu",
+    "ss2",
+    "556mm",
+    "pindad",
+    "infanteri",
+    "tni"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

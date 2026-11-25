@@ -1,0 +1,19 @@
+{
+  "nama": "Sukhoi / United Aircraft Corporation (UAC)",
+  "negara": "RU",
+  "tahunBerdiri": 1939,
+  "jenisUsaha": "Biro desain dan korporasi manufaktur pesawat terbang negara",
+  "deskripsi": "Biro desain dan produsen pesawat tempur asal Rusia yang merancang keluarga pesawat tempur bermesin ganda Su-27 dan Su-30.",
+  "sejarahSingkat": "Biro Desain Sukhoi didirikan oleh Pavel Sukhoi pada tahun 1939 di Moskow, dan sejak tahun 2006 terintegrasi ke dalam konsorsium kedirgantaraan Rusia United Aircraft Corporation (UAC).",
+  "situs": "https://www.uacrussia.ru",
+  "sumber": [
+    {
+      "id": "p-uac-1",
+      "judul": "UAC Military Aviation: Su-30MK & Su-27SK",
+      "penerbit": "United Aircraft Corporation",
+      "url": "https://www.uacrussia.ru",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

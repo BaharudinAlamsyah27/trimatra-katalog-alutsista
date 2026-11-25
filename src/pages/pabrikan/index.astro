@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getAllAlutsista, getAllPabrikan } from '../../lib/derive';
+import { namaNegara } from '../../lib/format';
+
+const semuaPabrikan = await getAllPabrikan();
+const semuaAlutsista = await getAllAlutsista();
+
+const produkPerPabrikan = new Map<string, typeof semuaAlutsista>();
+for (const p of semuaPabrikan) {
+  produkPerPabrikan.set(
+    p.id,
+    semuaAlutsista.filter((a) => a.data.pabrikan.some((ref) => ref.id === p.id))
+  );
+}
+---
+
+<Base
+  judul="Daftar Pabrikan & Industri Pertahanan"
+  deskripsi="Profil industri dan pabrikan alutsista dalam dan luar negeri yang tercatat di Katalog Alutsista Interaktif."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <header class="space-y-2">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /pabrikan &bull; {semuaPabrikan.length} Industri Pertahanan
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white" data-i18n-id="Pabrikan & Industri Pertahanan" data-i18n-en="Defense Manufacturers">
+        Pabrikan & Industri Pertahanan
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300">
+        Daftar perusahaan dan BUMN industri pertahanan yang merancang atau memproduksi alutsista di katalog ini.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {semuaPabrikan.map((p) => {
+        const produk = produkPerPabrikan.get(p.id) || [];
+        return (
+          <article class="terminal-panel flex flex-col justify-between hover:border-emerald-500/70 transition-colors">
+            <div class="terminal-bar">
+              <span>{namaNegara(p.data.negara)} ({p.data.negara})</span>
+              <span class="tabular-nums text-emerald-700 dark:text-emerald-400">{produk.length} Produk</span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                  <a href={`/pabrikan/${p.id}`} class="hover:text-emerald-600 dark:hover:text-emerald-400">
+                    {p.data.nama}
+                  </a>
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  {p.data.jenisUsaha} {p.data.tahunBerdiri ? `• Berdiri ${p.data.tahunBerdiri}` : ''}
+                </p>
+                <p class="text-sm text-slate-700 dark:text-slate-300 line-clamp-3 leading-relaxed">
+                  {p.data.deskripsi}
+                </p>
+              </div>
+
+              <div class="pt-3.5 border-t border-slate-100 dark:border-[#243244] flex items-center justify-between text-sm">
+                <span class="font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                  {produk.length} alutsista
+                </span>
+                <a
+                  href={`/pabrikan/${p.id}`}
+                  class="font-bold text-slate-900 dark:text-cyan-400 hover:underline"
+                >
+                  Lihat Profil &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</Base>

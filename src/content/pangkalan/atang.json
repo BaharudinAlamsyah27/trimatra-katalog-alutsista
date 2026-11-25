@@ -1,0 +1,15 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Lanud Atang Sendjaja (Bogor)",
+  "matra": "udara",
+  "lat": -6.545,
+  "lng": 106.762,
+  "satuan": "Skadron Udara 8 (TNI AU)",
+  "alutsista": [
+    {
+      "nama": "H225M Caracal",
+      "slug": "h225m-caracal"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI Angkatan Udara"
+}

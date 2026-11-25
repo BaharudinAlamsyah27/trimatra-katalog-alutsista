@@ -1,0 +1,209 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { labelMatra } from '../lib/format';
+
+const semuaPangkalan = (await getCollection('pangkalan'))
+  .filter((p) => !p.data.isReferensiGeografis)
+  .sort((a, b) => a.data.nama.localeCompare(b.data.nama, 'id'));
+
+const organisasiTni = [
+  {
+    matra: 'Mabes TNI & Kemhan RI',
+    warna: 'border-amber-500/40 text-amber-700 dark:text-amber-300',
+    peran: 'Perumusan kebijakan pertahanan negara (Kemhan RI) serta pembinaan penggunaan kekuatan gabungan tiga matra di bawah Panglima TNI.',
+    komandoPublik: ['Mabes TNI (Cilangkap)', 'Kodiklat TNI', 'Sesko TNI', 'PMPP TNI (Misi Perdamaian PBB)', 'Puspen TNI'],
+    sumberUrl: 'https://www.tni.mil.id/',
+  },
+  {
+    matra: 'TNI Angkatan Darat (TNI AD)',
+    warna: 'border-emerald-500/40 text-emerald-700 dark:text-emerald-300',
+    peran: 'Menjaga kedaulatan wilayah darat, pembinaan teritorial melalui Komando Daerah Militer (Kodam), serta satuan tempur darat.',
+    komandoPublik: ['Kostrad (Komando Cadangan Strategis)', 'Kopassus (Komando Pasukan Khusus)', 'Kodam di seluruh wilayah RI', 'Puspenerbad (Penerbangan AD)', 'Pussenkav & Pussenarmed'],
+    sumberUrl: 'https://tniad.mil.id/',
+  },
+  {
+    matra: 'TNI Angkatan Laut (TNI AL)',
+    warna: 'border-cyan-500/40 text-cyan-700 dark:text-cyan-300',
+    peran: 'Menegakkan kedaulatan dan hukum di wilayah perairan yurisdiksi nasional, kepulauan, serta diplomasi maritim.',
+    komandoPublik: ['Koarmada RI & Koarmada I, II, III', 'Korps Marinir (Kormar)', 'Kolinlamil (Angkut Laut Militer)', 'Pushidrosal (Hidro-Oseanografi)', 'Puspenerbal (Penerbangan AL)'],
+    sumberUrl: 'https://www.tnial.mil.id/',
+  },
+  {
+    matra: 'TNI Angkatan Udara (TNI AU)',
+    warna: 'border-sky-500/40 text-sky-700 dark:text-sky-300',
+    peran: 'Menjaga kedaulatan ruang udara nasional, pengamatan dirgantara, angkutan udara strategis, dan SAR udara.',
+    komandoPublik: ['Koopsudnas (Komando Operasi Udara Nasional)', 'Koopsud I, II, III', 'Kopasgat (Pasukan Gerak Cepat)', 'Koharmatau (Pemeliharaan Materiil)', 'Kodiklatau (Pendidikan & Latihan)'],
+    sumberUrl: 'https://tni-au.mil.id/',
+  },
+];
+
+const tonggakSejarah = [
+  { tahun: '1945', judul: 'Pembentukan BKR & TKR', uraian: 'Berawal dari Badan Keamanan Rakyat (22 Agustus 1945) yang kemudian disempurnakan menjadi Tentara Keamanan Rakyat (5 Oktober 1945).' },
+  { tahun: '1947', judul: 'Penyatuan Menjadi TNI', uraian: 'Pada 3 Juni 1947, pemerintah menyatukan Tentara Republik Indonesia (TRI) dan laskar perjuangan menjadi Tentara Nasional Indonesia (TNI).' },
+  { tahun: '1999', judul: 'Reformasi & Pemisahan TNI–Polri', uraian: 'Pemisahan peran pertahanan (TNI) dan keamanan ketertiban masyarakat (Polri), diikuti Undang-Undang Nomor 34 Tahun 2004 tentang TNI.' },
+  { tahun: '2010–2024', judul: 'Modernisasi MEF & Trimatra Terpadu', uraian: 'Program modernisasi alutsista bertahap dan pembangunan industri pertahanan dalam negeri melalui Holding Defend ID (Pindad, PAL, PTDI, Len, Dahana).' },
+];
+
+const roadmapPublik = [
+  {
+    sektor: 'Matra Udara',
+    status: 'Kontrak & Pengiriman Bertahap',
+    uraian: 'Pengadaan 42 unit pesawat tempur Rafale, pesawat angkut C-130J-30 Super Hercules, A400M Atlas, serta penguatan pesawat angkut produksi PTDI (CN-235 & NC212i).',
+  },
+  {
+    sektor: 'Matra Laut',
+    status: 'Pembangunan Dalam Negeri & Mitra',
+    uraian: 'Pembangunan dua unit Fregat Merah Putih (desain Arrowhead 140) di PT PAL Surabaya, penambahan KCR-60M, LPD, serta rencana kapal selam generasi baru.',
+  },
+  {
+    sektor: 'Matra Darat & Industri Nasional',
+    status: 'Produksi Domestik Berkelanjutan',
+    uraian: 'Produksi Tank Medium Harimau (kapasitas bersama Pindad–FNSS), panser Anoa/Badak, rantis Maung 4x4, serta kemandirian munisi kaliber kecil dan besar.',
+  },
+];
+---
+
+<Base
+  judul="Militer Indonesia: Struktur, Sejarah & Roadmap"
+  deskripsi="Ringkasan edukatif sumber terbuka mengenai struktur organisasi publik TNI Trimatra, sejarah singkat (1945–kini), roadmap modernisasi, dan peta lokasi pangkalan."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <header class="space-y-3">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /militer-indonesia &bull; Referensi Organisasi, Sejarah &amp; Modernisasi Terbuka
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        Militer Indonesia: Struktur, Sejarah &amp; Roadmap
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+        Ikhtisar edukatif berbasis sumber terbuka mengenai susunan organisasi publik TNI Trimatra (Darat, Laut, Udara), perjalanan sejarah sejak 1945, program modernisasi yang diumumkan publik, serta lokasi pangkalan induk.
+      </p>
+    </header>
+
+    <!-- Seksi 1: Struktur Organisasi & Kepengurusan Publik -->
+    <section aria-labelledby="heading-org" class="space-y-5">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 id="heading-org" class="text-2xl font-bold text-slate-900 dark:text-white">
+            1. Struktur Komando &amp; Organisasi Publik
+          </h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+            Pembagian komando utama dan badan pelaksana pusat TNI berdasarkan UU No. 34 Tahun 2004 dan publikasi resmi.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {organisasiTni.map((org) => (
+          <article class={`terminal-panel p-6 space-y-4 border-t-4 ${org.warna}`}>
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{org.matra}</h3>
+              <a
+                href={org.sumberUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-mono font-semibold text-emerald-700 dark:text-emerald-400 hover:underline shrink-0"
+              >
+                Situs Resmi &nearr;
+              </a>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{org.peran}</p>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                Komando Utama &amp; Satuan Publik:
+              </p>
+              <ul class="space-y-1.5 text-sm text-slate-700 dark:text-slate-200 list-disc list-inside">
+                {org.komandoPublik.map((k) => (
+                  <li>{k}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Seksi 2: Sejarah Ringkas Militer Indonesia -->
+    <section aria-labelledby="heading-sejarah-tni" class="terminal-panel">
+      <div class="terminal-bar">
+        <span id="heading-sejarah-tni">2. LINIMASA SEJARAH RINGKAS (1945–KINI)</span>
+        <a href="/sejarah" class="text-emerald-700 dark:text-emerald-400 hover:underline">Lihat Linimasa Alutsista &rarr;</a>
+      </div>
+      <div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {tonggakSejarah.map((t) => (
+          <div class="p-4 rounded-xl border border-slate-200 dark:border-[#243244] bg-slate-50 dark:bg-[#0d131c] space-y-2">
+            <span class="inline-block px-2.5 py-0.5 rounded font-mono text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300">
+              {t.tahun}
+            </span>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">{t.judul}</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{t.uraian}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Seksi 3: Roadmap Modernisasi & Kemandirian Industri -->
+    <section aria-labelledby="heading-roadmap" class="space-y-5">
+      <div>
+        <h2 id="heading-roadmap" class="text-2xl font-bold text-slate-900 dark:text-white">
+          3. Roadmap Modernisasi &amp; Industri Pertahanan Terbuka
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+          Ringkasan program pengadaan dan pembangunan alutsista strategis yang telah diumumkan ke publik.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {roadmapPublik.map((r) => (
+          <article class="terminal-panel p-6 space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">{r.sektor}</h3>
+              <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-700 dark:text-cyan-300">
+                {r.status}
+              </span>
+            </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{r.uraian}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Seksi 4: Lokasi Satuan & Pangkalan Publik -->
+    <section aria-labelledby="heading-satuan" class="space-y-5">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 id="heading-satuan" class="text-2xl font-bold text-slate-900 dark:text-white">
+            4. Daftar Lokasi Pangkalan &amp; Satuan Induk Publik ({semuaPangkalan.length})
+          </h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+            Titik geografis publik markas pangkalan udara, pangkalan armada laut, dan batalion darat yang tersedia di peta interaktif.
+          </p>
+        </div>
+        <a
+          href="/peta"
+          class="min-h-[42px] px-4 py-2 rounded-lg bg-slate-900 dark:bg-emerald-600 hover:bg-slate-800 dark:hover:bg-emerald-500 text-white text-sm font-bold inline-flex items-center transition-colors"
+        >
+          Buka Peta Interaktif &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {semuaPangkalan.map((p) => (
+          <article class="p-4 rounded-xl border border-slate-200 dark:border-[#243244] bg-white dark:bg-[#111822] space-y-2">
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">{p.data.nama}</h3>
+              <span class="text-[11px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-slate-100 dark:bg-[#192330] text-emerald-700 dark:text-emerald-300 shrink-0">
+                {labelMatra(p.data.matra)}
+              </span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">{p.data.satuan}</p>
+            <p class="text-[11px] font-mono tabular-nums text-slate-500 dark:text-slate-400">
+              Koordinat publik: {p.data.lat.toFixed(3)}, {p.data.lng.toFixed(3)}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>

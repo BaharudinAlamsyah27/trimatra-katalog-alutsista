@@ -1,0 +1,234 @@
+{
+  "nama": "Fregat Kelas Martadinata (SIGMA 10514)",
+  "namaLain": [
+    "Perusak Kawal Rudal (PKR) 10514",
+    "SIGMA 10514"
+  ],
+  "matra": "laut",
+  "jenis": "fregat",
+  "peran": "Fregat berpeluru kendali serbaguna untuk peperangan anti-permukaan, anti-udara, dan anti-kapal selam.",
+  "negaraAsal": [
+    "NL",
+    "ID"
+  ],
+  "pabrikan": [
+    "damen-schelde-naval-shipbuilding",
+    "pt-pal-indonesia"
+  ],
+  "varian": [
+    {
+      "nama": "KRI Raden Eddy Martadinata (331)",
+      "keterangan": "Kapal pertama di kelasnya, diresmikan masuk dinas TNI AL pada April 2017."
+    },
+    {
+      "nama": "KRI I Gusti Ngurah Rai (332)",
+      "keterangan": "Kapal kedua di kelasnya, diresmikan masuk dinas TNI AL pada Januari 2018."
+    }
+  ],
+  "tahunMulaiDinas": 2017,
+  "status": "dalam-dinas",
+  "ringkasan": "Fregat Kelas Martadinata (SIGMA 10514) adalah kapal perang permukaan jenis Perusak Kawal Rudal (PKR) yang dibangun bersama oleh Damen Schelde Naval Shipbuilding (Belanda) dan PT PAL Indonesia melalui skema perakitan modul di Surabaya. Dua unit kapal di kelas ini menjadi unsur pemukul utama Satuan Kapal Eskorta TNI Angkatan Laut.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 105.11,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 14.02,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "sarat-air",
+      "label": "Sarat air",
+      "nilai": 3.7,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "displasemen",
+      "label": "Displasemen",
+      "nilai": 2365,
+      "satuan": "ton",
+      "catatan": "Displasemen desain sekitar 2.365 ton (muatan penuh hingga sekitar 2.946 ton).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "propulsi",
+      "label": "Propulsi",
+      "nilai": "CODOE (Combined Diesel or Electric): 2 mesin diesel 10.000 kW + 2 motor listrik 1.300 kW",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 51.85,
+      "satuan": "km/jam",
+      "catatan": "Setara 28 knot.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 9260,
+      "satuan": "km",
+      "catatan": "Setara 5.000 mil laut (NM) pada kecepatan jelajah ekonomis 14 knot.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 122,
+      "satuan": "orang",
+      "catatan": "Kapasitas akomodasi hingga 120–122 personel.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan",
+      "label": "Persenjataan",
+      "nilai": "Meriam utama 76 mm, CIWS 35 mm, rudal anti-kapal, peluncur vertikal rudal pertahanan udara, dan 2x3 peluncur torpedo 324 mm",
+      "keandalan": "resmi",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "sensor",
+      "label": "Sensor",
+      "nilai": "Radar pengawasan 3D SMART-S Mk2, radar pengendali tembakan STIR 1.2 EO Mk2, dan sonar lambung Kingklip",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "fasilitas-penerbangan",
+      "label": "Dek/hanggar helikopter",
+      "nilai": "Dek pendaratan dan hanggar untuk 1 helikopter maritim kelas menengah (hingga 10 ton)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut",
+      "varian": "SIGMA 10514 (KRI RE Martadinata-331 & KRI I Gusti Ngurah Rai-332)",
+      "jumlah": 2,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2017,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Kedua kapal aktif di bawah jajaran Komando Armada TNI AL.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Program Perusak Kawal Rudal (PKR) Kelas Martadinata merupakan kelanjutan dari penggunaan desain modular SIGMA oleh TNI Angkatan Laut setelah empat korvet Kelas Diponegoro (SIGMA 9113). Kode 10514 mengacu pada dimensi kapal yang memiliki panjang sekitar 105 meter dan lebar 14 meter.\n\nPembangunan dilakukan dengan skema pembagian modul antara Damen Schelde Naval Shipbuilding di Vlissingen, Belanda, dan PT PAL Indonesia di Surabaya. Dari enam modul konstruksi per kapal, empat modul dibangun di Surabaya dan dua modul dibangun di Belanda, kemudian seluruhnya disatukan, diintegrasikan, serta diuji coba di fasilitas PT PAL Indonesia.\n\nKapal pertama, KRI Raden Eddy Martadinata (331), diluncurkan pada Januari 2016 dan dikukuhkan masuk dinas pada April 2017. Kapal kedua, KRI I Gusti Ngurah Rai (332), menyusul masuk dinas pada Januari 2018 dan telah selesai menjalani pemasangan penuh sistem persenjataan utama pada tahun 2020.",
+    "linimasa": [
+      {
+        "tahun": 2014,
+        "bulan": 1,
+        "judul": "Pemotongan baja pertama kapal pertama",
+        "uraian": "Proses konstruksi modul KRI Raden Eddy Martadinata dimulai secara paralel oleh Damen dan PT PAL Indonesia.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2016,
+        "bulan": 1,
+        "judul": "Peluncuran KRI Raden Eddy Martadinata (331)",
+        "uraian": "Kapal pertama diluncurkan di galangan PT PAL Indonesia, Surabaya.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2017,
+        "bulan": 4,
+        "judul": "Peresmian dinas KRI Raden Eddy Martadinata (331)",
+        "uraian": "Kapal resmi masuk jajaran TNI Angkatan Laut di Dermaga Pondok Dayung, Jakarta.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2018,
+        "bulan": 1,
+        "judul": "Peresmian dinas KRI I Gusti Ngurah Rai (332)",
+        "uraian": "Kapal kedua PKR 10514 diserahkan dan diresmikan memperkuat armada TNI AL.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/fregat-kelas-martadinata.glb",
+    "poster": "/models/fregat-kelas-martadinata.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Fregat Kelas Martadinata (SIGMA 10514) dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "haluan-meriam",
+        "label": "Dek Meriam Haluan 76 mm",
+        "posisi": "0 0.55 1.7",
+        "normal": "0 1 0",
+        "deskripsi": "Posisi meriam utama 76 mm dan modul peluncur vertikal di bagian haluan."
+      },
+      {
+        "id": "tiang-radar",
+        "label": "Tiang Utama Radar 3D",
+        "posisi": "0 1.35 0.3",
+        "normal": "0 1 0",
+        "deskripsi": "Anjungan dan tiang sensor tempat radar pengawasan 3D ditempatkan."
+      },
+      {
+        "id": "dek-heli",
+        "label": "Hanggar & Dek Helikopter",
+        "posisi": "0 0.5 -1.6",
+        "normal": "0 1 0",
+        "deskripsi": "Fasilitas pendaratan dan hanggar helikopter anti-kapal selam di buritan."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/fregat-kelas-martadinata.webp",
+      "alt": "Foto asli Fregat Kelas Martadinata (SIGMA 10514)",
+      "kredit": "MapStaringEnthusiast via Wikimedia Commons",
+      "lisensi": "CC0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Damen Naval SIGMA Frigate 10514 Product Sheet",
+      "penerbit": "Damen Shipyards Group",
+      "url": "https://www.damen.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "Profil Produk Kapal Perang Perusak Kawal Rudal (PKR) 10514",
+      "penerbit": "PT PAL Indonesia",
+      "url": "https://www.pal.co.id",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ],
+  "tag": [
+    "fregat",
+    "pkr",
+    "sigma-10514",
+    "pt-pal",
+    "damen",
+    "tni-al"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

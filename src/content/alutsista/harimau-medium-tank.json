@@ -1,0 +1,227 @@
+{
+  "nama": "Tank Medium Harimau (Kaplan MT)",
+  "namaLain": [
+    "Harimau",
+    "Kaplan MT",
+    "Modern Medium Weight Tank (MMWT)"
+  ],
+  "matra": "darat",
+  "jenis": "tank-medium",
+  "peran": "Tank tempur kelas menengah bermeriam 105 mm hasil rancang bangun bersama Indonesia dan Turki.",
+  "negaraAsal": [
+    "ID",
+    "TR"
+  ],
+  "pabrikan": [
+    "pindad",
+    "fnss-savunma-sistemleri"
+  ],
+  "varian": [
+    {
+      "nama": "Harimau / Kaplan MT",
+      "keterangan": "Konfigurasi produksi dengan kubah Cockerill 3105 bermeriam 105 mm berpengisi amunisi otomatis (autoloader)."
+    }
+  ],
+  "tahunMulaiDinas": 2024,
+  "status": "dalam-dinas",
+  "ringkasan": "Tank Medium Harimau (dikenal di Turki sebagai Kaplan MT) adalah kendaraan tempur lapis baja kelas menengah yang dikembangkan bersama oleh PT Pindad dan FNSS Savunma Sistemleri. Dengan bobot sekitar 30 hingga 35 ton dan meriam bertekanan tinggi 105 mm, tank ini dirancang untuk mobilitas tinggi di jaringan jalan dan jembatan wilayah tropis kepulauan.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 9.11,
+      "satuan": "m",
+      "catatan": "Panjang total dengan meriam menghadap ke depan (panjang lambung 6,95 m).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 3.36,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 2.46,
+      "satuan": "m",
+      "catatan": "Hingga atap kubah.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-tempur",
+      "label": "Bobot tempur",
+      "nilai": 32000,
+      "satuan": "kg",
+      "catatan": "Rentang 30.000–35.000 kg tergantung tingkat paket pelindung modular.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 3,
+      "satuan": "orang",
+      "catatan": "Pengemudi di lambung depan; komandan dan juru tembak di kubah dengan sistem autoloader.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "Diesel Caterpillar C13 6-silinder (711 hp) dengan transmisi otomatis Allison/Caterpillar X300",
+      "keandalan": "resmi",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "daya",
+      "label": "Daya",
+      "nilai": 530,
+      "satuan": "kW",
+      "catatan": "Setara 711 tenaga kuda (hp).",
+      "keandalan": "resmi",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 70,
+      "satuan": "km/jam",
+      "catatan": "Kecepatan jalan raya (hingga 78 km/jam pada pengujian).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 450,
+      "satuan": "km",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-utama",
+      "label": "Persenjataan utama",
+      "nilai": "Meriam berulir tekanan tinggi Cockerill 105 mm dengan autoloader",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-sekunder",
+      "label": "Persenjataan sekunder",
+      "nilai": "Senapan mesin koaksial 7,62 mm dan pelontar granat asap 76 mm",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Darat (Kavaleri)",
+      "varian": "Harimau 105 mm",
+      "jumlah": 18,
+      "jenisJumlah": "dikirim",
+      "tahunMulai": 2024,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-10",
+      "catatan": "Batch produksi awal sebanyak 18 unit telah diserahterimakan kepada Kementerian Pertahanan RI dan TNI AD pada tahun 2024.",
+      "sumberId": "s1"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Program Modern Medium Weight Tank (MMWT) dimulai melalui kesepakatan kerja sama pemerintah Indonesia dan Turki pada tahun 2014 untuk merancang tank medium generasi baru. PT Pindad dan FNSS Savunma Sistemleri berbagi porsi rekayasa desain, pembuatan prototipe, serta pengujian balistik dan mobilitas.\n\nDua unit prototipe dibangun—satu di Turki dan satu di Indonesia—serta tampil perdana di hadapan publik pada parade HUT TNI Oktober 2017. Setelah lulus rangkaian uji ketahanan medan dan uji tembak di Indonesia pada tahun 2018, Kementerian Pertahanan RI menandatangani kontrak produksi gelombang pertama sebanyak 18 unit pada tahun 2019.\n\nUnit produksi seri Tank Medium Harimau resmi diserahterimakan kepada TNI Angkatan Darat pada tahun 2024 untuk memperkuat satuan kavaleri.",
+    "linimasa": [
+      {
+        "tahun": 2015,
+        "bulan": 5,
+        "judul": "Dimulainya rancang bangun bersama MMWT Pindad–FNSS",
+        "uraian": "PT Pindad dan FNSS menindaklanjuti kesepakatan antar-pemerintah dengan memulai fase desain teknis tank medium.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2018,
+        "bulan": 8,
+        "judul": "Penyelesaian uji kelayakan dan sertifikasi di Indonesia",
+        "uraian": "Prototipe Tank Medium Harimau menuntaskan uji mobilitas, proteksi ranjau, dan penembakan meriam 105 mm.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2019,
+        "bulan": 4,
+        "judul": "Kontrak pemesanan batch produksi pertama (18 unit)",
+        "uraian": "Kementerian Pertahanan RI menandatangani kontrak produksi awal 18 unit Harimau dengan PT Pindad.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2024,
+        "bulan": 2,
+        "judul": "Penyerahan unit produksi kepada TNI Angkatan Darat",
+        "uraian": "Unit produksi seri Tank Medium Harimau resmi diserahkan untuk operasional satuan Kavaleri TNI AD.",
+        "sumberId": "s1"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/harimau-medium-tank.glb",
+    "poster": "/models/harimau-medium-tank.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Tank Medium Harimau dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "kubah-3105",
+        "label": "Kubah Cockerill 3105",
+        "posisi": "0 1.05 -0.1",
+        "normal": "0 1 0",
+        "deskripsi": "Kubah dua awak dilengkapi pengisi amunisi otomatis (autoloader) untuk meriam 105 mm."
+      },
+      {
+        "id": "meriam-105",
+        "label": "Meriam 105 mm",
+        "posisi": "0 0.95 1.7",
+        "normal": "0 1 0",
+        "deskripsi": "Meriam utama kaliber 105 mm bertekanan tinggi dengan penyedot asap laras."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/harimau-medium-tank.webp",
+      "alt": "Foto asli Tank Medium Harimau (Kaplan MT)",
+      "kredit": "Batalyon Kavaleri 13 (via @Jatosint) via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Harimau Medium Tank Product Specification",
+      "penerbit": "PT Pindad",
+      "url": "https://pindad.com/harimau-medium-tank",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "KAPLAN MT Medium Tank Technical Data Sheet",
+      "penerbit": "FNSS Savunma Sistemleri A.Ş.",
+      "url": "https://www.fnss.com.tr/en/products/kaplan-mt",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ],
+  "tag": [
+    "tank-medium",
+    "harimau",
+    "kaplan-mt",
+    "pindad",
+    "fnss",
+    "tni-ad"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

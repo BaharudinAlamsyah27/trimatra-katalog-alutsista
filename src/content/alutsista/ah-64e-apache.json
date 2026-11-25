@@ -1,0 +1,208 @@
+{
+  "nama": "Boeing AH-64E Apache Guardian",
+  "namaLain": [
+    "AH-64E Apache",
+    "Apache Guardian"
+  ],
+  "matra": "udara",
+  "jenis": "helikopter",
+  "peran": "Helikopter serang berat bermesin ganda untuk dukungan tembakan udara dekat dan anti-lapis baja.",
+  "negaraAsal": [
+    "US"
+  ],
+  "pabrikan": [
+    "boeing"
+  ],
+  "varian": [
+    {
+      "nama": "AH-64E Apache Guardian",
+      "keterangan": "Generasi terbaru keluarga Apache dengan mesin T700-GE-701D, bilah rotor utama komposit, transmisi daya tinggi, dan radar pengendali tembakan AN/APG-78 Longbow."
+    }
+  ],
+  "tahunMulaiDinas": 1986,
+  "status": "dalam-dinas",
+  "ringkasan": "Boeing AH-64E Apache Guardian adalah varian produksi mutakhir dari keluarga helikopter serang AH-64 Apache. Pusat Penerbangan TNI Angkatan Darat (Puspenerbad) mengoperasikan delapan unit AH-64E Apache Guardian di Skadron 11/Serbu, Semarang.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 17.76,
+      "satuan": "m",
+      "catatan": "Panjang total dengan rotor berputar (panjang badan 14,7 m).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "diameter-rotor",
+      "label": "Diameter rotor",
+      "nilai": 14.63,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 5165,
+      "satuan": "kg",
+      "catatan": "Bobot misi primer sekitar 6.838 kg.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-maks",
+      "label": "Bobot maks",
+      "nilai": 10433,
+      "satuan": "kg",
+      "catatan": "Setara 23.000 pon bobot lepas landas maksimum.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "2 x turboshaft General Electric T700-GE-701D (masing-masing sekitar 1.490 kW / 1.994 shp)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 279,
+      "satuan": "km/jam",
+      "catatan": "Kecepatan jelajah maksimum lebih dari 150 knot (279–300 km/jam).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan",
+      "label": "Jangkauan",
+      "nilai": 476,
+      "satuan": "km",
+      "catatan": "Jangkauan operasi dengan bahan bakar internal (~257 mil laut).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak-kapasitas",
+      "label": "Awak/kapasitas",
+      "nilai": "2 awak dalam kokpit tandem berlapis pelindung (penerbang di kursi belakang, kopilot/juru tembak di kursi depan)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "muatan-persenjataan",
+      "label": "Muatan/persenjataan",
+      "nilai": "Kanun rantai M230 30 mm di bawah dagu serta 4 tiang cantelan sayap pendek untuk rudal udara-ke-permukaan AGM-114 Hellfire dan pod roket 70 mm Hydra",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Darat (Puspenerbad — Skadron 11/Serbu)",
+      "varian": "AH-64E Apache Guardian",
+      "jumlah": 8,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2017,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Seluruh 8 unit dikirim pada 2017–2018 dan bermarkas di Lanumad Ahmad Yani, Semarang.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Helikopter serang AH-64 Apache awalnya dikembangkan untuk Angkatan Darat Amerika Serikat pada dekade 1970-an dan mulai berdinas pada tahun 1986. Varian AH-64E (awalnya dinamai AH-64D Block III sebelum ditetapkan menjadi AH-64E Guardian pada tahun 2012) membawa peningkatan daya mesin, bilah rotor komposit baru, serta radar gelombang milimeter Longbow yang telah ditingkatkan untuk mendeteksi sasaran darat maupun sasaran maritim.\n\nPemerintah Indonesia menandatangani kontrak pengadaan 8 unit AH-64E Apache Guardian pada tahun 2013 untuk memperkuat Pusat Penerbangan TNI Angkatan Darat (Puspenerbad). Gelombang pengiriman pertama tiba di Indonesia pada Desember 2017 menggunakan pesawat angkut berat C-17, dan seluruh 8 unit selesai diserahterimakan pada Mei 2018.",
+    "linimasa": [
+      {
+        "tahun": 1975,
+        "bulan": 9,
+        "judul": "Penerbangan perdana prototipe YAH-64",
+        "uraian": "Prototipe helikopter serang YAH-64 melaksanakan penerbangan perdana di Amerika Serikat.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2012,
+        "bulan": 10,
+        "judul": "Penetapan sebutan resmi varian AH-64E Guardian",
+        "uraian": "Varian peningkatan AH-64D Block III secara resmi ditetapkan menjadi seri AH-64E Apache Guardian.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2017,
+        "bulan": 12,
+        "judul": "Kedatangan gelombang pertama AH-64E TNI AD",
+        "uraian": "Unit awal AH-64E Apache Guardian tiba di Indonesia untuk memperkuat Puspenerbad TNI Angkatan Darat.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2018,
+        "bulan": 5,
+        "judul": "Serah terima penuh 8 unit AH-64E di Semarang",
+        "uraian": "Seluruh delapan unit AH-64E Apache Guardian resmi diserahterimakan kepada Skadron 11/Serbu Puspenerbad di Lanumad Ahmad Yani.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/ah-64e-apache.glb",
+    "poster": "/models/ah-64e-apache.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Boeing AH-64E Apache Guardian dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "radar-longbow",
+        "label": "Kubah Radar Tiang Rotor & Rotor 4 Bilah",
+        "posisi": "0 1.35 0.1",
+        "normal": "0 1 0",
+        "deskripsi": "Posisi kubah radar pengendali tembakan AN/APG-78 di atas poros rotor utama empat bilah."
+      },
+      {
+        "id": "sensor-hidung-kanun",
+        "label": "Sensor Hidung M-TADS/PNVS & Kanun 30 mm",
+        "posisi": "0 0.45 1.45",
+        "normal": "0 0 1",
+        "deskripsi": "Kubah sensor elektro-optik/inframerah di hidung dan kanun rantai 30 mm di bawah kokpit depan."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/ah-64e-apache.webp",
+      "alt": "Foto asli Boeing AH-64E Apache Guardian",
+      "kredit": "Puspenerbad, Indonesian Army Aviation Center via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Boeing AH-64E Apache Technical Specifications",
+      "penerbit": "The Boeing Company",
+      "url": "https://www.boeing.com/defense/ah-64-apache",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (US to Indonesia AH-64E Apache)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "helikopter",
+    "helikopter-serang",
+    "ah-64e",
+    "apache",
+    "boeing",
+    "puspenerbad",
+    "tni-ad"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

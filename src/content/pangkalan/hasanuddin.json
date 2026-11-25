@@ -1,0 +1,19 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Lanud Sultan Hasanuddin (Makassar)",
+  "matra": "udara",
+  "lat": -5.061,
+  "lng": 119.554,
+  "satuan": "Skadron Udara 14 & Skadron Udara 33 (TNI AU)",
+  "alutsista": [
+    {
+      "nama": "Sukhoi Su-27 / Su-30",
+      "slug": "sukhoi-su-27-su-30"
+    },
+    {
+      "nama": "C-130 Hercules",
+      "slug": "c-130-hercules"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI Angkatan Udara"
+}

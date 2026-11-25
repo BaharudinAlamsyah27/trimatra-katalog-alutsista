@@ -1,0 +1,75 @@
+{
+  "nama": "KRI Rigel (933)",
+  "namaLain": ["Kelas Rigel", "OSV 190 SC-WB"],
+  "matra": "laut",
+  "jenis": "kapal-survei",
+  "peran": "Kapal bantu hidro-oseanografi (BHO) untuk pemetaan dasar laut, survei batimetri, dan penelitian kelautan.",
+  "negaraAsal": ["FR"],
+  "pabrikan": ["ocea-shipbuilding"],
+  "varian": [
+    {
+      "nama": "KRI Rigel (933) & KRI Spica (934)",
+      "keterangan": "Dua unit kapal survei hidrografi berkonstruksi aluminium dioperasikan Pushidrosal TNI AL."
+    }
+  ],
+  "tahunMulaiDinas": 2015,
+  "status": "dalam-dinas",
+  "ringkasan": "KRI Rigel (933) adalah kapal survei hidro-oseanografi modern milik Pusat Hidro-Oseanografi TNI Angkatan Laut (Pushidrosal). Dibangun dari paduan aluminium di galangan OCEA Prancis, kapal ini dilengkapi sonar multibeam dan wahana survei bawah laut otonom (AUV).",
+  "spesifikasi": [
+    { "kunci": "panjang", "label": "Panjang", "nilai": 60.1, "satuan": "m", "keandalan": "resmi", "sumberId": "ocea-rigel" },
+    { "kunci": "lebar", "label": "Lebar", "nilai": 11.5, "satuan": "m", "keandalan": "resmi", "sumberId": "ocea-rigel" },
+    { "kunci": "displasemen", "label": "Displasemen", "nilai": 515, "satuan": "ton", "keandalan": "sekunder", "sumberId": "pushidrosal-ref" },
+    { "kunci": "kecepatan-maks", "label": "Kecepatan maks", "nilai": 25.9, "satuan": "km/jam", "catatan": "± 14 knot", "keandalan": "resmi", "sumberId": "ocea-rigel" },
+    { "kunci": "jarak-jelajah", "label": "Jarak jelajah", "nilai": 8148, "satuan": "km", "catatan": "4.400 mil laut pada 12 knot", "keandalan": "resmi", "sumberId": "ocea-rigel" },
+    { "kunci": "awak", "label": "Awak", "nilai": 46, "satuan": "orang", "catatan": "30 awak kapal dan 16 peneliti", "keandalan": "resmi", "sumberId": "ocea-rigel" }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "Pushidrosal TNI Angkatan Laut",
+      "varian": "KRI Rigel (933) & KRI Spica (934)",
+      "jumlah": 2,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2015,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "sumberId": "pushidrosal-ref"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Dipesan pada 2013 untuk memodernisasi armada pemetaan laut nasional dan mulai bertugas di Pushidrosal TNI AL pada 2015.",
+    "linimasa": [
+      { "tahun": 2015, "bulan": 3, "judul": "Serah Terima KRI Rigel (933)", "uraian": "Resmi diserahterimakan dari galangan OCEA Prancis kepada TNI AL.", "sumberId": "ocea-rigel" },
+      { "tahun": 2015, "bulan": 5, "judul": "Pengukuhan di Pushidrosal Jakarta", "uraian": "Memulai operasional pemetaan perairan Nusantara dari Dermaga JICT/Pondok Dayung.", "sumberId": "pushidrosal-ref" },
+      { "tahun": 2018, "bulan": 11, "judul": "Misi Pencarian & Pemetaan Bawah Laut", "uraian": "Dikerahkan dalam operasi survei dasar laut di perairan Karawang.", "sumberId": "pushidrosal-ref" }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/kri-rigel.webp",
+      "alt": "Foto KRI Spica (934), kapal survei sekelas KRI Rigel milik TNI AL",
+      "kredit": "Puspen TNI / Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "ocea-rigel",
+      "judul": "OCEA OSV 190 SC-WB Hydrographic Vessel Specifications",
+      "penerbit": "OCEA Shipbuilding",
+      "url": "https://www.ocea.fr/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "pushidrosal-ref",
+      "judul": "Armada Kapal Bantu Hidro-Oseanografi Pushidrosal",
+      "penerbit": "Pushidrosal TNI AL",
+      "url": "https://www.pushidrosal.id/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-pemerintah"
+    }
+  ],
+  "tag": ["kapal-survei", "hidrografi", "pushidrosal", "tni-al"],
+  "diperbaruiPada": "2026-11-25"
+}

@@ -1,0 +1,19 @@
+{
+  "nama": "OCEA Shipbuilding",
+  "negara": "FR",
+  "tahunBerdiri": 1987,
+  "jenisUsaha": "Galangan Kapal Aluminium (Survei & Patroli)",
+  "deskripsi": "Galangan kapal asal Prancis yang mengkhususkan diri pada kapal berbahan paduan aluminium untuk tugas patroli maritim, hidrografi, dan survei oseanografi.",
+  "sejarahSingkat": "Berbasis di Les Sables-d'Olonne, Prancis, OCEA memproduksi seri kapal survei hidrografi OSV 190 SC-WB yang digunakan TNI AL sebagai KRI Rigel (933) dan KRI Spica (934).",
+  "situs": "https://www.ocea.fr/",
+  "sumber": [
+    {
+      "id": "ocea-web",
+      "judul": "OCEA Shipbuilding — Hydrographic & Oceanographic Vessels",
+      "penerbit": "OCEA S.A.",
+      "url": "https://www.ocea.fr/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

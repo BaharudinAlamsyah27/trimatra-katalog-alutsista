@@ -1,0 +1,66 @@
+---
+import Base from '../../layouts/Base.astro';
+import { derivePenggunaMap } from '../../lib/derive';
+
+const penggunaMap = await derivePenggunaMap();
+const daftarNegara = Array.from(penggunaMap.values()).sort((a, b) =>
+  a.nama.localeCompare(b.nama, 'id')
+);
+---
+
+<Base
+  judul="Daftar Negara Pengguna Alutsista"
+  deskripsi="Daftar negara dan angkatan bersenjata pengguna alutsista yang diturunkan dari data entri katalog."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <header class="space-y-2">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /pengguna &bull; Pengelompokan per Negara & Angkatan
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white" data-i18n-id="Negara Pengguna Alutsista" data-i18n-en="Operator Countries">
+        Negara Pengguna Alutsista
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300">
+        Halaman ini diturunkan secara otomatis dari daftar pengguna pada setiap entri alutsista di katalog.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {daftarNegara.map((neg) => {
+        const daftarAngkatan = Array.from(neg.angkatanMap.keys());
+        return (
+          <article class="terminal-panel flex flex-col justify-between hover:border-emerald-500/70 transition-colors">
+            <div class="terminal-bar">
+              <span>KODE NEGARA &bull; {neg.kode}</span>
+              <span class="tabular-nums text-emerald-700 dark:text-emerald-400">{neg.entriList.length} Entri</span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+                  <a href={`/pengguna/${neg.kode.toLowerCase()}`} class="hover:text-emerald-600 dark:hover:text-emerald-400">
+                    {neg.nama}
+                  </a>
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {daftarAngkatan.join(' • ')}
+                </p>
+              </div>
+
+              <div class="pt-3.5 border-t border-slate-100 dark:border-[#243244] flex items-center justify-between text-sm">
+                <span class="font-medium text-slate-600 dark:text-slate-400 tabular-nums">
+                  {neg.entriList.length} sistem alutsista
+                </span>
+                <a
+                  href={`/pengguna/${neg.kode.toLowerCase()}`}
+                  class="font-bold text-slate-900 dark:text-cyan-400 hover:underline"
+                >
+                  Lihat Rincian &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</Base>

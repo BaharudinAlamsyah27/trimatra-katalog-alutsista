@@ -1,0 +1,19 @@
+{
+  "nama": "Airbus Helicopters / Airbus Defence and Space",
+  "negara": "FR",
+  "tahunBerdiri": 1992,
+  "jenisUsaha": "Korporasi industri kedirgantaraan dan helikopter multinasional Eropa",
+  "deskripsi": "Divisi helikopter dan pesawat militer Airbus yang memproduksi helikopter maritim AS565 MBe Panther, helikopter angkut H225M Caracal, serta pesawat angkut C295 bekerja sama dengan PT Dirgantara Indonesia.",
+  "sejarahSingkat": "Divisi helikopter ini terbentuk pada tahun 1992 sebagai Eurocopter Group dari penggabungan divisi helikopter Aérospatiale (Prancis) dan DASA (Jerman), serta berganti nama menjadi Airbus Helicopters pada Januari 2014.",
+  "situs": "https://www.airbus.com",
+  "sumber": [
+    {
+      "id": "p-airbus-1",
+      "judul": "Airbus Helicopters Military Product Line",
+      "penerbit": "Airbus",
+      "url": "https://www.airbus.com/en/products-services/helicopters/military-helicopters",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

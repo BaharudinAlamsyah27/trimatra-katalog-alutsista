@@ -1,0 +1,218 @@
+{
+  "nama": "Pindad Badak 6x6",
+  "namaLain": [
+    "Panser Kanon Badak 6x6",
+    "Badak FSV"
+  ],
+  "matra": "darat",
+  "jenis": "kendaraan-lapis-baja",
+  "peran": "Kendaraan tempur lapis baja bantuan tembakan beroda ban (6x6) dengan meriam kaliber 90 mm.",
+  "negaraAsal": [
+    "ID"
+  ],
+  "pabrikan": [
+    "pindad"
+  ],
+  "varian": [
+    {
+      "nama": "Badak 6x6 FSV (Fire Support Vehicle)",
+      "keterangan": "Konfigurasi standar dengan kubah dua awak CMI Cockerill CSE 90LP bermeriam 90 mm tekanan rendah."
+    }
+  ],
+  "tahunMulaiDinas": 2022,
+  "status": "dalam-dinas",
+  "ringkasan": "Pindad Badak 6x6 adalah kendaraan tempur lapis baja berpenggerak enam roda jenis bantuan tembakan (Fire Support Vehicle) yang dirancang oleh PT Pindad dari pengembangan platform Anoa. Kendaraan ini menggunakan lambung baja monokok dengan mesin di bagian depan-tengah guna menopang kubah dua awak bermeriam 90 mm untuk memperkuat satuan Kavaleri TNI Angkatan Darat.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 6,
+      "satuan": "m",
+      "catatan": "Panjang lambung sekitar 5,7–6,0 m.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 2.5,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 2.9,
+      "satuan": "m",
+      "catatan": "Tinggi keseluruhan hingga bagian atas kubah.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-tempur",
+      "label": "Bobot tempur",
+      "nilai": 16500,
+      "satuan": "kg",
+      "catatan": "Sekitar 16.500 kg termasuk kubah meriam 90 mm.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 3,
+      "satuan": "orang",
+      "catatan": "Pengemudi di depan serta komandan dan juru tembak di dalam kubah.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "Diesel 6-silinder segaris Turbocharger Intercooler (340 hp) dengan transmisi otomatis 6-percepatan",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "daya",
+      "label": "Daya",
+      "nilai": 253.5,
+      "satuan": "kW",
+      "catatan": "Setara 340 tenaga kuda (hp).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 80,
+      "satuan": "km/jam",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 600,
+      "satuan": "km",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-utama",
+      "label": "Persenjataan utama",
+      "nilai": "Meriam Cockerill 90 mm Low Pressure pada kubah dua awak CSE 90LP",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-sekunder",
+      "label": "Persenjataan sekunder",
+      "nilai": "Senapan mesin koaksial 7,62 mm, senapan mesin atap 7,62 mm, dan 2x4 pelontar granat asap",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Darat (Kavaleri)",
+      "varian": "Badak 6x6 FSV 90 mm",
+      "jumlah": 14,
+      "jenisJumlah": "dikirim",
+      "tahunMulai": 2022,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "14 unit gelombang produksi pertama telah diserahkan bertahap kepada satuan Kavaleri TNI AD pada 2022–2024.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "PT Pindad merancang Panser Kanon Badak 6x6 pada tahun 2013–2014 untuk memenuhi kebutuhan Korps Kavaleri TNI Angkatan Darat akan kendaraan tempur beroda ban bermeriam 90 mm yang dapat diproduksi di dalam negeri. Berbeda dari Anoa APC, Badak menggunakan suspensi independen (double wishbone) di seluruh enam rodanya untuk meredam hentakan saat menembakkan meriam 90 mm.\n\nPurwarupa Badak 6x6 diperkenalkan pada pameran Indo Defence November 2014 dan menuntaskan sertifikasi kelaikan dari Dinas Penelitian dan Pengembangan TNI AD pada tahun 2015. Pengiriman unit produksi seri kepada satuan Kavaleri TNI AD (antara lain Kikav 8 Kostrad) dimulai pada Januari 2022.",
+    "linimasa": [
+      {
+        "tahun": 2014,
+        "bulan": 11,
+        "judul": "Pengenalan purwarupa Badak 6x6 pada Indo Defence 2014",
+        "uraian": "PT Pindad memperkenalkan purwarupa panser kanon 90 mm berpenggerak 6x6 dengan suspensi independen.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2016,
+        "bulan": 1,
+        "judul": "Kontrak produksi gelombang pertama untuk TNI AD",
+        "uraian": "Kementerian Pertahanan RI menandatangani kontrak pengadaan gelombang awal Badak 6x6 bersama PT Pindad.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2022,
+        "bulan": 1,
+        "judul": "Serah terima batch awal Badak 6x6 kepada TNI Angkatan Darat",
+        "uraian": "Tujuh unit pertama Badak 6x6 diserahkan oleh Kementerian Pertahanan kepada Kepala Staf Angkatan Darat.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/pindad-badak-6x6.glb",
+    "poster": "/models/pindad-badak-6x6.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Pindad Badak 6x6 dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "kubah-90mm",
+        "label": "Kubah CSE 90LP & Meriam 90 mm",
+        "posisi": "0 1.15 -0.25",
+        "normal": "0 1 0",
+        "deskripsi": "Kubah dua awak di bagian tengah-belakang lambung dengan meriam bertekanan rendah kaliber 90 mm."
+      },
+      {
+        "id": "suspensi-6x6",
+        "label": "Suspensi Independen 6x6",
+        "posisi": "0.72 0.35 0",
+        "normal": "1 0 0",
+        "deskripsi": "Enam roda dengan suspensi independen double wishbone untuk menjaga kestabilan penembakan."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/pindad-badak-6x6.webp",
+      "alt": "Foto asli Pindad Badak 6x6",
+      "kredit": "Kostrad via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Spesifikasi Produk Kendaraan Khusus Badak 6x6",
+      "penerbit": "PT Pindad",
+      "url": "https://pindad.com/badak-6x6",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database & Publikasi Serah Terima Panser Badak",
+      "penerbit": "SIPRI / PT Pindad",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "panser-kanon",
+    "fsv",
+    "badak",
+    "6x6",
+    "90mm",
+    "pindad",
+    "kavaleri",
+    "tni-ad"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

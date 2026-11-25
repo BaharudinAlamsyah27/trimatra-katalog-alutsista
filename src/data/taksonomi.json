@@ -1,0 +1,754 @@
+{
+  "versi": 1,
+  "catatan": "Satuan disimpan metrik. Kecepatan kapal/pesawat disimpan km/jam; konversi ke knot hanya untuk tampilan. Bidang yang tidak diketahui dikosongkan (tampilkan 'Tidak dipublikasikan'). Jangan menambah bidang yang bersifat operasional/taktis.",
+  "matra": [
+    {
+      "kunci": "darat",
+      "label": "Darat"
+    },
+    {
+      "kunci": "laut",
+      "label": "Laut"
+    },
+    {
+      "kunci": "udara",
+      "label": "Udara"
+    }
+  ],
+  "templatSpesifikasi": {
+    "lapis-baja": [
+      {
+        "kunci": "panjang",
+        "label": "Panjang",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "lebar",
+        "label": "Lebar",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "tinggi",
+        "label": "Tinggi",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "bobot-tempur",
+        "label": "Bobot tempur",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "awak",
+        "label": "Awak",
+        "tipe": "angka",
+        "satuan": "orang"
+      },
+      {
+        "kunci": "penumpang",
+        "label": "Kapasitas penumpang",
+        "tipe": "angka",
+        "satuan": "orang"
+      },
+      {
+        "kunci": "mesin",
+        "label": "Mesin",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "daya",
+        "label": "Daya",
+        "tipe": "angka",
+        "satuan": "kW"
+      },
+      {
+        "kunci": "kecepatan-maks",
+        "label": "Kecepatan maks",
+        "tipe": "angka",
+        "satuan": "km/jam"
+      },
+      {
+        "kunci": "jarak-jelajah",
+        "label": "Jarak jelajah",
+        "tipe": "angka",
+        "satuan": "km"
+      },
+      {
+        "kunci": "persenjataan-utama",
+        "label": "Persenjataan utama",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "persenjataan-sekunder",
+        "label": "Persenjataan sekunder",
+        "tipe": "teks"
+      }
+    ],
+    "artileri": [
+      {
+        "kunci": "kaliber",
+        "label": "Kaliber",
+        "tipe": "angka",
+        "satuan": "mm"
+      },
+      {
+        "kunci": "panjang-laras",
+        "label": "Panjang laras",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "bobot",
+        "label": "Bobot",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "awak",
+        "label": "Awak",
+        "tipe": "angka",
+        "satuan": "orang"
+      },
+      {
+        "kunci": "jangkauan-maks",
+        "label": "Jangkauan maks (per amunisi, menurut produsen)",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "laju-tembak",
+        "label": "Laju tembak",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "penggerak",
+        "label": "Penggerak/platform",
+        "tipe": "teks"
+      }
+    ],
+    "senjata-ringan": [
+      {
+        "kunci": "amunisi",
+        "label": "Amunisi/kaliber",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "panjang",
+        "label": "Panjang",
+        "tipe": "angka",
+        "satuan": "mm"
+      },
+      {
+        "kunci": "bobot-kosong",
+        "label": "Bobot kosong",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "panjang-laras",
+        "label": "Panjang laras",
+        "tipe": "angka",
+        "satuan": "mm"
+      },
+      {
+        "kunci": "laju-tembak",
+        "label": "Laju tembak",
+        "tipe": "angka",
+        "satuan": "tembakan/menit"
+      },
+      {
+        "kunci": "kapasitas-magasin",
+        "label": "Kapasitas magasin",
+        "tipe": "angka",
+        "satuan": "butir"
+      },
+      {
+        "kunci": "jarak-efektif",
+        "label": "Jarak efektif (menurut produsen)",
+        "tipe": "angka",
+        "satuan": "m"
+      }
+    ],
+    "kapal": [
+      {
+        "kunci": "panjang",
+        "label": "Panjang",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "lebar",
+        "label": "Lebar",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "sarat-air",
+        "label": "Sarat air",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "displasemen",
+        "label": "Displasemen",
+        "tipe": "angka",
+        "satuan": "ton"
+      },
+      {
+        "kunci": "propulsi",
+        "label": "Propulsi",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "kecepatan-maks",
+        "label": "Kecepatan maks",
+        "tipe": "angka",
+        "satuan": "km/jam"
+      },
+      {
+        "kunci": "jarak-jelajah",
+        "label": "Jarak jelajah",
+        "tipe": "angka",
+        "satuan": "km"
+      },
+      {
+        "kunci": "awak",
+        "label": "Awak",
+        "tipe": "angka",
+        "satuan": "orang"
+      },
+      {
+        "kunci": "persenjataan",
+        "label": "Persenjataan",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "sensor",
+        "label": "Sensor",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "fasilitas-penerbangan",
+        "label": "Dek/hanggar helikopter",
+        "tipe": "teks"
+      }
+    ],
+    "kapal-selam": [
+      {
+        "kunci": "panjang",
+        "label": "Panjang",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "lebar",
+        "label": "Lebar",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "displasemen-permukaan",
+        "label": "Displasemen (permukaan)",
+        "tipe": "angka",
+        "satuan": "ton"
+      },
+      {
+        "kunci": "displasemen-tenggelam",
+        "label": "Displasemen (tenggelam)",
+        "tipe": "angka",
+        "satuan": "ton"
+      },
+      {
+        "kunci": "propulsi",
+        "label": "Propulsi",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "kecepatan-maks",
+        "label": "Kecepatan maks",
+        "tipe": "angka",
+        "satuan": "km/jam"
+      },
+      {
+        "kunci": "awak",
+        "label": "Awak",
+        "tipe": "angka",
+        "satuan": "orang"
+      },
+      {
+        "kunci": "tabung-torpedo",
+        "label": "Tabung torpedo",
+        "tipe": "angka",
+        "satuan": "jumlah"
+      }
+    ],
+    "pesawat": [
+      {
+        "kunci": "panjang",
+        "label": "Panjang",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "rentang-sayap",
+        "label": "Rentang sayap",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "tinggi",
+        "label": "Tinggi",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "bobot-kosong",
+        "label": "Bobot kosong",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "bobot-lepas-landas-maks",
+        "label": "Bobot lepas landas maks",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "mesin",
+        "label": "Mesin",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "kecepatan-maks",
+        "label": "Kecepatan maks",
+        "tipe": "angka",
+        "satuan": "km/jam"
+      },
+      {
+        "kunci": "jangkauan",
+        "label": "Jangkauan",
+        "tipe": "angka",
+        "satuan": "km"
+      },
+      {
+        "kunci": "plafon",
+        "label": "Plafon operasi",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "awak",
+        "label": "Awak/kapasitas",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "muatan-persenjataan",
+        "label": "Muatan/persenjataan",
+        "tipe": "teks"
+      }
+    ],
+    "helikopter": [
+      {
+        "kunci": "panjang",
+        "label": "Panjang",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "diameter-rotor",
+        "label": "Diameter rotor",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "bobot-kosong",
+        "label": "Bobot kosong",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "bobot-maks",
+        "label": "Bobot maks",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "mesin",
+        "label": "Mesin",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "kecepatan-maks",
+        "label": "Kecepatan maks",
+        "tipe": "angka",
+        "satuan": "km/jam"
+      },
+      {
+        "kunci": "jangkauan",
+        "label": "Jangkauan",
+        "tipe": "angka",
+        "satuan": "km"
+      },
+      {
+        "kunci": "awak-kapasitas",
+        "label": "Awak/kapasitas",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "muatan-persenjataan",
+        "label": "Muatan/persenjataan",
+        "tipe": "teks"
+      }
+    ],
+    "uav": [
+      {
+        "kunci": "rentang-sayap",
+        "label": "Rentang sayap",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "panjang",
+        "label": "Panjang",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "bobot-lepas-landas-maks",
+        "label": "Bobot lepas landas maks",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "daya-tahan",
+        "label": "Daya tahan terbang",
+        "tipe": "angka",
+        "satuan": "jam"
+      },
+      {
+        "kunci": "ketinggian-operasi",
+        "label": "Ketinggian operasi",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "muatan",
+        "label": "Muatan",
+        "tipe": "teks"
+      }
+    ],
+    "rudal": [
+      {
+        "kunci": "panjang",
+        "label": "Panjang",
+        "tipe": "angka",
+        "satuan": "m"
+      },
+      {
+        "kunci": "diameter",
+        "label": "Diameter",
+        "tipe": "angka",
+        "satuan": "mm"
+      },
+      {
+        "kunci": "bobot",
+        "label": "Bobot",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "jangkauan",
+        "label": "Jangkauan (menurut produsen)",
+        "tipe": "angka",
+        "satuan": "km"
+      },
+      {
+        "kunci": "kecepatan",
+        "label": "Kecepatan",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "kategori-hulu-ledak",
+        "label": "Kategori hulu ledak",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "pemandu",
+        "label": "Sistem pemandu",
+        "tipe": "teks"
+      }
+    ],
+    "sistem-pertahanan-udara": [
+      {
+        "kunci": "jenis-sistem",
+        "label": "Jenis sistem",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "platform",
+        "label": "Platform",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "jangkauan",
+        "label": "Jangkauan (menurut produsen)",
+        "tipe": "angka",
+        "satuan": "km"
+      },
+      {
+        "kunci": "persenjataan",
+        "label": "Rudal/meriam",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "awak",
+        "label": "Awak",
+        "tipe": "angka",
+        "satuan": "orang"
+      }
+    ],
+    "radar": [
+      {
+        "kunci": "jenis",
+        "label": "Jenis radar",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "jangkauan-deteksi",
+        "label": "Jangkauan deteksi (menurut produsen)",
+        "tipe": "angka",
+        "satuan": "km"
+      },
+      {
+        "kunci": "mobilitas",
+        "label": "Mobilitas",
+        "tipe": "teks"
+      },
+      {
+        "kunci": "bobot",
+        "label": "Bobot",
+        "tipe": "angka",
+        "satuan": "kg"
+      },
+      {
+        "kunci": "awak",
+        "label": "Awak",
+        "tipe": "angka",
+        "satuan": "orang"
+      }
+    ]
+  },
+  "jenis": [
+    {
+      "matra": "darat",
+      "kunci": "tank-utama",
+      "label": "Tank Utama",
+      "deskripsi": "Kendaraan tempur lapis baja berat dengan meriam utama berkaliber besar.",
+      "templatSpesifikasi": "lapis-baja"
+    },
+    {
+      "matra": "darat",
+      "kunci": "tank-medium",
+      "label": "Tank Medium",
+      "deskripsi": "Kendaraan tempur lapis baja kelas menengah dengan bobot lebih ringan dari tank utama.",
+      "templatSpesifikasi": "lapis-baja"
+    },
+    {
+      "matra": "darat",
+      "kunci": "kendaraan-lapis-baja",
+      "label": "Kendaraan Lapis Baja",
+      "deskripsi": "Kendaraan pengangkut pasukan atau pendukung tempur berlapis baja.",
+      "templatSpesifikasi": "lapis-baja"
+    },
+    {
+      "matra": "darat",
+      "kunci": "kendaraan-taktis",
+      "label": "Kendaraan Taktis",
+      "deskripsi": "Kendaraan militer untuk mobilitas, logistik, dan komando.",
+      "templatSpesifikasi": "lapis-baja"
+    },
+    {
+      "matra": "darat",
+      "kunci": "artileri",
+      "label": "Artileri",
+      "deskripsi": "Meriam dan howitzer untuk tembakan dukungan jarak jauh.",
+      "templatSpesifikasi": "artileri"
+    },
+    {
+      "matra": "darat",
+      "kunci": "roket-multilaras",
+      "label": "Roket Multilaras",
+      "deskripsi": "Peluncur roket berlaras ganda untuk tembakan area.",
+      "templatSpesifikasi": "artileri"
+    },
+    {
+      "matra": "darat",
+      "kunci": "senjata-ringan",
+      "label": "Senjata Ringan",
+      "deskripsi": "Senjata api perorangan dan kelompok.",
+      "templatSpesifikasi": "senjata-ringan"
+    },
+    {
+      "matra": "darat",
+      "kunci": "pertahanan-udara-darat",
+      "label": "Pertahanan Udara Darat",
+      "deskripsi": "Sistem darat untuk menghadapi ancaman udara.",
+      "templatSpesifikasi": "sistem-pertahanan-udara"
+    },
+    {
+      "matra": "darat",
+      "kunci": "radar-darat",
+      "label": "Radar Darat",
+      "deskripsi": "Sensor radar berbasis darat untuk pengawasan.",
+      "templatSpesifikasi": "radar"
+    },
+    {
+      "matra": "laut",
+      "kunci": "kapal-selam",
+      "label": "Kapal Selam",
+      "deskripsi": "Kapal yang beroperasi di bawah permukaan laut.",
+      "templatSpesifikasi": "kapal-selam"
+    },
+    {
+      "matra": "laut",
+      "kunci": "fregat",
+      "label": "Fregat",
+      "deskripsi": "Kapal perang permukaan serbaguna berukuran menengah.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "korvet",
+      "label": "Korvet",
+      "deskripsi": "Kapal perang permukaan yang lebih kecil dari fregat.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "kapal-patroli",
+      "label": "Kapal Patroli",
+      "deskripsi": "Kapal cepat untuk patroli dan pengamanan perairan.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "kapal-amfibi",
+      "label": "Kapal Amfibi",
+      "deskripsi": "Kapal pengangkut pasukan dan peralatan untuk operasi pendaratan.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "kapal-ranjau",
+      "label": "Kapal Ranjau",
+      "deskripsi": "Kapal untuk penyapuan atau penanggulangan ranjau laut.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "kapal-bantu",
+      "label": "Kapal Bantu",
+      "deskripsi": "Kapal pendukung logistik dan operasi maritim.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "kapal-latih",
+      "label": "Kapal Latih",
+      "deskripsi": "Kapal tiang tinggi atau kapal khusus untuk pendidikan pelayaran kadet.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "kapal-rumah-sakit",
+      "label": "Kapal Rumah Sakit",
+      "deskripsi": "Kapal bantu rumah sakit untuk misi kemanusiaan dan bantuan bencana.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "kapal-survei",
+      "label": "Kapal Survei & Hidrografi",
+      "deskripsi": "Kapal pemetaan dasar laut, oseanografi, dan hidrografi.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "kapal-tanker",
+      "label": "Kapal Tanker (BCM)",
+      "deskripsi": "Kapal bantu cair minyak untuk pengisian bahan bakar di laut.",
+      "templatSpesifikasi": "kapal"
+    },
+    {
+      "matra": "laut",
+      "kunci": "rudal-anti-kapal",
+      "label": "Rudal Anti Kapal",
+      "deskripsi": "Rudal untuk menghadapi sasaran permukaan laut.",
+      "templatSpesifikasi": "rudal"
+    },
+    {
+      "matra": "udara",
+      "kunci": "pesawat-tempur",
+      "label": "Pesawat Tempur",
+      "deskripsi": "Pesawat bersayap tetap untuk pertempuran udara dan serangan.",
+      "templatSpesifikasi": "pesawat"
+    },
+    {
+      "matra": "udara",
+      "kunci": "pesawat-angkut",
+      "label": "Pesawat Angkut",
+      "deskripsi": "Pesawat untuk mengangkut pasukan dan logistik.",
+      "templatSpesifikasi": "pesawat"
+    },
+    {
+      "matra": "udara",
+      "kunci": "pesawat-latih",
+      "label": "Pesawat Latih",
+      "deskripsi": "Pesawat untuk pendidikan dan latihan penerbang.",
+      "templatSpesifikasi": "pesawat"
+    },
+    {
+      "matra": "udara",
+      "kunci": "pesawat-patroli-maritim",
+      "label": "Pesawat Patroli Maritim",
+      "deskripsi": "Pesawat pengawasan wilayah laut.",
+      "templatSpesifikasi": "pesawat"
+    },
+    {
+      "matra": "udara",
+      "kunci": "pesawat-peringatan-dini",
+      "label": "Pesawat Peringatan Dini",
+      "deskripsi": "Pesawat dengan radar untuk pengawasan wilayah udara luas.",
+      "templatSpesifikasi": "pesawat"
+    },
+    {
+      "matra": "udara",
+      "kunci": "helikopter",
+      "label": "Helikopter",
+      "deskripsi": "Pesawat sayap putar untuk angkut, serang, dan SAR.",
+      "templatSpesifikasi": "helikopter"
+    },
+    {
+      "matra": "udara",
+      "kunci": "uav",
+      "label": "Pesawat Nirawak (UAV)",
+      "deskripsi": "Pesawat tanpa awak di dalam kokpit untuk pengintaian atau misi lain.",
+      "templatSpesifikasi": "uav"
+    },
+    {
+      "matra": "udara",
+      "kunci": "rudal-udara",
+      "label": "Rudal Udara",
+      "deskripsi": "Rudal berbasis pesawat atau untuk pertahanan udara.",
+      "templatSpesifikasi": "rudal"
+    },
+    {
+      "matra": "udara",
+      "kunci": "radar-udara",
+      "label": "Radar Udara",
+      "deskripsi": "Radar untuk pengawasan ruang udara.",
+      "templatSpesifikasi": "radar"
+    }
+  ]
+}

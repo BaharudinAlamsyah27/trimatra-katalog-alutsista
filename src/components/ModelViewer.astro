@@ -1,0 +1,361 @@
+---
+interface Hotspot {
+  id: string;
+  label: string;
+  posisi: string;
+  normal: string;
+  deskripsi?: string;
+}
+
+interface Model3D {
+  berkas: string;
+  poster: string;
+  pembuat: string;
+  sumberUrl?: string;
+  lisensi: 'CC0' | 'CC-BY-4.0' | 'CC-BY-SA-4.0' | 'milik-sendiri' | 'izin-tertulis';
+  atribusi: string;
+  hotspot?: Hotspot[];
+}
+
+interface GaleriItem {
+  berkas: string;
+  alt: string;
+  kredit: string;
+  lisensi: string;
+}
+
+interface Props {
+  model?: Model3D;
+  nama: string;
+  galeri?: GaleriItem[];
+  fallbackImage?: GaleriItem;
+}
+
+const { model, nama, galeri = [], fallbackImage } = Astro.props;
+const fotoUtama = galeri[0] || fallbackImage;
+const viewerId = `mv-${nama.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+const sectionId = `media-${nama.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+const hotspots = model?.hotspot ?? [];
+---
+
+<section
+  id={sectionId}
+  aria-label={`Media Visual ${nama}`}
+  class="terminal-panel shadow-sm"
+>
+  <!-- Bar Tab Media: Foto Asli & Model 3D Interaktif -->
+  <div class="px-4 py-2.5 border-b border-slate-200 dark:border-[#1e2c3d] bg-slate-50 dark:bg-[#090e15] flex flex-wrap items-center justify-between gap-2">
+    <div role="tablist" aria-label="Pilih mode tampilan media" class="inline-flex rounded-lg bg-slate-200/80 dark:bg-[#070b10] border border-slate-300/60 dark:border-[#1e2c3d] p-1 gap-1">
+      {fotoUtama && (
+        <button
+          type="button"
+          role="tab"
+          aria-selected="true"
+          data-media-root={sectionId}
+          data-media-tab="foto"
+          class="tab-media-btn min-h-[40px] px-4 py-2 rounded-md text-sm font-semibold bg-white dark:bg-emerald-600 text-slate-900 dark:text-white shadow-2xs transition-colors cursor-pointer"
+        >
+          <span data-i18n-id="Foto Asli" data-i18n-en="Real Photo">Foto Asli</span>
+        </button>
+      )}
+      {model && (
+        <button
+          type="button"
+          role="tab"
+          aria-selected={fotoUtama ? 'false' : 'true'}
+          data-media-root={sectionId}
+          data-media-tab="3d"
+          data-viewer-target={viewerId}
+          class={`tab-media-btn min-h-[40px] px-4 py-2 rounded-md text-sm font-semibold transition-colors cursor-pointer ${
+            fotoUtama
+              ? 'text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white'
+              : 'bg-white dark:bg-emerald-600 text-slate-900 dark:text-white shadow-2xs'
+          }`}
+        >
+          <span data-i18n-id="Model 3D Interaktif (360°)" data-i18n-en="Interactive 3D Model (360°)">
+            Model 3D Interaktif (360°)
+          </span>
+        </button>
+      )}
+    </div>
+
+    <span class="text-[11px] font-mono text-slate-500 dark:text-emerald-400/80 hidden sm:inline">
+      MEDIA_VIEWER // PHOTO + GLB_3D
+    </span>
+  </div>
+
+  <!-- Panel 1: Foto Asli -->
+  {fotoUtama && (
+    <div data-media-panel="foto" role="tabpanel">
+      <div class="relative bg-slate-950 flex items-center justify-center overflow-hidden" style="height:min(64vh,460px)">
+        <img
+          src={fotoUtama.berkas}
+          alt={fotoUtama.alt}
+          class="w-full h-full object-cover"
+          loading="eager"
+          width="1200"
+          height="800"
+        />
+        {model && (
+          <button
+            type="button"
+            data-media-root={sectionId}
+            data-media-tab="3d"
+            data-viewer-target={viewerId}
+            class="absolute bottom-4 right-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/90 hover:bg-sky-700 text-white text-xs sm:text-sm font-semibold shadow-lg backdrop-blur border border-white/15 transition-colors cursor-pointer"
+          >
+            <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+            </svg>
+            <span data-i18n-id="Buka Model 3D (Putar 360°)" data-i18n-en="Open 3D Model (360°)">
+              Buka Model 3D (Putar 360°)
+            </span>
+          </button>
+        )}
+      </div>
+
+      <div class="px-4 py-3 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400 flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <span class="font-bold text-slate-900 dark:text-white">Kredit Foto:</span> {fotoUtama.kredit}
+          <span class="ml-1.5 font-mono font-semibold px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
+            {fotoUtama.lisensi}
+          </span>
+        </div>
+        {!model && (
+          <span class="px-2.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-200 font-semibold">
+            Model 3D belum tersedia
+          </span>
+        )}
+      </div>
+    </div>
+  )}
+
+  <!-- Panel 2: Model 3D Interaktif -->
+  {model && (
+    <div data-media-panel="3d" role="tabpanel" class={fotoUtama ? 'hidden' : ''}>
+      <div class="relative w-full bg-gradient-to-b from-slate-900 to-slate-950">
+        <model-viewer
+          id={viewerId}
+          src={model.berkas}
+          poster={model.poster}
+          alt={`Model 3D ${nama}. Seret untuk memutar, cubit atau gulir untuk memperbesar.`}
+          camera-controls
+          auto-rotate
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          interaction-prompt="auto"
+          shadow-intensity="1"
+          exposure="1.15"
+          environment-image="neutral"
+          loading="lazy"
+          reveal="manual"
+          touch-action="pan-y"
+          style="width:100%;height:min(64vh,460px);background:transparent"
+        >
+          {hotspots.map((h) => (
+            <button
+              type="button"
+              class="hotspot hidden"
+              slot={`hotspot-${h.id}`}
+              data-position={h.posisi}
+              data-normal={h.normal}
+              data-hotspot-desc={h.deskripsi || h.label}
+              aria-label={`Bagian ${h.label}: ${h.deskripsi || ''}`}
+            >
+              <span class="hotspot-label">{h.label}</span>
+            </button>
+          ))}
+        </model-viewer>
+
+        <div id={`${viewerId}-fallback`} class="hidden p-6 text-center bg-slate-100 dark:bg-slate-900">
+          <img
+            src={model.poster}
+            alt={`Poster statis ${nama}`}
+            class="max-h-72 mx-auto object-cover rounded-lg mb-3"
+            width="640"
+            height="400"
+          />
+          <p class="text-sm text-slate-700 dark:text-slate-300 font-medium">
+            WebGL tidak tersedia atau model 3D gagal dimuat. Menampilkan foto pratinjau.
+          </p>
+        </div>
+      </div>
+
+      <!-- Kontrol Bantu Penampil -->
+      <div class="px-4 py-3 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            data-viewer-target={viewerId}
+            data-action="toggle-rotate"
+            class="px-3 py-1.5 rounded-md text-xs font-medium border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+          >
+            <span data-i18n-id="Putar otomatis hidup/mati" data-i18n-en="Toggle auto-rotate">Putar otomatis hidup/mati</span>
+          </button>
+          <button
+            type="button"
+            data-viewer-target={viewerId}
+            data-action="reset-camera"
+            class="px-3 py-1.5 rounded-md text-xs font-medium border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+          >
+            <span data-i18n-id="Atur ulang tampilan" data-i18n-en="Reset view">Atur ulang tampilan</span>
+          </button>
+          {hotspots.length > 0 && (
+            <button
+              type="button"
+              data-viewer-target={viewerId}
+              data-action="toggle-hotspots"
+              class="px-3 py-1.5 rounded-md text-xs font-medium border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+            >
+              <span>Tampilkan/sembunyikan titik bagian ({hotspots.length})</span>
+            </button>
+          )}
+        </div>
+        <span class="text-xs text-slate-500 dark:text-slate-400">
+          Seret untuk memutar &bull; Gulir / cubit untuk zoom
+        </span>
+      </div>
+
+      <!-- Info Hotspot Interaktif -->
+      <div id={`${viewerId}-hotspot-info`} class="hidden px-4 py-2.5 bg-sky-50 dark:bg-sky-950/60 border-t border-sky-200 dark:border-sky-800 text-xs text-slate-800 dark:text-slate-200"></div>
+
+      {hotspots.length > 0 && (
+        <div class="px-4 py-3 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800">
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+            Bagian Utama Model 3D:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {hotspots.map((h) => (
+              <div class="p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs">
+                <div class="font-bold text-slate-900 dark:text-white">{h.label}</div>
+                {h.deskripsi && <div class="text-slate-600 dark:text-slate-400 mt-0.5">{h.deskripsi}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Panel Kredit Model Wajib -->
+      <div class="px-4 py-3 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <span class="font-bold text-slate-900 dark:text-white">Kredit Model 3D:</span>
+          <span> Pembuat: <strong>{model.pembuat}</strong></span>
+          <span> &bull; Lisensi: <span class="font-mono font-semibold px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800">{model.lisensi}</span></span>
+          <span> &bull; {model.atribusi}</span>
+        </div>
+        <a href="/tentang#atribusi-aset" class="font-semibold text-sky-700 dark:text-sky-400 hover:underline">
+          Daftar Lisensi Aset &rarr;
+        </a>
+      </div>
+    </div>
+  )}
+</section>
+
+<script>
+  let modelViewerLoaded = false;
+  async function ensureModelViewer() {
+    if (modelViewerLoaded) return;
+    modelViewerLoaded = true;
+    await import('@google/model-viewer');
+  }
+
+  async function activate3DViewer(targetId: string | null) {
+    if (!targetId) return;
+    const mv = document.getElementById(targetId) as any;
+    if (!mv) return;
+    await ensureModelViewer();
+    if (typeof mv.dismissPoster === 'function') {
+      mv.dismissPoster();
+    }
+  }
+
+  // Tab switcher Foto Asli <-> Model 3D
+  document.querySelectorAll<HTMLButtonElement>('[data-media-root][data-media-tab]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const rootId = btn.getAttribute('data-media-root');
+      const tab = btn.getAttribute('data-media-tab');
+      const viewerId = btn.getAttribute('data-viewer-target');
+      if (!rootId || !tab) return;
+
+      const root = document.getElementById(rootId);
+      if (!root) return;
+
+      // Toggle panels
+      root.querySelectorAll<HTMLElement>('[data-media-panel]').forEach((panel) => {
+        panel.classList.toggle('hidden', panel.getAttribute('data-media-panel') !== tab);
+      });
+
+      // Update tab button styles
+      root.querySelectorAll<HTMLButtonElement>('.tab-media-btn').forEach((tBtn) => {
+        const isActive = tBtn.getAttribute('data-media-tab') === tab;
+        tBtn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        if (isActive) {
+          tBtn.classList.add('bg-white', 'dark:bg-emerald-600', 'text-slate-900', 'dark:text-white', 'shadow-2xs');
+          tBtn.classList.remove('text-slate-700', 'dark:text-slate-300');
+        } else {
+          tBtn.classList.remove('bg-white', 'dark:bg-emerald-600', 'text-slate-900', 'dark:text-white', 'shadow-2xs');
+          tBtn.classList.add('text-slate-700', 'dark:text-slate-300');
+        }
+      });
+
+      if (tab === '3d') {
+        await activate3DViewer(viewerId);
+      }
+    });
+  });
+
+  document.querySelectorAll('model-viewer').forEach((mv) => {
+    const id = mv.getAttribute('id');
+    mv.addEventListener('error', () => {
+      if (!id) return;
+      const fallback = document.getElementById(`${id}-fallback`);
+      if (fallback) {
+        (mv as HTMLElement).classList.add('hidden');
+        fallback.classList.remove('hidden');
+      }
+    });
+
+    mv.querySelectorAll('.hotspot').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (!id) return;
+        const infoBox = document.getElementById(`${id}-hotspot-info`);
+        const desc = btn.getAttribute('data-hotspot-desc');
+        const label = btn.textContent?.trim();
+        if (infoBox && desc) {
+          infoBox.textContent = `${label}: ${desc}`;
+          infoBox.classList.remove('hidden');
+        }
+      });
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-viewer-target][data-action]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const targetId = btn.getAttribute('data-viewer-target');
+      const action = btn.getAttribute('data-action');
+      if (!targetId) return;
+      const mv = document.getElementById(targetId) as any;
+      if (!mv) return;
+
+      await activate3DViewer(targetId);
+
+      if (action === 'toggle-rotate') {
+        if (mv.hasAttribute('auto-rotate')) {
+          mv.removeAttribute('auto-rotate');
+        } else {
+          mv.setAttribute('auto-rotate', '');
+        }
+      } else if (action === 'reset-camera') {
+        mv.cameraOrbit = 'auto auto auto';
+        mv.cameraTarget = 'auto auto auto';
+        if (typeof mv.resetTurntableRotation === 'function') {
+          mv.resetTurntableRotation();
+        }
+      } else if (action === 'toggle-hotspots') {
+        mv.querySelectorAll('.hotspot').forEach((h: HTMLElement) => {
+          h.classList.toggle('hidden');
+        });
+      }
+    });
+  });
+</script>

@@ -1,0 +1,19 @@
+{
+  "nama": "Damen Schelde Naval Shipbuilding",
+  "negara": "NL",
+  "tahunBerdiri": 1875,
+  "jenisUsaha": "Perusahaan galangan kapal militer (bagian dari Damen Shipyards Group)",
+  "deskripsi": "Galangan kapal angkatan laut asal Belanda yang merancang dan membangun korvet serta fregat modular seri SIGMA bersama mitra galangan internasional.",
+  "sejarahSingkat": "Didirikan pada tahun 1875 di Vlissingen sebagai Koninklijke Maatschappij De Schelde, galangan ini bergabung ke dalam Damen Shipyards Group pada tahun 2000 dan menjadi pusat rekayasa kapal perang permukaan grup tersebut.",
+  "situs": "https://www.damen.com",
+  "sumber": [
+    {
+      "id": "p-damen-1",
+      "judul": "Damen Naval Overview",
+      "penerbit": "Damen Shipyards Group",
+      "url": "https://www.damen.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

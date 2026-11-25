@@ -1,0 +1,19 @@
+{
+  "nama": "Dassault Aviation",
+  "negara": "FR",
+  "tahunBerdiri": 1929,
+  "jenisUsaha": "Industri Dirgantara & Pesawat Tempur",
+  "deskripsi": "Produsen pesawat tempur dan jet bisnis terkemuka asal Prancis, pengembang seri Mirage dan Rafale.",
+  "sejarahSingkat": "Didirikan oleh Marcel Dassault pada 1929, perusahaan ini merancang pesawat tempur delta Mirage serta pesawat tempur multiperan Rafale yang dioperasikan oleh Prancis dan berbagai negara mitra.",
+  "situs": "https://www.dassault-aviation.com/",
+  "sumber": [
+    {
+      "id": "dassault-web",
+      "judul": "Dassault Aviation Official Website",
+      "penerbit": "Dassault Aviation",
+      "url": "https://www.dassault-aviation.com/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

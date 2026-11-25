@@ -1,0 +1,19 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Yonkav 8 Kostrad (Pasuruan)",
+  "matra": "darat",
+  "lat": -7.657,
+  "lng": 112.762,
+  "satuan": "Batalion Kavaleri 8 Kostrad (TNI AD)",
+  "alutsista": [
+    {
+      "nama": "Leopard 2RI",
+      "slug": "leopard-2ri"
+    },
+    {
+      "nama": "Pindad Badak 6x6",
+      "slug": "pindad-badak-6x6"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI AD / Kostrad"
+}

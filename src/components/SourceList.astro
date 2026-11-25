@@ -1,0 +1,73 @@
+---
+import { formatTanggalLengkap } from '../lib/format';
+
+interface SumberItem {
+  id: string;
+  judul: string;
+  penerbit: string;
+  url?: string;
+  tanggalAkses: string;
+  jenis: 'resmi-produsen' | 'resmi-pemerintah' | 'database-independen' | 'publikasi' | 'sekunder';
+}
+
+interface Props {
+  sumber: SumberItem[];
+}
+
+const { sumber } = Astro.props;
+
+function labelJenisSumber(j: SumberItem['jenis']): string {
+  const map: Record<SumberItem['jenis'], string> = {
+    'resmi-produsen': 'Resmi Produsen',
+    'resmi-pemerintah': 'Resmi Pemerintah / Angkatan Bersenjata',
+    'database-independen': 'Basis Data Independen',
+    'publikasi': 'Publikasi Pertahanan',
+    'sekunder': 'Referensi Sekunder',
+  };
+  return map[j] || j;
+}
+---
+
+<section aria-labelledby="heading-sumber" class="space-y-3">
+  <h2 id="heading-sumber" class="text-xl font-bold text-slate-900 dark:text-white" data-i18n-id="Daftar Sumber & Referensi Terbuka" data-i18n-en="Open-Source References">
+    Daftar Sumber & Referensi Terbuka
+  </h2>
+
+  <ol class="space-y-2.5 text-sm">
+    {sumber.map((s) => (
+      <li
+        id={`sumber-${s.id}`}
+        class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col sm:flex-row sm:items-center justify-between gap-2 scroll-mt-24"
+      >
+        <div class="space-y-0.5">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="font-mono font-bold text-xs px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-sky-700 dark:text-sky-400">
+              [{s.id}]
+            </span>
+            <span class="font-semibold text-slate-900 dark:text-white">{s.judul}</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+              {labelJenisSumber(s.jenis)}
+            </span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400">
+            Penerbit: <span class="font-medium">{s.penerbit}</span> &bull; Diakses pada {formatTanggalLengkap(s.tanggalAkses)}
+          </p>
+        </div>
+
+        {s.url && (
+          <a
+            href={s.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 text-xs font-semibold text-sky-700 dark:text-sky-400 hover:underline shrink-0"
+          >
+            <span>Buka Tautan Sumber</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</section>

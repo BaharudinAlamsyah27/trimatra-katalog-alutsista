@@ -1,0 +1,214 @@
+{
+  "nama": "Korvet Kelas Diponegoro (SIGMA 9113)",
+  "namaLain": [
+    "SIGMA 9113"
+  ],
+  "matra": "laut",
+  "jenis": "korvet",
+  "peran": "Korvet peluru kendali berdesain modular untuk patroli zona ekonomi eksklusif dan peperangan permukaan.",
+  "negaraAsal": [
+    "NL"
+  ],
+  "pabrikan": [
+    "damen-schelde-naval-shipbuilding"
+  ],
+  "varian": [
+    {
+      "nama": "KRI Diponegoro (365) & KRI Hasanuddin (366)",
+      "keterangan": "Dua unit gelombang pesanan pertama yang masuk dinas pada tahun 2007."
+    },
+    {
+      "nama": "KRI Sultan Iskandar Muda (367) & KRI Frans Kaisiepo (368)",
+      "keterangan": "Dua unit gelombang kedua yang masuk dinas pada tahun 2008 dan 2009."
+    }
+  ],
+  "tahunMulaiDinas": 2007,
+  "status": "dalam-dinas",
+  "ringkasan": "Korvet Kelas Diponegoro adalah empat unit kapal perang permukaan berdesain modular SIGMA 9113 yang dibangun oleh Damen Schelde Naval Shipbuilding di Vlissingen, Belanda. Keempat korvet ini menjadi pengguna perdana konsep desain SIGMA di dunia dan rutin mengemban misi perdamaian PBB (Satgas Maritim UNIFIL) di Laut Mediterania.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 90.71,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 13.02,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "sarat-air",
+      "label": "Sarat air",
+      "nilai": 3.6,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "displasemen",
+      "label": "Displasemen",
+      "nilai": 1692,
+      "satuan": "ton",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "propulsi",
+      "label": "Propulsi",
+      "nilai": "2 x mesin diesel SEMT Pielstick 20PA6B STC (masing-masing 8.910 kW) dengan 2 poros baling-baling CPP",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 51.85,
+      "satuan": "km/jam",
+      "catatan": "Setara 28 knot (kecepatan jelajah 18 knot).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 6667,
+      "satuan": "km",
+      "catatan": "Setara 3.600 mil laut (NM) pada kecepatan 18 knot (hingga 4.000 NM pada 14 knot).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 80,
+      "satuan": "orang",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan",
+      "label": "Persenjataan",
+      "nilai": "Meriam utama 76 mm Super Rapid, 2 meriam 20 mm, 2 peluncur rudal pertahanan udara jarak pendek Tetral Mistral, 4 rudal anti-kapal Exocet MM40, dan 2x3 peluncur torpedo 324 mm",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "sensor",
+      "label": "Sensor",
+      "nilai": "Radar pengawasan 3D MW08, radar/elektro-optik pengendali tembakan LIROD Mk 2, dan sonar lambung Kingklip",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "fasilitas-penerbangan",
+      "label": "Dek/hanggar helikopter",
+      "nilai": "Dek pendaratan helikopter di buritan untuk helikopter maritim hingga 5 ton (tanpa hanggar tetap)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut (Satuan Kapal Eskorta)",
+      "varian": "SIGMA 9113 (365, 366, 367, 368)",
+      "jumlah": 4,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2007,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Keempat korvet aktif berdinas di Komando Armada II TNI AL.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Pada Januari 2004, Indonesia menandatangani kontrak dengan Damen Schelde Naval Shipbuilding untuk pembangunan dua unit korvet berdesain modular SIGMA (Ship Integrated Geometrical Modularity Approach) tipe 9113, yang kemudian diikuti opsi dua unit tambahan pada tahun 2006. Angka 9113 merujuk pada dimensi panjang sekitar 91 meter dan lebar 13 meter.\n\nKapal pertama, KRI Diponegoro (365), resmi diserahkan pada Juli 2007, disusul KRI Hasanuddin (366) pada November 2007, KRI Sultan Iskandar Muda (367) pada Oktober 2008, dan KRI Frans Kaisiepo (368) pada Maret 2009. Keberhasilan pengoperasian keempat korvet ini menjadi landasan pemilihan desain SIGMA 10514 pada program Fregat Kelas Martadinata.",
+    "linimasa": [
+      {
+        "tahun": 2004,
+        "bulan": 1,
+        "judul": "Kontrak pesanan perdana korvet SIGMA 9113",
+        "uraian": "Kementerian Pertahanan RI memesan batch pertama korvet SIGMA 9113 dari Damen Schelde Naval Shipbuilding.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2007,
+        "bulan": 7,
+        "judul": "Serah terima KRI Diponegoro (365)",
+        "uraian": "Kapal pertama di kelasnya diresmikan masuk dinas TNI Angkatan Laut di Vlissingen, Belanda.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2009,
+        "bulan": 3,
+        "judul": "Penyelesaian pengiriman unit keempat KRI Frans Kaisiepo (368)",
+        "uraian": "Unit keempat SIGMA 9113 resmi diserahkan sehingga melengkapi kekuatan empat korvet Kelas Diponegoro.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/korvet-kelas-diponegoro.glb",
+    "poster": "/models/korvet-kelas-diponegoro.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Korvet Kelas Diponegoro (SIGMA 9113) dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "meriam-76",
+        "label": "Meriam 76 mm & Peluncur Tetral",
+        "posisi": "0 0.55 1.55",
+        "normal": "0 1 0",
+        "deskripsi": "Meriam haluan 76 mm dan peluncur rudal pertahanan udara jarak pendek di depan anjungan."
+      },
+      {
+        "id": "dek-heli-buritan",
+        "label": "Dek Helikopter Buritan",
+        "posisi": "0 0.35 -1.45",
+        "normal": "0 1 0",
+        "deskripsi": "Dek pendaratan helikopter maritim AS565 Panther di buritan kapal."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/korvet-kelas-diponegoro.webp",
+      "alt": "Foto asli Korvet Kelas Diponegoro (SIGMA 9113)",
+      "kredit": "Author: Mr Wim Kosten,maritimephoto.com via Wikimedia Commons",
+      "lisensi": "CC BY-SA 2.5"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Damen Naval SIGMA Corvette 9113 Specification Sheet",
+      "penerbit": "Damen Shipyards Group",
+      "url": "https://www.damen.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (Netherlands to Indonesia SIGMA 9113)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "korvet",
+    "sigma-9113",
+    "diponegoro",
+    "damen",
+    "tni-al"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

@@ -1,0 +1,75 @@
+{
+  "nama": "KRI dr. Soeharso (990)",
+  "namaLain": ["KRI Tanjung Dalpele"],
+  "matra": "laut",
+  "jenis": "kapal-rumah-sakit",
+  "peran": "Kapal bantu rumah sakit untuk layanan kesehatan terapung, evakuasi medis, dan bantuan kemanusiaan penanggulangan bencana.",
+  "negaraAsal": ["KR", "ID"],
+  "pabrikan": ["daesun-shipbuilding"],
+  "varian": [
+    {
+      "nama": "BRS-990",
+      "keterangan": "Dikonversi dari kapal angkut serbaguna menjadi kapal bantu rumah sakit penuh pada 2008."
+    }
+  ],
+  "tahunMulaiDinas": 2003,
+  "status": "dalam-dinas",
+  "ringkasan": "KRI dr. Soeharso (990) adalah kapal bantu rumah sakit (BRS) milik TNI Angkatan Laut yang dibangun di Korea Selatan. Kapal ini dilengkapi ruang operasi, unit perawatan intensif, poliklinik, serta dek helikopter untuk mendukung operasi bantuan kemanusiaan di wilayah kepulauan Indonesia.",
+  "spesifikasi": [
+    { "kunci": "panjang", "label": "Panjang", "nilai": 122, "satuan": "m", "keandalan": "sekunder", "sumberId": "tnial-soeharso" },
+    { "kunci": "lebar", "label": "Lebar", "nilai": 22, "satuan": "m", "keandalan": "sekunder", "sumberId": "tnial-soeharso" },
+    { "kunci": "sarat-air", "label": "Sarat air", "nilai": 4.9, "satuan": "m", "keandalan": "sekunder", "sumberId": "tnial-soeharso" },
+    { "kunci": "displasemen", "label": "Displasemen", "nilai": 11394, "satuan": "ton", "keandalan": "sekunder", "sumberId": "daesun-ref" },
+    { "kunci": "kecepatan-maks", "label": "Kecepatan maks", "nilai": 27.8, "satuan": "km/jam", "catatan": "± 15 knot", "keandalan": "sekunder", "sumberId": "tnial-soeharso" },
+    { "kunci": "awak", "label": "Awak", "nilai": 140, "satuan": "orang", "catatan": "Belum termasuk staf medis dan pasien", "keandalan": "sekunder", "sumberId": "tnial-soeharso" }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut",
+      "varian": "BRS-990",
+      "jumlah": 1,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2003,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "sumberId": "tnial-soeharso"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Berawal sebagai kapal LPD KRI Tanjung Dalpele pada 2003, lalu dialihfungsikan secara resmi menjadi kapal bantu rumah sakit KRI dr. Soeharso (990) pada 2008.",
+    "linimasa": [
+      { "tahun": 2003, "bulan": 9, "judul": "Masuk Dinas sebagai KRI Tanjung Dalpele", "uraian": "Selesai dibangun di Dae Sun Shipbuilding dan bergabung dengan TNI AL.", "sumberId": "daesun-ref" },
+      { "tahun": 2008, "bulan": 9, "judul": "Konversi Menjadi Kapal Rumah Sakit", "uraian": "Diresmikan ulang sebagai KRI dr. Soeharso (990) dengan fasilitas rumah sakit terapung.", "sumberId": "tnial-soeharso" },
+      { "tahun": 2018, "bulan": 10, "judul": "Misi Bantuan Bencana Palu", "uraian": "Dikerahkan sebagai rumah sakit terapung dan pusat evakuasi medis pascagempa di Sulawesi Tengah.", "sumberId": "tnial-soeharso" }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/kri-dr-soeharso.webp",
+      "alt": "Foto KRI dr. Soeharso (990) TNI AL",
+      "kredit": "TNI Angkatan Laut / Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "tnial-soeharso",
+      "judul": "Profil KRI dr. Soeharso (990) TNI Angkatan Laut",
+      "penerbit": "TNI Angkatan Laut",
+      "url": "https://www.tnial.mil.id/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-pemerintah"
+    },
+    {
+      "id": "daesun-ref",
+      "judul": "Dae Sun Shipbuilding Hospital & LPD Vessel Reference",
+      "penerbit": "Dae Sun Shipbuilding & Engineering",
+      "url": "https://www.daesuns.co.kr/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "sekunder"
+    }
+  ],
+  "tag": ["kapal-rumah-sakit", "hadr", "tni-al"],
+  "diperbaruiPada": "2026-11-25"
+}

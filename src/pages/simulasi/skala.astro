@@ -1,0 +1,182 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { labelJenis, labelMatra } from '../../lib/format';
+
+const semuaAlutsista = (await getCollection('alutsista')).sort((a, b) =>
+  a.data.nama.localeCompare(b.data.nama, 'id')
+);
+
+const itemsDimensi = semuaAlutsista
+  .map((e) => {
+    const panjangSp = e.data.spesifikasi.find((s) => s.kunci === 'panjang' && typeof s.nilai === 'number');
+    const lebarSp = e.data.spesifikasi.find(
+      (s) => (s.kunci === 'lebar' || s.kunci === 'rentang-sayap' || s.kunci === 'diameter-rotor') && typeof s.nilai === 'number'
+    );
+    const tinggiSp = e.data.spesifikasi.find((s) => s.kunci === 'tinggi' && typeof s.nilai === 'number');
+    let panjangM = panjangSp && typeof panjangSp.nilai === 'number' ? panjangSp.nilai : null;
+    if (panjangM && panjangSp?.satuan === 'mm') panjangM = panjangM / 1000;
+
+    return {
+      slug: e.id,
+      nama: e.data.nama,
+      matra: e.data.matra,
+      matraLabel: labelMatra(e.data.matra),
+      jenisLabel: labelJenis(e.data.jenis),
+      panjangM,
+      lebarM: lebarSp && typeof lebarSp.nilai === 'number' ? lebarSp.nilai : null,
+      tinggiM: tinggiSp && typeof tinggiSp.nilai === 'number' ? tinggiSp.nilai : null,
+      foto: e.data.galeri[0]?.berkas || e.data.model3d?.poster || '',
+    };
+  })
+  .filter((d) => d.panjangM !== null);
+---
+
+<Base
+  judul="Pembanding Skala Ukuran Nyata"
+  deskripsi="Visualisasi perbandingan panjang dan skala ukuran nyata antar alutsista Trimatra dengan patokan manusia, bus kota, dan lapangan bola."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <header class="space-y-2">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /simulasi/skala &bull; Pembanding Dimensi Metrik
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        Pembanding Skala Ukuran Nyata
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl">
+        Pilih hingga 3 alutsista untuk melihat perbandingan panjang proporsionalnya dalam skala yang sama terhadap patokan objek sehari-hari.
+      </p>
+    </header>
+
+    <section class="terminal-panel">
+      <div class="terminal-bar">
+        <span>PEMILIH UNIT &amp; PATOKAN SKALA</span>
+        <span id="scale-max-label" class="tabular-nums text-emerald-700 dark:text-emerald-400">Skala maks: — m</span>
+      </div>
+
+      <div class="p-5 sm:p-6 space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label for="skala-a" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              Alutsista 1 (Hijau)
+            </label>
+            <select id="skala-a" class="w-full min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-sm text-slate-900 dark:text-white">
+              {itemsDimensi.map((it) => (
+                <option value={it.slug} selected={it.slug === 'fregat-kelas-martadinata'}>
+                  {it.nama} ({it.panjangM} m)
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label for="skala-b" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              Alutsista 2 (Biru)
+            </label>
+            <select id="skala-b" class="w-full min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-sm text-slate-900 dark:text-white">
+              {itemsDimensi.map((it) => (
+                <option value={it.slug} selected={it.slug === 'c-130-hercules'}>
+                  {it.nama} ({it.panjangM} m)
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label for="skala-c" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              Alutsista 3 (Kuning)
+            </label>
+            <select id="skala-c" class="w-full min-h-[44px] px-3 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-sm text-slate-900 dark:text-white">
+              {itemsDimensi.map((it) => (
+                <option value={it.slug} selected={it.slug === 'leopard-2ri'}>
+                  {it.nama} ({it.panjangM} m)
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <!-- Kanvas Perbandingan Proporsional -->
+        <div class="p-5 rounded-xl border border-slate-200 dark:border-[#243244] bg-slate-50 dark:bg-[#090e15] space-y-5">
+          <div id="scale-bars" class="space-y-4"></div>
+
+          <div class="pt-4 border-t border-slate-200 dark:border-[#243244] space-y-2.5">
+            <p class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              Patokan Referensi Umum (Skala Sama):
+            </p>
+            <div id="scale-refs" class="space-y-2.5"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script is:inline define:vars={{ itemsDimensi }}>
+    const selA = document.getElementById('skala-a');
+    const selB = document.getElementById('skala-b');
+    const selC = document.getElementById('skala-c');
+    const barsEl = document.getElementById('scale-bars');
+    const refsEl = document.getElementById('scale-refs');
+    const maxLabel = document.getElementById('scale-max-label');
+
+    const refs = [
+      { nama: 'Bus Kota Standar', panjangM: 12, warna: 'bg-slate-500' },
+      { nama: 'Pesawat Penumpang Boeing 737-800', panjangM: 39.5, warna: 'bg-slate-400' },
+      { nama: 'Lapangan Sepak Bola (FIFA)', panjangM: 105, warna: 'bg-emerald-800/70' },
+    ];
+
+    function renderScale() {
+      const picks = [
+        { item: itemsDimensi.find((d) => d.slug === selA.value), color: 'bg-emerald-500', text: 'text-emerald-700 dark:text-emerald-300' },
+        { item: itemsDimensi.find((d) => d.slug === selB.value), color: 'bg-cyan-500', text: 'text-cyan-700 dark:text-cyan-300' },
+        { item: itemsDimensi.find((d) => d.slug === selC.value), color: 'bg-amber-400', text: 'text-amber-700 dark:text-amber-300' },
+      ].filter((p) => p.item);
+
+      const maxLen = Math.max(...picks.map((p) => p.item.panjangM || 0), 105);
+      if (maxLabel) maxLabel.textContent = `Skala penuh: ${maxLen.toFixed(1)} m`;
+
+      if (barsEl) {
+        barsEl.innerHTML = picks
+          .map(({ item, color, text }) => {
+            const pct = Math.max(1.5, ((item.panjangM || 0) / maxLen) * 100);
+            const lebarTxt = item.lebarM ? ` • Lebar/Rentang: ${item.lebarM} m` : '';
+            return `
+              <div class="space-y-1.5">
+                <div class="flex flex-wrap items-center justify-between gap-2 text-sm">
+                  <a href="/alutsista/${item.slug}" class="font-bold ${text} hover:underline">${item.nama}</a>
+                  <span class="font-mono tabular-nums text-xs text-slate-600 dark:text-slate-300">
+                    Panjang: <strong>${item.panjangM} m</strong>${lebarTxt}
+                  </span>
+                </div>
+                <div class="w-full h-7 rounded-md bg-slate-200 dark:bg-[#131d2a] overflow-hidden flex items-center px-1">
+                  <div class="h-4 rounded ${color} transition-all duration-300" style="width:${pct}%"></div>
+                </div>
+              </div>
+            `;
+          })
+          .join('');
+      }
+
+      if (refsEl) {
+        refsEl.innerHTML = refs
+          .map((r) => {
+            const pct = Math.max(1.5, (r.panjangM / maxLen) * 100);
+            return `
+              <div class="space-y-1">
+                <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400">
+                  <span>${r.nama}</span>
+                  <span class="font-mono tabular-nums">${r.panjangM} m</span>
+                </div>
+                <div class="w-full h-4 rounded bg-slate-200 dark:bg-[#131d2a] overflow-hidden flex items-center px-1">
+                  <div class="h-2 rounded ${r.warna}" style="width:${pct}%"></div>
+                </div>
+              </div>
+            `;
+          })
+          .join('');
+      }
+    }
+
+    [selA, selB, selC].forEach((el) => el?.addEventListener('change', renderScale));
+    renderScale();
+  </script>
+</Base>

@@ -1,0 +1,208 @@
+{
+  "nama": "Kapal Selam Kelas Nagapasa (Type 209/1400)",
+  "namaLain": [
+    "DSME 1400",
+    "Kelas Chang Bogo Batch Indonesia"
+  ],
+  "matra": "laut",
+  "jenis": "kapal-selam",
+  "peran": "Kapal selam serang bertenaga diesel-listrik untuk patroli bawah permukaan dan peperangan anti-kapal permukaan/selam.",
+  "negaraAsal": [
+    "KR",
+    "ID"
+  ],
+  "pabrikan": [
+    "dsme-hanwha-ocean",
+    "pt-pal-indonesia"
+  ],
+  "varian": [
+    {
+      "nama": "KRI Nagapasa (403)",
+      "keterangan": "Unit pertama yang dibangun di Okpo, Korea Selatan, dan resmi berdinas pada Agustus 2017."
+    },
+    {
+      "nama": "KRI Ardadedali (404)",
+      "keterangan": "Unit kedua yang dibangun di Korea Selatan dan diserahkan kepada TNI AL pada April 2018."
+    },
+    {
+      "nama": "KRI Alugoro (405)",
+      "keterangan": "Unit ketiga yang dirakit dan diluncurkan di fasilitas kapal selam PT PAL Indonesia di Surabaya, diserahterimakan pada Maret 2021."
+    }
+  ],
+  "tahunMulaiDinas": 2017,
+  "status": "dalam-dinas",
+  "ringkasan": "Kapal Selam Kelas Nagapasa adalah kapal selam diesel-listrik tipe 209/1400 hasil pengembangan Daewoo Shipbuilding & Marine Engineering (kini Hanwha Ocean) bekerja sama dengan PT PAL Indonesia. Kelas ini terdiri dari tiga unit—KRI Nagapasa (403), KRI Ardadedali (404), dan KRI Alugoro (405)—yang juga menandai program alih teknologi perakitan kapal selam di Surabaya.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 61.3,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 6.25,
+      "satuan": "m",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "displasemen-permukaan",
+      "label": "Displasemen (permukaan)",
+      "nilai": 1400,
+      "satuan": "ton",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "displasemen-tenggelam",
+      "label": "Displasemen (tenggelam)",
+      "nilai": 1586,
+      "satuan": "ton",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "propulsi",
+      "label": "Propulsi",
+      "nilai": "Diesel-listrik: 4 mesin diesel MTU 12V 493 dengan motor listrik penggerak baling-baling tunggal",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 39.8,
+      "satuan": "km/jam",
+      "catatan": "Sekitar 21,5 knot saat menyelam (sekitar 11 knot atau 20,4 km/jam di permukaan).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 40,
+      "satuan": "orang",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tabung-torpedo",
+      "label": "Tabung torpedo",
+      "nilai": 8,
+      "satuan": "jumlah",
+      "catatan": "8 tabung torpedo haluan kaliber 533 mm.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut (Satuan Kapal Selam)",
+      "varian": "DSME 1400 (403, 404, 405)",
+      "jumlah": 3,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2017,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Ketiga kapal selam aktif memperkuat Satuan Kapal Selam TNI AL.",
+      "sumberId": "s1"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Kontrak pengadaan tiga kapal selam Kelas Nagapasa ditandatangani pada Desember 2011 antara Kementerian Pertahanan Republik Indonesia dan Daewoo Shipbuilding & Marine Engineering (DSME) Korea Selatan. Desain DSME 1400 merupakan turunan modern dari keluarga kapal selam Type 209/1400 yang sebelumnya dibangun DSME untuk Angkatan Laut Korea Selatan sebagai Kelas Chang Bogo.\n\nProgram ini dirancang dengan skema alih teknologi bertahap kepada PT PAL Indonesia. Dua unit pertama (KRI Nagapasa-403 dan KRI Ardadedali-404) dibangun di galangan Okpo, Korea Selatan, dengan keterlibatan teknisi Indonesia. Unit ketiga, KRI Alugoro (405), dibangun dalam bentuk blok modul yang kemudian disambung (joint section) dan diuji coba di fasilitas kapal selam PT PAL Indonesia di Surabaya.\n\nKRI Alugoro diluncurkan di Surabaya pada April 2019 dan resmi diserahterimakan kepada TNI Angkatan Laut pada Maret 2021, menjadikannya kapal selam pertama yang dirakit di kawasan Asia Tenggara.",
+    "linimasa": [
+      {
+        "tahun": 2011,
+        "bulan": 12,
+        "judul": "Penandatanganan kontrak tiga kapal selam DSME 1400",
+        "uraian": "Kementerian Pertahanan RI menandatangani kontrak pengadaan tiga kapal selam beserta program alih teknologi ke PT PAL Indonesia.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2017,
+        "bulan": 8,
+        "judul": "Peresmian KRI Nagapasa (403)",
+        "uraian": "Kapal pertama diserahterimakan dan tiba di Pangkalan Surabaya untuk berdinas di Satuan Kapal Selam TNI AL.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2018,
+        "bulan": 4,
+        "judul": "Peresmian KRI Ardadedali (404)",
+        "uraian": "Kapal kedua resmi diserahterimakan kepada TNI Angkatan Laut.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2021,
+        "bulan": 3,
+        "judul": "Serah terima KRI Alugoro (405) hasil perakitan Surabaya",
+        "uraian": "Unit ketiga yang dirakit di fasilitas PT PAL Indonesia resmi diserahkan kepada Kementerian Pertahanan dan TNI AL.",
+        "sumberId": "s1"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/kapal-selam-kelas-nagapasa.glb",
+    "poster": "/models/kapal-selam-kelas-nagapasa.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Kapal Selam Kelas Nagapasa dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "haluan-torpedo",
+        "label": "Haluan 8 Tabung Torpedo 533 mm",
+        "posisi": "0 0.35 1.85",
+        "normal": "0 1 0",
+        "deskripsi": "Bagian haluan silinder tempat delapan tabung peluncur torpedo 533 mm dan kubah sonar."
+      },
+      {
+        "id": "menara-anjungan",
+        "label": "Menara Anjungan (Sail)",
+        "posisi": "0 1.15 0.35",
+        "normal": "0 1 0",
+        "deskripsi": "Menara anjungan kapal selam tempat tiang periskop, radar permukaan, dan kemudi selam."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/kapal-selam-kelas-nagapasa.webp",
+      "alt": "Foto asli Kapal Selam Kelas Nagapasa (Type 209/1400)",
+      "kredit": "Indonesian Navy (TNI-AL) via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Produk Kapal Selam Kelas Nagapasa / KRI Alugoro-405",
+      "penerbit": "PT PAL Indonesia",
+      "url": "https://www.pal.co.id",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database & Hanwha Ocean Submarine Reference",
+      "penerbit": "SIPRI / Hanwha Ocean",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "kapal-selam",
+    "nagapasa",
+    "alugoro",
+    "type-209",
+    "pt-pal",
+    "tni-al"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

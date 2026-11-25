@@ -1,0 +1,130 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const semuaAlutsista = await getCollection('alutsista');
+const daftarModel = semuaAlutsista.filter((e) => e.data.model3d);
+---
+
+<Base
+  judul="Tentang, Metodologi & Penafian"
+  deskripsi="Tujuan, metodologi sumber terbuka, aturan konten, atribusi lisensi model 3D, dan penafian resmi Katalog Alutsista Interaktif."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <header class="space-y-3 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <p class="text-xs font-mono font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">
+        Dokumentasi & Transparansi
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        Tentang Katalog Alutsista Interaktif
+      </h1>
+      <p class="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+        Platform referensi dan edukasi berbahasa Indonesia yang mendokumentasikan alat utama sistem senjata (alutsista) berdasarkan informasi terbuka (open-source) tingkat katalog, dilengkapi model 3D interaktif berlisensi bebas.
+      </p>
+    </header>
+
+    <section aria-labelledby="penafian-resmi" class="p-6 rounded-xl bg-amber-50 dark:bg-slate-800/90 border border-amber-200 dark:border-slate-700 space-y-2">
+      <h2 id="penafian-resmi" class="text-lg font-bold text-slate-900 dark:text-white">
+        Penafian Wajib (Disclaimer)
+      </h2>
+      <p class="text-sm sm:text-base text-slate-800 dark:text-slate-200 font-medium leading-relaxed">
+        "Situs edukasi non-resmi. Tidak berafiliasi dengan TNI, Kementerian Pertahanan, atau produsen mana pun. Data bersumber dari informasi terbuka dan dapat berbeda dari data resmi."
+      </p>
+    </section>
+
+    <section aria-labelledby="tujuan-dan-batasan" class="space-y-4">
+      <h2 id="tujuan-dan-batasan" class="text-xl font-bold text-slate-900 dark:text-white">
+        1. Tujuan & Aturan Konten
+      </h2>
+      <div class="space-y-3 text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+        <p>
+          Situs ini dibuat semata-mata untuk kepentingan literasi teknologi pertahanan, sejarah rekayasa industri, dan edukasi masyarakat umum. Seluruh entri disusun mengikuti prinsip ketat:
+        </p>
+        <ul class="list-disc ps-6 space-y-2">
+          <li>
+            <strong>Hanya Informasi Terbuka:</strong> Semua angka spesifikasi, tahun dinas, dan riwayat pengadaan berasal dari lembar fakta produsen, rilis publik pemerintah, atau basis data pertahanan terbuka (seperti SIPRI).
+          </li>
+          <li>
+            <strong>Hanya Spesifikasi Tingkat Katalog:</strong> Hanya memuat dimensi fisik, bobot, propulsi/mesin, kecepatan, jangkauan umum, awak, dan kaliber. Situs ini tidak memuat prosedur taktis, panduan pengoperasian, cara modifikasi, maupun data berklasifikasi.
+          </li>
+          <li>
+            <strong>Penanda Keandalan & Tanggal Data:</strong> Setiap nilai spesifikasi diberi label tingkat keandalan (<em>Resmi</em>, <em>Sekunder</em>, atau <em>Perkiraan</em>) dan tertaut langsung ke sumber rujukan beserta tanggal aksesnya. Nilai yang tidak dipublikasikan ditulis secara jujur sebagai <em>"Tidak dipublikasikan"</em>.
+          </li>
+          <li>
+            <strong>Penulisan Independen & Netral:</strong> Seluruh ringkasan dan sejarah ditulis ulang dengan kalimat sendiri secara berimbang tanpa menyalin teks sumber lain dan tanpa klaim superlatif.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="metodologi-sumber" class="space-y-4">
+      <h2 id="metodologi-sumber" class="text-xl font-bold text-slate-900 dark:text-white">
+        2. Metodologi & Hierarki Sumber
+      </h2>
+      <ol class="list-decimal ps-6 space-y-2 text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+        <li>
+          <strong>Sumber Primer (`resmi-produsen`, `resmi-pemerintah`):</strong> Brosur spesifikasi resmi pabrikan (PT Pindad, PT PAL Indonesia, PT Dirgantara Indonesia, Damen Schelde Naval Shipbuilding, Lockheed Martin, Krauss-Maffei Wegmann/KNDS) serta pengumuman resmi kementerian atau angkatan bersenjata.
+        </li>
+        <li>
+          <strong>Basis Data Independen (`database-independen`, `publikasi`):</strong> SIPRI Arms Transfers Database dan publikasi lembaga kajian pertahanan.
+        </li>
+        <li>
+          <strong>Referensi Sekunder (`sekunder`):</strong> Publikasi media pertahanan terverifikasi untuk melengkapi konteks kronologi sejarah.
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="atribusi-aset" class="space-y-4">
+      <h2 id="atribusi-aset" class="text-xl font-bold text-slate-900 dark:text-white">
+        3. Lisensi & Atribusi Model 3D dan Visual
+      </h2>
+      <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+        Seluruh model 3D (format GLB) dan poster pratinjau (format WebP) di katalog ini menggunakan lisensi bebas (CC0, CC BY 4.0, CC BY-SA 4.0, atau karya milik sendiri). Berikut daftar atribusi model 3D pada katalog saat ini:
+      </p>
+
+      <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-slate-100 dark:bg-slate-800 text-xs uppercase text-slate-700 dark:text-slate-200">
+            <tr>
+              <th scope="col" class="py-3 px-4">Alutsista</th>
+              <th scope="col" class="py-3 px-4">Pembuat</th>
+              <th scope="col" class="py-3 px-4">Lisensi</th>
+              <th scope="col" class="py-3 px-4">Atribusi</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+            {daftarModel.map((item) => (
+              <tr>
+                <td class="py-3 px-4 font-semibold">
+                  <a href={`/alutsista/${item.id}`} class="text-sky-700 dark:text-sky-400 hover:underline">
+                    {item.data.nama}
+                  </a>
+                </td>
+                <td class="py-3 px-4">{item.data.model3d?.pembuat}</td>
+                <td class="py-3 px-4 font-mono text-xs">{item.data.model3d?.lisensi}</td>
+                <td class="py-3 px-4 text-slate-700 dark:text-slate-300">{item.data.model3d?.atribusi}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="koreksi" aria-labelledby="kontak-koreksi" class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 space-y-3">
+      <h2 id="kontak-koreksi" class="text-xl font-bold text-slate-900 dark:text-white">
+        4. Laporkan Koreksi Data
+      </h2>
+      <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+        Apabila Anda menemukan kekeliruan angka spesifikasi, pembaruan status dinas, atau tautan sumber terbuka yang berubah, silakan ajukan koreksi dengan menyertakan tautan sumber publik resmi melalui repositori proyek atau surat elektronik redaksi data.
+      </p>
+      <div class="pt-1">
+        <a
+          href="mailto:koreksi-data@example.org?subject=Koreksi%20Data%20Katalog%20Alutsista"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 dark:bg-sky-600 text-white text-sm font-semibold hover:bg-slate-800 dark:hover:bg-sky-500"
+        >
+          <span>Kirim Laporan Koreksi via Email</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</Base>

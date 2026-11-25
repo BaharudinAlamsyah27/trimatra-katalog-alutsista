@@ -1,0 +1,15 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Yonarmed 10 Kostrad (Bogor)",
+  "matra": "darat",
+  "lat": -6.544,
+  "lng": 106.837,
+  "satuan": "Batalion Artileri Medan 10 Kostrad (TNI AD)",
+  "alutsista": [
+    {
+      "nama": "ASTROS II Mk 6",
+      "slug": "astros-ii-mk6"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI AD / Kostrad"
+}

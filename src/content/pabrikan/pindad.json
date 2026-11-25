@@ -1,0 +1,19 @@
+{
+  "nama": "PT Pindad",
+  "negara": "ID",
+  "tahunBerdiri": 1983,
+  "jenisUsaha": "BUMN industri pertahanan (anggota holding DEFEND ID)",
+  "deskripsi": "Perusahaan industri pertahanan milik negara Indonesia yang memproduksi kendaraan khusus dan lapis baja, senjata ringan, serta amunisi untuk kebutuhan pertahanan dan keamanan.",
+  "sejarahSingkat": "Berakar dari bengkel persenjataan militer yang berdiri di Surabaya pada 1808 dan pindah ke Bandung pada 1923, perusahaan ini resmi menjadi badan usaha milik negara dengan nama PT Pindad (Persero) pada 29 April 1983.",
+  "situs": "https://pindad.com",
+  "sumber": [
+    {
+      "id": "p-pindad-1",
+      "judul": "Profil & Sejarah Perusahaan PT Pindad",
+      "penerbit": "PT Pindad",
+      "url": "https://pindad.com/sejarah",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "nama": "F-16 Fighting Falcon",
+  "namaLain": [
+    "F-16 A/B Block 15 OCU",
+    "F-16 C/D Block 52ID",
+    "Viper"
+  ],
+  "matra": "udara",
+  "jenis": "pesawat-tempur",
+  "peran": "Pesawat tempur multiperan supersonik bermesin tunggal untuk pertahanan udara dan dukungan udara.",
+  "negaraAsal": [
+    "US"
+  ],
+  "pabrikan": [
+    "general-dynamics-lockheed-martin"
+  ],
+  "varian": [
+    {
+      "nama": "F-16A/B Block 15 OCU (eMLU)",
+      "keterangan": "Varian gelombang pertama TNI AU dari program Peace Bima Sena I yang kemudian menjalani peningkatan struktur dan avionik melalui program Falcon Star-eMLU."
+    },
+    {
+      "nama": "F-16C/D Block 52ID",
+      "keterangan": "Varian gelombang kedua dari program Peace Bima Sena II yang telah ditingkatkan setara konfigurasi avionik Block 52."
+    }
+  ],
+  "tahunMulaiDinas": 1978,
+  "status": "dalam-dinas",
+  "ringkasan": "F-16 Fighting Falcon adalah pesawat tempur multiperan supersonik bermesin tunggal yang awalnya dikembangkan oleh General Dynamics (kini diproduksi oleh Lockheed Martin). Sejak akhir tahun 1989, pesawat ini menjadi salah satu unsur tempur utama TNI Angkatan Udara yang dioperasikan di Lanud Iswahjudi dan Lanud Roesmin Nurjadin.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 15.06,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "rentang-sayap",
+      "label": "Rentang sayap",
+      "nilai": 9.96,
+      "satuan": "m",
+      "catatan": "Termasuk rel peluncur rudal ujung sayap (9,45 m tanpa rel).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 4.88,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 8570,
+      "satuan": "kg",
+      "catatan": "Acuan varian standar F-16C.",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "bobot-lepas-landas-maks",
+      "label": "Bobot lepas landas maks",
+      "nilai": 19187,
+      "satuan": "kg",
+      "catatan": "Setara 42.300 pon pada konfigurasi F-16C/D (sekitar 17.010 kg pada konfigurasi awal).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "1 x turbofan Pratt & Whitney F100-PW-220 (atau F110-GE-100 pada blok lain) dengan afterburner",
+      "keandalan": "resmi",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 2120,
+      "satuan": "km/jam",
+      "catatan": "Sekitar Mach 2 pada ketinggian jelajah.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan",
+      "label": "Jangkauan",
+      "nilai": 3220,
+      "satuan": "km",
+      "catatan": "Jangkauan feri dengan tangki bahan bakar eksternal (lebih dari 2.000 mil).",
+      "keandalan": "resmi",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "plafon",
+      "label": "Plafon operasi",
+      "nilai": 15240,
+      "satuan": "m",
+      "catatan": "Di atas 50.000 kaki.",
+      "keandalan": "resmi",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak/kapasitas",
+      "nilai": "1 penerbang (F-16A/C) atau 2 penerbang (F-16B/D)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "muatan-persenjataan",
+      "label": "Muatan/persenjataan",
+      "nilai": "Kanun putar internal M61A1 20 mm dan hingga 11 cantelan (9 stasiun sayap/badan + 2 ujung sayap) untuk rudal udara-ke-udara serta amunisi udara-ke-permukaan",
+      "keandalan": "resmi",
+      "sumberId": "s2"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Udara (Skadron Udara 3 & Skadron Udara 16)",
+      "varian": "F-16A/B Block 15 OCU (eMLU) & F-16C/D Block 52ID",
+      "jumlah": 33,
+      "jenisJumlah": "perkiraan",
+      "tahunMulai": 1989,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Terdiri atas unit gelombang Peace Bima Sena I yang telah menjalani program Falcon Star-eMLU serta unit gelombang Peace Bima Sena II.",
+      "sumberId": "s3"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Program F-16 bermula dari kompetisi Lightweight Fighter (LWF) Angkatan Udara Amerika Serikat pada awal dekade 1970-an untuk menghasilkan pesawat tempur bermesin tunggal yang lincah dengan sistem kendali terbang fly-by-wire. Prototipe YF-16 terbang perdana pada tahun 1974 dan versi produksi F-16A resmi mulai berdinas pada tahun 1978.\n\nIndonesia mengakuisisi 12 unit F-16A/B Block 15 OCU (Operational Capability Upgrade) melalui program Peace Bima Sena I yang tiba di Lanud Iswahjudi pada akhir tahun 1989 untuk memperkuat Skadron Udara 3. Untuk menambah kekuatan pertahanan udara, Indonesia kemudian menjalankan program Peace Bima Sena II pada dekade 2010-an yang menghadirkan 24 unit F-16C/D yang telah direkondisi dan ditingkatkan ke standar Block 52ID, ditempatkan di Skadron Udara 16 Lanud Roesmin Nurjadin dan Skadron Udara 3.\n\nSelain pengadaan unit baru, TNI Angkatan Udara bersama teknisi PT Dirgantara Indonesia berhasil melaksanakan program Falcon Star dan Enhanced Mid-Life Update (eMLU) di dalam negeri untuk memperpanjang usia pakai struktur serta memutakhirkan sistem avionik armada F-16A/B.",
+    "linimasa": [
+      {
+        "tahun": 1974,
+        "bulan": 2,
+        "judul": "Penerbangan perdana prototipe YF-16",
+        "uraian": "Prototipe YF-16 melaksanakan penerbangan resmi pertamanya di Pangkalan Udara Edwards, Amerika Serikat.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 1989,
+        "bulan": 12,
+        "judul": "Kedatangan F-16A/B pertama TNI AU (Peace Bima Sena I)",
+        "uraian": "Gelombang perdana F-16A/B Block 15 OCU mendarat di Lanud Iswahjudi, Madiun, untuk memperkuat Skadron Udara 3.",
+        "sumberId": "s3"
+      },
+      {
+        "tahun": 2014,
+        "bulan": 7,
+        "judul": "Pengiriman gelombang pertama F-16C/D Block 52ID (Peace Bima Sena II)",
+        "uraian": "Unit awal dari total 24 pesawat F-16C/D Block 52ID tiba di Indonesia dan mulai memperkuat Skadron Udara 16 di Pekanbaru.",
+        "sumberId": "s3"
+      },
+      {
+        "tahun": 2020,
+        "bulan": 2,
+        "judul": "Penerbangan perdana F-16A/B hasil program Falcon Star-eMLU",
+        "uraian": "Pesawat F-16 TNI AU yang dimodernisasi oleh teknisi Skadron Teknik 042 dan PT Dirgantara Indonesia berhasil terbang perdana pasca-peningkatan.",
+        "sumberId": "s3"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/f-16-fighting-falcon.glb",
+    "poster": "/models/f-16-fighting-falcon.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik F-16 Fighting Falcon dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "kanopi",
+        "label": "Kanopi Gelembung (Bubble Canopy)",
+        "posisi": "0 0.85 1.1",
+        "normal": "0 1 0",
+        "deskripsi": "Kanopi polikarbonat tanpa bingkai depan untuk memberikan pandangan keliling yang luas bagi penerbang."
+      },
+      {
+        "id": "saluran-udara",
+        "label": "Saluran Masuk Udara Bawah",
+        "posisi": "0 0.25 0.9",
+        "normal": "0 -1 0",
+        "deskripsi": "Saluran masuk udara mesin tunggal yang ditempatkan di bawah badan pesawat."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/f-16-fighting-falcon.webp",
+      "alt": "Foto asli F-16 Fighting Falcon",
+      "kredit": "Slaunger via Wikimedia Commons",
+      "lisensi": "CC BY-SA 3.0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "F-16 Fighting Falcon Official Product Card",
+      "penerbit": "Lockheed Martin Corporation",
+      "url": "https://www.lockheedmartin.com/en-us/products/f-16.html",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "F-16 Fighting Falcon Fact Sheet",
+      "penerbit": "United States Air Force (USAF)",
+      "url": "https://www.af.mil/About-Us/Fact-Sheets/Display/Article/104505/f-16-fighting-falcon/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-pemerintah"
+    },
+    {
+      "id": "s3",
+      "judul": "SIPRI Arms Transfers Database (US to Indonesia F-16A/B & F-16C/D)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "pesawat-tempur",
+    "f-16",
+    "multiperan",
+    "lockheed-martin",
+    "tni-au"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

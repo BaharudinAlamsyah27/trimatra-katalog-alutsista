@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+import { deriveLinimasaGabungan } from '../lib/derive';
+import taksonomiJson from '../data/taksonomi.json';
+import { labelJenis, labelMatra } from '../lib/format';
+
+const semuaPeristiwa = await deriveLinimasaGabungan();
+const daftarDekade = Array.from(new Set(semuaPeristiwa.map((p) => p.dekade))).sort((a, b) => a - b);
+
+const namaBulan = [
+  'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+  'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember',
+];
+---
+
+<Base
+  judul="Linimasa Sejarah Alutsista"
+  deskripsi="Linimasa sejarah gabungan seluruh alutsista di katalog, dapat disaring berdasarkan matra dan dekade."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <header class="space-y-2">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /sejarah &bull; Kronologi Pengembangan & Pengadaan
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white" data-i18n-id="Linimasa Sejarah Alutsista Gabungan" data-i18n-en="Combined Equipment History Timeline">
+        Linimasa Sejarah Alutsista Gabungan
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300">
+        Kronologi pengembangan, penerbangan/peluncuran perdana, pengadaan Indonesia, dan modernisasi dari seluruh entri katalog ({semuaPeristiwa.length} peristiwa tercatat).
+      </p>
+    </header>
+
+    <section aria-label="Filter linimasa sejarah" class="terminal-panel">
+      <div class="terminal-bar">
+        <span>FILTER LINIMASA</span>
+        <span id="sejarah-jumlah-tampil" class="tabular-nums text-emerald-700 dark:text-emerald-400" aria-live="polite">
+          Menampilkan {semuaPeristiwa.length} peristiwa
+        </span>
+      </div>
+      <div class="p-5 flex flex-wrap items-end justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-4">
+          <div>
+            <label for="sejarah-filter-matra" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              Filter Matra
+            </label>
+            <select
+              id="sejarah-filter-matra"
+              class="min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-base text-slate-900 dark:text-white"
+            >
+              <option value="">Semua Matra</option>
+              {taksonomiJson.matra.map((m) => (
+                <option value={m.kunci}>{m.label}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label for="sejarah-filter-dekade" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              Filter Dekade
+            </label>
+            <select
+              id="sejarah-filter-dekade"
+              class="min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-base text-slate-900 dark:text-white"
+            >
+              <option value="">Semua Dekade</option>
+              {daftarDekade.map((d) => (
+                <option value={String(d)}>{d}-an</option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ol id="daftar-linimasa-gabungan" class="relative border-s-2 border-slate-300 dark:border-slate-700 ms-3 space-y-6">
+      {semuaPeristiwa.map((ev) => (
+        <li
+          class="item-peristiwa ms-6 p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs"
+          data-matra={ev.matra}
+          data-dekade={String(ev.dekade)}
+        >
+          <span class="absolute -start-2.5 mt-1.5 flex items-center justify-center w-5 h-5 rounded-full bg-sky-700 text-white ring-4 ring-slate-50 dark:ring-slate-950"></span>
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+            <div class="flex flex-wrap items-center gap-2">
+              <time class="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-slate-900 dark:bg-sky-600 text-white">
+                {ev.bulan ? `${namaBulan[ev.bulan - 1]} ${ev.tahun}` : ev.tahun}
+              </time>
+              <a
+                href={`/alutsista/${ev.alutsistaSlug}`}
+                class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-sky-50 dark:bg-sky-950 text-sky-800 dark:text-sky-300 hover:underline"
+              >
+                {ev.alutsistaNama}
+              </a>
+              <span class="text-xs text-slate-500 dark:text-slate-400">
+                {labelMatra(ev.matra)} &bull; {labelJenis(ev.jenis)}
+              </span>
+            </div>
+            <a
+              href={`/alutsista/${ev.alutsistaSlug}#sumber-${ev.sumberId}`}
+              class="text-xs font-mono text-sky-700 dark:text-sky-400 hover:underline"
+            >
+              Sumber [{ev.sumberId}]
+            </a>
+          </div>
+          <h2 class="text-base font-bold text-slate-900 dark:text-white mb-1">
+            {ev.judul}
+          </h2>
+          <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            {ev.uraian}
+          </p>
+        </li>
+      ))}
+    </ol>
+  </div>
+
+  <script>
+    const selMatra = document.getElementById('sejarah-filter-matra') as HTMLSelectElement | null;
+    const selDekade = document.getElementById('sejarah-filter-dekade') as HTMLSelectElement | null;
+    const items = Array.from(document.querySelectorAll<HTMLElement>('.item-peristiwa'));
+    const statusEl = document.getElementById('sejarah-jumlah-tampil');
+
+    function filterSejarah() {
+      const m = selMatra?.value || '';
+      const d = selDekade?.value || '';
+      let count = 0;
+
+      items.forEach((el) => {
+        const cocokM = !m || el.getAttribute('data-matra') === m;
+        const cocokD = !d || el.getAttribute('data-dekade') === d;
+        if (cocokM && cocokD) {
+          el.classList.remove('hidden');
+          count++;
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+
+      if (statusEl) {
+        statusEl.textContent = `Menampilkan ${count} dari ${items.length} peristiwa`;
+      }
+    }
+
+    selMatra?.addEventListener('change', filterSejarah);
+    selDekade?.addEventListener('change', filterSejarah);
+  </script>
+</Base>

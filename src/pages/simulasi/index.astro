@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const daftarSimulasi = [
+  {
+    href: '/peta',
+    kode: 'SIM-01',
+    judul: 'Peta Pangkalan & Simulator Jangkauan',
+    matra: 'Darat • Laut • Udara',
+    deskripsi:
+      'Simulasi radius jelajah, animasi lintasan A vs B real-time, rute multi-titik (waypoint), lapisan jalur ALKI I/II/III, dan garis siang-malam.',
+  },
+  {
+    href: '/simulasi/skala',
+    kode: 'SIM-02',
+    judul: 'Pembanding Skala Ukuran Nyata',
+    matra: 'Dimensi Metrik (m)',
+    deskripsi:
+      'Bandingkan panjang dan lebar hingga 3 alutsista secara proporsional berdampingan dengan patokan tinggi manusia, bus kota, dan lapangan sepak bola.',
+  },
+  {
+    href: '/simulasi/logistik',
+    kode: 'SIM-03',
+    judul: 'Kalkulator Angkut Logistik & Bantuan Bencana (HADR)',
+    matra: 'Kapasitas & Sorti',
+    deskripsi:
+      'Hitung estimasi jumlah sorti dan total waktu tempuh pesawat angkut atau kapal amfibi untuk mengirim logistik bantuan ke wilayah terdampak.',
+  },
+  {
+    href: '/simulasi/mach',
+    kode: 'SIM-04',
+    judul: 'Kalkulator Mach, ISA & Cakrawala Bumi',
+    matra: 'Fisika Penerbangan & Maritim',
+    deskripsi:
+      'Konversi kecepatan km/jam ⇄ Mach ⇄ knot di berbagai ketinggian Atmosfer Standar (ISA) serta hitung jarak pandang cakrawala kelengkungan Bumi.',
+  },
+  {
+    href: '/bandingkan',
+    kode: 'SIM-05',
+    judul: 'Komparasi Spesifikasi & Grafik Radar',
+    matra: 'Analisis Parameter',
+    deskripsi:
+      'Bandingkan parameter metrik 2–3 alutsista sejenis secara berdampingan lengkap dengan visualisasi grafik radar.',
+  },
+  {
+    href: '/kuis',
+    kode: 'SIM-06',
+    judul: 'Kuis Pengenalan Alutsista Trimatra',
+    matra: 'Edukasi Interaktif',
+    deskripsi:
+      'Uji pengetahuan mengenali foto dan peran alutsista Darat, Laut, dan Udara dengan skor tersimpan otomatis di browser.',
+  },
+];
+---
+
+<Base
+  judul="Pusat Simulasi Edukatif"
+  deskripsi="Kumpulan simulator edukatif Trimatra: peta jangkauan, pembanding skala ukuran, kalkulator logistik HADR, fisika Mach/ISA, cakrawala Bumi, dan kuis."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <header class="space-y-2">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /simulasi &bull; Laboratorium Edukasi Sumber Terbuka
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        Pusat Simulasi &amp; Kalkulator Edukatif
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl">
+        Semua kalkulator di bawah ini murni menggunakan rumus fisika, geografi, dan spesifikasi katalog terbuka untuk tujuan pembelajaran.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {daftarSimulasi.map((sim) => (
+        <a
+          href={sim.href}
+          class="hud-frame group rounded-xl border border-slate-200 dark:border-[#243244] bg-white dark:bg-[#111822] p-6 hover:border-emerald-500 transition-colors flex flex-col justify-between space-y-4"
+        >
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/25">
+                {sim.kode}
+              </span>
+              <span class="text-xs font-mono text-slate-500 dark:text-slate-400">{sim.matra}</span>
+            </div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
+              {sim.judul}
+            </h2>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              {sim.deskripsi}
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-100 dark:border-[#243244] text-sm font-bold text-emerald-700 dark:text-emerald-400">
+            Buka Simulator &rarr;
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

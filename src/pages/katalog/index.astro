@@ -1,0 +1,392 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import taksonomiJson from '../../data/taksonomi.json';
+import { labelJenis, labelMatra, labelStatus, namaNegara } from '../../lib/format';
+
+const semuaAlutsista = await getCollection('alutsista');
+const semuaPabrikan = await getCollection('pabrikan');
+const pabrikanMap = new Map(semuaPabrikan.map((p) => [p.id, p.data.nama]));
+
+const jenisTerpakai = Array.from(new Set(semuaAlutsista.map((e) => e.data.jenis)));
+const negaraAsalTerpakai = Array.from(
+  new Set(semuaAlutsista.flatMap((e) => e.data.negaraAsal))
+).sort();
+---
+
+<Base
+  judul="Katalog Alutsista"
+  deskripsi="Jelajahi dan saring katalog alutsista berdasarkan matra, jenis, negara asal, tahun dinas, dan kata kunci."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <header class="space-y-2">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /katalog &bull; Konsol Pencarian & Filter
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white" data-i18n-id="Katalog Alutsista" data-i18n-en="Equipment Catalog">
+        Katalog Alutsista
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300">
+        Saring seluruh {semuaAlutsista.length} entri alutsista berdasarkan matra, jenis, negara asal, urutan, atau kata kunci.
+      </p>
+    </header>
+
+    <section aria-label="Filter dan pencarian katalog" class="terminal-panel">
+      <div class="terminal-bar">
+        <span>FILTER KATALOG</span>
+        <span id="status-jumlah-katalog" class="tabular-nums text-emerald-700 dark:text-emerald-400" aria-live="polite">
+          Menampilkan {semuaAlutsista.length} dari {semuaAlutsista.length} entri
+        </span>
+      </div>
+
+      <div class="p-5 sm:p-6 space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div class="lg:col-span-2">
+            <label for="filter-q" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              Kata Kunci
+            </label>
+            <input
+              id="filter-q"
+              type="search"
+              placeholder="Nama, varian, peran, pabrikan..."
+              class="w-full min-h-[44px] px-4 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-base text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+          </div>
+
+          <div>
+            <label for="filter-matra" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              Matra
+            </label>
+            <select
+              id="filter-matra"
+              class="w-full min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-base text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              <option value="">Semua Matra</option>
+              {taksonomiJson.matra.map((m) => (
+                <option value={m.kunci}>{m.label}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label for="filter-jenis" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              Jenis
+            </label>
+            <select
+              id="filter-jenis"
+              class="w-full min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-base text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              <option value="">Semua Jenis</option>
+              {jenisTerpakai.map((j) => (
+                <option value={j}>{labelJenis(j)}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label for="filter-negara" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1.5">
+              Negara Asal
+            </label>
+            <select
+              id="filter-negara"
+              class="w-full min-h-[44px] px-3.5 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-base text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              <option value="">Semua Negara</option>
+              {negaraAsalTerpakai.map((kode) => (
+                <option value={kode}>{namaNegara(kode)} ({kode})</option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-[#243244] text-sm">
+          <div class="flex items-center gap-3">
+            <label for="urutkan-katalog" class="font-semibold text-slate-700 dark:text-slate-200">
+              Urutkan:
+            </label>
+            <select
+              id="urutkan-katalog"
+              class="min-h-[40px] px-3 py-1.5 rounded-lg border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0b1017] text-sm text-slate-900 dark:text-white"
+            >
+              <option value="nama-asc">Nama (A–Z)</option>
+              <option value="tahun-desc">Tahun Dinas (Terbaru)</option>
+              <option value="tahun-asc">Tahun Dinas (Terlama)</option>
+            </select>
+          </div>
+          <button
+            id="btn-reset-filter"
+            type="button"
+            class="min-h-[40px] px-4 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] hover:border-emerald-500 font-semibold text-slate-800 dark:text-emerald-300 cursor-pointer"
+          >
+            Atur Ulang Filter
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div id="grid-katalog" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {semuaAlutsista.map((item) => {
+        const poster = item.data.galeri[0]?.berkas || item.data.model3d?.poster;
+        const namaPabrikan = item.data.pabrikan
+          .map((p) => pabrikanMap.get(p.id) || p.id)
+          .join(', ');
+        const teksCari = [
+          item.data.nama,
+          ...item.data.namaLain,
+          item.data.peran,
+          item.data.ringkasan,
+          labelJenis(item.data.jenis),
+          namaPabrikan,
+          ...item.data.tag,
+        ]
+          .join(' ')
+          .toLowerCase();
+
+        return (
+          <article
+            class="kartu-alutsista group rounded-xl border border-slate-200 dark:border-[#243244] bg-white dark:bg-[#111822] overflow-hidden hover:border-emerald-500/70 transition-colors flex flex-col"
+            data-nama={item.data.nama}
+            data-matra={item.data.matra}
+            data-jenis={item.data.jenis}
+            data-negara={item.data.negaraAsal.join(',')}
+            data-tahun={item.data.tahunMulaiDinas || 0}
+            data-cari={teksCari}
+          >
+            <a href={`/alutsista/${item.id}`} class="block aspect-16/10 bg-slate-900 relative overflow-hidden">
+              {poster ? (
+                <img
+                  src={poster}
+                  alt={`Foto ${item.data.nama}`}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
+                  loading="lazy"
+                  width="480"
+                  height="300"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center text-sm text-slate-400">
+                  Tanpa pratinjau
+                </div>
+              )}
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+              <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-950/85 text-emerald-300 border border-emerald-500/30">
+                  {labelMatra(item.data.matra)}
+                </span>
+                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-950/80 text-slate-100 border border-white/10">
+                  {labelJenis(item.data.jenis)}
+                </span>
+              </div>
+              {item.data.model3d && (
+                <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md text-xs font-semibold bg-cyan-700/95 text-white">
+                  Foto + 3D
+                </span>
+              )}
+            </a>
+
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <div class="space-y-2">
+                <h2 class="text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                  <a href={`/alutsista/${item.id}`} class="hover:text-emerald-600 dark:hover:text-emerald-400">
+                    {item.data.nama}
+                  </a>
+                </h2>
+                <p class="text-sm text-slate-600 dark:text-slate-400">
+                  {item.data.negaraAsal.map((n) => namaNegara(n)).join(', ')}
+                  {item.data.tahunMulaiDinas ? ` • ${item.data.tahunMulaiDinas}` : ''} &bull; {namaPabrikan}
+                </p>
+                <p class="text-sm text-slate-700 dark:text-slate-300 line-clamp-2 leading-relaxed">
+                  {item.data.peran}
+                </p>
+              </div>
+
+              <div class="pt-3.5 border-t border-slate-100 dark:border-[#243244] flex items-center justify-between text-sm">
+                <span class="font-medium text-emerald-700 dark:text-emerald-400">
+                  {labelStatus(item.data.status)}
+                </span>
+                <a
+                  href={`/alutsista/${item.id}`}
+                  class="font-bold text-slate-900 dark:text-cyan-400 hover:underline"
+                >
+                  Lihat Detail &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <div id="pesan-kosong" class="hidden terminal-panel p-10 text-center space-y-2">
+      <p class="text-lg font-bold text-slate-900 dark:text-white">
+        Tidak ada entri alutsista yang cocok dengan filter pencarian.
+      </p>
+      <p class="text-base text-slate-600 dark:text-slate-400">
+        Hapus kata kunci atau tekan tombol "Atur Ulang Filter".
+      </p>
+    </div>
+
+    <!-- Kontrol Paginasi (Maksimal 10 Entri per Halaman) -->
+    <nav
+      id="katalog-pagination"
+      aria-label="Navigasi halaman katalog"
+      class="hidden flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-200 dark:border-[#243244]"
+    >
+      <p id="pagination-info" class="text-sm font-mono text-slate-600 dark:text-slate-400 tabular-nums"></p>
+      <div id="pagination-buttons" class="flex flex-wrap items-center gap-2"></div>
+    </nav>
+  </div>
+
+  <script>
+    const PAGE_SIZE = 10;
+    const inputQ = document.getElementById('filter-q') as HTMLInputElement | null;
+    const selectMatra = document.getElementById('filter-matra') as HTMLSelectElement | null;
+    const selectJenis = document.getElementById('filter-jenis') as HTMLSelectElement | null;
+    const selectNegara = document.getElementById('filter-negara') as HTMLSelectElement | null;
+    const selectUrut = document.getElementById('urutkan-katalog') as HTMLSelectElement | null;
+    const btnReset = document.getElementById('btn-reset-filter');
+    const grid = document.getElementById('grid-katalog');
+    const statusText = document.getElementById('status-jumlah-katalog');
+    const pesanKosong = document.getElementById('pesan-kosong');
+    const paginationNav = document.getElementById('katalog-pagination');
+    const paginationInfo = document.getElementById('pagination-info');
+    const paginationButtons = document.getElementById('pagination-buttons');
+
+    const params = new URLSearchParams(window.location.search);
+    if (inputQ && params.get('q')) inputQ.value = params.get('q')!;
+    if (selectMatra && params.get('matra')) selectMatra.value = params.get('matra')!;
+    if (selectJenis && params.get('jenis')) selectJenis.value = params.get('jenis')!;
+    if (selectNegara && params.get('negara')) selectNegara.value = params.get('negara')!;
+
+    let currentPage = Math.max(1, Number(params.get('page') || '1') || 1);
+
+    function renderPagination(totalItems: number, totalPages: number) {
+      if (!paginationNav || !paginationInfo || !paginationButtons) return;
+      if (totalItems <= PAGE_SIZE) {
+        paginationNav.classList.add('hidden');
+        paginationNav.classList.remove('flex');
+        return;
+      }
+      paginationNav.classList.remove('hidden');
+      paginationNav.classList.add('flex');
+
+      const startIdx = (currentPage - 1) * PAGE_SIZE + 1;
+      const endIdx = Math.min(totalItems, currentPage * PAGE_SIZE);
+      paginationInfo.textContent = `Menampilkan ${startIdx}–${endIdx} dari ${totalItems} entri (Halaman ${currentPage} / ${totalPages})`;
+
+      paginationButtons.innerHTML = '';
+
+      const makeBtn = (label: string, targetPage: number, active = false, disabled = false) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = label;
+        btn.disabled = disabled;
+        btn.className = active
+          ? 'min-h-[40px] min-w-[40px] px-3.5 py-1.5 rounded-lg text-sm font-bold bg-emerald-600 text-white cursor-default'
+          : disabled
+            ? 'min-h-[40px] px-3.5 py-1.5 rounded-lg text-sm font-semibold border border-slate-200 dark:border-[#243244] text-slate-400 cursor-not-allowed opacity-50'
+            : 'min-h-[40px] min-w-[40px] px-3.5 py-1.5 rounded-lg text-sm font-semibold border border-slate-300 dark:border-[#2c3c52] bg-white dark:bg-[#111822] text-slate-800 dark:text-slate-200 hover:border-emerald-500 cursor-pointer transition-colors';
+        if (!disabled && !active) {
+          btn.addEventListener('click', () => {
+            currentPage = targetPage;
+            terapkanFilter(false);
+            grid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        }
+        return btn;
+      };
+
+      paginationButtons.appendChild(makeBtn('← Sebelumnya', currentPage - 1, false, currentPage <= 1));
+      for (let p = 1; p <= totalPages; p++) {
+        paginationButtons.appendChild(makeBtn(String(p), p, p === currentPage, false));
+      }
+      paginationButtons.appendChild(makeBtn('Berikutnya →', currentPage + 1, false, currentPage >= totalPages));
+    }
+
+    function terapkanFilter(resetPage = true) {
+      if (!grid) return;
+      if (resetPage) currentPage = 1;
+
+      const q = (inputQ?.value || '').trim().toLowerCase();
+      const matra = selectMatra?.value || '';
+      const jenis = selectJenis?.value || '';
+      const negara = selectNegara?.value || '';
+      const urut = selectUrut?.value || 'nama-asc';
+
+      const kartuList = Array.from(grid.querySelectorAll<HTMLElement>('.kartu-alutsista'));
+
+      kartuList.sort((a, b) => {
+        if (urut === 'tahun-desc') {
+          return Number(b.getAttribute('data-tahun') || 0) - Number(a.getAttribute('data-tahun') || 0);
+        }
+        if (urut === 'tahun-asc') {
+          return Number(a.getAttribute('data-tahun') || 0) - Number(b.getAttribute('data-tahun') || 0);
+        }
+        return (a.getAttribute('data-nama') || '').localeCompare(b.getAttribute('data-nama') || '', 'id');
+      });
+
+      const matched: HTMLElement[] = [];
+      kartuList.forEach((kartu) => {
+        grid.appendChild(kartu);
+        const kMatra = kartu.getAttribute('data-matra') || '';
+        const kJenis = kartu.getAttribute('data-jenis') || '';
+        const kNegara = (kartu.getAttribute('data-negara') || '').split(',');
+        const kCari = kartu.getAttribute('data-cari') || '';
+
+        const cocokQ = !q || kCari.includes(q);
+        const cocokMatra = !matra || kMatra === matra;
+        const cocokJenis = !jenis || kJenis === jenis;
+        const cocokNegara = !negara || kNegara.includes(negara);
+
+        if (cocokQ && cocokMatra && cocokJenis && cocokNegara) {
+          matched.push(kartu);
+        } else {
+          kartu.classList.add('hidden');
+        }
+      });
+
+      const totalPages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
+      if (currentPage > totalPages) currentPage = totalPages;
+      const start = (currentPage - 1) * PAGE_SIZE;
+      const end = start + PAGE_SIZE;
+
+      matched.forEach((kartu, index) => {
+        if (index >= start && index < end) {
+          kartu.classList.remove('hidden');
+        } else {
+          kartu.classList.add('hidden');
+        }
+      });
+
+      if (statusText) {
+        if (matched.length === 0) {
+          statusText.textContent = `0 dari ${kartuList.length} entri`;
+        } else {
+          const shownEnd = Math.min(end, matched.length);
+          statusText.textContent = `Menampilkan ${start + 1}–${shownEnd} dari ${matched.length} entri (Hal. ${currentPage}/${totalPages})`;
+        }
+      }
+      if (pesanKosong) {
+        pesanKosong.classList.toggle('hidden', matched.length > 0);
+      }
+
+      renderPagination(matched.length, totalPages);
+    }
+
+    [inputQ, selectMatra, selectJenis, selectNegara, selectUrut].forEach((el) => {
+      el?.addEventListener('input', () => terapkanFilter(true));
+      el?.addEventListener('change', () => terapkanFilter(true));
+    });
+
+    btnReset?.addEventListener('click', () => {
+      if (inputQ) inputQ.value = '';
+      if (selectMatra) selectMatra.value = '';
+      if (selectJenis) selectJenis.value = '';
+      if (selectNegara) selectNegara.value = '';
+      if (selectUrut) selectUrut.value = 'nama-asc';
+      window.history.replaceState({}, '', '/katalog');
+      terapkanFilter(true);
+    });
+
+    terapkanFilter(false);
+  </script>
+</Base>

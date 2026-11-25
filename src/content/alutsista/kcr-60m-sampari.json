@@ -1,0 +1,218 @@
+{
+  "nama": "KCR-60M Kelas Sampari",
+  "namaLain": [
+    "Kapal Cepat Rudal 60 Meter",
+    "KCR-60M"
+  ],
+  "matra": "laut",
+  "jenis": "kapal-patroli",
+  "peran": "Kapal cepat berpeluru kendali 60 meter untuk patroli dan penangkalan sasaran permukaan di perairan kepulauan.",
+  "negaraAsal": [
+    "ID"
+  ],
+  "pabrikan": [
+    "pt-pal-indonesia"
+  ],
+  "varian": [
+    {
+      "nama": "Batch 1 (KRI Sampari-628, KRI Tombak-629, KRI Halasan-630)",
+      "keterangan": "Tiga unit gelombang produksi pertama yang masuk dinas pada tahun 2014."
+    },
+    {
+      "nama": "Batch 2 & Batch 3 (KRI Kerambit-627, KRI Kapak-625, KRI Panah-626)",
+      "keterangan": "Generasi pengembangan dengan penyempurnaan stabilitas bangunan atas serta integrasi penuh meriam utama 57 mm dan sistem manajemen tempur."
+    }
+  ],
+  "tahunMulaiDinas": 2014,
+  "status": "dalam-dinas",
+  "ringkasan": "KCR-60M Kelas Sampari adalah keluarga Kapal Cepat Rudal (KCR) berukuran panjang 60 meter yang dirancang dan dibangun oleh PT PAL Indonesia di Surabaya. Kapal ini memadukan lambung baja tarik tinggi (High Tensile Steel) dengan bangunan atas paduan aluminium agar mampu bermanuver cepat membawa rudal anti-kapal dan meriam reaksi cepat.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 60,
+      "satuan": "m",
+      "catatan": "60,0 hingga 60,3 m tergantung batch produksi.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 8.1,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "sarat-air",
+      "label": "Sarat air",
+      "nilai": 2.6,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "displasemen",
+      "label": "Displasemen",
+      "nilai": 460,
+      "satuan": "ton",
+      "catatan": "Berkisar 460–500 ton pada muatan penuh.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "propulsi",
+      "label": "Propulsi",
+      "nilai": "2 x mesin diesel MTU 20V 4000 M73L (masing-masing 3.600 kW) dengan 2 poros baling-baling",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 51.85,
+      "satuan": "km/jam",
+      "catatan": "Setara 28 knot (kecepatan jelajah 20 knot).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 4445,
+      "satuan": "km",
+      "catatan": "Setara 2.400 mil laut (NM) pada kecepatan jelajah 20 knot.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 55,
+      "satuan": "orang",
+      "catatan": "43–55 personel tergantung konfigurasi batch.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan",
+      "label": "Persenjataan",
+      "nilai": "Meriam utama 57 mm Bofors Mk 3 (atau 40 mm), 2 meriam 20 mm, dan peluncur rudal anti-kapal",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "sensor",
+      "label": "Sensor",
+      "nilai": "Radar pengawasan udara/permukaan Terma SCANTER 4603 atau SR-47AG dan sistem pengendali tembakan elektro-optik",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "fasilitas-penerbangan",
+      "label": "Dek/hanggar helikopter",
+      "nilai": "Tidak dilengkapi dek helikopter",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut (Satuan Kapal Cepat)",
+      "varian": "KCR-60M Batch 1, Batch 2, Batch 3",
+      "jumlah": 6,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2014,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Enam unit KCR-60M buatan PT PAL Indonesia aktif berdinas di Satuan Kapal Cepat Komando Armada I, II, dan III.",
+      "sumberId": "s1"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Pengembangan Kapal Cepat Rudal 60 Meter (KCR-60M) oleh PT PAL Indonesia merupakan bagian dari program kemandirian pemenuhan alutsista maritim untuk menjaga perairan kepulauan Indonesia. Kapal pertama di kelas ini, KRI Sampari (628), diluncurkan pada Mei 2014 disusul KRI Tombak (629) dan KRI Halasan (630) pada tahun yang sama.\n\nBerdasarkan evaluasi operasional gelombang pertama, PT PAL Indonesia melakukan penyempurnaan hidrodinamika dan desain bangunan atas pada unit keempat KRI Kerambit (627) yang diserahkan pada tahun 2019, serta gelombang ketiga KRI Kapak (625) dan KRI Panah (626) yang diserahkan pada Mei 2023 lengkap dengan meriam 57 mm Bofors Mk 3 dan sistem manajemen tempur terintegrasi.",
+    "linimasa": [
+      {
+        "tahun": 2014,
+        "bulan": 5,
+        "judul": "Peresmian KRI Sampari (628) sebagai unit pertama KCR-60M",
+        "uraian": "Unit pertama KCR-60M diserahterimakan oleh PT PAL Indonesia kepada TNI Angkatan Laut.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2019,
+        "bulan": 7,
+        "judul": "Serah terima KRI Kerambit (627) Batch 2",
+        "uraian": "Unit keempat KCR-60M dengan desain bangunan atas dan sistem sensor yang diperbarui resmi masuk dinas.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2023,
+        "bulan": 5,
+        "judul": "Serah terima KRI Kapak (625) dan KRI Panah (626) Batch 3",
+        "uraian": "Dua unit generasi ketiga diserahkan dalam kondisi terintegrasi penuh dengan sistem senjata dan manajemen tempur.",
+        "sumberId": "s1"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/kcr-60m-sampari.glb",
+    "poster": "/models/kcr-60m-sampari.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik KCR-60M Kelas Sampari dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "meriam-haluan-57",
+        "label": "Meriam Haluan 57 mm",
+        "posisi": "0 0.52 1.5",
+        "normal": "0 1 0",
+        "deskripsi": "Kubah meriam otomatis kaliber 57 mm berdesain siluman di dek haluan."
+      },
+      {
+        "id": "dek-rudal-buritan",
+        "label": "Dek Peluncur Rudal Anti-Kapal",
+        "posisi": "0 0.55 -1.1",
+        "normal": "0 1 0",
+        "deskripsi": "Area bagian belakang bangunan atas tempat dudukan tabung peluncur rudal anti-kapal."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/kcr-60m-sampari.webp",
+      "alt": "Foto asli KCR-60M Kelas Sampari",
+      "kredit": "Indonesian National Armed Forces via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Spesifikasi Kapal Cepat Rudal 60 Meter (KCR-60M)",
+      "penerbit": "PT PAL Indonesia",
+      "url": "https://www.pal.co.id",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database & Publikasi KCR-60M Batch 1–3",
+      "penerbit": "SIPRI / PT PAL Indonesia",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "kcr-60m",
+    "kapal-cepat-rudal",
+    "sampari",
+    "pt-pal",
+    "tni-al"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

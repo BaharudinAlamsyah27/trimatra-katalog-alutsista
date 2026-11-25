@@ -1,0 +1,245 @@
+{
+  "nama": "Kapal Amfibi Kelas Makassar (LPD)",
+  "namaLain": [
+    "Landing Platform Dock 122m / 124m",
+    "LPD Kelas Makassar"
+  ],
+  "matra": "laut",
+  "jenis": "kapal-amfibi",
+  "peran": "Kapal angkut amfibi jenis Landing Platform Dock (LPD) untuk pendaratan pasukan, kendaraan tempur, helikopter, dan operasi kemanusiaan.",
+  "negaraAsal": [
+    "KR",
+    "ID"
+  ],
+  "pabrikan": [
+    "daesun-shipbuilding",
+    "pt-pal-indonesia"
+  ],
+  "varian": [
+    {
+      "nama": "KRI Makassar (590) & KRI Surabaya (591)",
+      "keterangan": "Dua unit pertama dengan panjang 122 meter yang dibangun di galangan Daesun, Busan, Korea Selatan."
+    },
+    {
+      "nama": "KRI Banjarmasin (592) & KRI Banda Aceh (593)",
+      "keterangan": "Dua unit dengan panjang 125 meter hasil alih teknologi yang dibangun oleh PT PAL Indonesia di Surabaya."
+    },
+    {
+      "nama": "KRI Semarang (594) & Varian Kapal Rumah Sakit",
+      "keterangan": "Pengembangan lanjutan dengan panjang 124 meter oleh PT PAL Indonesia yang dapat difungsikan sebagai kapal bantu rumah sakit."
+    }
+  ],
+  "tahunMulaiDinas": 2007,
+  "status": "dalam-dinas",
+  "ringkasan": "Kapal Amfibi Kelas Makassar adalah keluarga kapal Landing Platform Dock (LPD) yang awalnya dirancang oleh Daesun Shipbuilding & Engineering (Korea Selatan) dan selanjutnya diproduksi serta dikembangkan di dalam negeri oleh PT PAL Indonesia. Kapal ini memiliki dek sumur (well deck) untuk kapal pendarat LCU, dek kendaraan berat, serta dek penerbangan dan hanggar helikopter.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 122,
+      "satuan": "m",
+      "catatan": "122 m pada dua unit awal (124–125 m pada unit produksi PT PAL Indonesia).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 22,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "sarat-air",
+      "label": "Sarat air",
+      "nilai": 4.9,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "displasemen",
+      "label": "Displasemen",
+      "nilai": 7300,
+      "satuan": "ton",
+      "catatan": "Displasemen standar sekitar 7.300 ton (muatan penuh berkisar 11.300–11.500 ton).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "propulsi",
+      "label": "Propulsi",
+      "nilai": "CODAD: 2 x mesin diesel MAN B&W 8L28/32A menggerakkan 2 poros baling-baling",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 29.63,
+      "satuan": "km/jam",
+      "catatan": "Setara 16 knot (kecepatan jelajah 14 knot).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 18520,
+      "satuan": "km",
+      "catatan": "Setara 10.000 mil laut (NM) atau ketahanan berlayar 30 hari.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 126,
+      "satuan": "orang",
+      "catatan": "Awak kapal 126 orang + kapasitas angkut hingga lebih dari 500 personel pasukan pendarat.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan",
+      "label": "Persenjataan",
+      "nilai": "Meriam 57 mm atau 40 mm di haluan serta meriam ringan 20 mm dan senapan mesin berat pertahanan diri",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "sensor",
+      "label": "Sensor",
+      "nilai": "Radar navigasi dan radar pengawasan permukaan/udara",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "fasilitas-penerbangan",
+      "label": "Dek/hanggar helikopter",
+      "nilai": "Dek pendaratan dengan 2 titik pendaratan (spot) dan hanggar untuk menyimpan hingga 2–3 helikopter kelas menengah, serta well deck untuk 2 LCU",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut (Komando Lintas Laut Militer & Satfib)",
+      "varian": "LPD 122m / 124m / 125m",
+      "jumlah": 5,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2007,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "5 unit LPD kombat/angkut (590–594) ditambah 2 unit turunan khusus Kapal Bantu Rumah Sakit (KRI dr. Wahidin Sudirohusodo-991 & KRI dr. Radjiman Wedyodiningrat-992).",
+      "sumberId": "s1"
+    },
+    {
+      "negara": "PH",
+      "angkatan": "Angkatan Laut Filipina",
+      "varian": "Kelas Tarlac (Strategic Sealift Vessel 123m produksi PT PAL)",
+      "jumlah": 2,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2016,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Dua unit (BRP Tarlac & BRP Davao del Sur) diekspor oleh PT PAL Indonesia pada 2016–2017.",
+      "sumberId": "s1"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Program pengadaan kapal Landing Platform Dock (LPD) Kelas Makassar dimulai pada Desember 2004 ketika Indonesia menandatangani kontrak empat kapal dengan Daesun Shipbuilding & Engineering Korea Selatan yang menyertakan skema alih teknologi ke PT PAL Indonesia. Dua unit pertama, KRI Makassar (590) dan KRI Surabaya (591), dibangun di Busan dan masuk dinas pada tahun 2007.\n\nDua unit berikutnya, KRI Banjarmasin (592) dan KRI Banda Aceh (593), dibangun oleh PT PAL Indonesia di Surabaya dengan modifikasi perpanjangan lambung menjadi 125 meter dan diresmikan pada tahun 2009 serta 2011. Penguasaan teknologi rancang bangun LPD ini memungkinkan PT PAL membangun unit kelima KRI Semarang (594), dua kapal bantu rumah sakit kelas Sudirohusodo, serta mengekspor kapal Strategic Sealift Vessel (SSV) Kelas Tarlac kepada Angkatan Laut Filipina.",
+    "linimasa": [
+      {
+        "tahun": 2004,
+        "bulan": 12,
+        "judul": "Kontrak empat kapal LPD dengan alih teknologi ke PT PAL",
+        "uraian": "Kementerian Pertahanan RI menandatangani kontrak pembangunan dua unit di Korea Selatan dan dua unit di galangan PT PAL Surabaya.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2007,
+        "bulan": 4,
+        "judul": "Peresmian KRI Makassar (590)",
+        "uraian": "Kapal pertama di kelasnya diserahterimakan dan masuk dinas aktif TNI Angkatan Laut.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2009,
+        "bulan": 11,
+        "judul": "Peresmian KRI Banjarmasin (592) buatan PT PAL Surabaya",
+        "uraian": "Kapal LPD pertama yang sepenuhnya dibangun di galangan PT PAL Indonesia resmi memperkuat TNI AL.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2016,
+        "bulan": 5,
+        "judul": "Ekspor kapal SSV turunan Kelas Makassar ke Filipina",
+        "uraian": "PT PAL Indonesia menyerahkan BRP Tarlac (LD-601) kepada Angkatan Laut Filipina sebagai ekspor kapal perang perdana Indonesia.",
+        "sumberId": "s1"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/kapal-amfibi-kelas-makassar.glb",
+    "poster": "/models/kapal-amfibi-kelas-makassar.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Kapal Amfibi Kelas Makassar (LPD) dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "anjungan-lpd",
+        "label": "Anjungan & Hanggar Depan",
+        "posisi": "0 0.95 0.65",
+        "normal": "0 1 0",
+        "deskripsi": "Struktur bangunan atas kapal tempat ruang kendali navigasi dan hanggar helikopter."
+      },
+      {
+        "id": "dek-heli-well",
+        "label": "Dek Helikopter & Well Deck Buritan",
+        "posisi": "0 0.55 -1.35",
+        "normal": "0 1 0",
+        "deskripsi": "Dek penerbangan luas di bagian atas dan pintu rampa kapal pendarat LCU di buritan bawah."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/kapal-amfibi-kelas-makassar.webp",
+      "alt": "Foto asli Kapal Amfibi Kelas Makassar (LPD)",
+      "kredit": "Kolinlamil (Military Sealift Command) via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Produk Kapal Perang Landing Platform Dock (LPD) 124m / SSV",
+      "penerbit": "PT PAL Indonesia",
+      "url": "https://www.pal.co.id",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (South Korea & PT PAL Makassar Class LPD)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "lpd",
+    "kapal-amfibi",
+    "makassar",
+    "pt-pal",
+    "daesun",
+    "tni-al"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

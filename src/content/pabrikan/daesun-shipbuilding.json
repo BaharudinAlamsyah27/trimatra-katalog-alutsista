@@ -1,0 +1,19 @@
+{
+  "nama": "Daesun Shipbuilding & Engineering",
+  "negara": "KR",
+  "tahunBerdiri": 1945,
+  "jenisUsaha": "Perusahaan galangan kapal menengah swasta",
+  "deskripsi": "Galangan kapal asal Busan, Korea Selatan, yang merancang kapal amfibi Landing Platform Dock (LPD) Kelas Tanjung Dalpele dan Kelas Makassar serta melaksanakan alih teknologi dengan PT PAL Indonesia.",
+  "sejarahSingkat": "Didirikan pada Desember 1945 di Busan dengan nama Daesun Iron Works, galangan ini berkembang memproduksi kapal niaga menengah dan merancang kapal angkut amfibi LPD untuk Indonesia pada pertengahan dekade 2000-an.",
+  "situs": "http://www.daesuns.co.kr",
+  "sumber": [
+    {
+      "id": "p-daesun-1",
+      "judul": "Daesun Shipbuilding History & Special Purpose Vessels",
+      "penerbit": "Daesun Shipbuilding & Engineering Co., Ltd.",
+      "url": "http://www.daesuns.co.kr",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

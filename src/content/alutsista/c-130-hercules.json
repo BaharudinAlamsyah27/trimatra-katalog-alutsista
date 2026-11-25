@@ -1,0 +1,238 @@
+{
+  "nama": "C-130 Hercules",
+  "namaLain": [
+    "C-130B",
+    "C-130H",
+    "L-100-30",
+    "C-130J-30 Super Hercules"
+  ],
+  "matra": "udara",
+  "jenis": "pesawat-angkut",
+  "peran": "Pesawat angkut militer berat empat mesin turboprop untuk angkutan pasukan, penerjunan, logistik, dan bantuan kemanusiaan.",
+  "negaraAsal": [
+    "US"
+  ],
+  "pabrikan": [
+    "general-dynamics-lockheed-martin"
+  ],
+  "varian": [
+    {
+      "nama": "C-130B / C-130H / L-100-30",
+      "keterangan": "Keluarga Hercules generasi klasik yang berdinas di Skadron Udara 31, Skadron Udara 32, dan Skadron Udara 33 TNI AU."
+    },
+    {
+      "nama": "C-130J-30 Super Hercules",
+      "keterangan": "Generasi terbaru berbadan panjang dengan mesin Rolls-Royce AE 2100D3, baling-baling komposit enam bilah, dan kokpit kaca digital penuh yang diterima TNI AU pada 2023–2024."
+    }
+  ],
+  "tahunMulaiDinas": 1956,
+  "status": "dalam-dinas",
+  "ringkasan": "Lockheed Martin C-130 Hercules adalah pesawat angkut militer taktis bermesin empat turboprop yang mampu lepas landas dan mendarat di landasan pendek atau belum beraspal. Indonesia merupakan salah satu operator C-130 paling awal di luar Amerika Serikat sejak tahun 1960 dan telah memodernisasi armadanya dengan lima unit C-130J-30 Super Hercules pada tahun 2023–2024.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 29.79,
+      "satuan": "m",
+      "catatan": "29,79 m pada C-130H standar (34,37 m pada varian badan panjang L-100-30 / C-130J-30).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "rentang-sayap",
+      "label": "Rentang sayap",
+      "nilai": 40.41,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 11.84,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 34400,
+      "satuan": "kg",
+      "catatan": "Acuan C-130H (sekitar 34.274 kg pada C-130J).",
+      "keandalan": "resmi",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "bobot-lepas-landas-maks",
+      "label": "Bobot lepas landas maks",
+      "nilai": 70305,
+      "satuan": "kg",
+      "catatan": "Setara 155.000 pon (hingga 74.389 kg pada C-130J-30).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "4 x turboprop Allison T56-A-15 (C-130H) atau Rolls-Royce AE 2100D3 (C-130J-30)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 620,
+      "satuan": "km/jam",
+      "catatan": "Sekitar 592–620 km/jam pada C-130H (hingga 660 km/jam pada C-130J-30).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan",
+      "label": "Jangkauan",
+      "nilai": 3334,
+      "satuan": "km",
+      "catatan": "Jangkauan dengan muatan normal sekitar 15–16 ton (jangkauan feri tanpa muatan hingga >7.000 km).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "plafon",
+      "label": "Plafon operasi",
+      "nilai": 8534,
+      "satuan": "m",
+      "catatan": "Sekitar 28.000–33.000 kaki tergantung bobot muatan.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak/kapasitas",
+      "nilai": "3–5 awak penerbangan; ruang kargo memuat hingga 92–128 penumpang atau 64–92 pasukan payung",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "muatan-persenjataan",
+      "label": "Muatan/persenjataan",
+      "nilai": "Kapasitas kargo sekitar 19.000–19.958 kg melalui pintu rampa belakang (atau konfigurasi pengisian bahan bakar di udara pada KC-130B)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Udara (Skadron Udara 31, 32, & 33)",
+      "varian": "C-130B/H, L-100-30, KC-130B, & C-130J-30 Super Hercules",
+      "jumlah": 28,
+      "jenisJumlah": "perkiraan",
+      "tahunMulai": 1960,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Termasuk 5 unit baru C-130J-30 Super Hercules yang seluruhnya selesai dikirim pada Mei 2024.",
+      "sumberId": "s3"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Pesawat angkut Lockheed C-130 Hercules terbang perdana pada Agustus 1954 dan mulai berdinas pada Desember 1956. Desain sayap tinggi, roda pendarat kokoh, dan pintu rampa belakang menjadikannya standar pesawat angkut militer di puluhan negara selama lebih dari tujuh dekade.\n\nIndonesia menerima gelombang pertama 10 unit C-130B langsung dari pabrik Lockheed di Marietta, Georgia, pada Maret 1960 dan menjadikannya pengguna C-130 pertama di kawasan Asia Tenggara. Pada akhir dekade 1970-an dan 1980-an, armada ditambah dengan varian C-130H, C-130H-30, dan L-100-30, serta hibah/pembelian C-130H eks-RAAF pada dekade 2010-an.\n\nUntuk memperbarui kekuatan angkut berat strategis, Kementerian Pertahanan RI memesan 5 unit generasi terbaru C-130J-30 Super Hercules yang dikirim secara bertahap mulai Maret 2023 hingga unit kelima tiba di Lanud Halim Perdanakusuma pada Mei 2024.",
+    "linimasa": [
+      {
+        "tahun": 1954,
+        "bulan": 8,
+        "judul": "Penerbangan perdana prototipe YC-130",
+        "uraian": "Prototipe YC-130 terbang perdana di Burbank, California.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 1960,
+        "bulan": 3,
+        "judul": "Kedatangan C-130B pertama AURI di Kemayoran",
+        "uraian": "Indonesia mulai mengoperasikan armada C-130B Hercules sebagai tulang punggung jembatan udara nusantara.",
+        "sumberId": "s3"
+      },
+      {
+        "tahun": 2023,
+        "bulan": 3,
+        "judul": "Kedatangan unit pertama C-130J-30 Super Hercules TNI AU",
+        "uraian": "Pesawat C-130J-30 pertama (A-1339) tiba di Lanud Halim Perdanakusuma untuk Skadron Udara 31.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2024,
+        "bulan": 5,
+        "judul": "Penyelesaian pengiriman unit kelima C-130J-30 Super Hercules",
+        "uraian": "Unit kelima (A-1344) mendarat di Jakarta sehingga menuntaskan kontrak lima pesawat C-130J-30.",
+        "sumberId": "s3"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/c-130-hercules.glb",
+    "poster": "/models/c-130-hercules.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik C-130 Hercules dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "sayap-4mesin",
+        "label": "Sayap Tinggi & 4 Mesin Turboprop",
+        "posisi": "1.1 0.85 0.1",
+        "normal": "0 1 0",
+        "deskripsi": "Konfigurasi sayap tinggi dengan empat mesin turboprop agar baling-baling aman dari kerikil landasan pendek."
+      },
+      {
+        "id": "rampa-kargo",
+        "label": "Pintu Rampa Kargo Belakang",
+        "posisi": "0 0.48 -1.45",
+        "normal": "0 0 -1",
+        "deskripsi": "Pintu rampa hidrolik belakang untuk bongkar muat kendaraan, palet logistik, dan penerjunan pasukan."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/c-130-hercules.webp",
+      "alt": "Foto asli C-130 Hercules",
+      "kredit": "Bidgee via Wikimedia Commons",
+      "lisensi": "CC BY-SA 3.0 au"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "C-130J Super Hercules Product Specifications",
+      "penerbit": "Lockheed Martin Corporation",
+      "url": "https://www.lockheedmartin.com/en-us/products/c130.html",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "C-130 Hercules Fact Sheet",
+      "penerbit": "United States Air Force (USAF)",
+      "url": "https://www.af.mil/About-Us/Fact-Sheets/Display/Article/104517/c-130-hercules/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-pemerintah"
+    },
+    {
+      "id": "s3",
+      "judul": "SIPRI Arms Transfers Database (US & Australia to Indonesia C-130 Family)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "pesawat-angkut",
+    "c-130",
+    "hercules",
+    "super-hercules",
+    "lockheed-martin",
+    "tni-au"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

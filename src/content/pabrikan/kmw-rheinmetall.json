@@ -1,0 +1,19 @@
+{
+  "nama": "Krauss-Maffei Wegmann & Rheinmetall",
+  "negara": "DE",
+  "tahunBerdiri": 1999,
+  "jenisUsaha": "Industri sistem pertahanan darat dan kendaraan lapis baja",
+  "deskripsi": "Produsen sistem kendaraan tempur lapis baja asal Jerman; Krauss-Maffei Wegmann (kini KNDS Deutschland) merupakan perancang utama keluarga tank Leopard 2, sedangkan Rheinmetall memproduksi meriam utama 120 mm serta paket peningkatan Leopard 2RI.",
+  "sejarahSingkat": "Krauss-Maffei Wegmann terbentuk pada tahun 1999 dari penggabungan divisi pertahanan Krauss-Maffei dan Wegmann & Co., sementara Rheinmetall berdiri sejak tahun 1889 sebagai produsen artileri dan sistem pertahanan di Jerman.",
+  "situs": "https://www.rheinmetall.com",
+  "sumber": [
+    {
+      "id": "p-kmw-1",
+      "judul": "Rheinmetall Defence Tracked Vehicles & Leopard 2 Upgrade",
+      "penerbit": "Rheinmetall AG",
+      "url": "https://www.rheinmetall.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

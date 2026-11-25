@@ -1,0 +1,213 @@
+{
+  "nama": "Pindad Maung 4x4",
+  "namaLain": [
+    "Rantis Maung",
+    "Maung MV1 / MV2 / MV3"
+  ],
+  "matra": "darat",
+  "jenis": "kendaraan-taktis",
+  "peran": "Kendaraan taktis ringan berpenggerak empat roda (4x4) untuk mobilitas pasukan, operasi lapangan, dan komando.",
+  "negaraAsal": [
+    "ID"
+  ],
+  "pabrikan": [
+    "pindad"
+  ],
+  "varian": [
+    {
+      "nama": "Maung Tangguh (Spartan)",
+      "keterangan": "Varian taktis terbuka tanpa pintu samping konvensional dengan rangka pelindung (rollbar) untuk mobilitas cepat prajurit."
+    },
+    {
+      "nama": "Maung Komando & Jelajah",
+      "keterangan": "Varian beratap kanvas lepas-pasang (soft top) maupun kabin tertutup penuh (hard top) berpenyejuk udara untuk operasi komando dan patroli."
+    }
+  ],
+  "tahunMulaiDinas": 2021,
+  "status": "dalam-produksi",
+  "ringkasan": "Pindad Maung 4x4 adalah kendaraan taktis ringan berpenggerak empat roda yang dirancang dan diproduksi oleh PT Pindad untuk memenuhi kebutuhan mobilitas satuan tempur dan operasional TNI serta Polri di medan jalan raya maupun off-road.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 4.93,
+      "satuan": "m",
+      "catatan": "4,93 m pada generasi awal (hingga 5,05–5,2 m pada varian pengembangan MV2/MV3).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 1.8,
+      "satuan": "m",
+      "catatan": "1,64 m lebar bodi hingga sekitar 2,0 m termasuk spion/fender pada varian terbaru.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 1.82,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-tempur",
+      "label": "Bobot tempur",
+      "nilai": 2910,
+      "satuan": "kg",
+      "catatan": "Bobot kosong sekitar 2.160 kg; bobot maksimum sekitar 2.910–3.000 kg.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 4,
+      "satuan": "orang",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "Turbo Diesel 4-silinder 2.400–2.494 cc (149–199 hp tergantung generasi MV1/MV3)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "daya",
+      "label": "Daya",
+      "nilai": 111,
+      "satuan": "kW",
+      "catatan": "Sekitar 111 kW (149 hp) pada versi dasar hingga 137–148 kW (184–199 hp) pada versi MV3.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 120,
+      "satuan": "km/jam",
+      "catatan": "Kecepatan aman di jalan raya.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 800,
+      "satuan": "km",
+      "catatan": "Rentang 500–800 km tergantung kondisi medan.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-utama",
+      "label": "Persenjataan utama",
+      "nilai": "Braket dudukan senapan mesin 7,62 mm di bagian atas kabin (pada varian taktis tempur)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI (AD, AL, AU) & Polri",
+      "varian": "Maung MV1, MV2, MV3 (Tangguh, Komando, Jelajah)",
+      "jumlah": 900,
+      "jenisJumlah": "perkiraan",
+      "tahunMulai": 2021,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Ratusan unit dari batch pertama hingga generasi ketiga (MV3) telah diserahkan dan terus diproduksi untuk satuan TNI dan Polri.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "PT Pindad memperkenalkan purwarupa kendaraan taktis ringan Maung 4x4 pada pertengahan tahun 2020 untuk menyediakan kendaraan taktis lincah berpenggerak empat roda dengan biaya operasional efisien bagi satuan infanteri dan komando kewilayahan. Setelah melewati uji jalan raya dan medan berat, gelombang produksi pertama diserahkan kepada TNI Angkatan Darat pada Januari 2021.\n\nPengembangan berkelanjutan melahirkan generasi kedua (MV2) dan generasi ketiga (MV3) yang mulai diserahkan secara masif pada tahun 2023–2024 dalam tiga sub-varian utama: Tangguh, Komando, dan Jelajah, untuk digunakan di jajaran TNI Angkatan Darat, Angkatan Laut (Marinir), dan Angkatan Udara (Kopasgat).",
+    "linimasa": [
+      {
+        "tahun": 2020,
+        "bulan": 7,
+        "judul": "Pengujian publik purwarupa Rantis Maung 4x4",
+        "uraian": "Kementerian Pertahanan RI menguji coba purwarupa Maung 4x4 buatan PT Pindad.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2021,
+        "bulan": 1,
+        "judul": "Penyerahan gelombang produksi pertama kepada TNI AD",
+        "uraian": "Sebanyak 40 unit gelombang awal Maung 4x4 diserahkan oleh Menteri Pertahanan kepada Kepala Staf Angkatan Darat.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2024,
+        "judul": "Produksi seri dan penyerahan generasi ketiga Maung MV3",
+        "uraian": "PT Pindad memproduksi dan menyerahkan ratusan unit generasi ketiga Maung MV3 kepada ketiga matra TNI dan Polri.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/pindad-maung-4x4.glb",
+    "poster": "/models/pindad-maung-4x4.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Pindad Maung 4x4 dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "kap-maung",
+        "label": "Mesin Turbo Diesel & Derek Depan",
+        "posisi": "0 0.6 1.15",
+        "normal": "0 1 0",
+        "deskripsi": "Bagian depan kendaraan dengan bumper baja dan mesin turbo diesel."
+      },
+      {
+        "id": "kabin-maung",
+        "label": "Kabin 4 Personel & Rollbar",
+        "posisi": "0 0.95 -0.15",
+        "normal": "0 1 0",
+        "deskripsi": "Kabin empat kursi dengan struktur pipa pelindung (rollbar) dan dudukan senjata."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/pindad-maung-4x4.webp",
+      "alt": "Foto asli Pindad Maung 4x4",
+      "kredit": "PT Pindad under the Government of Indonesia via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Spesifikasi Kendaraan Taktis Maung 4x4",
+      "penerbit": "PT Pindad",
+      "url": "https://pindad.com/maung",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "Publikasi Penyerahan Rantis Maung MV1–MV3 kepada TNI",
+      "penerbit": "PT Pindad",
+      "url": "https://pindad.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ],
+  "tag": [
+    "rantis",
+    "4x4",
+    "maung",
+    "mv3",
+    "pindad",
+    "tni"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

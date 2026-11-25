@@ -1,0 +1,185 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { labelJenis, labelMatra } from '../lib/format';
+
+const semua = await getCollection('alutsista');
+const soalData = semua.map((e) => ({
+  slug: e.id,
+  nama: e.data.nama,
+  matra: labelMatra(e.data.matra),
+  jenis: labelJenis(e.data.jenis),
+  peran: e.data.peran,
+  foto: e.data.galeri[0]?.berkas || e.data.model3d?.poster || '',
+}));
+---
+
+<Base
+  judul="Kuis Pengenalan Alutsista Trimatra"
+  deskripsi="Kuis edukatif mengenali alutsista Darat, Laut, dan Udara dari foto asli dan perannya."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <header class="space-y-2">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /kuis &bull; Uji Pengetahuan Trimatra
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        Kuis Pengenalan Alutsista
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300">
+        Tebak nama alutsista berdasarkan foto asli dan deskripsi perannya. Skor terbaik tersimpan otomatis di browser Anda.
+      </p>
+    </header>
+
+    <section class="terminal-panel">
+      <div class="terminal-bar">
+        <span id="quiz-progress">SOAL 1 / 10</span>
+        <span class="tabular-nums text-emerald-700 dark:text-emerald-400">
+          SKOR: <span id="quiz-score">0</span> &bull; REKOR: <span id="quiz-best">0</span>
+        </span>
+      </div>
+
+      <div id="quiz-body" class="p-5 sm:p-6 space-y-6">
+        <div class="aspect-16/9 w-full max-h-[360px] rounded-xl overflow-hidden bg-slate-950 border border-slate-200 dark:border-[#243244] relative">
+          <img id="quiz-img" src="" alt="Foto alutsista yang ditebak" class="w-full h-full object-cover" />
+          <div class="absolute top-3 left-3 flex gap-2">
+            <span id="quiz-matra" class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-slate-950/85 text-emerald-300 border border-emerald-500/30">—</span>
+            <span id="quiz-jenis" class="px-2.5 py-1 rounded text-xs font-mono bg-slate-950/85 text-slate-200 border border-white/15">—</span>
+          </div>
+        </div>
+
+        <p id="quiz-clue" class="text-base text-slate-700 dark:text-slate-200 leading-relaxed"></p>
+
+        <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+
+        <div id="quiz-feedback" class="hidden p-4 rounded-xl border text-sm"></div>
+
+        <div class="flex items-center justify-between pt-2">
+          <button
+            id="quiz-next"
+            type="button"
+            class="hidden min-h-[44px] px-6 py-2 rounded-lg bg-slate-900 dark:bg-emerald-600 hover:bg-slate-800 dark:hover:bg-emerald-500 text-white font-bold text-sm cursor-pointer"
+          >
+            Soal Berikutnya &rarr;
+          </button>
+          <button
+            id="quiz-restart"
+            type="button"
+            class="min-h-[40px] px-4 py-2 rounded-lg border border-slate-300 dark:border-[#2c3c52] text-xs font-semibold text-slate-700 dark:text-slate-300 hover:border-emerald-500 cursor-pointer"
+          >
+            Mulai Ulang (Acak 10 Soal)
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script is:inline define:vars={{ soalData }}>
+    const TOTAL = Math.min(10, soalData.length);
+    let deck = [];
+    let idx = 0;
+    let score = 0;
+    let answered = false;
+
+    const bestKey = 'trimatra-quiz-best';
+    let best = Number(localStorage.getItem(bestKey) || '0');
+
+    const elProg = document.getElementById('quiz-progress');
+    const elScore = document.getElementById('quiz-score');
+    const elBest = document.getElementById('quiz-best');
+    const elImg = document.getElementById('quiz-img');
+    const elMatra = document.getElementById('quiz-matra');
+    const elJenis = document.getElementById('quiz-jenis');
+    const elClue = document.getElementById('quiz-clue');
+    const elOpts = document.getElementById('quiz-options');
+    const elFb = document.getElementById('quiz-feedback');
+    const btnNext = document.getElementById('quiz-next');
+    const btnRestart = document.getElementById('quiz-restart');
+
+    function shuffle(arr) {
+      return [...arr].sort(() => Math.random() - 0.5);
+    }
+
+    function startQuiz() {
+      deck = shuffle(soalData).slice(0, TOTAL);
+      idx = 0;
+      score = 0;
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      answered = false;
+      const q = deck[idx];
+      if (elProg) elProg.textContent = idx < TOTAL ? `SOAL ${idx + 1} / ${TOTAL}` : 'SELESAI';
+      if (elScore) elScore.textContent = String(score);
+      if (elBest) elBest.textContent = String(best);
+      if (elImg) elImg.src = q.foto;
+      if (elMatra) elMatra.textContent = q.matra;
+      if (elJenis) elJenis.textContent = q.jenis;
+      if (elClue) elClue.textContent = `Peran: ${q.peran}`;
+      if (elFb) elFb.classList.add('hidden');
+      if (btnNext) btnNext.classList.add('hidden');
+
+      const distractors = shuffle(soalData.filter((d) => d.slug !== q.slug)).slice(0, 3);
+      const choices = shuffle([q, ...distractors]);
+
+      if (elOpts) {
+        elOpts.innerHTML = '';
+        choices.forEach((c) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className =
+            'min-h-[48px] px-4 py-3 rounded-xl border border-slate-300 dark:border-[#2c3c52] bg-slate-50 dark:bg-[#0d131c] hover:border-emerald-500 text-left text-sm font-bold text-slate-900 dark:text-white cursor-pointer transition-colors';
+          btn.textContent = c.nama;
+          btn.addEventListener('click', () => handleAnswer(c, q, btn));
+          elOpts.appendChild(btn);
+        });
+      }
+    }
+
+    function handleAnswer(chosen, correct, btn) {
+      if (answered) return;
+      answered = true;
+      const isRight = chosen.slug === correct.slug;
+      if (isRight) {
+        score += 10;
+        if (score > best) {
+          best = score;
+          localStorage.setItem(bestKey, String(best));
+        }
+      }
+      if (elScore) elScore.textContent = String(score);
+      if (elBest) elBest.textContent = String(best);
+
+      if (elFb) {
+        elFb.classList.remove('hidden');
+        elFb.className = isRight
+          ? 'p-4 rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-emerald-800 dark:text-emerald-200 text-sm'
+          : 'p-4 rounded-xl border border-rose-500/40 bg-rose-500/10 text-rose-800 dark:text-rose-200 text-sm';
+        elFb.innerHTML = isRight
+          ? `<strong>Benar!</strong> Ini adalah <a href="/alutsista/${correct.slug}" class="underline font-bold">${correct.nama}</a>.`
+          : `<strong>Kurang tepat.</strong> Jawaban yang benar adalah <a href="/alutsista/${correct.slug}" class="underline font-bold">${correct.nama}</a>.`;
+      }
+
+      btn.classList.add(isRight ? 'border-emerald-500' : 'border-rose-500');
+      if (btnNext) {
+        btnNext.classList.remove('hidden');
+        btnNext.textContent = idx + 1 < TOTAL ? 'Soal Berikutnya →' : 'Lihat Hasil Akhir';
+      }
+    }
+
+    btnNext?.addEventListener('click', () => {
+      if (idx + 1 < TOTAL) {
+        idx++;
+        renderQuestion();
+      } else {
+        if (elOpts) elOpts.innerHTML = '';
+        if (elClue) elClue.textContent = `Kuis selesai! Skor akhir Anda: ${score} dari ${TOTAL * 10}.`;
+        btnNext.classList.add('hidden');
+      }
+    });
+
+    btnRestart?.addEventListener('click', startQuiz);
+    startQuiz();
+  </script>
+</Base>

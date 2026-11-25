@@ -1,0 +1,35 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Pangkalan Koarmada II & Juanda (Surabaya)",
+  "matra": "laut",
+  "lat": -7.205,
+  "lng": 112.742,
+  "satuan": "Satkor, Satsel, Satfib, Satkat & Skadron Udara 100 (TNI AL)",
+  "alutsista": [
+    {
+      "nama": "Fregat Kelas Martadinata",
+      "slug": "fregat-kelas-martadinata"
+    },
+    {
+      "nama": "Kapal Selam Kelas Nagapasa",
+      "slug": "kapal-selam-kelas-nagapasa"
+    },
+    {
+      "nama": "Kapal Selam Kelas Cakra",
+      "slug": "kapal-selam-kelas-cakra"
+    },
+    {
+      "nama": "Korvet Kelas Diponegoro",
+      "slug": "korvet-kelas-diponegoro"
+    },
+    {
+      "nama": "Kapal Amfibi Kelas Makassar",
+      "slug": "kapal-amfibi-kelas-makassar"
+    },
+    {
+      "nama": "AS565 MBe Panther",
+      "slug": "as565-mbe-panther"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI Angkatan Laut & PT PAL Indonesia"
+}

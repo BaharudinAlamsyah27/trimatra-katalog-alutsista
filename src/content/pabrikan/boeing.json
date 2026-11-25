@@ -1,0 +1,19 @@
+{
+  "nama": "Boeing Defense, Space & Security",
+  "negara": "US",
+  "tahunBerdiri": 1916,
+  "jenisUsaha": "Perusahaan kedirgantaraan dan teknologi pertahanan",
+  "deskripsi": "Produsen pesawat dan helikopter militer asal Amerika Serikat yang memproduksi helikopter serang AH-64E Apache Guardian di fasilitas Mesa, Arizona.",
+  "sejarahSingkat": "Boeing didirikan oleh William Boeing di Seattle pada tahun 1916. Program helikopter AH-64 Apache awalnya dikembangkan oleh Hughes Helicopters, kemudian beralih ke McDonnell Douglas pada 1984 yang bergabung dengan Boeing pada tahun 1997.",
+  "situs": "https://www.boeing.com",
+  "sumber": [
+    {
+      "id": "p-boeing-1",
+      "judul": "Boeing AH-64 Apache Overview",
+      "penerbit": "The Boeing Company",
+      "url": "https://www.boeing.com/defense/ah-64-apache",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

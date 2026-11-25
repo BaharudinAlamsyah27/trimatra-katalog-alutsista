@@ -1,0 +1,19 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Lanud Halim Perdanakusuma (Jakarta)",
+  "matra": "udara",
+  "lat": -6.266,
+  "lng": 106.891,
+  "satuan": "Skadron Udara 2 & Skadron Udara 31 (TNI AU)",
+  "alutsista": [
+    {
+      "nama": "C-130J-30 Super Hercules",
+      "slug": "c-130-hercules"
+    },
+    {
+      "nama": "CN235-220",
+      "slug": "cn-235-220"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI Angkatan Udara"
+}

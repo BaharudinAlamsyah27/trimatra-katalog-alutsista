@@ -1,0 +1,202 @@
+{
+  "nama": "Kapal Selam Kelas Cakra (Type 209/1300)",
+  "namaLain": [
+    "Type 209/1300",
+    "KRI Cakra (401)"
+  ],
+  "matra": "laut",
+  "jenis": "kapal-selam",
+  "peran": "Kapal selam serang diesel-listrik untuk patroli bawah permukaan dan peperangan anti-kapal permukaan/selam.",
+  "negaraAsal": [
+    "DE"
+  ],
+  "pabrikan": [
+    "hdw-tkms"
+  ],
+  "varian": [
+    {
+      "nama": "KRI Cakra (401)",
+      "keterangan": "Kapal pertama di kelasnya yang resmi berdinas pada Maret 1981 dan telah menjalani overhaul di PT PAL Indonesia."
+    },
+    {
+      "nama": "KRI Nanggala (402)",
+      "keterangan": "Kapal kedua di kelasnya yang berdinas sejak Juli 1981 hingga gugur dalam latihan patroli di perairan utara Bali pada April 2021."
+    }
+  ],
+  "tahunMulaiDinas": 1981,
+  "status": "dalam-dinas",
+  "ringkasan": "Kapal Selam Kelas Cakra adalah kapal selam serang bertenaga diesel-listrik tipe 209/1300 yang dirancang oleh Ingenieurkontor Lübeck (IKL) dan dibangun oleh Howaldtswerke-Deutsche Werft (HDW) di Kiel, Jerman. Sejak masuk dinas pada tahun 1981, Kelas Cakra menjaga kedaulatan bawah permukaan laut Indonesia selama lebih dari empat dekade.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 59.5,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 6.2,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "displasemen-permukaan",
+      "label": "Displasemen (permukaan)",
+      "nilai": 1285,
+      "satuan": "ton",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "displasemen-tenggelam",
+      "label": "Displasemen (tenggelam)",
+      "nilai": 1390,
+      "satuan": "ton",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "propulsi",
+      "label": "Propulsi",
+      "nilai": "Diesel-listrik: 4 x mesin diesel MTU 12V 493 AZ80 GA31L, 4 alternator Siemens, dan 1 motor listrik penggerak baling-baling tunggal",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 39.8,
+      "satuan": "km/jam",
+      "catatan": "Sekitar 21,5 knot saat menyelam (11 knot atau 20,4 km/jam di permukaan).",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 34,
+      "satuan": "orang",
+      "catatan": "Awak standar 34 personel.",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "tabung-torpedo",
+      "label": "Tabung torpedo",
+      "nilai": 8,
+      "satuan": "jumlah",
+      "catatan": "8 tabung torpedo haluan kaliber 533 mm (kapasitas total hingga 14 torpedo berat).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut (Satuan Kapal Selam)",
+      "varian": "Type 209/1300 (KRI Cakra-401)",
+      "jumlah": 1,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 1981,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Dua unit diterima pada 1981; KRI Cakra (401) aktif setelah menyelesaikan overhaul di PT PAL pada 2022, sedangkan KRI Nanggala (402) gugur dalam tugas pada April 2021.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Pemerintah Indonesia memesan dua unit kapal selam Type 209/1300 dari galangan Howaldtswerke-Deutsche Werft (HDW) Jerman Barat pada April 1977 untuk menggantikan armada kapal selam Kelas Whiskey asal era 1960-an. Kedua kapal dibangun di Kiel pada tahun 1978 dan diresmikan masuk dinas TNI Angkatan Laut pada tahun 1981 sebagai KRI Cakra (401) dan KRI Nanggala (402).\n\nSelama masa dinasnya, kedua kapal selam menjalani perawatan besar (overhaul) dan pembaruan baterai/sistem kendali tembakan di Jerman pada akhir dekade 1980-an, di Korea Selatan pada dekade 2000-an, serta di fasilitas PT PAL Indonesia Surabaya.\n\nPada 21 April 2021, KRI Nanggala (402) mengalami musibah tenggelam saat melaksanakan latihan penembakan torpedo di perairan utara Bali dan dinyatakan gugur dalam patroli abadi (on eternal patrol) bersama 53 awaknya. Sementara itu, KRI Cakra (401) menuntaskan program overhaul menyeluruh di PT PAL Indonesia pada tahun 2022 dan kembali aktif bertugas.",
+    "linimasa": [
+      {
+        "tahun": 1977,
+        "bulan": 4,
+        "judul": "Pemesanan dua kapal selam Type 209/1300 dari HDW Jerman",
+        "uraian": "Indonesia menandatangani kontrak pembangunan KRI Cakra dan KRI Nanggala di galangan HDW, Kiel.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 1981,
+        "bulan": 3,
+        "judul": "Peresmian dinas KRI Cakra (401) dan KRI Nanggala (402)",
+        "uraian": "KRI Cakra diresmikan pada Maret 1981 disusul KRI Nanggala pada Juli 1981 untuk memperkuat Satuan Kapal Selam TNI AL.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2021,
+        "bulan": 4,
+        "judul": "Gugurnya KRI Nanggala (402) dalam latihan di perairan utara Bali",
+        "uraian": "KRI Nanggala (402) dinyatakan tenggelam dan berpatroli abadi bersama 53 prajurit terbaik Hiu Kencana.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2022,
+        "judul": "Penyelesaian overhaul KRI Cakra (401) di PT PAL Indonesia",
+        "uraian": "KRI Cakra (401) menyelesaikan perawatan besar dan uji selam di Surabaya untuk kembali memperkuat armada TNI AL.",
+        "sumberId": "s1"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/kapal-selam-kelas-cakra.glb",
+    "poster": "/models/kapal-selam-kelas-cakra.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Kapal Selam Kelas Cakra (Type 209/1300) dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "haluan-cakra",
+        "label": "Haluan 8 Tabung Torpedo 533 mm",
+        "posisi": "0 0.35 1.75",
+        "normal": "0 1 0",
+        "deskripsi": "Bagian haluan tempat delapan tabung peluncur torpedo kaliber 533 mm."
+      },
+      {
+        "id": "anjungan-cakra",
+        "label": "Menara Anjungan & Periskop",
+        "posisi": "0 1.1 0.3",
+        "normal": "0 1 0",
+        "deskripsi": "Menara anjungan Type 209/1300 dengan kemudi selam dan tiang periskop."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/kapal-selam-kelas-cakra.webp",
+      "alt": "Foto asli Kapal Selam Kelas Cakra (Type 209/1300)",
+      "kredit": "Indonesian Navy via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Pemeliharaan & Overhaul Kapal Selam KRI Cakra-401 (Type 209/1300)",
+      "penerbit": "PT PAL Indonesia / thyssenkrupp Marine Systems",
+      "url": "https://www.pal.co.id",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (Germany HDW to Indonesia Type 209/1300)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "kapal-selam",
+    "cakra",
+    "nanggala",
+    "type-209",
+    "hdw",
+    "tni-al"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

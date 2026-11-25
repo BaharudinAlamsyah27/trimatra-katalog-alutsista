@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base
+  judul="Kalkulator Mach, ISA & Cakrawala Bumi"
+  deskripsi="Simulasi fisika atmosfer standar (ISA), konversi Mach/km per jam/knot, dan rumus kelengkungan cakrawala Bumi."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <header class="space-y-2">
+      <p class="text-sm font-mono font-semibold text-emerald-700 dark:text-emerald-400">
+        /simulasi/mach &bull; Fisika Penerbangan &amp; Geometri Bumi
+      </p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        Kalkulator Mach (ISA) &amp; Cakrawala Bumi
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300 max-w-3xl">
+        Pelajari bagaimana ketinggian memengaruhi suhu udara dan kecepatan suara (Mach), serta seberapa jauh jarak pandang akibat kelengkungan Bumi.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Panel 1: Mach & Atmosfer Standar (ISA) -->
+      <section class="terminal-panel">
+        <div class="terminal-bar">
+          <span>1. KONVERSI KECEPATAN &amp; ATMOSFER (ISA)</span>
+          <span id="isa-regime" class="text-emerald-700 dark:text-emerald-400">SUPERSONIK</span>
+        </div>
+        <div class="p-5 sm:p-6 space-y-5">
+          <div>
+            <div class="flex justify-between text-sm mb-1.5">
+              <label for="isa-alt" class="font-semibold text-slate-700 dark:text-slate-200">Ketinggian Terbang (m)</label>
+              <span id="isa-alt-val" class="font-mono font-bold text-emerald-700 dark:text-emerald-400">11.000 m</span>
+            </div>
+            <input id="isa-alt" type="range" min="0" max="20000" step="500" value="11000" class="w-full accent-emerald-500 cursor-pointer" />
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1.5">
+              <label for="isa-speed" class="font-semibold text-slate-700 dark:text-slate-200">Kecepatan Pesawat (km/jam)</label>
+              <span id="isa-speed-val" class="font-mono font-bold text-cyan-700 dark:text-cyan-400">2.120 km/jam</span>
+            </div>
+            <input id="isa-speed" type="range" min="200" max="3000" step="20" value="2120" class="w-full accent-cyan-500 cursor-pointer" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-3.5 rounded-lg border border-slate-200 dark:border-[#243244] bg-slate-50 dark:bg-[#0d131c]">
+              <div class="text-xs font-mono text-slate-500 dark:text-slate-400">ANGKA MACH</div>
+              <div id="isa-mach" class="text-2xl font-extrabold tabular-nums text-emerald-700 dark:text-emerald-300 mt-1">—</div>
+            </div>
+            <div class="p-3.5 rounded-lg border border-slate-200 dark:border-[#243244] bg-slate-50 dark:bg-[#0d131c]">
+              <div class="text-xs font-mono text-slate-500 dark:text-slate-400">KECEPATAN (KNOT)</div>
+              <div id="isa-knot" class="text-2xl font-extrabold tabular-nums text-cyan-700 dark:text-cyan-300 mt-1">—</div>
+            </div>
+            <div class="p-3.5 rounded-lg border border-slate-200 dark:border-[#243244] bg-slate-50 dark:bg-[#0d131c]">
+              <div class="text-xs font-mono text-slate-500 dark:text-slate-400">SUHU UDARA ISA</div>
+              <div id="isa-temp" class="text-lg font-bold tabular-nums text-slate-900 dark:text-white mt-1">—</div>
+            </div>
+            <div class="p-3.5 rounded-lg border border-slate-200 dark:border-[#243244] bg-slate-50 dark:bg-[#0d131c]">
+              <div class="text-xs font-mono text-slate-500 dark:text-slate-400">KECEPATAN SUARA (Mach 1)</div>
+              <div id="isa-sos" class="text-lg font-bold tabular-nums text-slate-900 dark:text-white mt-1">—</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 2: Cakrawala & Kelengkungan Bumi -->
+      <section class="terminal-panel">
+        <div class="terminal-bar">
+          <span>2. CAKRAWALA &amp; KELENGKUNGAN BUMI</span>
+          <span class="text-cyan-700 dark:text-cyan-400">d ≈ 3,57 · √h</span>
+        </div>
+        <div class="p-5 sm:p-6 space-y-5">
+          <div>
+            <div class="flex justify-between text-sm mb-1.5">
+              <label for="hor-obs" class="font-semibold text-slate-700 dark:text-slate-200">Tinggi Pengamat / Menara / Pesawat (m)</label>
+              <span id="hor-obs-val" class="font-mono font-bold text-emerald-700 dark:text-emerald-400">30 m</span>
+            </div>
+            <input id="hor-obs" type="range" min="2" max="15000" step="10" value="30" class="w-full accent-emerald-500 cursor-pointer" />
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm mb-1.5">
+              <label for="hor-tgt" class="font-semibold text-slate-700 dark:text-slate-200">Tinggi Objek / Tiang Kapal (m)</label>
+              <span id="hor-tgt-val" class="font-mono font-bold text-cyan-700 dark:text-cyan-400">20 m</span>
+            </div>
+            <input id="hor-tgt" type="range" min="0" max="1000" step="5" value="20" class="w-full accent-cyan-500 cursor-pointer" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-4 rounded-lg border border-emerald-500/35 bg-emerald-500/5">
+              <div class="text-xs font-mono text-emerald-700 dark:text-emerald-400 font-bold">CAKRAWALA GEOMETRIS</div>
+              <div id="hor-geo" class="text-2xl font-extrabold tabular-nums text-slate-900 dark:text-white mt-1">—</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Garis pandang lurus optik</div>
+            </div>
+            <div class="p-4 rounded-lg border border-cyan-500/35 bg-cyan-500/5">
+              <div class="text-xs font-mono text-cyan-700 dark:text-cyan-400 font-bold">CAKRAWALA REFRAKSI (4/3 R)</div>
+              <div id="hor-radio" class="text-2xl font-extrabold tabular-nums text-slate-900 dark:text-white mt-1">—</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">Model atmosfer standar</div>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            Ilustrasi fisika: karena Bumi melengkung, pengamat di anjungan kapal setinggi 30 m hanya dapat melihat puncak tiang kapal lain setinggi 20 m hingga sekitar 35–41 km sebelum menghilang di balik cakrawala.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script is:inline>
+    const altEl = document.getElementById('isa-alt');
+    const spdEl = document.getElementById('isa-speed');
+    const obsEl = document.getElementById('hor-obs');
+    const tgtEl = document.getElementById('hor-tgt');
+
+    function updateISA() {
+      const h = Number(altEl.value);
+      const spd = Number(spdEl.value);
+      document.getElementById('isa-alt-val').textContent = `${h.toLocaleString('id-ID')} m`;
+      document.getElementById('isa-speed-val').textContent = `${spd.toLocaleString('id-ID')} km/jam`;
+
+      const tempK = h <= 11000 ? 288.15 - 0.0065 * h : 216.65;
+      const sosMs = Math.sqrt(1.4 * 287.058 * tempK);
+      const sosKmh = sosMs * 3.6;
+      const mach = spd / sosKmh;
+      const knot = spd * 0.539957;
+
+      document.getElementById('isa-mach').textContent = `Mach ${mach.toFixed(2)}`;
+      document.getElementById('isa-knot').textContent = `${Math.round(knot).toLocaleString('id-ID')} kt`;
+      document.getElementById('isa-temp').textContent = `${(tempK - 273.15).toFixed(1)} °C`;
+      document.getElementById('isa-sos').textContent = `${Math.round(sosKmh).toLocaleString('id-ID')} km/jam`;
+      document.getElementById('isa-regime').textContent = mach >= 1.2 ? 'SUPERSONIK' : mach >= 0.8 ? 'TRANSONIK' : 'SUBSONIK';
+    }
+
+    function updateHorizon() {
+      const ho = Number(obsEl.value);
+      const ht = Number(tgtEl.value);
+      document.getElementById('hor-obs-val').textContent = `${ho.toLocaleString('id-ID')} m`;
+      document.getElementById('hor-tgt-val').textContent = `${ht.toLocaleString('id-ID')} m`;
+
+      const geo = 3.56972 * (Math.sqrt(ho) + Math.sqrt(ht));
+      const rad = 4.124 * (Math.sqrt(ho) + Math.sqrt(ht));
+      document.getElementById('hor-geo').textContent = `${geo.toFixed(1)} km`;
+      document.getElementById('hor-radio').textContent = `${rad.toFixed(1)} km`;
+    }
+
+    altEl?.addEventListener('input', updateISA);
+    spdEl?.addEventListener('input', updateISA);
+    obsEl?.addEventListener('input', updateHorizon);
+    tgtEl?.addEventListener('input', updateHorizon);
+    updateISA();
+    updateHorizon();
+  </script>
+</Base>

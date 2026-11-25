@@ -1,0 +1,221 @@
+{
+  "nama": "KAI T-50i Golden Eagle",
+  "namaLain": [
+    "T-50i",
+    "TA-50"
+  ],
+  "matra": "udara",
+  "jenis": "pesawat-latih",
+  "peran": "Pesawat latih tempur lanjut (lead-in fighter trainer) supersonik dan serang ringan.",
+  "negaraAsal": [
+    "KR"
+  ],
+  "pabrikan": [
+    "korea-aerospace-industries"
+  ],
+  "varian": [
+    {
+      "nama": "T-50i Golden Eagle",
+      "keterangan": "Varian khusus TNI Angkatan Udara untuk pendidikan transisi penerbang tempur dan misi serang ringan."
+    }
+  ],
+  "tahunMulaiDinas": 2005,
+  "status": "dalam-dinas",
+  "ringkasan": "KAI T-50i Golden Eagle adalah pesawat latih lanjut supersonik dan serang ringan bermesin tunggal yang diproduksi oleh Korea Aerospace Industries (KAI) dengan dukungan teknis Lockheed Martin. Di Indonesia, pesawat ini dioperasikan oleh Skadron Udara 15 TNI Angkatan Udara di Lanud Iswahjudi, Madiun, menggantikan peran Hawk MK-53.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 13.14,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "rentang-sayap",
+      "label": "Rentang sayap",
+      "nilai": 9.45,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 4.94,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 6441,
+      "satuan": "kg",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-lepas-landas-maks",
+      "label": "Bobot lepas landas maks",
+      "nilai": 12300,
+      "satuan": "kg",
+      "catatan": "12.300 kg pada T-50 standar (hingga sekitar 13.500 kg pada konfigurasi serang bersenjata).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "1 x turbofan General Electric F404-GE-102 dengan afterburner (daya dorong 78,7 kN / 17.700 lbf)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 1837,
+      "satuan": "km/jam",
+      "catatan": "Sekitar Mach 1,5 pada ketinggian jelajah.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan",
+      "label": "Jangkauan",
+      "nilai": 1851,
+      "satuan": "km",
+      "catatan": "Setara 1.000 mil laut (NM).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "plafon",
+      "label": "Plafon operasi",
+      "nilai": 14630,
+      "satuan": "m",
+      "catatan": "Setara 48.000 kaki.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak/kapasitas",
+      "nilai": "2 awak (penerbang siswa dan instruktur dalam konfigurasi tandem)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "muatan-persenjataan",
+      "label": "Muatan/persenjataan",
+      "nilai": "Pod kanun 20 mm dan 7 cantelan eksternal untuk rudal udara-ke-udara jarak pendek, roket, serta bom latih/tempur",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Udara (Skadron Udara 15)",
+      "varian": "T-50i Golden Eagle",
+      "jumlah": 19,
+      "jenisJumlah": "perkiraan",
+      "tahunMulai": 2013,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "16 unit pesanan awal dikirim pada 2013–2014 (tiga unit mengalami kecelakaan dalam masa dinas), ditambah kontrak 6 unit tambahan yang ditandatangani pada 2021.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Program pengembangan T-50 Golden Eagle dimulai di Korea Selatan pada akhir dekade 1990-an untuk menghasilkan pesawat latih supersonik domestik yang memiliki karakteristik kokpit digital dan pengendalian fly-by-wire menyerupai F-16. Prototipe T-50 terbang perdana pada Agustus 2002 dan mulai berdinas di Angkatan Udara Republik Korea pada tahun 2005.\n\nIndonesia menjadi pelanggan ekspor perdana T-50 ketika menandatangani kontrak pengadaan 16 unit T-50i pada Mei 2011. Seluruh 16 pesawat diterbangkan secara bertahap dari Korea Selatan ke Lanud Iswahjudi antara September 2013 hingga Januari 2014 dan diresmikan pada Februari 2014.\n\nPada tahun 2021, Kementerian Pertahanan RI menandatangani kontrak pengadaan tambahan 6 unit T-50i beserta pembaruan radar dan avionik untuk memperkuat Skadron Udara 15.",
+    "linimasa": [
+      {
+        "tahun": 2002,
+        "bulan": 8,
+        "judul": "Penerbangan perdana prototipe T-50 Golden Eagle",
+        "uraian": "Prototipe pertama T-50 berhasil melaksanakan penerbangan perdana di Sacheon, Korea Selatan.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2011,
+        "bulan": 5,
+        "judul": "Kontrak ekspor perdana 16 unit T-50i ke Indonesia",
+        "uraian": "Indonesia memesan 16 unit T-50i untuk menggantikan pesawat latih Hawk MK-53 di Skadron Udara 15.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2014,
+        "bulan": 2,
+        "judul": "Peresmian operasional T-50i di TNI Angkatan Udara",
+        "uraian": "Setelah seluruh 16 unit tiba di Lanud Iswahjudi, armada T-50i diresmikan masuk dinas aktif TNI AU.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2021,
+        "bulan": 7,
+        "judul": "Kontrak pengadaan tambahan 6 unit T-50i",
+        "uraian": "Kementerian Pertahanan RI memesan 6 unit tambahan T-50i dari KAI.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/kai-t-50i-golden-eagle.glb",
+    "poster": "/models/kai-t-50i-golden-eagle.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik KAI T-50i Golden Eagle dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "kanopi-tandem",
+        "label": "Kokpit Tandem Siswa & Instruktur",
+        "posisi": "0 0.82 0.85",
+        "normal": "0 1 0",
+        "deskripsi": "Kokpit dua kursi berjenjang dengan tampilan layar multifungsi dan HUD."
+      },
+      {
+        "id": "saluran-samping",
+        "label": "Saluran Udara Samping Badan",
+        "posisi": "0.35 0.45 0.55",
+        "normal": "1 0 0",
+        "deskripsi": "Sepasang saluran masuk udara di sisi kiri dan kanan badan pesawat menuju mesin F404."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/kai-t-50i-golden-eagle.webp",
+      "alt": "Foto asli KAI T-50i Golden Eagle",
+      "kredit": "Korea Aerospace Industries via Wikimedia Commons",
+      "lisensi": "CC BY 2.0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "KAI T-50 / TA-50 Family Specifications",
+      "penerbit": "Korea Aerospace Industries (KAI)",
+      "url": "https://www.koreaaero.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (South Korea to Indonesia T-50i)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "pesawat-latih",
+    "t-50i",
+    "golden-eagle",
+    "kai",
+    "tni-au"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

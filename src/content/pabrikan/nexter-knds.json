@@ -1,0 +1,19 @@
+{
+  "nama": "KNDS France (Nexter Systems)",
+  "negara": "FR",
+  "tahunBerdiri": 1971,
+  "jenisUsaha": "Industri sistem persenjataan darat dan artileri",
+  "deskripsi": "Produsen sistem pertahanan darat dan artileri asal Prancis yang memproduksi howitzer swagerak beroda ban CAESAR 155 mm, meriam kaliber menengah, serta tank Leclerc.",
+  "sejarahSingkat": "Berakar dari jaringan manufaktur persenjataan negara Prancis yang disatukan menjadi GIAT pada tahun 1971, kemudian direstrukturisasi menjadi Nexter Systems pada tahun 2006 dan bergabung dengan KMW membentuk grup KNDS pada tahun 2015.",
+  "situs": "https://www.knds.fr",
+  "sumber": [
+    {
+      "id": "p-nexter-1",
+      "judul": "KNDS France Artillery & CAESAR System",
+      "penerbit": "KNDS France",
+      "url": "https://www.knds.fr",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Lanud Roesmin Nurjadin (Pekanbaru)",
+  "matra": "udara",
+  "lat": 0.461,
+  "lng": 101.445,
+  "satuan": "Skadron Udara 16 (TNI AU)",
+  "alutsista": [
+    {
+      "nama": "F-16 Fighting Falcon (Block 52ID)",
+      "slug": "f-16-fighting-falcon"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI Angkatan Udara"
+}

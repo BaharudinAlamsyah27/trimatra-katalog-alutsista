@@ -1,0 +1,203 @@
+{
+  "nama": "H225M Caracal",
+  "namaLain": [
+    "Eurocopter EC725 Caracal",
+    "Super Cougar"
+  ],
+  "matra": "udara",
+  "jenis": "helikopter",
+  "peran": "Helikopter angkut taktis jarak jauh dan pencarian serta penyelamatan tempur (CSAR).",
+  "negaraAsal": [
+    "FR",
+    "ID"
+  ],
+  "pabrikan": [
+    "airbus-helicopters",
+    "pt-dirgantara-indonesia"
+  ],
+  "varian": [
+    {
+      "nama": "H225M (EC725) CSAR / Angkut Taktis",
+      "keterangan": "Konfigurasi TNI Angkatan Udara untuk misi Combat Search and Rescue (CSAR) dan angkutan personel taktis."
+    }
+  ],
+  "tahunMulaiDinas": 2005,
+  "status": "dalam-dinas",
+  "ringkasan": "Airbus Helicopters H225M Caracal (sebelumnya dikenal sebagai Eurocopter EC725) adalah helikopter angkut taktis jarak jauh bermesin ganda dari keluarga Super Puma/Cougar yang dilengkapi rotor utama lima bilah. TNI Angkatan Udara mengoperasikan H225M yang dirakit dan diintegrasikan bersama PT Dirgantara Indonesia di Skadron Udara 8 Lanud Atang Sendjaja, Bogor.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 19.5,
+      "satuan": "m",
+      "catatan": "Panjang keseluruhan dengan rotor berputar.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "diameter-rotor",
+      "label": "Diameter rotor",
+      "nilai": 16.2,
+      "satuan": "m",
+      "catatan": "Rotor utama 5 bilah komposit Spheriflex.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 5330,
+      "satuan": "kg",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-maks",
+      "label": "Bobot maks",
+      "nilai": 11000,
+      "satuan": "kg",
+      "catatan": "11.000 kg standar (hingga 11.200 kg dengan muatan gantung eksternal).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "2 x turboshaft Safran (Turbomeca) Makila 2A1 (masing-masing ~1.776 kW / 2.382 shp)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 324,
+      "satuan": "km/jam",
+      "catatan": "Kecepatan batas (Vne) 324 km/jam; kecepatan jelajah cepat sekitar 262–285 km/jam.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan",
+      "label": "Jangkauan",
+      "nilai": 920,
+      "satuan": "km",
+      "catatan": "Jangkauan dengan tangki standar (hingga 1.253 km dengan tangki bahan bakar tambahan).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak-kapasitas",
+      "label": "Awak/kapasitas",
+      "nilai": "2 penerbang + juru mesin/loadmaster; kabin memuat hingga 28 pasukan lengkap atau 11 tandu evakuasi medis",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "muatan-persenjataan",
+      "label": "Muatan/persenjataan",
+      "nilai": "Dudukan senapan mesin pintu jendela 7,62 mm, kerekan penyelamat (rescue hoist), dan kamera elektro-optik SAR",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Udara (Skadron Udara 8)",
+      "varian": "H225M Caracal",
+      "jumlah": 14,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2016,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Terdiri atas 6 unit gelombang pertama (diserahkan 2016–2017) dan 8 unit gelombang kedua (diserahkan Desember 2023).",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Helikopter EC725 (kini H225M) Caracal dikembangkan di Prancis pada akhir dekade 1990-an atas permintaan Angkatan Udara Prancis untuk misi pencarian dan penyelamatan tempur (CSAR) jarak jauh. Prototipe EC725 terbang perdana pada November 2000 dan mulai berdinas pada tahun 2005.\n\nIndonesia memesan gelombang pertama sebanyak 6 unit H225M pada tahun 2012 melalui kerja sama industri antara Airbus Helicopters dan PT Dirgantara Indonesia di Bandung. Enam unit pertama tersebut diserahterimakan kepada TNI Angkatan Udara pada tahun 2016–2017. Pada tahun 2019, Kementerian Pertahanan RI kembali memesan 8 unit tambahan H225M yang seluruhnya resmi diserahkan kepada TNI AU pada Desember 2023 untuk memperkuat Skadron Udara 8.",
+    "linimasa": [
+      {
+        "tahun": 2000,
+        "bulan": 11,
+        "judul": "Penerbangan perdana prototipe EC725 Caracal",
+        "uraian": "Prototipe EC725 melaksanakan penerbangan perdana di Marignane, Prancis.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2016,
+        "bulan": 11,
+        "judul": "Penyerahan gelombang pertama H225M kepada TNI AU",
+        "uraian": "PT Dirgantara Indonesia mulai menyerahkan batch awal dari 6 unit H225M pesanan pertama kepada TNI Angkatan Udara.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2023,
+        "bulan": 12,
+        "judul": "Serah terima 8 unit tambahan H225M gelombang kedua",
+        "uraian": "Kementerian Pertahanan RI dan PT Dirgantara Indonesia menyerahkan 8 unit H225M batch kedua kepada TNI AU di Lanud Atang Sendjaja.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/h225m-caracal.glb",
+    "poster": "/models/h225m-caracal.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik H225M Caracal dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "rotor-5bilah",
+        "label": "Rotor Utama 5 Bilah & Mesin Makila 2A1",
+        "posisi": "0 1.3 0.15",
+        "normal": "0 1 0",
+        "deskripsi": "Sistem rotor utama lima bilah Spheriflex yang digerakkan dua mesin turboshaft Makila 2A1."
+      },
+      {
+        "id": "kabin-csar",
+        "label": "Kabin Angkut Taktis & Hoist CSAR",
+        "posisi": "0 0.65 0.3",
+        "normal": "0 1 0",
+        "deskripsi": "Kabin utama berkapasitas 28 personel dilengkapi kerekan penyelamat (hoist) untuk misi SAR tempur."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/h225m-caracal.webp",
+      "alt": "Foto asli H225M Caracal",
+      "kredit": "MilborneOne at English Wikipedia via Wikimedia Commons",
+      "lisensi": "CC BY-SA 3.0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Airbus Helicopters H225M Technical Data",
+      "penerbit": "Airbus Helicopters",
+      "url": "https://www.airbus.com/en/products-services/helicopters/military-helicopters/h225m",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "Pengiriman Helikopter H225M PT Dirgantara Indonesia & SIPRI Database",
+      "penerbit": "PT Dirgantara Indonesia / SIPRI",
+      "url": "https://www.indonesian-aerospace.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ],
+  "tag": [
+    "helikopter",
+    "csar",
+    "h225m",
+    "caracal",
+    "ptdi",
+    "airbus",
+    "tni-au"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

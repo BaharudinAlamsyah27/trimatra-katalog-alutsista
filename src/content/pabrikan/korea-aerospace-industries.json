@@ -1,0 +1,19 @@
+{
+  "nama": "Korea Aerospace Industries (KAI)",
+  "negara": "KR",
+  "tahunBerdiri": 1999,
+  "jenisUsaha": "Perusahaan industri kedirgantaraan dan pertahanan",
+  "deskripsi": "Perusahaan kedirgantaraan nasional Korea Selatan yang memproduksi pesawat latih lanjut supersonik T-50 Golden Eagle, pesawat latih KT-1B Woongbi, serta pesawat tempur KF-21.",
+  "sejarahSingkat": "Didirikan pada Oktober 1999 di Sacheon melalui penggabungan divisi kedirgantaraan Samsung Aerospace, Daewoo Heavy Industries, dan Hyundai Space and Aircraft Company.",
+  "situs": "https://www.koreaaero.com",
+  "sumber": [
+    {
+      "id": "p-kai-1",
+      "judul": "Korea Aerospace Industries Overview & T-50 Family",
+      "penerbit": "Korea Aerospace Industries, Ltd.",
+      "url": "https://www.koreaaero.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

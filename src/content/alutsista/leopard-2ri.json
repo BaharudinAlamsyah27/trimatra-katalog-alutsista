@@ -1,0 +1,226 @@
+{
+  "nama": "Leopard 2RI",
+  "namaLain": [
+    "Leopard 2A4+",
+    "Leopard 2 Republic of Indonesia"
+  ],
+  "matra": "darat",
+  "jenis": "tank-utama",
+  "peran": "Tank tempur utama berat dengan meriam 120 mm dan paket pelindung komposit modular.",
+  "negaraAsal": [
+    "DE"
+  ],
+  "pabrikan": [
+    "kmw-rheinmetall"
+  ],
+  "varian": [
+    {
+      "nama": "Leopard 2A4",
+      "keterangan": "Varian dasar standar dengan kubah berbentuk kotak dan meriam L/44 120 mm."
+    },
+    {
+      "nama": "Leopard 2RI",
+      "keterangan": "Varian peningkatan khusus Indonesia dengan pelindung komposit modular AMAP, penggerak kubah elektrik, penyejuk kabin tropis, dan unit daya bantu (APU)."
+    }
+  ],
+  "tahunMulaiDinas": 1979,
+  "status": "dalam-dinas",
+  "ringkasan": "Leopard 2RI adalah varian modernisasi tank tempur utama Leopard 2A4 asal Jerman yang disesuaikan oleh Rheinmetall untuk kebutuhan operasi TNI Angkatan Darat di iklim tropis. Tank ini menggabungkan meriam 120 mm L/44, mesin diesel 1.500 tenaga kuda, serta modul pelindung komposit tambahan dan sistem kendali kubah elektrik.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 9.97,
+      "satuan": "m",
+      "catatan": "Panjang total dengan laras meriam menghadap ke depan.",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 3.75,
+      "satuan": "m",
+      "catatan": "Lebar dapat bertambah dengan pemasangan modul pelindung samping.",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 3,
+      "satuan": "m",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-tempur",
+      "label": "Bobot tempur",
+      "nilai": 60000,
+      "satuan": "kg",
+      "catatan": "Sekitar 55.200 kg pada varian dasar 2A4 dan meningkat hingga sekitar 60.000 kg pada varian 2RI dengan pelindung modular.",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 4,
+      "satuan": "orang",
+      "catatan": "Komandan, juru tembak, pengisi amunisi, dan pengemudi.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "MTU MB 873 Ka-501 V12 twin-turbo diesel + APU",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "daya",
+      "label": "Daya",
+      "nilai": 1103,
+      "satuan": "kW",
+      "catatan": "Setara 1.500 tenaga kuda (hp).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 68,
+      "satuan": "km/jam",
+      "catatan": "Rentang 68–72 km/jam di jalan raya tergantung konfigurasi bobot.",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 500,
+      "satuan": "km",
+      "catatan": "Rentang jelajah jalan raya sekitar 450–550 km.",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-utama",
+      "label": "Persenjataan utama",
+      "nilai": "Meriam smoothbore Rheinmetall 120 mm L/44",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-sekunder",
+      "label": "Persenjataan sekunder",
+      "nilai": "2 x senapan mesin 7,62 mm (koaksial dan atap kubah)",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Darat (Kavaleri)",
+      "varian": "Leopard 2RI (61 unit) & Leopard 2A4+ (42 unit)",
+      "jumlah": 103,
+      "jenisJumlah": "dikirim",
+      "tahunMulai": 2014,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Kontrak pengadaan mencakup 103 tank tempur utama beserta kendaraan pendukung zeni/pemulihan.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Keluarga tank tempur utama Leopard 2 mulai berdinas di Angkatan Darat Jerman Barat pada tahun 1979 sebagai penerus Leopard 1. Varian Leopard 2A4 yang diproduksi antara tahun 1985 hingga 1992 menjadi seri yang paling banyak dibuat, dilengkapi sistem pengendali tembakan digital dan kubah berlapis pelindung komposit.\n\nDalam rangka modernisasi satuan kavaleri, Kementerian Pertahanan Republik Indonesia menandatangani kontrak pengadaan surplus Leopard 2A4 dari Jerman pada akhir tahun 2012. Dari total 103 unit tank tempur utama yang diakuisisi, sebanyak 61 unit ditingkatkan oleh Rheinmetall ke standar Leopard 2RI (Republic of Indonesia), sedangkan 42 unit lainnya berdinas sebagai Leopard 2A4+.\n\nPengiriman ke Indonesia berlangsung bertahap mulai tahun 2014 hingga selesai pada tahun 2017. Unit-unit tersebut kini ditempatkan di Batalion Kavaleri 1 Kostrad (Cijantung) dan Batalion Kavaleri 8 Kostrad (Pasuruan).",
+    "linimasa": [
+      {
+        "tahun": 1979,
+        "bulan": 10,
+        "judul": "Leopard 2 mulai berdinas di Jerman",
+        "uraian": "Seri produksi awal Leopard 2 diserahkan kepada Angkatan Darat Jerman Barat.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2013,
+        "judul": "Persetujuan kontrak pengadaan dan peningkatan Leopard 2RI",
+        "uraian": "Rheinmetall menggarap paket peningkatan 103 unit Leopard 2 (termasuk 61 unit standar 2RI) beserta kendaraan pendukung untuk TNI AD.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2014,
+        "bulan": 9,
+        "judul": "Kedatangan gelombang pertama di Indonesia",
+        "uraian": "Gelombang awal Leopard 2A4 tiba di Pelabuhan Tanjung Priok dan mulai memperkuat satuan Kavaleri TNI AD.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2017,
+        "judul": "Penyelesaian pengiriman seluruh unit Leopard 2RI",
+        "uraian": "Seluruh 61 unit varian Leopard 2RI dan 42 unit Leopard 2A4+ selesai diterima oleh TNI Angkatan Darat.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/leopard-2ri.glb",
+    "poster": "/models/leopard-2ri.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Leopard 2RI dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "meriam",
+        "label": "Meriam 120 mm L/44",
+        "posisi": "0 0.95 1.8",
+        "normal": "0 1 0",
+        "deskripsi": "Meriam utama smoothbore kaliber 120 mm buatan Rheinmetall."
+      },
+      {
+        "id": "kubah-amap",
+        "label": "Kubah Pelindung Modular",
+        "posisi": "0 1.15 0",
+        "normal": "0 1 0",
+        "deskripsi": "Kubah dengan paket pelindung komposit modular AMAP dan penggerak elektrik."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/leopard-2ri.webp",
+      "alt": "Foto asli Leopard 2RI",
+      "kredit": "Batalyon Kavaleri 1 via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Rheinmetall Tracked Vehicles & Leopard 2 Upgrade Programme",
+      "penerbit": "Rheinmetall AG",
+      "url": "https://www.rheinmetall.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (Germany to Indonesia Leopard 2A4/2RI)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "mbt",
+    "tank-utama",
+    "leopard-2",
+    "kavaleri",
+    "tni-ad"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

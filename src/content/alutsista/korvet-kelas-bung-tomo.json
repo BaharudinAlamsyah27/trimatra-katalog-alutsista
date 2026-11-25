@@ -1,0 +1,220 @@
+{
+  "nama": "Korvet Kelas Bung Tomo",
+  "namaLain": [
+    "Multi-Role Light Frigate (MRLF) F2000",
+    "Kelas Nakhoda Ragam"
+  ],
+  "matra": "laut",
+  "jenis": "korvet",
+  "peran": "Korvet berpeluru kendali serbaguna untuk peperangan permukaan, pertahanan udara, dan anti-kapal selam.",
+  "negaraAsal": [
+    "GB"
+  ],
+  "pabrikan": [
+    "bae-systems"
+  ],
+  "varian": [
+    {
+      "nama": "KRI Bung Tomo (357)",
+      "keterangan": "Kapal pertama di kelasnya yang resmi berdinas di TNI AL pada Juli 2014."
+    },
+    {
+      "nama": "KRI John Lie (358)",
+      "keterangan": "Kapal kedua di kelasnya, diresmikan pada Juli 2014."
+    },
+    {
+      "nama": "KRI Usman Harun (359)",
+      "keterangan": "Kapal ketiga di kelasnya, diresmikan pada Juli 2014."
+    }
+  ],
+  "tahunMulaiDinas": 2014,
+  "status": "dalam-dinas",
+  "ringkasan": "Korvet Kelas Bung Tomo adalah tiga unit kapal perang permukaan jenis Multi-Role Light Frigate (MRLF) yang dibangun oleh BAE Systems Marine di galangan Scotstoun, Glasgow, Skotlandia. Ketiga kapal ini—KRI Bung Tomo (357), KRI John Lie (358), dan KRI Usman Harun (359)—dioperasikan oleh Satuan Kapal Eskorta TNI Angkatan Laut.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 95,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 12.8,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "sarat-air",
+      "label": "Sarat air",
+      "nilai": 3.6,
+      "satuan": "m",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "displasemen",
+      "label": "Displasemen",
+      "nilai": 1940,
+      "satuan": "ton",
+      "catatan": "Displasemen muatan penuh sekitar 1.940–2.000 ton.",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "propulsi",
+      "label": "Propulsi",
+      "nilai": "CODAD: 4 x mesin diesel MAN 20 RK270 menggerakkan 2 poros baling-baling",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 55.56,
+      "satuan": "km/jam",
+      "catatan": "Setara 30 knot.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 9260,
+      "satuan": "km",
+      "catatan": "Setara 5.000 mil laut (NM) pada kecepatan ekonomis 12 knot.",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 79,
+      "satuan": "orang",
+      "catatan": "Awak inti 79 personel (akomodasi hingga sekitar 100 personel).",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "persenjataan",
+      "label": "Persenjataan",
+      "nilai": "Meriam utama 76 mm, 2 meriam 30 mm, rudal anti-kapal Exocet MM40, peluncur vertikal rudal pertahanan udara, dan 2x3 peluncur torpedo 324 mm",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "sensor",
+      "label": "Sensor",
+      "nilai": "Radar pengawasan 3D, radar pengendali tembakan, dan sonar lambung Thales TMS 4130C1",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    },
+    {
+      "kunci": "fasilitas-penerbangan",
+      "label": "Dek/hanggar helikopter",
+      "nilai": "Dek pendaratan buritan untuk 1 helikopter maritim kelas menengah (tanpa hanggar tetap)",
+      "keandalan": "sekunder",
+      "sumberId": "s2"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Laut (Satuan Kapal Eskorta)",
+      "varian": "Kelas Bung Tomo (357, 358, 359)",
+      "jumlah": 3,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2014,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Ketiga kapal aktif berdinas di jajaran Komando Armada TNI AL.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Ketiga kapal di kelas ini awalnya dibangun oleh galangan BAE Systems Marine di Scotstoun, Skotlandia, antara tahun 1999 dan 2002 berdasarkan desain F2000. Meskipun seluruh rangkaian uji laut telah diselesaikan, pemesan awal memutuskan untuk tidak mengoperasikannya sehingga ketiga kapal disimpan dalam perawatan terawat di Barrow-in-Furness.\n\nPada tahun 2012, Pemerintah Indonesia menandatangani kontrak akuisisi ketiga kapal tersebut untuk memperkuat Satuan Kapal Eskorta TNI Angkatan Laut. Setelah menjalani rekondisi sistem dan pelatihan awak di Inggris, KRI Bung Tomo (357), KRI John Lie (358), dan KRI Usman Harun (359) resmi dikukuhkan masuk dinas TNI AL pada tahun 2014.\n\nDalam dinasnya di Indonesia, KRI Bung Tomo dan KRI Usman Harun antara lain pernah ditugaskan dalam Satgas Maritim TNI Kontingen Garuda UNIFIL di perairan Lebanon serta berbagai operasi pencarian dan penyelamatan maritim.",
+    "linimasa": [
+      {
+        "tahun": 2001,
+        "bulan": 1,
+        "judul": "Peluncuran lambung kapal pertama di Glasgow",
+        "uraian": "BAE Systems Marine meluncurkan unit pertama desain F2000 di galangan Sungai Clyde, Skotlandia.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2012,
+        "judul": "Penandatanganan kontrak akuisisi oleh Indonesia",
+        "uraian": "Kementerian Pertahanan RI mengakuisisi ketiga kapal untuk memperkuat armada kombatan permukaan TNI AL.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2014,
+        "bulan": 7,
+        "judul": "Peresmian dinas KRI Bung Tomo (357) dan KRI John Lie (358)",
+        "uraian": "Kapal pertama dan kedua resmi dikukuhkan masuk dinas TNI Angkatan Laut di Barrow-in-Furness sebelum berlayar ke Indonesia.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/korvet-kelas-bung-tomo.glb",
+    "poster": "/models/korvet-kelas-bung-tomo.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Korvet Kelas Bung Tomo dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "haluan-vls",
+        "label": "Meriam Haluan 76 mm & VLS",
+        "posisi": "0 0.55 1.65",
+        "normal": "0 1 0",
+        "deskripsi": "Dek haluan tempat meriam utama 76 mm dan sel peluncur vertikal rudal pertahanan udara."
+      },
+      {
+        "id": "tiang-sensor",
+        "label": "Tiang Utama Radar Pengawasan",
+        "posisi": "0 1.3 0.25",
+        "normal": "0 1 0",
+        "deskripsi": "Struktur tiang utama pembawa radar pengawasan udara dan permukaan."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/korvet-kelas-bung-tomo.webp",
+      "alt": "Foto asli Korvet Kelas Bung Tomo",
+      "kredit": "Marwan Mohamad via Wikimedia Commons",
+      "lisensi": "CC BY-SA 4.0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "BAE Systems Maritime Naval Surface Combatants Reference",
+      "penerbit": "BAE Systems plc",
+      "url": "https://www.baesystems.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (UK to Indonesia Bung Tomo Class)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "korvet",
+    "mrlf",
+    "bung-tomo",
+    "bae-systems",
+    "tni-al"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

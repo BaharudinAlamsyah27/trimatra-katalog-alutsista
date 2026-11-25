@@ -1,0 +1,15 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Yonkav 1 Kostrad (Cijantung, Jakarta)",
+  "matra": "darat",
+  "lat": -6.322,
+  "lng": 106.857,
+  "satuan": "Batalion Kavaleri 1 Kostrad (TNI AD)",
+  "alutsista": [
+    {
+      "nama": "Leopard 2RI",
+      "slug": "leopard-2ri"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI AD / Kostrad"
+}

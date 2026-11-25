@@ -1,0 +1,212 @@
+{
+  "nama": "Pindad Komodo 4x4",
+  "namaLain": [
+    "Rantis Komodo"
+  ],
+  "matra": "darat",
+  "jenis": "kendaraan-taktis",
+  "peran": "Kendaraan taktis lapis baja ringan berpenggerak empat roda (4x4) untuk pengintaian, komando, dan mobilitas satuan.",
+  "negaraAsal": [
+    "ID"
+  ],
+  "pabrikan": [
+    "pindad"
+  ],
+  "varian": [
+    {
+      "nama": "Komodo 4x4 Recon (Intai)",
+      "keterangan": "Varian dasar pengintaian dan patroli taktis berkapasitas empat personel."
+    },
+    {
+      "nama": "Komodo 4x4 APC / Battering Ram",
+      "keterangan": "Varian angkut personel taktis dan varian pendobrak khusus satuan penanggulangan teror."
+    },
+    {
+      "nama": "Komodo 4x4 Missile Launcher",
+      "keterangan": "Platform pembawa peluncur rudal pertahanan udara jarak pendek (seperti Mistral Atlas)."
+    }
+  ],
+  "tahunMulaiDinas": 2012,
+  "status": "dalam-dinas",
+  "ringkasan": "Pindad Komodo 4x4 adalah keluarga kendaraan taktis berlapis baja ringan berpenggerak empat roda yang dirancang dan diproduksi oleh PT Pindad. Kendaraan ini digunakan untuk misi pengintaian, kendaraan pos komando, penarik meriam ringan, serta platform peluncur rudal pertahanan udara.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 5.65,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "lebar",
+      "label": "Lebar",
+      "nilai": 2.25,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 2.15,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-tempur",
+      "label": "Bobot tempur",
+      "nilai": 7300,
+      "satuan": "kg",
+      "catatan": "Bobot kosong sekitar 5.800 kg; bobot tempur berkisar 7.300–8.000 kg tergantung varian.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak",
+      "nilai": 4,
+      "satuan": "orang",
+      "catatan": "Pada varian Recon standar (hingga 8–10 orang pada varian APC).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "Diesel 4-silinder segaris Turbocharger Intercooler (215 hp)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "daya",
+      "label": "Daya",
+      "nilai": 160.3,
+      "satuan": "kW",
+      "catatan": "Setara 215 tenaga kuda (hp) pada 2.500 rpm.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 80,
+      "satuan": "km/jam",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jarak-jelajah",
+      "label": "Jarak jelajah",
+      "nilai": 450,
+      "satuan": "km",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "persenjataan-utama",
+      "label": "Persenjataan utama",
+      "nilai": "Dudukan senapan mesin 7,62 mm atau 12,7 mm di atap (atau peluncur rudal pertahanan udara pada varian Missile Launcher)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Darat & Korps Brimob Polri",
+      "varian": "Komodo Recon, APC, Komando, Missile Launcher",
+      "jumlah": 130,
+      "jenisJumlah": "perkiraan",
+      "tahunMulai": 2012,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Digunakan oleh satuan Kostrad, Kopassus, Arhanud, Kavaleri, kontingen PBB (UNIFIL/MINUSCA), serta Brimob.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Pengembangan kendaraan taktis Komodo 4x4 dimulai oleh PT Pindad pada akhir tahun 2011 guna menyediakan kendaraan taktis ringan berlapis baja buatan dalam negeri yang setara dengan keluarga Sherpa Light atau Humvee lapis baja. Bodi kendaraan dibangun dari pelat baja monokok antipeluru yang dipadukan dengan kaca antipeluru.\n\nPurwarupa Komodo 4x4 selesai diuji pada tahun 2012 dan secara resmi diberi nama 'Komodo' oleh Presiden Republik Indonesia pada pameran Indo Defence November 2012. Sejak saat itu, PT Pindad mengembangkan berbagai varian khusus mulai dari pengintaian (Recon), kendaraan komando, ambulans lapangan, hingga kendaraan peluncur rudal pertahanan udara Mistral bagi satuan Arhanud TNI AD.",
+    "linimasa": [
+      {
+        "tahun": 2011,
+        "bulan": 10,
+        "judul": "Perancangan purwarupa kendaraan taktis 4x4",
+        "uraian": "Divisi Kendaraan Khusus PT Pindad memulai rancang bangun kendaraan taktis lapis baja ringan berpenggerak 4x4.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2012,
+        "bulan": 11,
+        "judul": "Peresmian nama Komodo pada Indo Defence 2012",
+        "uraian": "Rantis 4x4 buatan PT Pindad diperkenalkan secara resmi dengan nama Komodo dan mulai dipesan oleh TNI serta Polri.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2015,
+        "judul": "Pengiriman varian peluncur rudal dan misi perdamaian PBB",
+        "uraian": "Varian Komodo Missile Launcher masuk dinas satuan Arhanud TNI AD dan sejumlah unit dikerahkan mendukung misi perdamaian PBB.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/pindad-komodo-4x4.glb",
+    "poster": "/models/pindad-komodo-4x4.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Pindad Komodo 4x4 dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "kap-mesin",
+        "label": "Ruang Mesin Depan",
+        "posisi": "0 0.65 1.1",
+        "normal": "0 1 0",
+        "deskripsi": "Ruang mesin diesel turbocharged 215 hp dengan kisi pelindung baja."
+      },
+      {
+        "id": "kabin-lapis-baja",
+        "label": "Kabin Monokok Antipeluru",
+        "posisi": "0 0.95 -0.1",
+        "normal": "0 1 0",
+        "deskripsi": "Kabin baja antipeluru dengan kaca tebal dan dudukan senjata di bagian atap."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/pindad-komodo-4x4.webp",
+      "alt": "Foto asli Pindad Komodo 4x4",
+      "kredit": "Kostrad via Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "Spesifikasi Kendaraan Khusus Komodo 4x4 Recon",
+      "penerbit": "PT Pindad",
+      "url": "https://pindad.com/komodo-4x4-recon",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database & Publikasi Pengiriman Rantis Komodo",
+      "penerbit": "SIPRI / PT Pindad",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "rantis",
+    "4x4",
+    "komodo",
+    "pindad",
+    "tni-ad"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

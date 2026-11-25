@@ -1,0 +1,19 @@
+{
+  "nama": "Freire Shipyard",
+  "negara": "ES",
+  "tahunBerdiri": 1895,
+  "jenisUsaha": "Galangan Kapal Sipil & Kapal Latih",
+  "deskripsi": "Galangan kapal asal Vigo, Spanyol, yang membangun kapal oseanografi, kapal penelitian, dan kapal latih tiang tinggi termasuk KRI Bima Suci.",
+  "sejarahSingkat": "Didirikan pada 1895 oleh keluarga Freire di Vigo, Spanyol, galangan ini berkembang menjadi pembuat kapal khusus berteknologi tinggi untuk pasar Eropa, Amerika, dan Asia.",
+  "situs": "https://www.freireshipyard.com/",
+  "sumber": [
+    {
+      "id": "freire-web",
+      "judul": "Freire Shipyard Official Website",
+      "penerbit": "Construcciones Navales Paulino Freire S.A.",
+      "url": "https://www.freireshipyard.com/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    }
+  ]
+}

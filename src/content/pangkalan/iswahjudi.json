@@ -1,0 +1,19 @@
+{
+  "isReferensiGeografis": false,
+  "nama": "Lanud Iswahjudi (Madiun)",
+  "matra": "udara",
+  "lat": -7.615,
+  "lng": 111.434,
+  "satuan": "Skadron Udara 3 & Skadron Udara 15 (TNI AU)",
+  "alutsista": [
+    {
+      "nama": "F-16 Fighting Falcon",
+      "slug": "f-16-fighting-falcon"
+    },
+    {
+      "nama": "KAI T-50i Golden Eagle",
+      "slug": "kai-t-50i-golden-eagle"
+    }
+  ],
+  "sumber": "Informasi publik resmi TNI Angkatan Udara"
+}

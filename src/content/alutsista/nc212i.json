@@ -1,0 +1,232 @@
+{
+  "nama": "NC212i",
+  "namaLain": [
+    "CASA/IPTN NC-212",
+    "NC212-200",
+    "NC212i MSA"
+  ],
+  "matra": "udara",
+  "jenis": "pesawat-angkut",
+  "peran": "Pesawat angkut militer ringan multiguna berkemampuan lepas landas dan mendarat pendek (STOL).",
+  "negaraAsal": [
+    "ID",
+    "ES"
+  ],
+  "pabrikan": [
+    "pt-dirgantara-indonesia"
+  ],
+  "varian": [
+    {
+      "nama": "NC212-200",
+      "keterangan": "Seri produksi berlisensi generasi terdahulu yang dioperasikan oleh TNI AU, TNI AD, dan TNI AL."
+    },
+    {
+      "nama": "NC212i",
+      "keterangan": "Generasi pemutakhiran penuh buatan PT Dirgantara Indonesia dengan avionik digital kaca (glass cockpit), autopilot, dan winglet."
+    }
+  ],
+  "tahunMulaiDinas": 1976,
+  "status": "dalam-produksi",
+  "ringkasan": "NC212i adalah pesawat angkut ringan bermesin turboprop ganda generasi terbaru dari keluarga C212 Aviocar yang kini sepenuhnya diproduksi oleh PT Dirgantara Indonesia di Bandung. Pesawat ini dirancang untuk beroperasi di landasan perintis pendek dan belum beraspal guna melayani angkutan personel, terjun payung, evakuasi medis, modifikasi cuaca (hujan buatan), serta patroli maritim.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 16.15,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "rentang-sayap",
+      "label": "Rentang sayap",
+      "nilai": 20.28,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 6.6,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 4400,
+      "satuan": "kg",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-lepas-landas-maks",
+      "label": "Bobot lepas landas maks",
+      "nilai": 8100,
+      "satuan": "kg",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "2 x turboprop Honeywell TPE331-12JR-701C (masing-masing ~723 kW / 970 shp)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 370,
+      "satuan": "km/jam",
+      "catatan": "Kecepatan jelajah maksimum sekitar 195–200 knot (361–370 km/jam).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan",
+      "label": "Jangkauan",
+      "nilai": 1493,
+      "satuan": "km",
+      "catatan": "Sekitar 806 mil laut dengan bahan bakar penuh (hingga 2.680 km dalam konfigurasi feri).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "plafon",
+      "label": "Plafon operasi",
+      "nilai": 7925,
+      "satuan": "m",
+      "catatan": "Setara 26.000 kaki.",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak/kapasitas",
+      "nilai": "2 penerbang; kabin memuat hingga 28 penumpang atau 25 pasukan payung",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "muatan-persenjataan",
+      "label": "Muatan/persenjataan",
+      "nilai": "Kapasitas muatan maksimum hingga 3.000 kg dengan pintu rampa belakang",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Udara (Skadron Udara 4), Puspenerbal TNI AL, & Puspenerbad TNI AD",
+      "varian": "NC212-200 & NC212i",
+      "jumlah": 24,
+      "jenisJumlah": "perkiraan",
+      "tahunMulai": 1976,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Termasuk pesanan 9 unit generasi terbaru NC212i untuk Skadron Udara 4 TNI AU di Lanud Abdulrachman Saleh, Malang.",
+      "sumberId": "s1"
+    },
+    {
+      "negara": "PH",
+      "angkatan": "Angkatan Udara Filipina",
+      "varian": "NC212i",
+      "jumlah": 2,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2018,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Dua unit NC212i diekspor oleh PT Dirgantara Indonesia ke Filipina pada tahun 2018.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Keluarga pesawat angkut ringan NC-212 merupakan produk pertama yang dirakit oleh PT Industri Pesawat Terbang Nurtanio (kini PT Dirgantara Indonesia) di Bandung sejak tahun 1976 melalui lisensi dari CASA Spanyol. Lebih dari 100 unit seri NC-212 generasi awal telah diproduksi di Bandung untuk operator militer maupun sipil.\n\nPada tahun 2012, Airbus Defence and Space (penerus CASA) bersama PT Dirgantara Indonesia menyepakati pemindahan penuh lini produksi keluarga C212 ke Bandung sekaligus meluncurkan generasi terbaru NC212i (huruf 'i' menandakan improved dan Indonesia). Seri NC212i membawa peningkatan muatan menjadi 3 ton, kokpit kaca digital, serta efisiensi aerodinamika.\n\nKementerian Pertahanan RI memesan 9 unit NC212i untuk memperkuat Skadron Udara 4 TNI Angkatan Udara di Malang yang dikirim secara bertahap mulai tahun 2021 hingga 2024, selain ekspor ke Filipina, Vietnam, dan Thailand.",
+    "linimasa": [
+      {
+        "tahun": 1976,
+        "judul": "Dimulainya produksi berlisensi NC-212 di Bandung",
+        "uraian": "IPTN mulai memproduksi pesawat angkut ringan NC-212 di fasilitas Husein Sastranegara, Bandung.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2012,
+        "bulan": 11,
+        "judul": "Peluncuran program NC212i dan pemindahan lini produksi ke PTDI",
+        "uraian": "PT Dirgantara Indonesia menjadi satu-satunya produsen keluarga NC212i di dunia.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2021,
+        "bulan": 1,
+        "judul": "Pengiriman unit awal pesanan 9 NC212i untuk TNI Angkatan Udara",
+        "uraian": "Unit pertama dari kontrak 9 pesawat NC212i diserahkan kepada Skadron Udara 4 Lanud Abdulrachman Saleh, Malang.",
+        "sumberId": "s1"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/nc212i.glb",
+    "poster": "/models/nc212i.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik NC212i dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "sayap-turboprop-nc212",
+        "label": "Sayap Tinggi & Mesin Honeywell TPE331",
+        "posisi": "0.85 0.68 0.2",
+        "normal": "0 1 0",
+        "deskripsi": "Sayap tinggi dengan dua mesin turboprop Honeywell TPE331 dan ujung sayap winglet."
+      },
+      {
+        "id": "badan-kotak-rampa",
+        "label": "Kabin Kargo Penampang Kotak & Rampa",
+        "posisi": "0 0.45 -0.8",
+        "normal": "0 1 0",
+        "deskripsi": "Badan pesawat berpenampang kotak dengan roda pendarat tetap dan pintu rampa belakang untuk landasan pendek."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/nc212i.webp",
+      "alt": "Foto asli NC212i",
+      "kredit": "Rjcastillo via Wikimedia Commons",
+      "lisensi": "CC BY-SA 4.0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "NC212i Light Transport Aircraft Specification",
+      "penerbit": "PT Dirgantara Indonesia",
+      "url": "https://www.indonesian-aerospace.com",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (Indonesia PTDI NC212i Deliveries)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "pesawat-angkut",
+    "stol",
+    "nc212i",
+    "c212",
+    "ptdi",
+    "tni-au"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}

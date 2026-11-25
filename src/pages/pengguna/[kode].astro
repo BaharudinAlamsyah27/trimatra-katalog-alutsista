@@ -1,0 +1,131 @@
+---
+import Base from '../../layouts/Base.astro';
+import { derivePenggunaMap } from '../../lib/derive';
+import {
+  formatAngka,
+  formatTanggalBulan,
+  labelJenis,
+  labelJenisJumlah,
+  labelMatra,
+  labelStatus,
+} from '../../lib/format';
+
+export async function getStaticPaths() {
+  const penggunaMap = await derivePenggunaMap();
+  const paths = [];
+
+  for (const [kode, summary] of penggunaMap.entries()) {
+    paths.push({
+      params: { kode: kode.toLowerCase() },
+      props: { summary },
+    });
+    if (kode.toUpperCase() !== kode.toLowerCase()) {
+      paths.push({
+        params: { kode: kode.toUpperCase() },
+        props: { summary },
+      });
+    }
+  }
+  return paths;
+}
+
+const { summary } = Astro.props;
+const angkatanEntries = Array.from(summary.angkatanMap.entries());
+---
+
+<Base
+  judul={`Alutsista Pengguna: ${summary.nama} (${summary.kode})`}
+  deskripsi={`Daftar alutsista yang dioperasikan oleh ${summary.nama} (${summary.kode}) dikelompokkan per angkatan bersenjata.`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <nav aria-label="Breadcrumb" class="text-xs text-slate-600 dark:text-slate-400 flex flex-wrap items-center gap-1.5">
+      <a href="/" class="hover:underline">Beranda</a>
+      <span>/</span>
+      <a href="/pengguna" class="hover:underline">Pengguna</a>
+      <span>/</span>
+      <span class="font-semibold text-slate-900 dark:text-slate-100" aria-current="page">
+        {summary.nama} ({summary.kode})
+      </span>
+    </nav>
+
+    <header class="space-y-2 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <span class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-sky-100 dark:bg-sky-950 text-sky-900 dark:text-sky-300">
+        Kode Negara ISO: {summary.kode}
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+        Alutsista yang Dioperasikan {summary.nama}
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">
+        Dikelompokkan per angkatan berdasarkan data sumber terbuka pada masing-masing entri katalog ({summary.entriList.length} entri).
+      </p>
+    </header>
+
+    <div class="space-y-10">
+      {angkatanEntries.map(([namaAngkatan, daftarItem]) => (
+        <section class="space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+              {namaAngkatan}
+            </h2>
+            <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+              {daftarItem.length} sistem alutsista
+            </span>
+          </div>
+
+          <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 text-xs uppercase">
+                <tr>
+                  <th scope="col" class="py-3 px-4 font-semibold">Alutsista</th>
+                  <th scope="col" class="py-3 px-4 font-semibold">Matra & Jenis</th>
+                  <th scope="col" class="py-3 px-4 font-semibold">Varian</th>
+                  <th scope="col" class="py-3 px-4 font-semibold">Jumlah & Tanggal Data</th>
+                  <th scope="col" class="py-3 px-4 font-semibold">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                {daftarItem.map(({ entri, barisPengguna }) => (
+                  <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                    <td class="py-3 px-4 font-bold">
+                      <a href={`/alutsista/${entri.id}`} class="text-sky-700 dark:text-sky-400 hover:underline">
+                        {entri.data.nama}
+                      </a>
+                    </td>
+                    <td class="py-3 px-4 text-xs">
+                      <span class="font-semibold uppercase">{labelMatra(entri.data.matra)}</span>
+                      <span class="text-slate-500"> &bull; </span>
+                      <a href={`/jenis/${entri.data.jenis}`} class="hover:underline">
+                        {labelJenis(entri.data.jenis)}
+                      </a>
+                    </td>
+                    <td class="py-3 px-4 text-slate-700 dark:text-slate-300">
+                      {barisPengguna.varian || '—'}
+                    </td>
+                    <td class="py-3 px-4 text-slate-800 dark:text-slate-200">
+                      <div>
+                        {barisPengguna.jumlah !== null ? (
+                          <span class="font-semibold">{formatAngka(barisPengguna.jumlah)} unit</span>
+                        ) : (
+                          <span class="italic text-slate-500">Tidak dipublikasikan</span>
+                        )}
+                        <span class="ml-1 text-xs text-slate-500">({labelJenisJumlah(barisPengguna.jenisJumlah)})</span>
+                      </div>
+                      <div class="text-xs text-slate-500">
+                        per {formatTanggalBulan(barisPengguna.perDate)}
+                      </div>
+                    </td>
+                    <td class="py-3 px-4">
+                      <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-200">
+                        {labelStatus(barisPengguna.status)}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</Base>

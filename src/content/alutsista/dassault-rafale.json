@@ -1,0 +1,81 @@
+{
+  "nama": "Dassault Rafale",
+  "namaLain": ["Rafale F4"],
+  "matra": "udara",
+  "jenis": "pesawat-tempur",
+  "peran": "Pesawat tempur multiperan bermesin ganda generasi 4,5 dengan konfigurasi sayap delta dan canard.",
+  "negaraAsal": ["FR"],
+  "pabrikan": ["dassault-aviation"],
+  "varian": [
+    {
+      "nama": "Rafale C / B",
+      "keterangan": "Varian kursi tunggal (C) dan kursi ganda (B) untuk angkatan udara."
+    },
+    {
+      "nama": "Rafale F4",
+      "keterangan": "Standar pembaruan konektivitas, sensor, dan avionik terkini."
+    }
+  ],
+  "tahunMulaiDinas": 2001,
+  "status": "dalam-produksi",
+  "ringkasan": "Dassault Rafale adalah pesawat tempur multiperan bermesin ganda asal Prancis yang dirancang untuk tugas superioritas udara, serangan darat, pengintaian, dan anti-kapal. Indonesia telah menandatangani kontrak pengadaan 42 unit Rafale secara bertahap sejak 2022.",
+  "spesifikasi": [
+    { "kunci": "panjang", "label": "Panjang", "nilai": 15.27, "satuan": "m", "keandalan": "resmi", "sumberId": "dassault-rafale" },
+    { "kunci": "rentang-sayap", "label": "Rentang sayap", "nilai": 10.9, "satuan": "m", "keandalan": "resmi", "sumberId": "dassault-rafale" },
+    { "kunci": "tinggi", "label": "Tinggi", "nilai": 5.34, "satuan": "m", "keandalan": "resmi", "sumberId": "dassault-rafale" },
+    { "kunci": "bobot-kosong", "label": "Bobot kosong", "nilai": 10000, "satuan": "kg", "keandalan": "resmi", "sumberId": "dassault-rafale" },
+    { "kunci": "bobot-lepas-landas-maks", "label": "Bobot lepas landas maks", "nilai": 24500, "satuan": "kg", "keandalan": "resmi", "sumberId": "dassault-rafale" },
+    { "kunci": "kecepatan-maks", "label": "Kecepatan maks", "nilai": 1912, "satuan": "km/jam", "catatan": "Mach 1,8 di ketinggian tinggi", "keandalan": "resmi", "sumberId": "dassault-rafale" },
+    { "kunci": "jangkauan", "label": "Jangkauan", "nilai": 3700, "satuan": "km", "catatan": "Jangkauan feri dengan tangki eksternal", "keandalan": "sekunder", "sumberId": "kemhan-rafale" },
+    { "kunci": "plafon", "label": "Plafon operasi", "nilai": 15235, "satuan": "m", "keandalan": "resmi", "sumberId": "dassault-rafale" }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Udara",
+      "varian": "Rafale F4",
+      "jumlah": 42,
+      "jenisJumlah": "dipesan",
+      "status": "dipesan",
+      "perDate": "2024-01",
+      "catatan": "Kontrak efektif dalam 3 tahap (6 + 18 + 18 unit).",
+      "sumberId": "kemhan-rafale"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Dikembangkan Dassault Aviation sebagai pesawat tempur serbaguna Prancis dan memasuki fase pengadaan resmi untuk TNI AU sejak 2022.",
+    "linimasa": [
+      { "tahun": 2001, "bulan": 5, "judul": "Masuk Dinas Angkatan Bersenjata Prancis", "uraian": "Rafale mulai beroperasi secara resmi di Prancis.", "sumberId": "dassault-rafale" },
+      { "tahun": 2022, "bulan": 2, "judul": "Penandatanganan Kontrak Indonesia", "uraian": "Kementerian Pertahanan RI menandatangani kontrak pengadaan 42 unit Rafale.", "sumberId": "kemhan-rafale" },
+      { "tahun": 2024, "bulan": 1, "judul": "Tahap Akhir 18 Unit Resmi Efektif", "uraian": "Seluruh 42 unit pesanan Indonesia memasuki tahap kontrak efektif.", "sumberId": "dassault-rafale" }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/dassault-rafale.webp",
+      "alt": "Foto pesawat tempur Dassault Rafale sedang terbang",
+      "kredit": "Joshua A. Hoskins / USAF / Wikimedia Commons",
+      "lisensi": "Public domain"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "dassault-rafale",
+      "judul": "Rafale Specifications & Performance",
+      "penerbit": "Dassault Aviation",
+      "url": "https://www.dassault-aviation.com/en/defense/rafale/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "kemhan-rafale",
+      "judul": "Rilis Resmi Pengadaan Alutsista TNI AU",
+      "penerbit": "Kementerian Pertahanan Republik Indonesia",
+      "url": "https://www.kemhan.go.id/",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-pemerintah"
+    }
+  ],
+  "tag": ["pesawat-tempur", "multiperan", "dipesan", "tni-au"],
+  "diperbaruiPada": "2026-11-25"
+}

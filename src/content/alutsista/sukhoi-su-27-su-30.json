@@ -1,0 +1,230 @@
+{
+  "nama": "Sukhoi Su-27 / Su-30",
+  "namaLain": [
+    "Su-27SK",
+    "Su-27SKM",
+    "Su-30MK",
+    "Su-30MK2",
+    "Flanker"
+  ],
+  "matra": "udara",
+  "jenis": "pesawat-tempur",
+  "peran": "Pesawat tempur berat bermesin ganda untuk superioritas udara dan serangan maritim/permukaan jarak jauh.",
+  "negaraAsal": [
+    "RU"
+  ],
+  "pabrikan": [
+    "sukhoi-uac"
+  ],
+  "varian": [
+    {
+      "nama": "Su-27SK & Su-27SKM",
+      "keterangan": "Varian tempat duduk tunggal (5 unit: 2 Su-27SK dan 3 Su-27SKM) dengan fokus superioritas udara."
+    },
+    {
+      "nama": "Su-30MK & Su-30MK2",
+      "keterangan": "Varian tempat duduk ganda (11 unit: 2 Su-30MK dan 9 Su-30MK2) dengan kemampuan multiperan dan serangan permukaan/maritim."
+    }
+  ],
+  "tahunMulaiDinas": 1985,
+  "status": "dalam-dinas",
+  "ringkasan": "Keluarga pesawat tempur Sukhoi Su-27 dan Su-30 adalah pesawat tempur berat bermesin turbofan ganda yang dirancang oleh Biro Desain Sukhoi (kini bagian dari United Aircraft Corporation). TNI Angkatan Udara mengoperasikan 16 unit kombinasi Su-27SK/SKM dan Su-30MK/MK2 di Skadron Udara 14 Lanud Sultan Hasanuddin, Makassar.",
+  "spesifikasi": [
+    {
+      "kunci": "panjang",
+      "label": "Panjang",
+      "nilai": 21.93,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "rentang-sayap",
+      "label": "Rentang sayap",
+      "nilai": 14.7,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "tinggi",
+      "label": "Tinggi",
+      "nilai": 6.36,
+      "satuan": "m",
+      "catatan": "6,36 m pada Su-30MK2 (5,93 m pada Su-27SK).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-kosong",
+      "label": "Bobot kosong",
+      "nilai": 17700,
+      "satuan": "kg",
+      "catatan": "Acuan varian Su-30MK2.",
+      "keandalan": "sekunder",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "bobot-lepas-landas-maks",
+      "label": "Bobot lepas landas maks",
+      "nilai": 34500,
+      "satuan": "kg",
+      "catatan": "Hingga 34.500 kg pada Su-30MK2 (30.450–33.000 kg pada Su-27SK/SKM).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "mesin",
+      "label": "Mesin",
+      "nilai": "2 x turbofan Saturn AL-31F dengan afterburner (masing-masing daya dorong 122,6 kN)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "kecepatan-maks",
+      "label": "Kecepatan maks",
+      "nilai": 2120,
+      "satuan": "km/jam",
+      "catatan": "Sekitar Mach 2 pada ketinggian tinggi (1.350–1.400 km/jam dekat permukaan laut).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "jangkauan",
+      "label": "Jangkauan",
+      "nilai": 3000,
+      "satuan": "km",
+      "catatan": "Jangkauan terbang pada ketinggian jelajah dengan bahan bakar internal (dapat diperpanjang dengan pengisian bahan bakar di udara pada Su-30).",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "plafon",
+      "label": "Plafon operasi",
+      "nilai": 17300,
+      "satuan": "m",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "awak",
+      "label": "Awak/kapasitas",
+      "nilai": "1 penerbang (Su-27SK/SKM) atau 2 awak tandem (Su-30MK/MK2)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    },
+    {
+      "kunci": "muatan-persenjataan",
+      "label": "Muatan/persenjataan",
+      "nilai": "Kanun internal GSh-30-1 30 mm dan 12 cantelan eksternal (hingga 8.000 kg muatan rudal udara-ke-udara, rudal udara-ke-permukaan/anti-kapal, dan bom)",
+      "keandalan": "resmi",
+      "sumberId": "s1"
+    }
+  ],
+  "pengguna": [
+    {
+      "negara": "ID",
+      "angkatan": "TNI Angkatan Udara (Skadron Udara 14)",
+      "varian": "Su-27SK (2), Su-27SKM (3), Su-30MK (2), Su-30MK2 (9)",
+      "jumlah": 16,
+      "jenisJumlah": "dioperasikan",
+      "tahunMulai": 2003,
+      "tahunBerakhir": null,
+      "status": "aktif",
+      "perDate": "2024-12",
+      "catatan": "Seluruh 16 pesawat ditempatkan di Lanud Sultan Hasanuddin, Makassar.",
+      "sumberId": "s2"
+    }
+  ],
+  "sejarah": {
+    "ringkas": "Biro Desain Sukhoi merancang Su-27 pada akhir dekade 1970-an sebagai pesawat tempur superioritas udara jarak jauh bermesin ganda dengan kelincahan manuver tinggi. Dari kerangka Su-27UB bertempat duduk ganda, Sukhoi kemudian mengembangkan Su-30 yang dilengkapi kemampuan misi serangan permukaan dan maritim jarak jauh.\n\nIndonesia memulai pengadaan pesawat ini pada tahun 2003 dengan kedatangan 2 unit Su-27SK dan 2 unit Su-30MK. Selanjutnya, melalui kontrak pada tahun 2007 dan 2010, TNI Angkatan Udara menerima tambahan 3 unit Su-30MK2 pada 2008–2009, 3 unit Su-27SKM pada 2010, dan 6 unit Su-30MK2 terakhir pada tahun 2013 sehingga genap satu skadron berkekuatan 16 pesawat.",
+    "linimasa": [
+      {
+        "tahun": 1977,
+        "bulan": 5,
+        "judul": "Penerbangan perdana prototipe T-10 (Su-27)",
+        "uraian": "Prototipe awal keluarga Su-27 melaksanakan penerbangan perdana di Uni Soviet.",
+        "sumberId": "s1"
+      },
+      {
+        "tahun": 2003,
+        "bulan": 9,
+        "judul": "Kedatangan gelombang pertama Su-27SK dan Su-30MK di Indonesia",
+        "uraian": "Empat unit pertama (2 Su-27SK dan 2 Su-30MK) tiba di Indonesia untuk memperkuat TNI Angkatan Udara.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2010,
+        "bulan": 9,
+        "judul": "Pengiriman 3 unit Su-27SKM ke Lanud Sultan Hasanuddin",
+        "uraian": "Tiga unit varian Su-27SKM tiba di Makassar setelah pengiriman 3 unit Su-30MK2 pada 2008–2009.",
+        "sumberId": "s2"
+      },
+      {
+        "tahun": 2013,
+        "bulan": 9,
+        "judul": "Pengiriman penuh 6 unit Su-30MK2 batch terakhir",
+        "uraian": "Enam unit Su-30MK2 terakhir tiba di Makassar sehingga melengkapi kekuatan 16 pesawat tempur Sukhoi TNI AU.",
+        "sumberId": "s2"
+      }
+    ]
+  },
+  "model3d": {
+    "berkas": "/models/sukhoi-su-27-su-30.glb",
+    "poster": "/models/sukhoi-su-27-su-30.webp",
+    "pembuat": "Tim Katalog Alutsista Interaktif",
+    "lisensi": "CC0",
+    "atribusi": "Model 3D edukasi skematik Sukhoi Su-27 / Su-30 dirilis ke domain publik (CC0 1.0).",
+    "hotspot": [
+      {
+        "id": "kokpit-tandem",
+        "label": "Kokpit & Sensor IRST Hidung",
+        "posisi": "0 0.78 1.25",
+        "normal": "0 1 0",
+        "deskripsi": "Kokpit penerbang dan bola sensor pelacak inframerah (IRST) di depan kaca depan."
+      },
+      {
+        "id": "sirip-ekor-ganda",
+        "label": "Sirip Tegak Ganda & Mesin AL-31F",
+        "posisi": "0 1.05 -1.35",
+        "normal": "0 1 0",
+        "deskripsi": "Sepasang sirip ekor vertikal dan dua nosel mesin turbofan Saturn AL-31F."
+      }
+    ]
+  },
+  "galeri": [
+    {
+      "berkas": "/images/sukhoi-su-27-su-30.webp",
+      "alt": "Foto asli Sukhoi Su-27 / Su-30",
+      "kredit": "NaidNdeso via Wikimedia Commons",
+      "lisensi": "CC BY-SA 4.0"
+    }
+  ],
+  "sumber": [
+    {
+      "id": "s1",
+      "judul": "UAC Su-30MK / Su-27SK Technical Performance Data",
+      "penerbit": "United Aircraft Corporation (UAC)",
+      "url": "https://www.uacrussia.ru",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "resmi-produsen"
+    },
+    {
+      "id": "s2",
+      "judul": "SIPRI Arms Transfers Database (Russia to Indonesia Su-27 & Su-30)",
+      "penerbit": "Stockholm International Peace Research Institute (SIPRI)",
+      "url": "https://www.sipri.org/databases/armstransfers",
+      "tanggalAkses": "2026-11-25",
+      "jenis": "database-independen"
+    }
+  ],
+  "tag": [
+    "pesawat-tempur",
+    "sukhoi",
+    "su-27",
+    "su-30",
+    "flanker",
+    "tni-au"
+  ],
+  "diperbaruiPada": "2026-11-25"
+}
